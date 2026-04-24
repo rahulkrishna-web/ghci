@@ -17,17 +17,8 @@ export default function About({ data }: AboutProps) {
   const rightImage = gallery[2] || "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80";
 
   return (
-    <section id="experience" className="py-24 bg-black text-white px-6 overflow-hidden relative">
-      {/* Background Wavy Lines */}
-      <div className="absolute top-40 inset-x-0 h-96 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 200C240 100 480 300 720 200C960 100 1200 300 1440 200" stroke="#A32482" strokeWidth="1" opacity="0.4" />
-              <path d="M0 220C240 120 480 320 720 220C960 120 1200 320 1440 220" stroke="#A32482" strokeWidth="1" opacity="0.3" />
-              <path d="M0 180C240 80 480 280 720 180C960 80 1200 280 1440 180" stroke="#A32482" strokeWidth="1" opacity="0.2" />
-          </svg>
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="experience" className="py-24 bg-black text-white px-4 md:px-40 relative overflow-hidden">
+      <div className="w-full relative z-10">
         
         {/* Floating Gallery */}
         <div className="relative h-[400px] md:h-[500px] mb-20">

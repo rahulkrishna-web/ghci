@@ -37,7 +37,7 @@ export default function EventiveePage() {
   const footerData = getContentData('footer');
 
   return (
-    <main className="min-h-screen bg-[#070708] selection:bg-[#b02677] selection:text-white font-sans text-white">
+    <main className="min-h-screen bg-[#070708] selection:bg-[#b02677] selection:text-white font-sans text-white overflow-x-hidden">
       <Navbar />
       {heroData && <Hero data={heroData as any} />}
       <Marquee />

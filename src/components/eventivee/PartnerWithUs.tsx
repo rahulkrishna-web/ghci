@@ -26,8 +26,8 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
   };
 
   return (
-    <section className="py-24 bg-black text-white px-6 overflow-hidden relative">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="partners" className="py-24 bg-black text-white px-4 md:px-40 relative overflow-hidden">
+      <div className="w-full relative z-10">
         
         {/* Header Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-6">

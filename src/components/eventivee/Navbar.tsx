@@ -15,8 +15,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent py-4">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#070708]/80 backdrop-blur-md border-b border-white/[0.05] px-4 md:px-40 py-4"
+    >
+      <div className="w-full flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex-shrink-0">
           <img 
@@ -90,6 +94,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }

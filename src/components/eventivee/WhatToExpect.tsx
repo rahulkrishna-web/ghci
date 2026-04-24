@@ -11,9 +11,8 @@ type WhatToExpectProps = {
 
 export default function WhatToExpect({ data }: WhatToExpectProps) {
   return (
-    <section className="py-24 bg-black text-white px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-24 bg-black text-white px-4 md:px-40">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side: Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -22,21 +21,24 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
             className="rounded-[10px] overflow-hidden aspect-video border border-white/10"
           >
             <img 
-              src={data.imageUrl} 
+              src="/what-to-expect.png" 
               alt="What to expect" 
               className="w-full h-full object-cover"
             />
           </motion.div>
-
+ 
           {/* Right Side: Info Box */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/[0.03] border border-white/5 rounded-[10px] p-10 md:p-14 relative overflow-hidden h-full flex flex-col justify-center"
+            className="relative rounded-[10px] p-10 md:p-14 overflow-hidden h-full flex flex-col justify-center"
+            style={{
+              backgroundImage: 'url(/what-to-expect-card-bg.png)',
+              backgroundSize: '100% 100%',
+              backgroundPosition: 'center'
+            }}
           >
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
             
             <div className="relative z-10">
               <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#A32482] mb-10">
@@ -56,7 +58,6 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
             </div>
           </motion.div>
         </div>
-      </div>
     </section>
   );
 }

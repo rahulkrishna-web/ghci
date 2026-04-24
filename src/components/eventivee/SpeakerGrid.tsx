@@ -12,8 +12,8 @@ type SpeakerGridProps = {
 
 export default function SpeakerGrid({ data }: SpeakerGridProps) {
   return (
-    <section id="speakers" className="py-24 bg-black text-white px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="speakers" className="py-24 bg-black text-white px-4 md:px-40">
+      <div className="w-full relative z-10">
         
         {/* Header Section */}
         <div className="text-center mb-20 relative">

@@ -24,12 +24,12 @@ export default function Footer({ data }: FooterProps) {
   if (!data) return null;
 
   return (
-    <footer className="pt-24 pb-0 bg-black text-white px-6 relative overflow-hidden flex flex-col min-h-[600px] justify-between" style={{
+    <footer className="pt-24 pb-0 bg-black text-white px-4 md:px-40 relative overflow-hidden flex flex-col min-h-[600px] justify-between" style={{
         backgroundImage: 'url(/footer-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
     }}>
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="w-full relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-16 md:gap-8 pb-20">
                 
                 {/* Brand & Socials */}

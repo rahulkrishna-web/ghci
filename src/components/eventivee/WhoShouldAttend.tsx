@@ -23,8 +23,8 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
   const bottomRow = data.blocks.slice(3, 5);
 
   return (
-    <section id="attendees" className="py-24 bg-black text-white px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="attendees" className="py-24 bg-black text-white px-4 md:px-40">
+      <div className="w-full">
         
         {/* Header */}
         <div className="text-center mb-20">

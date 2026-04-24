@@ -18,8 +18,8 @@ export default function Contact({ data }: ContactProps) {
   const highlightTitle = titleParts.slice(2).join(' '); // "Touch"
 
   return (
-    <section id="contact" className="py-24 bg-black text-white px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-24 bg-black text-white px-4 md:px-40 border-t border-white/[0.05]">
+      <div className="w-full">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
             
             {/* Left Side: Content */}

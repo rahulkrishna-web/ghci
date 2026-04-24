@@ -36,8 +36,8 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   };
 
   return (
-    <section id="get-involved" className="py-24 bg-black text-white px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="get-involved" className="py-24 bg-black text-white px-4 md:px-40">
+      <div className="w-full">
         
         {/* Header */}
         <div className="text-center mb-20">

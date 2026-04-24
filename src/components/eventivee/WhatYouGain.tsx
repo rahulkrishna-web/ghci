@@ -20,8 +20,8 @@ type WhatYouGainProps = {
 
 export default function WhatYouGain({ data }: WhatYouGainProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-6">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="py-24 bg-black text-white px-4 md:px-40">
+      <div className="w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
