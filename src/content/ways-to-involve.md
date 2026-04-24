@@ -1,0 +1,37 @@
+---
+sectionTitle: "Ways to Get Involved"
+subtitle: "Explore opportunities to speak, contribute, compete, and engage with the GHCI community."
+ways:
+  - title: "Call For Presenters"
+    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
+    type: "primary"
+    links:
+      - text: "Learn More"
+        url: "#"
+        variant: "solid"
+  - title: "Call For Jurors"
+    description: "Help recognize excellence in tech. Evaluate submissions, support talent, and shape industry benchmarks."
+    type: "primary"
+    links:
+      - text: "Applications Closed"
+        url: "#"
+        variant: "outline"
+      - text: "View Program Details"
+        url: "#"
+        variant: "solid"
+  - title: "Advancing Inclusion Program"
+    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
+    type: "secondary"
+    links:
+      - text: "Learn More"
+        url: "#"
+        variant: "solid"
+  - title: "WeQuest"
+    description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
+    type: "secondary"
+    badge: "Launching Soon"
+  - title: "GHCI Ambassadors"
+    description: "Champion GHCI in your community. Build connections, expand reach, and drive impact."
+    type: "secondary"
+    badge: "Launching Soon"
+---
