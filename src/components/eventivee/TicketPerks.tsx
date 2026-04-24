@@ -33,7 +33,11 @@ export default function TicketPerks({ data }: TicketPerksProps) {
            className="relative md:w-2/3 w-full"
         >
           {/* Ticket Body */}
-          <div className="relative bg-gradient-to-br from-[#4a1052] via-[#2d1b5a] to-[#070708] rounded-3xl p-8 md:p-12 min-h-[300px] flex items-center overflow-hidden">
+          <div className="relative rounded-3xl p-8 md:p-12 min-h-[300px] flex items-center overflow-hidden" style={{
+            backgroundImage: 'url(/ticket-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}>
             
             {/* Left Notch */}
             <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-black rounded-full z-10" />

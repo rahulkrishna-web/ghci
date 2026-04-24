@@ -24,12 +24,11 @@ export default function Footer({ data }: FooterProps) {
   if (!data) return null;
 
   return (
-    <footer className="pt-24 pb-0 bg-black text-white px-6 relative overflow-hidden flex flex-col min-h-[600px] justify-between">
-        {/* Atmospheric Mesh Gradients */}
-        <div className="absolute bottom-[-10%] left-[-10%] w-[70%] h-[70%] bg-[radial-gradient(circle_at_center,#4B1061_0%,transparent_70%)] opacity-40 blur-[120px] pointer-events-none z-0" />
-        <div className="absolute bottom-0 left-[20%] w-[50%] h-[50%] bg-[radial-gradient(circle_at_center,#A3238E_0%,transparent_70%)] opacity-30 blur-[100px] pointer-events-none z-0" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[radial-gradient(circle_at_center,#4338CA_0%,transparent_70%)] opacity-10 blur-[130px] pointer-events-none z-0" />
-        
+    <footer className="pt-24 pb-0 bg-black text-white px-6 relative overflow-hidden flex flex-col min-h-[600px] justify-between" style={{
+        backgroundImage: 'url(/footer-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+    }}>
         <div className="max-w-7xl mx-auto w-full relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-16 md:gap-8 pb-20">
                 
@@ -75,18 +74,13 @@ export default function Footer({ data }: FooterProps) {
             </div>
         </div>
 
-        {/* Large watermark text */}
-        <div className="relative w-full overflow-hidden select-none pointer-events-none mt-auto">
-            <h2 className="text-[28vw] font-bold text-transparent leading-none tracking-tighter text-center translate-y-[20%] uppercase border-outline-text">
-                GHCI
-            </h2>
-            <style jsx>{`
-                .border-outline-text {
-                    background: linear-gradient(to bottom, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-stroke: 1px rgba(255,255,255,0.1);
-                }
-            `}</style>
+        {/* Large SVG logo - positioned to overflow bottom */}
+        <div className="relative w-full flex justify-center pointer-events-none mt-auto">
+            <img 
+              src="/GHCI.svg" 
+              alt="GHCI Watermark" 
+              className="w-[100%] max-w-[1400px] h-auto translate-y-[10%] opacity-100"
+            />
         </div>
     </footer>
   );

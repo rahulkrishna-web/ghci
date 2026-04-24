@@ -16,11 +16,13 @@ type HeroProps = {
 
 export default function Hero({ data }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black text-white">
-      {/* Radial Atmosphere Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[100%] pointer-events-none z-0">
-          <div className="w-full h-full bg-[radial-gradient(circle_at_center,_#A32482_0%,_transparent_60%)] opacity-[0.25] blur-[120px]" />
-      </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black text-white" style={{
+        backgroundImage: 'url(/lead-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+    }}>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40 z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Date Cluster */}

@@ -54,7 +54,7 @@ export default function EventiveePage() {
       {involveData && <WaysToInvolve data={involveData as any} />}
       {partnerData && <PartnerWithUs data={partnerData as any} />}
       {locationData && <Location data={locationData as any} />}
-      {/* {ticketPerksData && <TicketPerks data={ticketPerksData as any} />} */}
+      {ticketPerksData && <TicketPerks data={ticketPerksData as any} />}
       {contactData && <Contact data={contactData as any} />}
       <FAQ />
       {footerData && <Footer data={footerData as any} />}

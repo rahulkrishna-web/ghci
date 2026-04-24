@@ -198,3 +198,18 @@
 - Implemented button clusters with circular iconic badges and refined pill-shaped buttons.
 - Standardized navigation architecture to match the new visual design.
 [1.5 hrs]
+
+### Watermark Outline Fix [2026-04-24 10:13]
+- Fixed interior overlapping lines in "GHCI" watermark in Footer.tsx.
+- Replaced -webkit-text-stroke with 4-way text-shadow to achieve a "union" effect on Montserrat font paths.
+[0.3 hrs]
+
+### Footer Asset Integration [2026-04-24 10:28]
+- Integrated footer-bg.png and sharp GHCI.svg watermark into Footer.tsx.
+- Removed CSS-based watermark and mesh gradients to use designer-provided assets.
+- Adjusted SVG positioning to overflow the bottom bounds as per design specs.
+[0.5 hrs]
+- Adjusted Footer watermark vertical offset to translate-y-[10%] for 10% bottom clipping. [2026-04-24 10:30] [0.1 hrs]
+- Integrated lead-bg.png as the background for the Hero (lead) section with a readability overlay. [2026-04-24 10:31] [0.2 hrs]
+- Restored "What You Get With Your Ticket" section before Contact. [2026-04-24 10:33]
+- Updated ticket card background to use ticket-bg.png. [0.3 hrs]
