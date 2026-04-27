@@ -380,3 +380,41 @@
 - Adjusted `Marquee.tsx` to have a transparent background and removed unnecessary padding, allowing it to blend seamlessly with the Hero's cinematic background.
 - Positioned the marquee absolutely at the bottom of the Hero section (`bottom-10`) to match the design reference.
 [0.3 hrs]
+
+### Experience Section Background Integration [2026-04-27 19:18]
+- Integrated `2nd-section-bg.png` as the full-width background for the "Experience GHCI" section.
+- Added a `bg-black/60` overlay to ensure readability and maintain visual consistency with the site's dark cinematic theme.
+[0.1 hrs]
+
+### Experience Background Bleed Fix [2026-04-27 19:21]
+- Resolved a background "bleeding" issue in the Experience section by setting `backgroundRepeat: 'no-repeat'` and `backgroundPosition: 'top center'`.
+- This ensures the large wavy line asset stays strictly contained within its section boundaries and doesn't spill over into the Hero or What You Gain sections.
+[0.1 hrs]
+
+### Experience Background Boundary Fix [2026-04-27 19:23]
+- Restored the `bg-black` class to the Experience section to prevent background transparency issues that caused assets to "bleed" into adjacent viewport areas.
+- Refined background properties to `backgroundSize: '100% auto'`, `backgroundPosition: 'bottom center'`, and `backgroundRepeat: 'no-repeat'` to strictly anchor the wavy graphic within the section's lower boundary.
+[0.1 hrs]
+
+### Experience Background Layer Refactoring [2026-04-27 19:27]
+- Refactored the Experience section background from a style property on the section to a dedicated absolute-positioned `div` with `inset-0`.
+- Applied `backgroundSize: 'cover'` to ensure the image maintains 100% height of the section while allowing the horizontal width to bleed beyond the screen edges as needed.
+- This ensures perfectly centered positioning and strict clipping within the section's `overflow-hidden` container, preventing any spillover into adjacent sections.
+[0.1 hrs]
+
+### Experience Stats Refinement [2026-04-27 19:52]
+- Top-aligned the stats columns in the Experience section by changing vertical justification to `justify-start`.
+- Applied the consistent GHCI brand gradient (`from-white to-[#A32482]`) to the stat digits using `bg-clip-text` for a high-fidelity look.
+- Refined typography and spacing based on user manual adjustments (increased font sizes and wider container).
+[0.2 hrs]
+
+### Experience Section Modularization [2026-04-27 19:57]
+- Detached the "Experience GHCI" stats from the "Floating Gallery" (About.tsx) into a standalone `ExperienceStats.tsx` component.
+- This modularization allows for cleaner separation of concerns while maintaining the identical cinematic design (same background graphics and layout).
+- Updated the main page structure to render both sections sequentially.
+[0.4 hrs]
+
+### About section Build Error Fix [2026-04-27 19:59]
+- Resolved a "Expression expected" build error in `About.tsx` caused by a redundant closing `</div>` tag left over during component modularization.
+- Restored valid JSX structure by correcting the `div` nesting levels.
+[0.1 hrs]

@@ -73,7 +73,7 @@ export default function Hero({ data }: HeroProps) {
                     href={data.primaryButtonLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-15 py-6 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
+                    className="px-15 py-6 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg font-bold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
                 >
                     {data.primaryButtonText}
                 </a>
@@ -86,7 +86,7 @@ export default function Hero({ data }: HeroProps) {
                 </div>
                 <a
                     href="#"
-                    className="px-15 py-6 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-lg shadow-xl active:scale-95 whitespace-nowrap"
+                    className="px-15 py-6 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-lg font-bold shadow-xl active:scale-95 whitespace-nowrap"
                 >
                     {data.secondaryButtonText}
                 </a>

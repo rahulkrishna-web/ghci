@@ -2,6 +2,7 @@ import Navbar from '@/components/eventivee/Navbar';
 import Hero from '@/components/eventivee/Hero';
 import Marquee from '@/components/eventivee/Marquee';
 import About from '@/components/eventivee/About';
+import ExperienceStats from '@/components/eventivee/ExperienceStats';
 import WhatYouGain from '@/components/eventivee/WhatYouGain';
 import WhoShouldAttend from '@/components/eventivee/WhoShouldAttend';
 import ExploreTracks from '@/components/eventivee/ExploreTracks';
@@ -41,6 +42,7 @@ export default function EventiveePage() {
       <Navbar />
       {heroData && <Hero data={heroData as any} />}
       {aboutData && <About data={aboutData as any} />}
+      {aboutData && <ExperienceStats data={aboutData as any} />}
       {gainData && <WhatYouGain data={gainData as any} />}
       {/* {perksData && <Perks data={perksData as any} />} */}
       {/* <Schedule /> */}

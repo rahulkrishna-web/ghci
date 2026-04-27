@@ -20,13 +20,13 @@ type WhatYouGainProps = {
 
 export default function WhatYouGain({ data }: WhatYouGainProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-40">
+    <section className="py-24 bg-black text-white px-4 md:px-12">
       <div className="w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold tracking-tight mb-20 text-center"
+          className="text-4xl md:text-7xl tracking-tight mb-20 text-center"
         >
           {data.sectionTitle}
         </motion.h2>
@@ -56,9 +56,9 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                 {/* Content */}
                 <div className="absolute inset-0 p-5 flex flex-col justify-end">
                   <div className="mb-4 text-white/90 group-hover:text-white transition-colors">
-                    {Icon && <Icon className="w-5 h-5" />}
+                    {Icon && <Icon className="w-8 h-8" />}
                   </div>
-                  <p className="text-white/80 text-[12px] font-medium leading-[1.4] transition-all group-hover:text-white">
+                  <p className="text-white/80 text-[24px] font-medium leading-[1.4] transition-all group-hover:text-white">
                     {card.description}
                   </p>
                 </div>
