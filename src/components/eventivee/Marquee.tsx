@@ -28,7 +28,7 @@ export default function Marquee() {
           {[...items, ...items, ...items, ...items].map((text, idx) => (
             <div 
               key={idx} 
-              className="flex items-center gap-3 px-6 py-2.5 rounded-full border border-dashed border-white/20 text-white/60 text-sm font-medium"
+              className="flex items-center gap-3 px-6 py-2.5 rounded-full border border-dashed border-white/20 text-white/60 text-md font-medium"
             >
               <span className="text-[#b02677] text-lg">✦</span>
               <span>{text}</span>

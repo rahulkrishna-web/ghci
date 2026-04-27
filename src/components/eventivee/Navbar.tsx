@@ -18,7 +18,7 @@ export default function Navbar() {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#070708]/80 backdrop-blur-md border-b border-white/[0.05] px-4 md:px-18 py-8"
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md px-4 md:px-13 py-8"
     >
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
@@ -36,7 +36,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-white hover:text-white transition-opacity text-xl tracking-tight"
+              className="text-white hover:text-white transition-opacity text-[1rem] tracking-tight"
             >
               {link.label}
             </a>
@@ -46,7 +46,7 @@ export default function Navbar() {
             href="https://konfhub.com/ghci-2027"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2 rounded-full bg-white text-black hover:bg-white/90 transition-all text-xl active:scale-95"
+            className="px-3 py-2 rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95"
           >
             Register Now
           </a>
