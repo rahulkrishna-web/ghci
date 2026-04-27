@@ -12,8 +12,15 @@ type SpeakerGridProps = {
 
 export default function SpeakerGrid({ data }: SpeakerGridProps) {
   return (
-    <section id="speakers" className="py-24 bg-black text-white px-4 md:px-40">
-      <div className="w-full relative z-10">
+    <section id="speakers" className="py-24 relative overflow-hidden text-white" style={{
+      backgroundImage: 'url(/speaker.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      
+      <div className="w-full relative z-10 px-4 md:px-40">
         
         {/* Header Section */}
         <div className="text-center mb-20 relative">
@@ -51,8 +58,8 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
           </motion.div>
         </div>
 
-        {/* Speaker Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {/* Speaker Grid / Slider */}
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {data.speakers.map((speaker, idx) => (
             <motion.div
               key={idx}
@@ -60,7 +67,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="group relative aspect-[3/4.5] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500"
+              className="group relative aspect-[3/4.5] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500 min-w-[75vw] md:min-w-0 snap-center"
             >
               {/* Image */}
               <img

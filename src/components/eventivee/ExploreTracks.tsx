@@ -22,7 +22,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="flex overflow-x-auto lg:grid md:grid-cols-2 lg:grid-cols-5 gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {data.tracks.map((track, idx) => (
             <motion.div
               key={idx}
@@ -30,7 +30,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 rounded-[10px] bg-white/[0.03] border border-white/5 flex flex-col h-full hover:bg-white/[0.06] transition-all group"
+              className="p-8 rounded-[10px] bg-white/[0.03] border border-white/5 flex flex-col h-full hover:bg-white/[0.06] transition-all group min-w-[80vw] md:min-w-0 snap-center"
             >
               <div className="mb-10">
                 <Check className="w-5 h-5 text-[#A32482]" />

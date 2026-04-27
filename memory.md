@@ -224,3 +224,123 @@
 - Integrated premium assets for "What To Expect" section (what-to-expect.png and card background). [2026-04-24 11:10]
 - Removed legacy grid pattern from What To Expect card. [0.2 hrs]
 - Refined what-to-expect card background to fill 100% of the container and removed the redundant border. [2026-04-24 11:13] [0.1 hrs]
+- Integrated ScrollReveal component from reactbits.dev (without tilt effect). [2026-04-24 11:21]
+- Applied ScrollReveal animation to the About section content for a premium entrance effect. [1.2 hrs]
+
+### Contact Section Refinement [2026-04-27 15:55]
+- Implemented a vertical linear gradient (Pink -> Magenta) on the "Touch" text in the Contact section to match Figma designs.
+- Standardized brand magenta to #A32482 across the Contact component (buttons, banner, highlights).
+- Optimized heading layout with precise line breaks and leading to align with the provided mockups.
+- Updated content title casing to "Get in Touch" for perfect design fidelity.
+[0.5 hrs]
+
+### Contact Section Gradient Fix [2026-04-27 16:02]
+- Updated "Get in Touch" heading to match the new design: single line with a horizontal gradient.
+- Implemented `bg-gradient-to-r from-white to-[#A32482]` across the entire heading.
+- Expanded container width from `max-w-md` to `max-w-2xl` to ensure the text stays on one line.
+- Removed unused title splitting logic.
+[0.5 hrs]
+
+### Ticket Pricing Banner Gradient [2026-04-27 16:07]
+- Applied the horizontal white-to-magenta gradient to the "Tickets starting at ₹3,000" text in the Contact section banner.
+- Used `inline-block` and `bg-clip-text` to ensure the gradient aligns perfectly with the text length.
+[0.2 hrs]
+
+### Font Consistency Update [2026-04-27 16:15]
+- Removed `font-mono` from transport options in the Location section to align with the global Montserrat font.
+- Standardized headers "VIA CAB", "VIA METRO", and "VIA BUS" to use the brand's primary typography.
+[0.2 hrs]
+
+### Global Font Migration: Montserrat -> Proxima Nova [2026-04-27 16:17]
+- Migrated project from Google Font Montserrat to locally hosted Proxima Nova.
+- Configured `next/font/local` in `layout.tsx` using TTF files from `/public/fonts/proxima-nova`.
+- Mapped weights: 300 (Light), 400 (Regular), 600 (Semibold), 800 (Extrabold).
+- Updated Tailwind theme variable `--font-sans` in `globals.css` to track `--font-proxima-nova`.
+[1.0 hrs]
+
+### Partner Section Asset Integration [2026-04-27 16:35]
+- Renamed and integrated local logos for the "Trusted By" section in `PartnerWithUs`.
+- New logo filenames: `jio-institute.png`, `lloyds.png`, `mycareernet.png`, `backbase.png`, `avalara.png`.
+- Updated `src/content/partner-with-us.md` to reference local `/trusted-by/` paths instead of external URLs.
+[0.5 hrs]
+
+### Partner Section Visual Polish [2026-04-27 16:40]
+- Increased trusted partner logo height from `h-8` (32px) to `h-12` (48px) for better visibility.
+- Changed "Trusted By" label from all-caps (`uppercase`) to sentence case to match the design.
+[0.2 hrs]
+
+### Partner Section Layout Overhaul [2026-04-27 16:42]
+- Wrapped the entire "Partner With Us" content into a unified boxed container with 10px corner radius.
+- Integrated `partner-bg.png` as the background for this container with a dark readability overlay.
+- Removed the manual SVG wave pattern to use the designer-provided background asset.
+- Adjusted interior padding (`p-10 md:p-16`) to create a professional, framed look matching the design specs.
+[0.5 hrs]
+
+### Partner Section Full-Width Transition [2026-04-27 16:43]
+- Refactored `PartnerWithUs.tsx` to shift the background image from a boxed container to the full-viewport-width section wrapper.
+- Increased background overlay opacity (`bg-black/80`) to ensure contrast against the full-width `partner-bg.png`.
+- Realigned content using `px-4 md:px-40` on the inner container to maintain site-wide horizontal consistency.
+[0.3 hrs]
+
+### Partner Section Background Correction [2026-04-27 16:45]
+- Corrected background overlay opacity from `bg-black/80` back to `bg-black/40`.
+- The previous opacity was masking the full-width `partner-bg.png` texture entirely.
+[0.1 hrs]
+
+### Partner Background Alignment Fix [2026-04-27 16:46]
+- Adjusted `backgroundPosition` to `bottom center` in `PartnerWithUs.tsx`.
+- This ensures the decorative wavy lines (located at the bottom of the source image) are properly anchored to the bottom of the section and not clipped by the container.
+[0.1 hrs]
+
+### Location Section Asset Integration [2026-04-27 16:49]
+- Applied `location-bg.png` as the full-width background for the "Our Location" section.
+- Added a `bg-black/60` overlay to maintain professional contrast and text readability.
+- Realigned the content container with `px-4 md:px-40` to ensure site-wide horizontal padding consistency while the background spans the full viewport.
+[0.3 hrs]
+
+### Ways to Involve Section Refinement [2026-04-27 16:52]
+- Redesigned card title gradients to show more brand magenta color.
+- Changed gradient from `to-br from-white via-white to-magenta` to a cleaner `to-r from-white to-magenta`.
+- Applied the `getTitleWithHighlight` logic to all secondary cards (WeQuest, Ambassadors) to ensure visual consistency across the entire grid.
+[0.3 hrs]
+
+### Speaker Asset Integration & Interaction [2026-04-27 17:02]
+- Standardized speaker headshot filenames in `/public/speakers/` (lowercase, kebab-case).
+- Updated `src/content/speakers.md` to reference local optimized assets.
+- Implemented cinematic hover effect in `SpeakerGrid.tsx`:
+  - Default: Full grayscale (100% saturation removal) and slightly dimmed (`brightness-90`).
+  - Hover: Smooth transition to full color (`grayscale-0`) and subtle scale-up (`scale-105`) over 700ms.
+[0.5 hrs]
+
+### Speaker Section Background Integration [2026-04-27 17:11]
+- Integrated `speaker.png` as a full-width background for the `Speakers` section.
+- Added a `bg-black/60` overlay to ensure typographic legibility and cinematic depth.
+- Standardized the layout by moving section padding to a relative inner container.
+[0.3 hrs]
+
+### Feature Section Asset Integration [2026-04-27 17:18]
+- Standardized feature card images in `/public/features/` with sequential naming (`feature-1.png` to `feature-6.png`).
+- Migrated "What You'll Gain" section from placeholder Unsplash URLs to local high-fidelity assets.
+[0.3 hrs]
+
+### Experience Section Gallery Overhaul [2026-04-27 17:26]
+- Restructured the "Experience GHCI" gallery from a 3-image layout to a high-fidelity 5-image floating grid.
+- Mapped all local assets from `/public/experience/` (Center, Top-Left, Top-Right, Bottom-Left, Bottom-Right) to their respective spatial positions as per Figma.
+- Enhanced the visual depth by adjusting relative positions, z-indexing, and adding subtle grayscale filters to the floating peripheral images.
+[0.5 hrs]
+
+### Experience Gallery Overlap Fix [2026-04-27 17:28]
+- Resolved visual crowding in the "Experience GHCI" gallery by refining individual image positions.
+- Reduced the main center image width to `55%` and pushed floating images to the absolute container edges (`left-0`, `right-0`).
+- Increased the overall height of the gallery container on desktop to `700px` to allow for better vertical staggering and a cleaner floating effect.
+[0.2 hrs]
+
+### Mobile Slider Implementation [2026-04-27 17:34]
+- Converted vertical card stacks into horizontal snap sliders for several key sections on mobile viewports:
+    - `WhoShouldAttend`: Integrated 5 cards into a single slider row.
+    - `ExploreTracks`: Five-column track list now scrolls horizontally.
+    - `SpeakerGrid`: Lineup cards now feature horizontal swipe-scroll.
+    - `WhatYouGain`: Six portrait cards refactored into a mobile carousel.
+    - `WaysToInvolve`: Primary and secondary involvement cards migrated to horizontal sliders.
+- Used Tailwind `overflow-x-auto`, `snap-x`, and `snap-mandatory` for a native-feeling mobile experience while preserving core grid layouts on desktop.
+[0.8 hrs]

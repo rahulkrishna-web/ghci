@@ -19,8 +19,13 @@ type LocationProps = {
 
 export default function Location({ data }: LocationProps) {
   return (
-    <section id="location" className="py-24 bg-black text-white px-4 md:px-40">
-      <div className="w-full">
+    <section id="location" className="py-24 relative overflow-hidden text-white" style={{
+      backgroundImage: 'url(/location-bg.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'top center'
+    }}>
+      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      <div className="w-full relative z-10 px-4 md:px-40">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +127,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 pr-8">
                 <Car className="w-8 h-8 text-white/80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50 font-mono">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[0].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">
@@ -135,7 +140,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 px-12 border-l border-white/10">
                 <Train className="w-8 h-8 text-white/80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50 font-mono">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[1].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">
@@ -148,7 +153,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 pl-12 border-l border-white/10">
                 <Bus className="w-8 h-8 text-white/80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50 font-mono">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[2].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">

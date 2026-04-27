@@ -1,5 +1,5 @@
 ---
-sectionTitle: "Get In Touch"
+sectionTitle: "Get in Touch"
 subtitle: "Have a question? We'd love to hear from you."
 email: "support@anitab.org"
 buttons:

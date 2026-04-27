@@ -17,13 +17,13 @@ benefits:
 trustedByText: "Trusted by professionals from leading organizations"
 logos:
   - name: "Jio Institute"
-    src: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Jio_Institute_logo.png"
+    src: "/trusted-by/jio-institute.png"
   - name: "LLOYDS"
-    src: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Lloyds_Bank_logo.svg/1200px-Lloyds_Bank_logo.svg.png"
+    src: "/trusted-by/lloyds.png"
   - name: "mycareernet"
-    src: "https://www.mycareernet.in/assets/images/logo.png"
+    src: "/trusted-by/mycareernet.png"
   - name: "Backbase"
-    src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Backbase-logo.png"
+    src: "/trusted-by/backbase.png"
   - name: "Avalara"
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avalara_logo.svg/1200px-Avalara_logo.svg.png"
+    src: "/trusted-by/avalara.png"
 ---
