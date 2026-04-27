@@ -20,13 +20,13 @@ type WhatYouGainProps = {
 
 export default function WhatYouGain({ data }: WhatYouGainProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-12">
+    <section className="py-12 bg-black text-white px-4 md:px-12">
       <div className="w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-7xl tracking-tight mb-20 text-center"
+          className="text-4xl md:text-6xl tracking-tight mb-10 text-center"
         >
           {data.sectionTitle}
         </motion.h2>

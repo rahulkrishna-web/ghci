@@ -11,14 +11,14 @@ type WhatToExpectProps = {
 
 export default function WhatToExpect({ data }: WhatToExpectProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-40">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-0 text-white px-4 md:px-12">
+      <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch">
           {/* Left Side: Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-[10px] overflow-hidden aspect-video border border-white/10"
+            className="md:col-span-5 rounded-[10px] overflow-hidden border border-white/10 h-full"
           >
             <img 
               src="/what-to-expect.png" 
@@ -32,7 +32,7 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[10px] p-10 md:p-14 overflow-hidden h-full flex flex-col justify-center"
+            className="md:col-span-7 relative rounded-[10px] p-10 md:p-14 overflow-hidden h-full flex flex-col justify-center"
             style={{
               backgroundImage: 'url(/what-to-expect-card-bg.png)',
               backgroundSize: '100% 100%',
@@ -41,15 +41,15 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
           >
             
             <div className="relative z-10">
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#A32482] mb-10">
+              <h3 className="text-[2rem] text-[#A32482] mb-2">
                 {data.sectionTitle}
               </h3>
               
-              <ul className="space-y-6">
+              <ul>
                 {data.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-4 group cursor-pointer">
                     <span className="w-1.5 h-1.5 rounded-full bg-white/20 mt-2.5 group-hover:bg-[#A32482] transition-colors" />
-                    <span className="text-white/80 text-lg md:text-xl font-medium border-b border-transparent group-hover:border-white/20 transition-all pb-1 leading-tight">
+                    <span className="text-white/80 text-lg md:text-[1.5rem] font-medium border-b border-transparent group-hover:border-white/20 transition-all pb-1 leading-tight">
                         {point}
                     </span>
                   </li>

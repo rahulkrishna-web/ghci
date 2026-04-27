@@ -418,3 +418,65 @@
 - Resolved a "Expression expected" build error in `About.tsx` caused by a redundant closing `</div>` tag left over during component modularization.
 - Restored valid JSX structure by correcting the `div` nesting levels.
 [0.1 hrs]
+
+### ExploreTracks 4.5 Card Layout [2026-04-28 03:24]
+- Refactored `ExploreTracks.tsx` from a static grid to a horizontal flex-scroll container on desktop.
+- Adjusted card `min-width` to show exactly 4.5 cards on desktop and 2.2 cards on tablet viewports.
+- Enabled `flex-shrink-0` to maintain card dimensions during horizontal scrolling.
+[0.3 hrs]
+
+### ExploreTracks Card Width Correction [2026-04-28 03:28]
+- Fixed issue where cards were showing at 1.2 visibility on desktop.
+- Replaced complex `calc` with percentage-based widths (`w-[21%]`) for better reliability in flex containers.
+- Added `w-full` to the tracks container and increased gap to `gap-6`.
+[0.2 hrs]
+
+### ExploreTracks Figma Replication [2026-04-28 03:35]
+- Replicated premium card styling from Figma:
+    - Added `backdrop-blur-md` for the Glass effect.
+    - Updated background fill to `bg-white/[0.05]` and border to `border-white/10`.
+    - Set description text color to `#A3A3A3` as per Figma selection colors.
+    - Increased section padding to `px-4 md:px-16 lg:px-20` to match design margins.
+    - Adjusted vertical padding to `py-20` for better breathing room.
+[0.4 hrs]
+
+### ExploreTracks Leading Padding and Bleed [2026-04-28 03:41]
+- Added leading padding (`px-4 md:px-20`) to the tracks container to provide a 1rem+ starting gap.
+- Configured as a full-width bleed section: cards touch screen edges during scroll but respect margins at start/end.
+- Switched to `snap-start` for better alignment with the new leading margins.
+- Updated card width to `w-[18.5%]` to preserve the 4.5-card visibility within the padded container.
+[0.2 hrs]
+
+### ExploreTracks 4.5 Card Correction [2026-04-28 03:46]
+- Fixed issue where too many cards were visible simultaneously.
+- Restored `lg:w-[21%]` and `md:w-[44%]` to re-establish the 4.5 and 2.2 card visibility ratios.
+- Verified that these percentages correctly account for the `px-20` container padding.
+[0.1 hrs]
+
+### ExploreTracks Spacer Implementation [2026-04-28 03:50]
+- Added high-reliability spacer divs at the start and end of the track list to ensure consistent leading gaps.
+- Adjusted card widths to `lg:w-[22%]` and `md:w-[46%]` to maintain the 4.5 and 2.2 visibility ratios given the new internal spacers.
+- Verified that `snap-start` correctly targets the first card after the leading spacer.
+[0.1 hrs]
+
+### ExploreTracks Scroll Padding Fix [2026-04-28 03:51]
+- Resolved issue where snap-alignment was overriding leading gaps.
+- Implemented `scroll-pl-20` (and `md`, `lg` variations) to force snap-alignment to respect container padding.
+- Removed manual spacers in favor of standard CSS `scroll-padding`.
+[0.1 hrs]
+
+[0.1 hrs]
+
+### Grouped ExploreTracks and WhatToExpect [2026-04-28 04:18]
+- Clubbed `ExploreTracks` and `WhatToExpect` components into a single common section wrapper layout in `page.tsx`.
+- Applied global `/expect-bg.png` full size background on the grouped section wrapper and removed hardcoded static `bg-black` from `ExploreTracks` and `WhatToExpect` containers to let the new common backdrop bleed through gracefully.
+[0.1 hrs]
+
+### WhatToExpect Column Layout Overhaul [2026-04-28 04:25]
+- Transitioned grid from basic `md:grid-cols-2` 50/50 split to a refined 12-column grid format.
+- Adjusted widths visually applying `md:col-span-5` to the left-side image to shrink width and `md:col-span-7` to expand the right-side text block perfectly reproducing the specific Figma proportions superimposed.
+- Replaced centralizing grid `items-center` algorithm into `items-stretch`. By injecting native `h-full` to both split columns, the smaller image organically auto-corrects height directly to align perfectly flush to the larger context body's exact line span.
+[0.1 hrs]
+### ExploreTracks Equal Heights Fix Restored [2026-04-28 04:08]
+- Replaced `h-full` with `h-auto` on the child cards for the track flex container. `h-full` resolves to 100% of auto on the wrapper when there is no implicit parent layout height, disabling `items-stretch` ability natively. `h-auto` defaults the item into flex computed cross-size bound constraints.
+[0.1 hrs]

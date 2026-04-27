@@ -21,7 +21,7 @@ export default function About({ data }: AboutProps) {
   const bottomRightImage = gallery[4];
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-black text-white px-4 md:px-40">
+    <section id="experience" className="py-6 relative overflow-hidden bg-black text-white px-4 md:px-15">
         {/* Background Graphic Layer */}
         <div 
             className="absolute inset-0 pointer-events-none"
@@ -43,7 +43,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: -30, y: -30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute left-0 lg:left-[2%] top-[5%] w-20 md:w-40 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="absolute left-0 lg:left-[1%] top-0 w-20 md:w-40 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={topLeftImage} alt="Experience 1" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -53,7 +53,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: 30, y: -30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute right-0 lg:right-[2%] top-[10%] w-24 md:w-44 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="absolute right-0 top-[1%] w-24 md:w-44 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={topRightImage} alt="Experience 2" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -63,7 +63,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full md:w-[55%] aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
+                className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full md:w-[68%] aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
             >
                 <img src={centerImage} alt="Main Experience" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -74,7 +74,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: -30, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute left-0 lg:left-[4%] bottom-[10%] w-24 md:w-48 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="absolute left-0 lg:left-[2%] bottom-0 w-24 md:w-48 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={bottomLeftImage} alt="Experience 3" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -84,7 +84,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: 30, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute right-0 lg:right-[4%] bottom-[5%] w-20 md:w-36 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="absolute right-0  bottom-[2%] w-20 md:w-36 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={bottomRightImage} alt="Experience 4" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>

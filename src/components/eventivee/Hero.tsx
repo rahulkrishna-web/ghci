@@ -17,7 +17,7 @@ type HeroProps = {
 
 export default function Hero({ data }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex flex-col gap-18 items-center justify-center overflow-hidden bg-black text-white" style={{
+    <section className="relative min-h-screen md:min-h-[80vh] flex flex-col gap-8 items-center justify-center overflow-hidden bg-black text-white" style={{
         backgroundImage: 'url(/lead-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
@@ -26,7 +26,7 @@ export default function Hero({ data }: HeroProps) {
         
         {/* <div className="absolute inset-0 bg-black/40 z-0" /> */}
 
-      <div className="relative z-10 w-full px-4 md:px-40 text-center">
+      <div className="relative z-10 w-full px-4 md:px-40 mt-24 text-center">
         {/* Date Cluster */}
         <motion.div
             initial={{ opacity: 0, y: -20 }}

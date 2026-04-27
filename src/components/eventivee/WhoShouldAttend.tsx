@@ -23,16 +23,16 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
   const bottomRow = data.blocks.slice(3, 5);
 
   return (
-    <section id="attendees" className="py-24 bg-black text-white px-4 md:px-40">
+    <section id="attendees" className="py-4 bg-black text-white px-4 md:px-14">
       <div className="w-full">
         
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-15">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
+            className="text-4xl md:text-6xl tracking-tight"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -41,14 +41,14 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 text-lg max-w-2xl mx-auto"
+            className="text-white/60 text-lg max-w-4xl mx-auto"
           >
             {data.subtitle}
           </motion.p>
         </div>
 
         {/* Grid / Slider Container */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {data.blocks.map((block, idx) => {
                 const Icon = IconMap[block.icon];
                 const isCenteredOnDesktop = idx >= 3;
@@ -59,23 +59,23 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className={`p-10 rounded-[10px] flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center ${
+                        className={`py-10 px-8 rounded-[10px] flex flex-col h-full min-w-[82vw] md:min-w-0 snap-center ${
                             block.highlight 
                             ? 'bg-[#A32482] shadow-2xl shadow-purple-900/20' 
                             : 'bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all'
                         } ${isCenteredOnDesktop ? 'lg:translate-x-1/2' : ''}`}
                     >
-                        <div className={`mb-8 ${block.highlight ? 'text-white' : 'text-white/40'}`}>
+                        <div className={`mb-3 ${block.highlight ? 'text-white' : 'text-white/40'}`}>
                             {Icon && <Icon className="w-10 h-10" />}
                         </div>
-                        <h3 className="text-2xl font-bold mb-8 leading-tight">
+                        <h3 className="text-2xl leading-tight">
                             {block.title}
                         </h3>
                         <ul className="space-y-4">
                             {block.points.map((point, pIdx) => (
-                                <li key={pIdx} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
+                                <li key={pIdx} className="flex items-start gap-4 text-sm font-medium leading-relaxed mb-0">
                                     <span className={`w-1 h-1 rounded-full mt-2.5 shrink-0 ${block.highlight ? 'bg-white/60' : 'bg-white/20'}`} />
-                                    <span className={block.highlight ? 'text-white/90' : 'text-white/60'}>
+                                    <span className={`text-xl ${block.highlight ? 'text-white/90' : 'text-white/60'}`}>
                                         {point}
                                     </span>
                                 </li>

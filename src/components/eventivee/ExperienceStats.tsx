@@ -10,7 +10,7 @@ type ExperienceStatsProps = {
 
 export default function ExperienceStats({ data }: ExperienceStatsProps) {
   return (
-    <section id="experience-stats" className="py-12 relative overflow-hidden bg-black text-white px-4 md:px-12">
+    <section id="experience-stats" className="py-6 relative overflow-hidden bg-black text-white px-4 md:px-12">
         {/* Background Graphic Layer */}
         <div 
             className="absolute inset-0 pointer-events-none"
@@ -25,7 +25,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-7xl tracking-tight mb-40"
+            className="text-4xl md:text-6xl tracking-tight mb-22"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -38,9 +38,9 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             className="flex flex-col md:flex-row justify-center items-stretch gap-0 max-w-8xl mx-auto"
           >
             {data.stats.map((stat, idx) => (
-              <div key={idx} className={`flex-1 px-20 py-4 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-4xl md:text-6xl font-medium mb-4">{stat.value}</div>
-                <p className="text-white text-sm md:text-[28px] leading-relaxed max-w-[400px]">
+              <div key={idx} className={`flex-1 px-18 py-4 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
+                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
+                <p className="text-white text-sm md:text-[24px] leading-tight max-w-[200px]">
                     {stat.label}
                 </p>
               </div>

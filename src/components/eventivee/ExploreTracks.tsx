@@ -11,18 +11,18 @@ type ExploreTracksProps = {
 
 export default function ExploreTracks({ data }: ExploreTracksProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-40">
+    <section className="py-20 text-white">
       <div className="w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold tracking-tight mb-20 text-center"
+          className="text-4xl md:text-6xl tracking-tight mb-20 text-center"
         >
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="flex overflow-x-auto lg:grid md:grid-cols-2 lg:grid-cols-5 gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex w-full overflow-x-auto gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-16 lg:px-20 scroll-pl-4 md:scroll-pl-16 lg:scroll-pl-14 items-stretch">
           {data.tracks.map((track, idx) => (
             <motion.div
               key={idx}
@@ -30,15 +30,15 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 rounded-[10px] bg-white/[0.03] border border-white/5 flex flex-col h-full hover:bg-white/[0.06] transition-all group min-w-[80vw] md:min-w-0 snap-center"
+              className="p-6 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col h-auto hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[85%] md:w-[46%] lg:w-[23%] snap-start"
             >
               <div className="mb-10">
                 <Check className="w-5 h-5 text-[#A32482]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-8 leading-snug">
+              <h3 className="text-[1.8rem] text-white mb-8 leading-snug">
                 {track.title}
               </h3>
-              <p className="text-white/40 text-sm leading-relaxed mt-auto">
+              <p className="text-[#A3A3A3] text-[1.25rem] leading-relaxed mt-auto">
                 {track.description}
               </p>
             </motion.div>

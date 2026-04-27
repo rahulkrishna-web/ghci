@@ -18,9 +18,10 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
       backgroundPosition: 'center'
     }}>
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+    
+      {/* <div className="absolute inset-0 bg-black/60 pointer-events-none" /> */}
       
-      <div className="w-full relative z-10 px-4 md:px-40">
+      <div className="w-full relative z-10 px-4 md:px-12">
         
         {/* Header Section */}
         <div className="text-center mb-20 relative">
@@ -37,7 +38,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-8"
+            className="text-4xl md:text-6xl tracking-tight mb-8"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -47,12 +48,12 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="max-w-3xl mx-auto space-y-4"
+            className="max-w-5xl mx-auto"
           >
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-white text-2xl leading-relaxed">
               {data.subtitle}
             </p>
-            <p className="text-white font-bold text-lg">
+            <p className="text-white font-bold text-2xl">
               {data.lineupNote}
             </p>
           </motion.div>

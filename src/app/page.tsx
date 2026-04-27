@@ -48,9 +48,14 @@ export default function EventiveePage() {
       {/* <Schedule /> */}
       
       {attendData && <WhoShouldAttend data={attendData as any} />}
-      {tracksData && <ExploreTracks data={tracksData as any} />}
-      {expectData && <WhatToExpect data={expectData as any} />}
       
+      <section 
+        className="w-full relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/expect-bg.png)' }}
+      >
+        {tracksData && <ExploreTracks data={tracksData as any} />}
+        {expectData && <WhatToExpect data={expectData as any} />}
+      </section>
       {speakersData && <SpeakerGrid data={speakersData as any} />}
       {involveData && <WaysToInvolve data={involveData as any} />}
       {partnerData && <PartnerWithUs data={partnerData as any} />}
