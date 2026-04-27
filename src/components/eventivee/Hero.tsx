@@ -35,15 +35,15 @@ export default function Hero({ data }: HeroProps) {
             <span className="text-lg font-medium tracking-wide">{data.date}</span>
         </motion.div>
 
-        {/* Main Title */}
+        {/* Main Title with Glass Effect */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-          className="text-6xl md:text-8xl lg:text-[7.5rem] font-bold text-[#D1D1D4] tracking-tighter leading-[0.9] mb-10 max-w-6xl mx-auto flex flex-col items-center"
+          className="text-6xl md:text-8xl lg:text-[7.5rem] font-semibold text-white/50 tracking-[-0.02em] mb-6 max-w-6xl mx-auto flex flex-col items-center mix-blend-plus-lighter"
         >
           <span className="block">Grace Hopper</span>
-          <span className="block">Celebration India 2027</span>
+          <span className="block whitespace-nowrap">Celebration India 2027</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -51,7 +51,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed"
+          className="text-white text-xl md:text-2xl max-w-6xl mx-auto mb-16 leading-relaxed"
         >
           {data.subtitle}
         </motion.p>
@@ -64,28 +64,28 @@ export default function Hero({ data }: HeroProps) {
           className="flex flex-col md:flex-row items-center justify-center gap-8"
         >
             {/* Register Cluster */}
-            <div className="flex items-center gap-3 group">
-                <div className="w-14 h-14 rounded-full bg-[#A32482]/20 border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482]/40 transition-all">
-                    <Ticket className="w-6 h-6 text-[#A32482]" />
+            <div className="flex items-center group">
+                <div className="w-14 h-14 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-all">
+                    <Ticket className="w-6 h-6 text-white" />
                 </div>
                 <a
                     href={data.primaryButtonLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-10 py-4 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white font-bold text-lg shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
+                    className="px-10 py-4 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
                 >
                     {data.primaryButtonText}
                 </a>
             </div>
 
             {/* Agenda Cluster */}
-            <div className="flex items-center gap-3 group">
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-all">
-                    <Calendar className="w-6 h-6 text-white/80" />
+            <div className="flex items-center group">
+                <div className="w-14 h-14 rounded-full bg-white border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-all">
+                    <Calendar className="w-6 h-6 text-[#A32482]" />
                 </div>
                 <a
                     href="#"
-                    className="px-10 py-4 rounded-full bg-white text-black hover:bg-neutral-200 transition-all font-bold text-lg shadow-xl active:scale-95 whitespace-nowrap"
+                    className="px-10 py-4 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-lg shadow-xl active:scale-95 whitespace-nowrap"
                 >
                     {data.secondaryButtonText}
                 </a>

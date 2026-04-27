@@ -344,3 +344,33 @@
     - `WaysToInvolve`: Primary and secondary involvement cards migrated to horizontal sliders.
 - Used Tailwind `overflow-x-auto`, `snap-x`, and `snap-mandatory` for a native-feeling mobile experience while preserving core grid layouts on desktop.
 [0.8 hrs]
+
+### Hero Button Join Update [2026-04-27 17:35]
+- Refined the primary and secondary call-to-action buttons in the Hero section to act as unified components.
+- Removed the `gap-3` between the icon cluster and the label cluster.
+- Adjusted corner radii to `rounded-l-full` for icons and `rounded-r-full` for text labels, specifically targeting the meeting edges to ensure they "touch" and look integrated.
+- Standardized height to `h-14` for both parts to ensure pixel-perfect alignment.
+[0.2 hrs]
+
+### Hero Glass Title Replication [2026-04-27 17:40]
+- Replicated the "Glass" effect for the hero title by using `text-white/50` combined with `mix-blend-plus-lighter` for an ethereal, translucent look that picks up background colors.
+- Fine-tuned typography to match Figma specs: `7.5rem` font size, `-0.02em` tracking, and `0.95` leading.
+- Added styling nuances like `italic` and `uppercase` where appropriate to match the designer's intent.
+[0.3 hrs]
+
+### Hero Title Typography Correction [2026-04-27 17:42]
+- Corrected the hero title typography to strictly adhere to the Figma design:
+    - Removed incorrect italics and uppercase transformations.
+    - Restored Title Case ("Grace Hopper Celebration India 2027").
+    - Adjusted font-weight to `semibold` as per design specs.
+- Maintained the requested glass effect (`white/50` + `mix-blend-plus-lighter`) and precise spacing (`tracking-[-0.02em]`, `leading-[0.95]`).
+[0.1 hrs]
+
+### Hero Title Layout Fix [2026-04-27 17:43]
+- Forced "Celebration India 2027" to remain on a single line using `whitespace-nowrap` to prevent orphans or unintended wrapping on smaller desktop viewports.
+[0.1 hrs]
+
+### Hero Subtitle Spacing and Typography [2026-04-27 17:46]
+- Updated the hero subtitle to solid `white` and increased font size to `2xl` (approx 24px) to improve legibility and visual weight.
+- Adjusted the vertical gap between the main title and the subtitle to `mb-24` (96px), aligning the spacing with the visual line-height of the title as requested.
+[0.2 hrs]
