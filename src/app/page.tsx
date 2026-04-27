@@ -40,7 +40,6 @@ export default function EventiveePage() {
     <main className="min-h-screen bg-[#070708] selection:bg-[#b02677] selection:text-white font-sans text-white overflow-x-hidden">
       <Navbar />
       {heroData && <Hero data={heroData as any} />}
-      <Marquee />
       {aboutData && <About data={aboutData as any} />}
       {gainData && <WhatYouGain data={gainData as any} />}
       {/* {perksData && <Perks data={perksData as any} />} */}

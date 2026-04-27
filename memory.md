@@ -374,3 +374,9 @@
 - Updated the hero subtitle to solid `white` and increased font size to `2xl` (approx 24px) to improve legibility and visual weight.
 - Adjusted the vertical gap between the main title and the subtitle to `mb-24` (96px), aligning the spacing with the visual line-height of the title as requested.
 [0.2 hrs]
+
+### Marquee Relocation Above the Fold [2026-04-27 18:23]
+- Moved the `Marquee` component from the main page structure into the `Hero` section to ensure it remains visible "above the fold" on page load.
+- Adjusted `Marquee.tsx` to have a transparent background and removed unnecessary padding, allowing it to blend seamlessly with the Hero's cinematic background.
+- Positioned the marquee absolutely at the bottom of the Hero section (`bottom-10`) to match the design reference.
+[0.3 hrs]

@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Calendar, Ticket } from 'lucide-react';
+import Marquee from './Marquee';
 
 type HeroProps = {
   data: {
@@ -29,10 +30,10 @@ export default function Hero({ data }: HeroProps) {
         <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-3 mb-10 text-white/70"
+            className="flex items-center justify-center gap-3 mb-10 text-white"
         >
-            <Calendar className="w-5 h-5" />
-            <span className="text-lg font-medium tracking-wide">{data.date}</span>
+            <Calendar className="w-8 h-8" />
+            <span className="text-2xl font-medium tracking-wide">{data.date}</span>
         </motion.div>
 
         {/* Main Title with Glass Effect */}
@@ -40,7 +41,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-          className="text-6xl md:text-8xl lg:text-[7.5rem] font-semibold text-white/50 tracking-[-0.02em] mb-6 max-w-6xl mx-auto flex flex-col items-center mix-blend-plus-lighter"
+          className="text-6xl md:text-10xl lg:text-[9.5rem] font-semibold text-white/50 tracking-[-0.02em] mb-6 max-w-6xl mx-auto flex flex-col items-center mix-blend-plus-lighter"
         >
           <span className="block">Grace Hopper</span>
           <span className="block whitespace-nowrap">Celebration India 2027</span>
@@ -51,7 +52,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-white text-xl md:text-2xl max-w-6xl mx-auto mb-16 leading-relaxed"
+          className="text-white text-4xl md:text-3xl max-w-8xl mx-auto mb-16 leading-relaxed"
         >
           {data.subtitle}
         </motion.p>
@@ -65,14 +66,14 @@ export default function Hero({ data }: HeroProps) {
         >
             {/* Register Cluster */}
             <div className="flex items-center group">
-                <div className="w-14 h-14 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-all">
-                    <Ticket className="w-6 h-6 text-white" />
+                <div className="w-20 h-20 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-all">
+                    <Ticket className="w-10 h-10 text-white" />
                 </div>
                 <a
                     href={data.primaryButtonLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-10 py-4 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
+                    className="px-15 py-6 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap"
                 >
                     {data.primaryButtonText}
                 </a>
@@ -80,17 +81,22 @@ export default function Hero({ data }: HeroProps) {
 
             {/* Agenda Cluster */}
             <div className="flex items-center group">
-                <div className="w-14 h-14 rounded-full bg-white border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-all">
-                    <Calendar className="w-6 h-6 text-[#A32482]" />
+                <div className="w-20 h-20 rounded-full bg-white border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-all">
+                    <Calendar className="w-10 h-10 text-[#A32482]" />
                 </div>
                 <a
                     href="#"
-                    className="px-10 py-4 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-lg shadow-xl active:scale-95 whitespace-nowrap"
+                    className="px-15 py-6 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-lg shadow-xl active:scale-95 whitespace-nowrap"
                 >
                     {data.secondaryButtonText}
                 </a>
             </div>
         </motion.div>
+      </div>
+
+      {/* Marquee Integrated into Hero */}
+      <div className="absolute bottom-10 left-0 w-full z-20">
+        <Marquee />
       </div>
 
       {/* Atmospheric Particles/Grain Overlay */}

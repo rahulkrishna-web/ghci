@@ -10,7 +10,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="relative w-full overflow-hidden bg-[#070708] py-8">
+    <div className="relative w-full overflow-hidden bg-transparent">
       {/* Side Fades */}
       <div className="absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-[#070708] to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-[#070708] to-transparent pointer-events-none" />
