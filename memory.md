@@ -475,7 +475,16 @@
 ### WhatToExpect Column Layout Overhaul [2026-04-28 04:25]
 - Transitioned grid from basic `md:grid-cols-2` 50/50 split to a refined 12-column grid format.
 - Adjusted widths visually applying `md:col-span-5` to the left-side image to shrink width and `md:col-span-7` to expand the right-side text block perfectly reproducing the specific Figma proportions superimposed.
-- Replaced centralizing grid `items-center` algorithm into `items-stretch`. By injecting native `h-full` to both split columns, the smaller image organically auto-corrects height directly to align perfectly flush to the larger context body's exact line span.
+[0.1 hrs]
+
+### Speaker Card Hover Color Restoration [2026-04-28 04:47]
+- Addressed an issue resulting in the speaker images failing to return to their full native color output on hover.
+- Migrated standard subset `grayscale` filtering properties to robust `saturate-0` baseline rendering to prevent Tailwind v4 conflicts over filter specificity bindings. Tied hover state to explicit `group-hover:saturate-100` and native `group-hover:brightness-100` to unconditionally render native colored portraits seamlessly.
+[0.1 hrs]
+
+### WaysToInvolve Background Image Update [2026-04-28 05:10]
+- Replaced the solid `bg-black` background of the `WaysToInvolve` section (`id="get-involved"`) with the `@public/get-involved.png` asset.
+- Configured native background parameters (`backgroundSize: 'cover'`, `backgroundPosition: 'center'`) alongside `relative overflow-hidden` wrapper constraints to safely implement full viewport container rendering.
 [0.1 hrs]
 ### ExploreTracks Equal Heights Fix Restored [2026-04-28 04:08]
 - Replaced `h-full` with `h-auto` on the child cards for the track flex container. `h-full` resolves to 100% of auto on the wrapper when there is no implicit parent layout height, disabling `items-stretch` ability natively. `h-auto` defaults the item into flex computed cross-size bound constraints.

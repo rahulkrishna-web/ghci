@@ -26,22 +26,20 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
   };
 
   return (
-    <section id="partners" className="py-24 relative overflow-hidden text-white" style={{
+    <section id="partners" className="py-6 relative overflow-hidden text-white" style={{
       backgroundImage: 'url(/partner-bg.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'bottom center'
     }}>
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-
-      <div className="w-full relative z-10 px-4 md:px-40">
+     
+      <div className="w-full relative z-10 px-4 md:px-12">
             {/* Header Row */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-6">
-            <div className="max-w-2xl">
-                <h4 className="text-white/70 text-xl font-medium mb-4 leading-tight">
+            <div className="max-w-5xl">
+                <h4 className="text-white text-4xl md:text-4xl mb-4 leading-tight">
                 {data.title}
                 </h4>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                <h2 className="text-4xl md:text-4xl tracking-tight text-white mb-4">
                 {data.sectionName}
                 </h2>
             </div>
@@ -59,7 +57,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </div>
 
             {/* Description */}
-            <p className="text-white/50 text-lg max-w-3xl mb-16 leading-relaxed">
+            <p className="text-white text-lg max-w-3xl mb-16 leading-relaxed">
             {data.description}
             </p>
 

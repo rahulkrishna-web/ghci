@@ -36,7 +36,11 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   };
 
   return (
-    <section id="get-involved" className="py-24 bg-black text-white px-4 md:px-40">
+    <section id="get-involved" className="py-24 relative overflow-hidden text-white px-4 md:px-12" style={{
+      backgroundImage: 'url(/get-involved.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
       <div className="w-full">
         
         {/* Header */}
@@ -45,7 +49,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
+            className="text-4xl md:text-6xl tracking-tight mb-6"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -54,7 +58,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 text-lg max-w-3xl mx-auto"
+            className="text-white text-2xl max-w-5xl mx-auto"
           >
             {data.subtitle}
           </motion.p>
@@ -68,12 +72,12 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white/[0.03] border border-white/5 rounded-[10px] p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all min-w-[85vw] md:min-w-0 snap-center"
+              className="bg-white/[0.03] border border-white/5 rounded-[10px] p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all min-w-[85vw] max-w-[600px] md:min-w-0 snap-center"
             >
-              <h3 className="text-3xl font-bold mb-6">
+              <h3 className="text-4xl mb-6">
                 {getTitleWithHighlight(way.title)}
               </h3>
-              <p className="text-white/50 text-lg mb-10 flex-grow leading-relaxed">
+              <p className="text-white text-xl mb-10 flex-grow leading-relaxed">
                 {way.description}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -104,10 +108,10 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
             viewport={{ once: true }}
             className="md:col-span-4 bg-white/[0.03] border border-white/5 rounded-[10px] p-10 flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center"
           >
-            <h3 className="text-2xl font-bold mb-6 leading-tight">
+            <h3 className="text-4xl mb-6 leading-tight">
                 {getTitleWithHighlight(secondaryWays[0].title)}
             </h3>
-            <p className="text-white/50 mb-10 flex-grow leading-relaxed">
+            <p className="text-white mb-10 flex-grow leading-relaxed">
               {secondaryWays[0].description}
             </p>
             <div className="flex gap-4">
@@ -133,10 +137,10 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
               transition={{ delay: idx * 0.1 }}
               className="bg-white/[0.03] border border-white/5 rounded-[10px] p-8 flex flex-col h-full md:col-span-3 min-w-[85vw] md:min-w-0 snap-center"
             >
-              <h3 className="text-2xl font-bold mb-6">
+              <h3 className="text-4xl mb-6">
                   {getTitleWithHighlight(way.title)}
               </h3>
-              <p className="text-white/50 text-sm mb-10 flex-grow leading-relaxed">
+              <p className="text-whitetext-sm mb-10 flex-grow leading-relaxed">
                 {way.description}
               </p>
               {way.badge && (

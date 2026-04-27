@@ -74,7 +74,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover saturate-0 brightness-90 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
               />
               
               {/* Overlay Gradient */}
