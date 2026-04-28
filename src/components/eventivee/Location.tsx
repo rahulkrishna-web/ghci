@@ -19,17 +19,17 @@ type LocationProps = {
 
 export default function Location({ data }: LocationProps) {
   return (
-    <section id="location" className="py-24 relative overflow-hidden text-white" style={{
+    <section id="location" className="py-12 relative overflow-hidden text-white" style={{
       backgroundImage: 'url(/location-bg.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'top center'
     }}>
-      <div className="w-full relative z-10 px-4 md:px-40">
+      <div className="w-full relative z-10 px-4 md:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold tracking-tight mb-16 text-white"
+          className="text-4xl md:text-5xl font-medium tracking-tight mb-16 text-white"
         >
           {data.sectionTitle}
         </motion.h2>
@@ -45,11 +45,11 @@ export default function Location({ data }: LocationProps) {
               viewport={{ once: true }}
               className="flex-1 bg-white/[0.04] p-8 rounded-[10px] flex items-center gap-6 border border-white/5"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <MapPin className="w-6 h-6 text-white/70" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                <MapPin className="w-8 h-8 text-white/70" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-1 leading-tight">
+                <h3 className="text-2xl text-white mb-1 leading-tight">
                     {data.venueName}
                 </h3>
                 <p className="text-white/50 text-lg">{data.venueArea}</p>
@@ -63,10 +63,10 @@ export default function Location({ data }: LocationProps) {
               transition={{ delay: 0.1 }}
               className="flex-1 bg-white/[0.04] p-8 rounded-[10px] flex items-center gap-6 border border-white/5"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <Calendar className="w-6 h-6 text-white/70" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                <Calendar className="w-8 h-8 text-white/70" />
               </div>
-              <h3 className="text-xl font-bold text-white uppercase tracking-tight">
+              <h3 className="text-2xl text-white tracking-tight">
                 {data.dates}
               </h3>
             </motion.div>
