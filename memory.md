@@ -544,3 +544,9 @@
 - Implemented a linear gradient mask on the container edges to create a "graceful" fade-in/fade-out effect.
 - Adjusted animation duration and refined logo interactivity with subtle opacity transitions on hover.
 [0.5 hrs]
+
+### Experience Stats CountUp Animation [2026-04-28 17:23]
+- Implemented a high-performance count-up animation for the "Experience GHCI" statistics using `framer-motion`'s `useMotionValue` and `useInView`.
+- Configured numbers to animate from 0 to their target values (10,000+, 350+, 800+) with smooth `easeOutExpo` easing over 2 seconds.
+- Ensured proper number formatting with locale-aware commas and preserved original suffixes.
+[0.5 hrs]

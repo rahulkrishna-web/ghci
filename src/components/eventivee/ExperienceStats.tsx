@@ -1,5 +1,6 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 type ExperienceStatsProps = {
   data: {
@@ -7,6 +8,34 @@ type ExperienceStatsProps = {
     stats: { label: string; value: string }[];
   };
 };
+
+function Counter({ value }: { value: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  // Extract number and suffix
+  const numericPart = value.replace(/[^0-9]/g, '');
+  const numericValue = parseInt(numericPart, 10) || 0;
+  const suffix = value.replace(/[0-9,]/g, '');
+  
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    const val = Math.floor(latest);
+    return val.toLocaleString() + suffix;
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, numericValue, {
+        duration: 2,
+        ease: [0.16, 1, 0.3, 1], // Custom easeOutExpo
+      });
+      return controls.stop;
+    }
+  }, [isInView, numericValue, count]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+}
 
 export default function ExperienceStats({ data }: ExperienceStatsProps) {
   return (
@@ -39,7 +68,9 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
           >
             {data.stats.map((stat, idx) => (
               <div key={idx} className={`flex-1 px-4 md:px-18 py-6 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-semibold mb-2">{stat.value}</div>
+                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-semibold mb-2">
+                  <Counter value={stat.value} />
+                </div>
                 <p className="text-white text-base md:text-[24px] leading-tight max-w-[200px]">
                     {stat.label}
                 </p>
