@@ -121,10 +121,10 @@ export default function Location({ data }: LocationProps) {
               {data.gettingThere.description}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
               {/* Option 1 */}
-              <div className="space-y-6 pr-8">
-                <Car className="w-8 h-8 text-white/80" />
+              <div className="space-y-6 md:pr-8">
+                <img src="/icons/cab.png" alt="Cab" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
                     <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[0].title}
@@ -136,8 +136,8 @@ export default function Location({ data }: LocationProps) {
               </div>
 
               {/* Option 2 */}
-              <div className="space-y-6 px-12 border-l border-white/10">
-                <Train className="w-8 h-8 text-white/80" />
+              <div className="space-y-6 md:px-12 md:border-l md:border-white/10">
+                <img src="/icons/metro.png" alt="Metro" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
                     <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[1].title}
@@ -149,8 +149,8 @@ export default function Location({ data }: LocationProps) {
               </div>
 
               {/* Option 3 */}
-              <div className="space-y-6 pl-12 border-l border-white/10">
-                <Bus className="w-8 h-8 text-white/80" />
+              <div className="space-y-6 md:pl-12 md:border-l md:border-white/10">
+                <img src="/icons/bus.png" alt="Bus" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
                     <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[2].title}
