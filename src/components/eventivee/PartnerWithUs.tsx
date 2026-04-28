@@ -32,11 +32,11 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
       backgroundPosition: 'bottom center'
     }}>
      
-      <div className="w-full relative z-10 px-4 md:px-8">
+      <div className="w-full relative z-10 px-4 md:px-12">
             {/* Header Row */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-8 mb-8">
-                <div className="max-w-5xl">
-                    <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-4 leading-tight tracking-relaxed opacity-90">
+                <div className="max-w-6xl">
+                    <h4 className="text-white text-sm md:text-[40px] font-medium max-w-2xl mb-2 md:mb-6 leading-[1.1] tracking-tight opacity-90">
                         {data.title}
                     </h4>
                     <h2 className="text-4xl md:text-4xl text-white font-semibold">
@@ -103,17 +103,21 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-2 md:p-4 text-left flex flex-col items-start ${idx !== 0 ? 'md:border-l md:border-white/10 md:ml-[-1px]' : 'pl-0'}`}
+                className={`p-2 md:py-10 text-left flex flex-col items-start relative 
+                    ${idx === 0 ? 'md:pl-0 md:pr-12' : ''} 
+                    ${idx === 1 ? 'md:px-12' : ''} 
+                    ${idx === 2 ? 'md:pl-12 md:pr-0' : ''}
+                    ${idx !== 0 ? 'md:before:content-[""] md:before:absolute md:before:left-0 md:before:top-1/4 md:before:h-1/2 md:before:w-[1px] md:before:bg-white/10' : ''}`}
                 >
-                <div className="mb-4 md:mb-6">
-                    <div className="scale-75 md:scale-100 origin-left">
+                <div className="mb-4 md:mb-8">
+                    <div className="scale-90 md:scale-100 origin-left">
                         {getIcon(benefit.icon)}
                     </div>
                 </div>
-                <h3 className="text-xl md:text-4xl font-semibold leading-tight mb-3 md:mb-5">
+                <h3 className="text-xl md:text-[34px] font-semibold leading-[1.1] mb-3 md:mb-6 max-w-[280px]">
                     {benefit.title}
                 </h3>
-                <p className="text-white text-sm md:text-[26px] leading-snug opacity-100 font-medium">
+                <p className="text-white/70 text-sm md:text-[20px] leading-snug font-medium max-w-[340px]">
                     {benefit.desc}
                 </p>
                 </motion.div>

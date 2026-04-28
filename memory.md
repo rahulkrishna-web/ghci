@@ -550,3 +550,37 @@
 - Configured numbers to animate from 0 to their target values (10,000+, 350+, 800+) with smooth `easeOutExpo` easing over 2 seconds.
 - Ensured proper number formatting with locale-aware commas and preserved original suffixes.
 [0.5 hrs]
+
+### Speaker Card Visual Polish [2026-04-28 17:29]
+- Updated the `SpeakerGrid.tsx` card styling to strictly follow Figma specifications:
+    - Applied a `135deg` linear gradient (`#A3A3A3` to `#494949`) with a 20% black overlay.
+    - Upgraded the border to `white/40` for improved definition.
+- Preserved the high-frequency animated noise/grain overlay (`mix-blend-overlay`) to maintain the section's gritty, cinematic texture.
+[0.3 hrs]
+
+### Speaker Card Readability Enhancement [2026-04-28 17:31]
+- Enhanced the text readability on speaker cards by implementing a deeper, vertical black-to-transparent gradient (`bg-gradient-to-t from-black via-black/40 to-transparent`).
+- This update ensures high contrast for the white text (name and role) at the bottom of the card, strictly following the latest Figma design reference.
+[0.1 hrs]
+
+### Speaker Card Grain Intensification [2026-04-28 17:33]
+- Intensified the cinematic grain effect on speaker cards to make it more "prominent" and "gritty":
+    - Increased noise overlay opacity from `0.25` to `0.45`.
+    - Refined SVG `fractalNoise` parameters (`baseFrequency: 0.8`, `numOctaves: 4`) for a denser texture.
+    - Accelerated the "jitter" animation duration to `0.1s` for a more energetic, high-frequency cinematic flicker.
+[0.2 hrs]
+
+### Partner Section Layout & Typography Refinement [2026-04-28 17:38]
+- Refined the `PartnerWithUs.tsx` layout to strictly match the Figma design proportions:
+    - Forced the section header title to wrap to 2 lines using a `max-w-2xl` constraint.
+    - Updated benefit titles to a precise `34px` font size with a `280px` width limit, ensuring they wrap to 2 lines.
+    - Increased internal column padding to `md:p-10` for improved breathing room between statistics.
+    - Reduced benefit description size to `20px` with `white/70` opacity for better visual hierarchy.
+[0.4 hrs]
+
+### Partner Section Separator Polish [2026-04-28 17:42]
+- Redesigned the benefit column separators in `PartnerWithUs.tsx` for a more premium, centered aesthetic:
+    - Reduced separator height to 50% and centered them vertically within the row.
+    - Achieved perfect horizontal equidistance between text blocks by implementing a balanced padding strategy (`md:pr-12`, `md:px-12`, `md:pl-12`) across the three columns.
+    - Used high-precision pseudo-elements (`md:before`) for the separators to ensure they stay exactly on the column boundaries.
+[0.2 hrs]
