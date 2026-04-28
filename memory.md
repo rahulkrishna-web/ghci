@@ -590,3 +590,11 @@
 - Removed the `once: true` constraint from `useInView` and implemented a state reset (`count.set(0)`) when the component exits the viewport.
 - This ensures a dynamic, high-engagement experience that re-animates the statistics every time the user scrolls back to the section.
 [0.2 hrs]
+
+### Contact Section Visual Enhancements [2026-04-28 17:55]
+- Refined the `Contact.tsx` layout and typography to match high-fidelity Figma specs:
+    - Implemented a premium gradient border (`#A32478` to white at 30% opacity) for the "Tickets starting at..." banner using a nested `rounded-full` wrapper with `p-[1px]`.
+    - Increased contact header size to `text-7xl` and adjusted layout split to a 75/25 ratio between content and CTAs.
+    - Standardized CTA buttons to follow the "Lead Section" cluster design with 64x64 icon badges and rolling text animations.
+- Updated `ExploreTracks.tsx` Check icons to `w-8 h-8` for improved visual prominence.
+[0.5 hrs]

@@ -94,14 +94,19 @@ export default function Contact({ data }: ContactProps) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full border border-[#A32482]/30 rounded-full py-6 md:py-8 text-center px-4"
+            className="w-full relative rounded-full p-[1px] overflow-hidden"
+            style={{
+                background: 'linear-gradient(45deg, rgba(163, 36, 120, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%)'
+            }}
         >
-            <h3 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
-                Tickets starting at <span className="text-[#A32482]">₹3,000</span>
-            </h3>
-            <p className="text-white/40 text-[10px] md:text-base font-medium tracking-wider uppercase">
-                Early Bird pricing available for a limited time
-            </p>
+            <div className="w-full bg-black rounded-full py-6 md:py-8 text-center px-4">
+                <h3 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
+                    Tickets starting at <span className="text-[#A32482]">₹3,000</span>
+                </h3>
+                <p className="text-white text-[10px] md:text-base font-medium tracking-wider uppercase">
+                    Early Bird pricing available for a limited time
+                </p>
+            </div>
         </motion.div>
       </div>
     </section>
