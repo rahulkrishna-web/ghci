@@ -25,11 +25,11 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl tracking-tight mb-22"
+            className="text-4xl md:text-6xl tracking-tight mb-10 md:mb-22"
           >
             {data.sectionTitle}
           </motion.h2>
-
+ 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,9 +38,9 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             className="flex flex-col md:flex-row justify-center items-stretch gap-0 max-w-8xl mx-auto"
           >
             {data.stats.map((stat, idx) => (
-              <div key={idx} className={`flex-1 px-18 py-4 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <p className="text-white text-sm md:text-[24px] leading-tight max-w-[200px]">
+              <div key={idx} className={`flex-1 px-4 md:px-18 py-6 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
+                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-bold mb-2">{stat.value}</div>
+                <p className="text-white text-base md:text-[24px] leading-tight max-w-[200px]">
                     {stat.label}
                 </p>
               </div>

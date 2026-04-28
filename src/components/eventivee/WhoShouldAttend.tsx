@@ -59,7 +59,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className={`py-10 px-8 rounded-[10px] flex flex-col h-full min-w-[82vw] md:min-w-0 snap-center ${
+                        className={`py-8 px-6 rounded-[10px] flex flex-col h-full min-w-[65%] md:min-w-0 snap-center ${
                             block.highlight 
                             ? 'bg-[#A32482] shadow-2xl shadow-purple-900/20' 
                             : 'bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all'

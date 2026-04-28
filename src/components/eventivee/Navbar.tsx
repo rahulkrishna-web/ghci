@@ -18,7 +18,7 @@ export default function Navbar() {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md px-4 md:px-13 py-8"
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md px-4 md:px-13 py-4 md:py-8"
     >
       <div className="w-full flex items-center justify-between">
         {/* Logo */}

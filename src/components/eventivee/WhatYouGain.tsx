@@ -31,7 +31,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="flex overflow-x-auto md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {data.cards.map((card, idx) => {
             const Icon = IconMap[card.icon];
             return (
@@ -41,7 +41,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group relative overflow-hidden rounded-[10px] aspect-[1/1.7] border border-white/5 min-w-[70vw] md:min-w-0 snap-center"
+                className="group relative overflow-hidden rounded-[10px] aspect-[1/1.6] md:aspect-[1/1.7] border border-white/5 min-w-[45%] md:min-w-0 snap-center"
               >
                 <img
                   src={card.image}
@@ -54,11 +54,11 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                 <div className="absolute inset-0 bg-[#A32482]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 
                 {/* Content */}
-                <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                  <div className="mb-4 text-white/90 group-hover:text-white transition-colors">
-                    {Icon && <Icon className="w-8 h-8" />}
+                <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                  <div className="mb-3 text-white/90 group-hover:text-white transition-colors">
+                    {Icon && <Icon className="w-6 h-6 md:w-8 md:h-8" />}
                   </div>
-                  <p className="text-white/80 text-[24px] font-medium leading-[1.4] transition-all group-hover:text-white">
+                  <p className="text-white/80 text-sm md:text-[24px] font-medium leading-[1.3] transition-all group-hover:text-white">
                     {card.description}
                   </p>
                 </div>

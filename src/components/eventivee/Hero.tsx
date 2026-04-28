@@ -26,7 +26,7 @@ export default function Hero({ data }: HeroProps) {
         
         {/* <div className="absolute inset-0 bg-black/40 z-0" /> */}
 
-      <div className="relative z-10 w-full px-6 md:px-40 mt-32 md:mt-24 text-center">
+      <div className="relative z-10 w-full px-6 md:px-40 mt-24 md:mt-24 text-center">
         {/* Date Cluster */}
         <motion.div
             initial={{ opacity: 0, y: -20 }}

@@ -37,13 +37,13 @@ export default function About({ data }: AboutProps) {
       <div className="w-full relative z-10">
         
         {/* Floating Gallery */}
-        <div className="relative h-[550px] md:h-[700px] mb-20">
+        <div className="relative h-[300px] md:h-[700px] mb-12 md:mb-20">
             {/* Top Left Floating Image */}
             <motion.div
                 initial={{ opacity: 0, x: -30, y: -30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute left-0 lg:left-[1%] top-0 w-20 md:w-40 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="hidden md:block absolute left-0 lg:left-[1%] top-0 w-20 md:w-40 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={topLeftImage} alt="Experience 1" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -53,7 +53,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: 30, y: -30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute right-0 top-[1%] w-24 md:w-44 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="hidden md:block absolute right-0 top-[1%] w-24 md:w-44 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={topRightImage} alt="Experience 2" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -74,7 +74,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: -30, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute left-0 lg:left-[2%] bottom-0 w-24 md:w-48 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="hidden md:block absolute left-0 lg:left-[2%] bottom-0 w-24 md:w-48 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={bottomLeftImage} alt="Experience 3" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
@@ -84,7 +84,7 @@ export default function About({ data }: AboutProps) {
                 initial={{ opacity: 0, x: 30, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute right-0  bottom-[2%] w-20 md:w-36 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
+                className="hidden md:block absolute right-0  bottom-[2%] w-20 md:w-36 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
                 <img src={bottomRightImage} alt="Experience 4" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>

@@ -30,7 +30,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-6 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col h-auto hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[85%] md:w-[46%] lg:w-[23%] snap-start"
+              className="p-5 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col h-auto hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[65%] md:w-[46%] lg:w-[23%] snap-start"
             >
               <div className="mb-10">
                 <Check className="w-5 h-5 text-[#A32482]" />
