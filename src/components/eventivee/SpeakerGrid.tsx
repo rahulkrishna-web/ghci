@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 type SpeakerGridProps = {
@@ -11,6 +12,21 @@ type SpeakerGridProps = {
 };
 
 export default function SpeakerGrid({ data }: SpeakerGridProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  
+  // Show only 4 speakers on mobile initially
+  const visibleSpeakers = isExpanded ? data.speakers : data.speakers.slice(0, 4);
+
+  // Avoid hydration mismatch by rendering all speakers on the server/initial client pass
+  const speakersToRender = isMounted && typeof window !== 'undefined' && window.innerWidth < 768 
+    ? visibleSpeakers 
+    : data.speakers;
+
   return (
     <section id="speakers" className="py-24 relative overflow-hidden text-white" style={{
       backgroundImage: 'url(/speaker.png)',
@@ -50,25 +66,29 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             transition={{ delay: 0.1 }}
             className="max-w-5xl mx-auto"
           >
-            <p className="text-white text-2xl leading-relaxed">
+            <p className="text-white text-lg md:text-2xl leading-relaxed">
               {data.subtitle}
             </p>
-            <p className="text-white font-bold text-2xl">
+            <p className="text-white font-bold text-lg md:text-2xl">
               {data.lineupNote}
             </p>
           </motion.div>
         </div>
 
         {/* Speaker Grid / Slider */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-          {data.speakers.map((speaker, idx) => (
+        <motion.div 
+            layout
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6"
+        >
+          {speakersToRender.map((speaker, idx) => (
             <motion.div
               key={idx}
+              layout
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="group relative aspect-[3/4.5] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500 min-w-[75vw] md:min-w-0 snap-center"
+              className="group relative aspect-[3/4] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500"
             >
               {/* Image */}
               <img
@@ -78,19 +98,29 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
               />
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
               
               {/* Speaker Info Overlay */}
-              <div className="absolute bottom-0 left-0 p-6 w-full">
-                <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+              <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
+                <h3 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">
                   {speaker.name}
                 </h3>
-                <p className="text-white/60 text-xs leading-relaxed max-w-[90%] line-clamp-2">
+                <p className="text-white/60 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
                   {speaker.role}
                 </p>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Call to action */}
+        <div className="text-center mt-12 md:hidden">
+            <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+            >
+                {isExpanded ? 'SHOW LESS -' : 'CLICK TO KNOW MORE +'}
+            </button>
         </div>
       </div>
     </section>
