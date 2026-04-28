@@ -491,6 +491,16 @@
 - Replaced the default Lucide React `<Ticket />` and `<Calendar />` vector icons in the Hero Lead Call-To-Action clusters.
 - Configured native `<img>` tags pointing to `@public/icons/Ticket.png` and `@public/icons/calender.png` using `object-contain` scaling to embed the custom graphical PNG assets provided by the design team.
 [0.1 hrs]
+
+### Partner CTA Alignment [2026-04-28 05:44]
+- Redesigned the primary `Enquire Now` action button inside the `PartnerWithUs` section to perfectly match the Hero CTA component layout structure.
+- Migrated the native button block into a grouped flex container featuring a separated 64x64 solid circular icon badge mapping perfectly adjacent to the main pill-rounded text anchor.
+[0.1 hrs]
+
+### Partner Insights Icons Replacement [2026-04-28 06:03]
+- Swapped standard `lucide-react` vector models mapped inside `PartnerWithUs.tsx` column benefit points to exclusively provided custom colored images.
+- Pointed the rendering switch-case logic mapping 'bolt', 'sparkles', and 'link' native references directly to exactly `access-technology.png`, `strengthen.png`, and `link.png` within the `@public/icons/...` directories rescaled seamlessly native to `w-10 h-10 object-contain`.
+[0.1 hrs]
 ### ExploreTracks Equal Heights Fix Restored [2026-04-28 04:08]
 - Replaced `h-full` with `h-auto` on the child cards for the track flex container. `h-full` resolves to 100% of auto on the wrapper when there is no implicit parent layout height, disabling `items-stretch` ability natively. `h-auto` defaults the item into flex computed cross-size bound constraints.
 [0.1 hrs]

@@ -24,7 +24,6 @@ export default function Location({ data }: LocationProps) {
       backgroundSize: 'cover',
       backgroundPosition: 'top center'
     }}>
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
       <div className="w-full relative z-10 px-4 md:px-40">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

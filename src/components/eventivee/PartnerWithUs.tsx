@@ -18,10 +18,10 @@ type PartnerWithUsProps = {
 export default function PartnerWithUs({ data }: PartnerWithUsProps) {
   const getIcon = (name: string) => {
     switch (name) {
-      case 'bolt': return <Bolt className="w-6 h-6 text-[#A3238E]" />;
-      case 'sparkles': return <Sparkles className="w-6 h-6 text-[#A3238E]" />;
-      case 'link': return <LinkIcon className="w-6 h-6 text-[#A3238E]" />;
-      default: return <Bolt className="w-6 h-6 text-[#A3238E]" />;
+      case 'bolt': return <img src="/icons/access-technology.png" alt="Access Technology" className="w-10 h-10 object-contain" />;
+      case 'sparkles': return <img src="/icons/strengthen.png" alt="Strengthen Brand" className="w-10 h-10 object-contain" />;
+      case 'link': return <img src="/icons/link.png" alt="Link and Connect" className="w-10 h-10 object-contain" />;
+      default: return <img src="/icons/access-technology.png" alt="Partner Icon" className="w-10 h-10 object-contain" />;
     }
   };
 
@@ -43,17 +43,17 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 {data.sectionName}
                 </h2>
             </div>
-            <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={data.ctaLink}
-                className="flex items-center gap-3 bg-[#A3238E] hover:bg-[#8e1f7c] px-6 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-purple-900/20"
-            >
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center -ml-2">
-                    <UserPlus className="w-4 h-4 text-white" />
+            <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
+                <div className="w-16 h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
+                    <UserPlus className="w-8 h-8 text-white" />
                 </div>
-                {data.ctaText}
-            </motion.a>
+                <a
+                    href={data.ctaLink}
+                    className="px-8 py-4 rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-colors text-white text-lg font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap"
+                >
+                    {data.ctaText}
+                </a>
+            </div>
             </div>
 
             {/* Description */}
@@ -62,7 +62,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </p>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 ">
             {data.benefits.map((benefit, idx) => (
                 <motion.div
                 key={idx}
@@ -70,7 +70,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-10  ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
+                className={`p-4  ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
                 >
                 <div className="mb-6">
                     {getIcon(benefit.icon)}
@@ -87,7 +87,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
 
             {/* Trusted By Section */}
             <div className="relative pt-12 border-t border-white/5 text-center">
-                <span className="text-white/50 text-sm font-medium tracking-wide mb-10 block">
+                <span className="text-white/50 text-3xl font-medium tracking-wide mb-10 block">
                     {data.trustedByText}
                 </span>
 
