@@ -68,7 +68,7 @@ export default function Hero({ data }: HeroProps) {
             {/* Register Cluster */}
             <div className="flex items-center group">
                 <div className="w-16 h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-all">
-                    <Ticket className="w-10 h-10 text-white" />
+                    <img src="/icons/Ticket.png" alt="Ticket" className="w-8 h-8 object-contain" />
                 </div>
                 <a
                     href={data.primaryButtonLink}
@@ -83,7 +83,7 @@ export default function Hero({ data }: HeroProps) {
             {/* Agenda Cluster */}
             <div className="flex items-center group">
                 <div className="w-16 h-16 rounded-full bg-white border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-all">
-                    <Calendar className="w-10 h-10 text-[#A32482]" />
+                    <img src="/icons/calender.png" alt="Calendar" className="w-8 h-8 object-contain" />
                 </div>
                 <a
                     href="#"

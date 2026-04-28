@@ -36,10 +36,10 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             {/* Header Row */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-6">
             <div className="max-w-5xl">
-                <h4 className="text-white text-4xl md:text-4xl mb-4 leading-tight">
+                <h4 className="text-white text-3xl md:text-4xl font-medium max-w-4xl mb-8 leading-tight tracking-relaxed">
                 {data.title}
                 </h4>
-                <h2 className="text-4xl md:text-4xl tracking-tight text-white mb-4">
+                <h2 className="text-4xl md:text-4xl text-white mb-4">
                 {data.sectionName}
                 </h2>
             </div>
@@ -57,7 +57,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </div>
 
             {/* Description */}
-            <p className="text-white text-lg max-w-3xl mb-16 leading-relaxed">
+            <p className="text-white text-2xl max-w-4xl mb-8 leading-relaxed">
             {data.description}
             </p>
 
@@ -70,15 +70,15 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-10 ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
+                className={`p-10  ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
                 >
                 <div className="mb-6">
                     {getIcon(benefit.icon)}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 leading-tight">
+                <h3 className="text-3xl leading-tight max-w-[300px]">
                     {benefit.title}
                 </h3>
-                <p className="text-white/50 text-sm leading-relaxed">
+                <p className="text-white text-2xl leading-tight">
                     {benefit.desc}
                 </p>
                 </motion.div>

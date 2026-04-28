@@ -486,6 +486,11 @@
 - Replaced the solid `bg-black` background of the `WaysToInvolve` section (`id="get-involved"`) with the `@public/get-involved.png` asset.
 - Configured native background parameters (`backgroundSize: 'cover'`, `backgroundPosition: 'center'`) alongside `relative overflow-hidden` wrapper constraints to safely implement full viewport container rendering.
 [0.1 hrs]
+
+### Lead CTA Icons Replacement [2026-04-28 05:40]
+- Replaced the default Lucide React `<Ticket />` and `<Calendar />` vector icons in the Hero Lead Call-To-Action clusters.
+- Configured native `<img>` tags pointing to `@public/icons/Ticket.png` and `@public/icons/calender.png` using `object-contain` scaling to embed the custom graphical PNG assets provided by the design team.
+[0.1 hrs]
 ### ExploreTracks Equal Heights Fix Restored [2026-04-28 04:08]
 - Replaced `h-full` with `h-auto` on the child cards for the track flex container. `h-full` resolves to 100% of auto on the wrapper when there is no implicit parent layout height, disabling `items-stretch` ability natively. `h-auto` defaults the item into flex computed cross-size bound constraints.
 [0.1 hrs]
