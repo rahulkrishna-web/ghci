@@ -54,9 +54,16 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href={data.buttons[0].link} 
-                        className="bg-[#A32482] hover:bg-[#8e1f7c] text-white px-6 md:px-10 py-2.5 md:py-4 rounded-full text-[12px] md:text-lg font-bold transition-all shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0"
+                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-bold transition-all shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                     >
-                        Register Now
+                        <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                                Register Now
+                            </div>
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                                Register Now
+                            </div>
+                        </div>
                     </a>
                 </div>
 
@@ -67,9 +74,16 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href="#" 
-                        className="bg-white hover:bg-neutral-200 text-[#A32482] px-6 md:px-10 py-2.5 md:py-4 rounded-full text-[12px] md:text-lg font-bold transition-all shadow-xl active:scale-95 whitespace-nowrap z-0"
+                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-white text-[#A32482] font-bold transition-all shadow-xl active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                     >
-                        Subscribe
+                        <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                                Subscribe
+                            </div>
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                                Subscribe
+                            </div>
+                        </div>
                     </a>
                 </div>
             </motion.div>

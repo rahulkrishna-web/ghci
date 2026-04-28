@@ -58,9 +58,16 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                     </div>
                     <a
                         href={data.ctaLink}
-                        className="px-6 md:px-8 py-3 md:py-4 rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-colors text-base md:text-lg font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap"
+                        className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
                     >
-                        {data.ctaText}
+                        <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                                {data.ctaText}
+                            </div>
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                                {data.ctaText}
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>

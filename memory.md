@@ -513,3 +513,28 @@
     - Integrated `/icons/ticket.png` and refined button interactions (shadows, hover scales, and hover background transitions).
     - Optimized mobile responsiveness by using `flex-1` and `shrink-0` to prevent button squishing while maintaining the 75/25 visual ratio.
 [1.5 hrs]
+
+### Hero Title Line Break Fix [2026-04-28 06:51]
+- Adjusted Hero title `h1` to ensure "Celebration India 2027" stays on a single line on desktop via `md:whitespace-nowrap`.
+- Implemented responsive line breaks for mobile: "Grace Hopper" (Line 1), "Celebration" (Line 2), and "India 2027" (Line 3) using `block md:inline` span logic.
+- Resolved vertical alignment issues on desktop by removing nested flex containers in favor of standard block/inline flow.
+[0.5 hrs]
+
+### Rolling Text Animation [2026-04-28 06:57]
+- Implemented a premium "rolling" (marquee) text animation for all primary CTA buttons (`Hero`, `Contact`, `Navbar`, `PartnerWithUs`, `WaysToInvolve`).
+- Wrapped button text in `overflow-hidden` containers with dual-stacked text spans that translate vertically on `group-hover` (using `-translate-y-full`).
+- Standardized button heights and padding to ensure the rolling effect is seamless and perfectly centered across all sections.
+[1.0 hrs]
+
+### Rolling Text Animation Fix [2026-04-28 07:05]
+- Fixed rolling text animation to ensure only one line of text is visible initially by applying `inline-flex flex-col` to the `a` tag and `shrink-0` to the inner text items.
+- Resolved "double text" visibility issue across all primary CTA buttons (`Hero`, `Contact`, `Navbar`, `PartnerWithUs`, `WaysToInvolve`).
+- Ensured perfect centering and clipping of the rolling text secondary state through standardized height and overflow constraints.
+[0.5 hrs]
+
+### Navbar Scroll Behavior & Glassmorphism [2026-04-28 08:29]
+- Implemented a dynamic scroll-based state for the `Navbar`.
+- **Top of Page (<100px)**: The navbar is fully transparent with expanded vertical padding (`py-8`) and no backdrop blur.
+- **Scrolled State (>100px)**: The navbar transitions to a fixed position with a semi-transparent black background (`bg-black/80`), `backdrop-filter: blur(20px)`, and a compact layout (`py-4`).
+- Leveraged `framer-motion` for smooth, cinematic transitions between states.
+[1.0 hrs]

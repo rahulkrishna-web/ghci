@@ -1,4 +1,6 @@
 'use client';
+
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Briefcase, UserCircle, GraduationCap, Users } from 'lucide-react';
 
@@ -19,8 +21,7 @@ type WhoShouldAttendProps = {
 };
 
 export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
-  const topRow = data.blocks.slice(0, 3);
-  const bottomRow = data.blocks.slice(3, 5);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
     <section id="attendees" className="py-4 bg-black text-white px-4 md:px-14">
@@ -52,6 +53,8 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
             {data.blocks.map((block, idx) => {
                 const Icon = IconMap[block.icon];
                 const isCenteredOnDesktop = idx >= 3;
+                const isSelected = idx === selectedIndex;
+
                 return (
                     <motion.div
                         key={idx}
@@ -59,13 +62,14 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className={`py-8 px-6 rounded-[10px] flex flex-col h-full min-w-[65%] md:min-w-0 snap-center ${
-                            block.highlight 
+                        onClick={() => setSelectedIndex(idx)}
+                        className={`group py-8 px-6 rounded-[10px] flex flex-col h-full min-w-[65%] md:min-w-0 snap-center cursor-pointer transition-all duration-300 ${
+                            isSelected 
                             ? 'bg-[#A32482] shadow-2xl shadow-purple-900/20' 
-                            : 'bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all'
+                            : 'bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent'
                         } ${isCenteredOnDesktop ? 'lg:translate-x-1/2' : ''}`}
                     >
-                        <div className={`mb-3 ${block.highlight ? 'text-white' : 'text-white/40'}`}>
+                        <div className={`mb-3 transition-colors duration-300 ${isSelected ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>
                             {Icon && <Icon className="w-10 h-10" />}
                         </div>
                         <h3 className="text-2xl leading-tight">
@@ -74,9 +78,11 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         <ul className="space-y-4">
                             {block.points.map((point, pIdx) => (
                                 <li key={pIdx} className="flex items-start gap-4 text-sm font-medium leading-relaxed mb-0">
-                                    <span className={`w-1 h-1 rounded-full mt-2.5 shrink-0 ${block.highlight ? 'bg-white/60' : 'bg-white/20'}`} />
-                                    <span className={`text-xl ${block.highlight ? 'text-white/90' : 'text-white/60'}`}>
-                                        {point}
+                                    <span className={`w-1 h-1 rounded-full mt-2.5 shrink-0 transition-colors duration-300 ${isSelected ? 'bg-white/60' : 'bg-white/20 group-hover:bg-white/60'}`} />
+                                    <span className={`text-xl transition-colors duration-300 ${isSelected ? 'text-white/90' : 'text-white/60'}`}>
+                                        <span className={isSelected ? '' : 'group-hover:text-white/90'}>
+                                            {point}
+                                        </span>
                                     </span>
                                 </li>
                             ))}

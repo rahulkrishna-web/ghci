@@ -93,13 +93,20 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                     <a
                       key={lIdx}
                       href={link.url}
-                      className={`px-4 md:px-8 py-2 md:py-3.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider text-center transition-all ${
+                      className={`h-8 md:h-12 inline-flex flex-col rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider text-center transition-all overflow-hidden group/btn ${
                         link.variant === 'solid' 
                           ? 'bg-[#A32482] text-white hover:bg-[#8e1f7c] shadow-lg shadow-purple-900/20' 
                           : 'border border-[#A32482] text-[#A32482] hover:bg-[#A32482]/10'
                       }`}
                     >
-                      {link.text}
+                      <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover/btn:-translate-y-full">
+                          <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                              {link.text}
+                          </div>
+                          <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                              {link.text}
+                          </div>
+                      </div>
                     </a>
                   ))}
                   {way.badge && (

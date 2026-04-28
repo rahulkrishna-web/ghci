@@ -42,11 +42,13 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-          className="text-[40px] leading-[1.1] md:text-10xl lg:text-[7.5rem] md:leading-[7rem] font-bold text-white/50 tracking-[-0.02em] mb-6 md:mb-2 max-w-6xl mx-auto flex flex-col items-center mix-blend-plus-lighter"
+          className="text-[40px] leading-[1.1] md:text-10xl lg:text-[7.5rem] md:leading-[7rem] font-bold text-white/50 tracking-[-0.02em] mb-6 md:mb-2 max-w-6xl md:max-w-8xl  mx-auto flex flex-col items-center mix-blend-plus-lighter"
         >
           <span className="block">Grace Hopper</span>
-          <span className="block">Celebration</span>
-          <span className="block md:whitespace-nowrap">India 2027</span>
+          <span className="block md:whitespace-nowrap">
+            <span className="block md:inline">Celebration</span>{' '}
+            <span className="block md:inline">India 2027</span>
+          </span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -75,9 +77,16 @@ export default function Hero({ data }: HeroProps) {
                     href={data.primaryButtonLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 md:px-8 py-2 md:py-4 rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-bold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0"
+                    className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-bold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                 >
-                    {data.primaryButtonText}
+                    <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                        <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                            {data.primaryButtonText}
+                        </div>
+                        <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                            {data.primaryButtonText}
+                        </div>
+                    </div>
                 </a>
             </div>
 
@@ -88,9 +97,16 @@ export default function Hero({ data }: HeroProps) {
                 </div>
                 <a
                     href="#"
-                    className="px-4 md:px-8 py-2 md:py-4 rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-[15px] md:text-lg font-bold shadow-xl active:scale-95 whitespace-nowrap z-0"
+                    className="h-10 md:h-16 inline-flex flex-col rounded-full bg-white text-[#A32482] hover:bg-neutral-200 transition-all text-[15px] md:text-lg font-bold shadow-xl active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                 >
-                    {data.secondaryButtonText}
+                    <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                        <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                            {data.secondaryButtonText}
+                        </div>
+                        <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">
+                            {data.secondaryButtonText}
+                        </div>
+                    </div>
                 </a>
             </div>
         </motion.div>

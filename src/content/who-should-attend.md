@@ -9,7 +9,7 @@ blocks:
       - "Connect with top hiring companies and explore early career opportunities"
       - "Gain clarity on career paths across technology domains"
     icon: "book"
-    highlight: true
+    highlight: false
   - id: "02"
     title: "Professionals & Corporates"
     points:

@@ -87,7 +87,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                     duration: 0.5,
                     delay: isExpanded && idx >= 4 ? (idx - 4) * 0.05 : 0 
                 }}
-                className="group relative aspect-[3/4] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500"
+                className="group relative aspect-[3/4] rounded-[10px] overflow-hidden bg-[#D1D5DB] border border-white/10 transition-all duration-500"
                 >
                 {/* Image */}
                 <img
@@ -95,16 +95,34 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                     alt={speaker.name}
                     className="w-full h-full object-cover saturate-0 brightness-90 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
                 />
+
+                {/* Animated Noise Overlay - Prominent Version */}
+                <motion.div 
+                    className="absolute inset-[-150%] opacity-[0.25] mix-blend-overlay pointer-events-none z-10"
+                    animate={{
+                        x: ['0%', '-10%', '-20%', '15%', '-5%', '20%', '-15%', '10%'],
+                        y: ['0%', '5%', '-15%', '10%', '-20%', '15%', '-5%', '18%']
+                    }}
+                    transition={{
+                        duration: 0.15,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                        backgroundSize: '250px 250px'
+                    }}
+                />
                 
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
+                {/* Overlay Gradient (inverted for light background) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                 
                 {/* Speaker Info Overlay */}
                 <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
                     <h3 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">
                     {speaker.name}
                     </h3>
-                    <p className="text-white/60 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
+                    <p className="text-white/80 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
                     {speaker.role}
                     </p>
                 </div>

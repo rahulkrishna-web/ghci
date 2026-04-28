@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -13,12 +13,29 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.nav 
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md px-4 md:px-13 py-4 md:py-8"
+      animate={{ 
+        y: 0,
+        backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0)',
+        backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
+        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0)',
+        paddingTop: isScrolled ? '1rem' : '2rem',
+        paddingBottom: isScrolled ? '1rem' : '2rem',
+      }}
+      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 px-4 md:px-13"
     >
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
@@ -46,9 +63,16 @@ export default function Navbar() {
             href="https://konfhub.com/ghci-2027"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2 rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95"
+            className="h-10 inline-flex flex-col rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95 overflow-hidden group"
           >
-            Register Now
+            <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                    Register Now
+                </div>
+                <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                    Register Now
+                </div>
+            </div>
           </a>
         </div>
 
