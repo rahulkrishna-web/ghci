@@ -504,3 +504,12 @@
 ### ExploreTracks Equal Heights Fix Restored [2026-04-28 04:08]
 - Replaced `h-full` with `h-auto` on the child cards for the track flex container. `h-full` resolves to 100% of auto on the wrapper when there is no implicit parent layout height, disabling `items-stretch` ability natively. `h-auto` defaults the item into flex computed cross-size bound constraints.
 [0.1 hrs]
+
+### Location & Contact High-Fidelity Refinements [2026-04-28 04:33]
+- **Location Section**: Replaced generic transport icons with custom high-fidelity PNG assets (`cab.png`, `metro.png`, `bus.png`). Removed mobile vertical dividers and refined alignment for a clean, stacked layout.
+- **Get in Touch (Contact) Section**:
+    - Implemented a precise 75/25 horizontal split between main content and CTA buttons.
+    - Replicated the 'Lead Section' (Hero) button cluster design: circular icon badges flush with pill-shaped buttons using `z-index` layering and `gap-0`.
+    - Integrated `/icons/ticket.png` and refined button interactions (shadows, hover scales, and hover background transitions).
+    - Optimized mobile responsiveness by using `flex-1` and `shrink-0` to prevent button squishing while maintaining the 75/25 visual ratio.
+[1.5 hrs]
