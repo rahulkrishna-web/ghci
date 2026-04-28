@@ -584,3 +584,9 @@
     - Achieved perfect horizontal equidistance between text blocks by implementing a balanced padding strategy (`md:pr-12`, `md:px-12`, `md:pl-12`) across the three columns.
     - Used high-precision pseudo-elements (`md:before`) for the separators to ensure they stay exactly on the column boundaries.
 [0.2 hrs]
+
+### Experience Stats Multi-Trigger Animation [2026-04-28 17:49]
+- Upgraded the count-up animation in `ExperienceStats.tsx` to trigger on every viewport entry.
+- Removed the `once: true` constraint from `useInView` and implemented a state reset (`count.set(0)`) when the component exits the viewport.
+- This ensures a dynamic, high-engagement experience that re-animates the statistics every time the user scrolls back to the section.
+[0.2 hrs]

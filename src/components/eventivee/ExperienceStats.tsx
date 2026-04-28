@@ -11,7 +11,7 @@ type ExperienceStatsProps = {
 
 function Counter({ value }: { value: string }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
   
   // Extract number and suffix
   const numericPart = value.replace(/[^0-9]/g, '');
@@ -31,6 +31,8 @@ function Counter({ value }: { value: string }) {
         ease: [0.16, 1, 0.3, 1], // Custom easeOutExpo
       });
       return controls.stop;
+    } else {
+      count.set(0);
     }
   }, [isInView, numericValue, count]);
 
