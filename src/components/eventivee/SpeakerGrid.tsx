@@ -76,52 +76,67 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
         </div>
 
         {/* Speaker Grid / Slider */}
-        <motion.div 
-            layout
-            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6"
-        >
-          {speakersToRender.map((speaker, idx) => (
-            <motion.div
-              key={idx}
-              layout
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="group relative aspect-[3/4] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500"
-            >
-              {/* Image */}
-              <img
-                src={speaker.image}
-                alt={speaker.name}
-                className="w-full h-full object-cover saturate-0 brightness-90 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
-              />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
-              
-              {/* Speaker Info Overlay */}
-              <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
-                <h3 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">
-                  {speaker.name}
-                </h3>
-                <p className="text-white/60 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
-                  {speaker.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="relative">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
+            {speakersToRender.map((speaker, idx) => (
+                <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                    duration: 0.5,
+                    delay: isExpanded && idx >= 4 ? (idx - 4) * 0.05 : 0 
+                }}
+                className="group relative aspect-[3/4] rounded-[10px] overflow-hidden bg-white/5 border border-white/5 transition-all duration-500"
+                >
+                {/* Image */}
+                <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover saturate-0 brightness-90 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                />
+                
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
+                
+                {/* Speaker Info Overlay */}
+                <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
+                    <h3 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">
+                    {speaker.name}
+                    </h3>
+                    <p className="text-white/60 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
+                    {speaker.role}
+                    </p>
+                </div>
+                </motion.div>
+            ))}
+            </div>
 
-        {/* Call to action */}
-        <div className="text-center mt-12 md:hidden">
-            <button 
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
-            >
-                {isExpanded ? 'SHOW LESS -' : 'CLICK TO KNOW MORE +'}
-            </button>
+            {/* Cinematic Fade Overlay & CTA (Mobile Only, Collapsed Only) */}
+            {!isExpanded && isMounted && typeof window !== 'undefined' && window.innerWidth < 768 && (
+                <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent flex items-end justify-center pb-12 z-20 pointer-events-none">
+                    {/* The button itself needs pointer events */}
+                    <button 
+                        onClick={() => setIsExpanded(true)}
+                        className="text-[12px] font-black uppercase tracking-[0.25em] text-white pointer-events-auto drop-shadow-lg"
+                    >
+                        CLICK TO KNOW MORE +
+                    </button>
+                </div>
+            )}
         </div>
+
+        {/* Show Less Button (Mobile Only, Expanded Only) */}
+        {isExpanded && isMounted && typeof window !== 'undefined' && window.innerWidth < 768 && (
+            <div className="text-center mt-8">
+                <button 
+                    onClick={() => setIsExpanded(false)}
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+                >
+                    SHOW LESS -
+                </button>
+            </div>
+        )}
       </div>
     </section>
   );

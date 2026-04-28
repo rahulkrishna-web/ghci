@@ -32,37 +32,41 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
       backgroundPosition: 'bottom center'
     }}>
      
-      <div className="w-full relative z-10 px-4 md:px-12">
+      <div className="w-full relative z-10 px-6 md:px-12">
             {/* Header Row */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-6">
-            <div className="max-w-5xl">
-                <h4 className="text-white text-3xl md:text-4xl font-medium max-w-4xl mb-8 leading-tight tracking-relaxed">
-                {data.title}
-                </h4>
-                <h2 className="text-4xl md:text-4xl text-white mb-4">
-                {data.sectionName}
-                </h2>
-            </div>
-            <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
-                <div className="w-16 h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
-                    <UserPlus className="w-8 h-8 text-white" />
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-left md:text-left gap-4 md:gap-8 mb-6">
+                <div className="max-w-5xl">
+                    <h4 className="text-white text-base md:text-xl font-medium max-w-4xl mb-4 md:mb-8 leading-tight tracking-relaxed">
+                        {data.title}
+                    </h4>
+                    <h2 className="text-3xl md:text-4xl text-white mb-4">
+                        {data.sectionName}
+                    </h2>
                 </div>
-                <a
-                    href={data.ctaLink}
-                    className="px-8 py-4 rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-colors text-white text-lg font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap"
-                >
-                    {data.ctaText}
-                </a>
-            </div>
             </div>
 
             {/* Description */}
-            <p className="text-white text-2xl max-w-4xl mb-8 leading-relaxed">
-            {data.description}
+            <p className="text-white text-base md:text-2xl max-w-4xl mx-0 md:mx-0 text-left md:text-left mb-8 leading-relaxed">
+                {data.description}
             </p>
 
+            {/* CTA Button */}
+            <div className="flex justify-start md:justify-start items-center mb-16">
+                <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
+                        <UserPlus className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                    </div>
+                    <a
+                        href={data.ctaLink}
+                        className="px-6 md:px-8 py-3 md:py-4 rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-colors text-base md:text-lg font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap"
+                    >
+                        {data.ctaText}
+                    </a>
+                </div>
+            </div>
+
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 ">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-0 mb-16">
             {data.benefits.map((benefit, idx) => (
                 <motion.div
                 key={idx}
@@ -70,15 +74,17 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-4  ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
+                className={`p-2 md:p-4 text-left flex flex-col items-start ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
                 >
-                <div className="mb-6">
-                    {getIcon(benefit.icon)}
+                <div className="mb-4 md:mb-6">
+                    <div className="scale-75 md:scale-100 origin-left">
+                        {getIcon(benefit.icon)}
+                    </div>
                 </div>
-                <h3 className="text-3xl leading-tight max-w-[300px]">
+                <h3 className="text-[13px] md:text-3xl font-bold leading-tight mb-2 md:mb-3">
                     {benefit.title}
                 </h3>
-                <p className="text-white text-2xl leading-tight">
+                <p className="text-white/60 text-[10px] md:text-2xl leading-tight">
                     {benefit.desc}
                 </p>
                 </motion.div>
@@ -86,15 +92,33 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </div>
 
             {/* Trusted By Section */}
-            <div className="relative pt-12 border-t border-white/5 text-center">
-                <span className="text-white/50 text-3xl font-medium tracking-wide mb-10 block">
+            <div className="relative pt-12 border-t border-white/5 text-center overflow-hidden">
+                <span className="text-white/50 text-xl md:text-3xl font-medium tracking-wide mb-10 block">
                     {data.trustedByText}
                 </span>
 
-                <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700">
-                    {data.logos.map((logo, idx) => (
-                        <img key={idx} src={logo.src} alt={logo.name} className="h-12 w-auto object-contain max-w-[150px]" />
-                    ))}
+                <div className="relative flex overflow-hidden">
+                    <motion.div 
+                        animate={{
+                            x: [0, "-50%"]
+                        }}
+                        transition={{
+                            duration: 25,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "linear"
+                        }}
+                        className="flex items-center gap-12 md:gap-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700 whitespace-nowrap min-w-max"
+                    >
+                        {/* Original Logos */}
+                        {data.logos.map((logo, idx) => (
+                            <img key={idx} src={logo.src} alt={logo.name} className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] inline-block" />
+                        ))}
+                        {/* Duplicate Logos for seamless loop */}
+                        {data.logos.map((logo, idx) => (
+                            <img key={`dup-${idx}`} src={logo.src} alt={logo.name} className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] inline-block" />
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </div>
