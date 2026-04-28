@@ -64,92 +64,53 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
           </motion.p>
         </div>
 
-        {/* Primary Row */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-8 mb-8 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-          {primaryWays.map((way, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-white/[0.03] border border-white/5 rounded-[10px] p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all min-w-[85vw] max-w-[600px] md:min-w-0 snap-center"
-            >
-              <h3 className="text-4xl mb-6">
-                {getTitleWithHighlight(way.title)}
-              </h3>
-              <p className="text-white text-xl mb-10 flex-grow leading-relaxed">
-                {way.description}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {way.links?.map((link, lIdx) => (
-                  <a
-                    key={lIdx}
-                    href={link.url}
-                    className={`px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                      link.variant === 'solid' 
-                        ? 'bg-[#A32482] text-white hover:bg-[#8e1f7c] shadow-lg shadow-purple-900/20' 
-                        : 'border border-[#A32482] text-[#A32482] hover:bg-[#A32482]/10'
-                    }`}
-                  >
-                    {link.text}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Secondary Row */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-10 gap-8 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-          {/* First Secondary Card (Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-4 bg-white/[0.03] border border-white/5 rounded-[10px] p-10 flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center"
-          >
-            <h3 className="text-4xl mb-6 leading-tight">
-                {getTitleWithHighlight(secondaryWays[0].title)}
-            </h3>
-            <p className="text-white mb-10 flex-grow leading-relaxed">
-              {secondaryWays[0].description}
-            </p>
-            <div className="flex gap-4">
-              {secondaryWays[0].links?.map((link, lIdx) => (
-                <a
-                  key={lIdx}
-                  href={link.url}
-                  className="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#A32482] text-white hover:bg-[#8e1f7c] shadow-lg shadow-purple-900/20 transition-all font-bold"
-                >
-                  {link.text}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Other Secondary Cards */}
-          {secondaryWays.slice(1).map((way, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white/[0.03] border border-white/5 rounded-[10px] p-8 flex flex-col h-full md:col-span-3 min-w-[85vw] md:min-w-0 snap-center"
-            >
-              <h3 className="text-4xl mb-6">
+        {/* Mobile Grid / Desktop Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-8">
+          {data.ways.map((way, idx) => {
+            const isLast = idx === data.ways.length - 1;
+            const isPrimary = way.type === 'primary';
+            
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className={`
+                  ${isLast ? 'col-span-2 md:col-span-2' : isPrimary ? 'col-span-1 md:col-span-3' : 'col-span-1 md:col-span-2'}
+                  bg-white/[0.03] border border-white/5 rounded-[10px] p-5 md:p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all
+                `}
+              >
+                <h3 className="text-xl md:text-[2.2rem] mb-4 md:mb-6 leading-tight">
                   {getTitleWithHighlight(way.title)}
-              </h3>
-              <p className="text-whitetext-sm mb-10 flex-grow leading-relaxed">
-                {way.description}
-              </p>
-              {way.badge && (
-                <div className="inline-block px-5 py-2.5 rounded-full bg-[#A32482] text-white text-[11px] font-black uppercase tracking-[0.2em] w-fit shadow-lg shadow-purple-900/20">
-                  {way.badge}
+                </h3>
+                <p className="text-white text-[13px] md:text-base mb-6 md:mb-10 flex-grow leading-relaxed">
+                  {way.description}
+                </p>
+                <div className="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4">
+                  {way.links?.map((link, lIdx) => (
+                    <a
+                      key={lIdx}
+                      href={link.url}
+                      className={`px-4 md:px-8 py-2 md:py-3.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider text-center transition-all ${
+                        link.variant === 'solid' 
+                          ? 'bg-[#A32482] text-white hover:bg-[#8e1f7c] shadow-lg shadow-purple-900/20' 
+                          : 'border border-[#A32482] text-[#A32482] hover:bg-[#A32482]/10'
+                      }`}
+                    >
+                      {link.text}
+                    </a>
+                  ))}
+                  {way.badge && (
+                    <div className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] w-fit shadow-lg shadow-purple-900/20">
+                      {way.badge}
+                    </div>
+                  )}
                 </div>
-              )}
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
