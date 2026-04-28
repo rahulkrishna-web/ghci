@@ -85,7 +85,7 @@ const PricingCard = ({ plan, idx }: { plan: any; idx: number }) => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
+        <h3 className="text-2xl font-semibold mb-2 flex items-center gap-2">
           {plan.highlight && '👑 '}
           {plan.name.replace('👑 ', '')}
         </h3>
@@ -95,7 +95,7 @@ const PricingCard = ({ plan, idx }: { plan: any; idx: number }) => {
         <div className="border-t border-dashed border-white/10 my-4" />
 
         {/* Price */}
-        <div className="text-5xl font-bold mb-2">{plan.price}</div>
+        <div className="text-5xl font-semibold mb-2">{plan.price}</div>
         <p className="text-white/40 text-sm mb-8">{plan.earlyBird}</p>
 
         {/* CTA */}
@@ -150,7 +150,7 @@ export default function Pricing() {
           className="text-center mb-20"
         >
           <span className="text-purple-400 text-sm font-mono tracking-wider mb-4 block">[Tickets]</span>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
             Unlock the Experience{' '}
             <span className="text-white/40">That Suits You</span>
           </h2>

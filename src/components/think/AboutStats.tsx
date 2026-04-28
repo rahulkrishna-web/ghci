@@ -18,7 +18,7 @@ export default function AboutStats() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 italic">
+            <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-8 italic">
               Where future <br /> is built today.
             </h2>
             <p className="text-xl text-white/60 leading-relaxed max-w-lg">
@@ -35,8 +35,8 @@ export default function AboutStats() {
                 transition={{ delay: index * 0.1 }}
                 className="p-8 border border-white/10 rounded-2xl bg-white/5"
               >
-                <div className="text-5xl font-black mb-2 italic">{stat.value}</div>
-                <div className="text-white/40 uppercase tracking-widest text-xs font-bold">{stat.label}</div>
+                <div className="text-5xl font-semibold mb-2 italic">{stat.value}</div>
+                <div className="text-white/40 uppercase tracking-widest text-xs font-semibold">{stat.label}</div>
               </motion.div>
             ))}
           </div>

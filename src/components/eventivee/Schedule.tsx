@@ -185,7 +185,7 @@ export default function Schedule() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold tracking-tight"
+              className="text-4xl md:text-6xl font-semibold tracking-tight"
             >
               Fuel Your Curiosity –{' '}
               <span className="text-white/40">Discover the Schedule</span>
@@ -232,7 +232,7 @@ export default function Schedule() {
                     <span className="text-white/40 text-sm font-mono">{item.time}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                     <p className="text-white/50 text-sm leading-relaxed max-w-lg">{item.description}</p>
                   </div>
                   {item.image && (

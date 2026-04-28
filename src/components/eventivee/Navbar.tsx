@@ -110,7 +110,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 px-6 py-3 rounded-full bg-white text-black font-bold text-center inline-block"
+                className="mt-4 px-6 py-3 rounded-full bg-white text-black font-semibold text-center inline-block"
               >
                 Register Now
               </a>

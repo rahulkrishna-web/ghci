@@ -39,7 +39,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
           >
             {data.stats.map((stat, idx) => (
               <div key={idx} className={`flex-1 px-4 md:px-18 py-6 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-bold mb-2">{stat.value}</div>
+                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-semibold mb-2">{stat.value}</div>
                 <p className="text-white text-base md:text-[24px] leading-tight max-w-[200px]">
                     {stat.label}
                 </p>

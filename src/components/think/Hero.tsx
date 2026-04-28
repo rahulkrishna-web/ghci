@@ -15,7 +15,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.21, 0.45, 0.32, 0.9] as any }}
           className="mb-8"
         >
-          <span className="text-think-accent text-sm font-inter font-bold tracking-[0.2em] uppercase">
+          <span className="text-think-accent text-sm font-inter font-semibold tracking-[0.2em] uppercase">
             September 24-26, 2027
           </span>
         </motion.div>
@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1, ease: [0.21, 0.45, 0.32, 0.9] as any }}
-          className="text-white text-6xl md:text-9xl font-inter font-extrabold tracking-tight leading-tighter mb-12"
+          className="text-white text-6xl md:text-9xl font-inter font-semibold tracking-tight leading-tighter mb-12"
         >
           THINK <br /> FORWARD
         </motion.h1>
@@ -44,7 +44,7 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] as any }}
         >
           <a href="https://konfhub.com/ghci-2027" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="h-16 px-12 rounded-full bg-think-accent text-black hover:bg-think-accent/90 text-xl font-bold transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(204,172,245,0.3)]">
+            <Button size="lg" className="h-16 px-12 rounded-full bg-think-accent text-black hover:bg-think-accent/90 text-xl font-semibold transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(204,172,245,0.3)]">
               Join the Summit
             </Button>
           </a>

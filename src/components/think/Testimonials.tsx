@@ -37,7 +37,7 @@ export default function Testimonials() {
               exit={{ opacity: 0, y: -20 }}
               className="absolute inset-0"
             >
-              <p className="text-3xl md:text-4xl font-bold tracking-tight italic leading-snug">
+              <p className="text-3xl md:text-4xl font-semibold tracking-tight italic leading-snug">
                 "{testimonials[current].quote}"
               </p>
             </motion.div>
@@ -45,7 +45,7 @@ export default function Testimonials() {
         </div>
         
         <div className="mt-12">
-          <div className="text-xl font-bold">{testimonials[current].author}</div>
+          <div className="text-xl font-semibold">{testimonials[current].author}</div>
           <div className="text-black/40 font-medium uppercase tracking-widest text-xs mt-1">
             {testimonials[current].role}
           </div>

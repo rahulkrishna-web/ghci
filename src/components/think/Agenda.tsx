@@ -37,7 +37,7 @@ export default function Agenda() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-inter font-bold tracking-tighter text-black mb-4">Agenda</h2>
+          <h2 className="text-4xl md:text-6xl font-inter font-semibold tracking-tighter text-black mb-4">Agenda</h2>
           <div className="w-20 h-2 bg-think-accent" />
         </motion.div>
 
@@ -55,12 +55,12 @@ export default function Agenda() {
               className="flex flex-col md:flex-row gap-8 pb-12 border-b border-black/5 last:border-0"
             >
               <div className="w-32 shrink-0">
-                <span className="text-black/40 font-inter font-bold tracking-widest text-sm uppercase">
+                <span className="text-black/40 font-inter font-semibold tracking-widest text-sm uppercase">
                   {item.time}
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-inter font-bold text-black mb-3">{item.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-inter font-semibold text-black mb-3">{item.title}</h3>
                 <p className="text-black/60 text-lg font-inter leading-relaxed">{item.description}</p>
               </div>
             </motion.div>

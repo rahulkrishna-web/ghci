@@ -538,3 +538,9 @@
 - **Scrolled State (>100px)**: The navbar transitions to a fixed position with a semi-transparent black background (`bg-black/80`), `backdrop-filter: blur(20px)`, and a compact layout (`py-4`).
 - Leveraged `framer-motion` for smooth, cinematic transitions between states.
 [1.0 hrs]
+
+### Partner Logo Marquee Optimization [2026-04-28 17:19]
+- Optimized the logo carousel in `PartnerWithUs.tsx` into a smooth, infinite marquee by removing conflicting CSS transitions and repeating the logo set multiple times for a seamless loop.
+- Implemented a linear gradient mask on the container edges to create a "graceful" fade-in/fade-out effect.
+- Adjusted animation duration and refined logo interactivity with subtle opacity transitions on hover.
+[0.5 hrs]

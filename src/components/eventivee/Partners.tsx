@@ -25,7 +25,7 @@ export default function Partners({ data }: PartnersProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-4"
+            className="text-4xl md:text-5xl font-semibold tracking-tight mb-4"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -51,7 +51,7 @@ export default function Partners({ data }: PartnersProps) {
               transition={{ delay: idx * 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-[#b02677] mb-2">{stat.value}</div>
+              <div className="text-4xl font-semibold text-[#b02677] mb-2">{stat.value}</div>
               <div className="text-white/50 text-sm tracking-wider uppercase font-medium">{stat.label}</div>
             </motion.div>
           ))}
@@ -64,7 +64,7 @@ export default function Partners({ data }: PartnersProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 href={data.buttonLink}
-                className="inline-block px-10 py-4 rounded-full bg-[#b02677] hover:bg-[#c42c86] transition-all text-white font-bold text-lg shadow-[0_0_40px_rgba(176,38,119,0.3)] active:scale-95"
+                className="inline-block px-10 py-4 rounded-full bg-[#b02677] hover:bg-[#c42c86] transition-all text-white font-semibold text-lg shadow-[0_0_40px_rgba(176,38,119,0.3)] active:scale-95"
             >
                 {data.buttonText}
             </motion.a>

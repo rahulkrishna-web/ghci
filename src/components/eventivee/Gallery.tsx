@@ -48,7 +48,7 @@ export default function Gallery() {
           className="text-center mb-16"
         >
           <span className="text-purple-400 text-sm font-mono tracking-wider mb-4 block">[Our gallery]</span>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
             A glimpse from previous{' '}
             <span className="text-white/40">ConfexPro events.</span>
           </h2>

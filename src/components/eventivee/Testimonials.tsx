@@ -66,7 +66,7 @@ export default function Testimonials() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#b02677]/20 flex items-center justify-center text-[#b02677] text-xs font-bold border border-[#b02677]/30">
+                  <div className="w-10 h-10 rounded-full bg-[#b02677]/20 flex items-center justify-center text-[#b02677] text-xs font-semibold border border-[#b02677]/30">
                     {t.name.charAt(0)}
                   </div>
                   <div>

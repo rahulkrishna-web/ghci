@@ -29,10 +29,10 @@ export default function Demo2Page() {
       <footer className="py-32 bg-black text-white px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
           <div>
-            <h2 className="text-8xl md:text-[12rem] font-black tracking-[ -0.05em] uppercase italic leading-none opacity-10 mb-12">
+            <h2 className="text-8xl md:text-[12rem] font-semibold tracking-[ -0.05em] uppercase italic leading-none opacity-10 mb-12">
               GHCI <br /> 2027
             </h2>
-            <div className="flex gap-12 text-sm font-bold uppercase tracking-widest">
+            <div className="flex gap-12 text-sm font-semibold uppercase tracking-widest">
               <a href="#" className="hover:text-think-accent transition-colors">Twitter</a>
               <a href="#" className="hover:text-think-accent transition-colors">Instagram</a>
               <a href="#" className="hover:text-think-accent transition-colors">YouTube</a>
@@ -44,7 +44,7 @@ export default function Demo2Page() {
                href="https://konfhub.com/ghci-2027" 
                target="_blank" 
                rel="noopener noreferrer" 
-               className="inline-block px-12 py-6 rounded-full bg-think-accent text-black font-black uppercase text-xl hover:scale-105 transition-transform"
+               className="inline-block px-12 py-6 rounded-full bg-think-accent text-black font-semibold uppercase text-xl hover:scale-105 transition-transform"
              >
                Get Tickets
              </a>

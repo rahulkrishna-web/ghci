@@ -69,7 +69,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             <p className="text-white text-lg md:text-2xl leading-relaxed">
               {data.subtitle}
             </p>
-            <p className="text-white font-bold text-lg md:text-2xl">
+            <p className="text-white font-semibold text-lg md:text-2xl">
               {data.lineupNote}
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                 
                 {/* Speaker Info Overlay */}
                 <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
-                    <h3 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">
+                    <h3 className="text-sm md:text-xl font-semibold text-white mb-1 md:mb-2 leading-tight">
                     {speaker.name}
                     </h3>
                     <p className="text-white/80 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
@@ -136,7 +136,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                     {/* The button itself needs pointer events */}
                     <button 
                         onClick={() => setIsExpanded(true)}
-                        className="text-[12px] font-black uppercase tracking-[0.25em] text-white pointer-events-auto drop-shadow-lg"
+                        className="text-[12px] font-semibold uppercase tracking-[0.25em] text-white pointer-events-auto drop-shadow-lg"
                     >
                         CLICK TO KNOW MORE +
                     </button>
@@ -149,7 +149,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             <div className="text-center mt-8">
                 <button 
                     onClick={() => setIsExpanded(false)}
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+                    className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
                 >
                     SHOW LESS -
                 </button>

@@ -43,7 +43,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Frequently Asked Questions</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Frequently Asked Questions</h2>
         </motion.div>
 
         {/* Accordion */}

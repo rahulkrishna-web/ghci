@@ -23,7 +23,7 @@ export default function Expectations() {
   return (
     <section className="py-32 bg-white text-black px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-6xl font-bold tracking-tighter mb-20 text-center uppercase">What to expect</h2>
+        <h2 className="text-6xl font-semibold tracking-tighter mb-20 text-center uppercase">What to expect</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {expectations.map((item, index) => (
             <motion.div
@@ -33,10 +33,10 @@ export default function Expectations() {
               transition={{ delay: index * 0.2 }}
               className="group p-10 border border-black/10 rounded-3xl hover:bg-black hover:text-white transition-all duration-500"
             >
-              <div className="text-7xl font-black mb-10 opacity-10 group-hover:opacity-100 transition-opacity italic">
+              <div className="text-7xl font-semibold mb-10 opacity-10 group-hover:opacity-100 transition-opacity italic">
                 {item.id}
               </div>
-              <h3 className="text-3xl font-bold mb-6">{item.title}</h3>
+              <h3 className="text-3xl font-semibold mb-6">{item.title}</h3>
               <p className="text-xl opacity-60 group-hover:opacity-100 leading-relaxed">
                 {item.description}
               </p>

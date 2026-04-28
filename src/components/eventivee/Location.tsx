@@ -116,7 +116,7 @@ export default function Location({ data }: LocationProps) {
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-bold mb-8">Getting There</h3>
+            <h3 className="text-3xl md:text-4xl font-semibold mb-8">Getting There</h3>
             <p className="text-white/50 text-lg mb-16 max-w-3xl leading-relaxed">
               {data.gettingThere.description}
             </p>
@@ -126,7 +126,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 md:pr-8">
                 <img src="/icons/cab.png" alt="Cab" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
+                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[0].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">
@@ -139,7 +139,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 md:px-12 md:border-l md:border-white/10">
                 <img src="/icons/metro.png" alt="Metro" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
+                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[1].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">
@@ -152,7 +152,7 @@ export default function Location({ data }: LocationProps) {
               <div className="space-y-6 md:pl-12 md:border-l md:border-white/10">
                 <img src="/icons/bus.png" alt="Bus" className="w-8 h-8 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-white/50">
+                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
                         {data.gettingThere.options[2].title}
                     </h4>
                     <p className="text-white/60 text-sm leading-relaxed">

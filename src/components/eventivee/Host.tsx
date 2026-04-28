@@ -30,7 +30,7 @@ export default function Host() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-8"
+              className="text-4xl md:text-6xl font-semibold tracking-tight mb-8"
             >
               Meet the Hosts Behind{' '}
               <span className="text-white/40">ConfexPro</span>
@@ -57,7 +57,7 @@ export default function Host() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-10 text-5xl font-bold italic text-white/20 font-serif"
+              className="mt-10 text-5xl font-semibold italic text-white/20 font-serif"
             >
               Jony
             </motion.div>

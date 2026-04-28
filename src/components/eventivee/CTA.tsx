@@ -9,7 +9,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          className="text-5xl md:text-7xl font-semibold tracking-tight mb-6"
         >
           Get ready for ConfexPro
         </motion.h2>

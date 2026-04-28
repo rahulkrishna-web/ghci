@@ -47,7 +47,7 @@ export default function Features() {
           className="text-center mb-16"
         >
           <span className="text-purple-400 text-sm font-mono tracking-wider mb-4 block">[Why Attend]</span>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
             Unleash the Potential of Your{' '}
             <span className="text-white/40">Conference</span>
           </h2>
@@ -67,7 +67,7 @@ export default function Features() {
               <div className="w-12 h-12 mb-8 flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
                 <feature.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-white/50 leading-relaxed text-sm">{feature.description}</p>
             </motion.div>
           ))}

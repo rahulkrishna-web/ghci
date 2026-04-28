@@ -20,7 +20,7 @@ export default function TicketPerks({ data }: TicketPerksProps) {
            viewport={{ once: true }}
            className="md:w-1/3"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
             {data.sectionTitle}
           </h2>
         </motion.div>

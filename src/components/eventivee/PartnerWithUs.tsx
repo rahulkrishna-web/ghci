@@ -32,39 +32,61 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
       backgroundPosition: 'bottom center'
     }}>
      
-      <div className="w-full relative z-10 px-6 md:px-12">
+      <div className="w-full relative z-10 px-4 md:px-8">
             {/* Header Row */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-left md:text-left gap-4 md:gap-8 mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-8 mb-8">
                 <div className="max-w-5xl">
-                    <h4 className="text-white text-base md:text-xl font-medium max-w-4xl mb-4 md:mb-8 leading-tight tracking-relaxed">
+                    <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-4 leading-tight tracking-relaxed opacity-90">
                         {data.title}
                     </h4>
-                    <h2 className="text-3xl md:text-4xl text-white mb-4">
+                    <h2 className="text-4xl md:text-4xl text-white font-semibold">
                         {data.sectionName}
                     </h2>
+                </div>
+
+                {/* CTA Button (Desktop) */}
+                <div className="hidden md:flex justify-start md:justify-end items-center mb-4">
+                    <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
+                            <UserPlus className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        </div>
+                        <a
+                            href={data.ctaLink}
+                            className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
+                        >
+                            <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                                <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                                    {data.ctaText}
+                                </div>
+                                <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                                    {data.ctaText}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             {/* Description */}
-            <p className="text-white text-base md:text-2xl max-w-4xl mx-0 md:mx-0 text-left md:text-left mb-8 leading-relaxed">
+            <p className="text-white text-lg md:text-[28px] max-w-4xl mx-0 md:mx-0 text-left md:text-left mb-12 leading-tight opacity-100 font-medium">
                 {data.description}
             </p>
 
-            {/* CTA Button */}
-            <div className="flex justify-start md:justify-start items-center mb-16">
+            {/* CTA Button (Mobile Only) */}
+            <div className="flex md:hidden justify-start items-center mb-16">
                 <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
-                        <UserPlus className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                    <div className="w-10 h-10 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
+                        <UserPlus className="w-5 h-5 text-white" />
                     </div>
                     <a
                         href={data.ctaLink}
-                        className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-bold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
+                        className="h-10 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                            <div className="h-full w-full flex items-center justify-center px-6 text-sm shrink-0">
                                 {data.ctaText}
                             </div>
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
+                            <div className="h-full w-full flex items-center justify-center px-6 text-sm shrink-0">
                                 {data.ctaText}
                             </div>
                         </div>
@@ -88,10 +110,10 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                         {getIcon(benefit.icon)}
                     </div>
                 </div>
-                <h3 className="text-[13px] md:text-3xl font-bold leading-tight mb-2 md:mb-3">
+                <h3 className="text-xl md:text-4xl font-semibold leading-tight mb-3 md:mb-5">
                     {benefit.title}
                 </h3>
-                <p className="text-white/60 text-[10px] md:text-2xl leading-tight">
+                <p className="text-white text-sm md:text-[26px] leading-snug opacity-100 font-medium">
                     {benefit.desc}
                 </p>
                 </motion.div>
@@ -100,30 +122,35 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
 
             {/* Trusted By Section */}
             <div className="relative pt-12 border-t border-white/5 text-center overflow-hidden">
-                <span className="text-white/50 text-xl md:text-3xl font-medium tracking-wide mb-10 block">
+                <span className="text-white text-xl md:text-3xl font-medium tracking-wide mb-10 block">
                     {data.trustedByText}
                 </span>
 
-                <div className="relative flex overflow-hidden">
+                <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
                     <motion.div 
                         animate={{
                             x: [0, "-50%"]
                         }}
                         transition={{
-                            duration: 25,
+                            duration: 30,
                             repeat: Infinity,
                             repeatType: "loop",
                             ease: "linear"
                         }}
-                        className="flex items-center gap-12 md:gap-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700 whitespace-nowrap min-w-max"
+                        className="flex items-center gap-12 md:gap-32 whitespace-nowrap min-w-max brightness-0 invert py-4"
                     >
-                        {/* Original Logos */}
-                        {data.logos.map((logo, idx) => (
-                            <img key={idx} src={logo.src} alt={logo.name} className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] inline-block" />
-                        ))}
-                        {/* Duplicate Logos for seamless loop */}
-                        {data.logos.map((logo, idx) => (
-                            <img key={`dup-${idx}`} src={logo.src} alt={logo.name} className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] inline-block" />
+                        {/* Repeat logos multiple times to ensure seamless flow and fill container */}
+                        {[...Array(4)].map((_, i) => (
+                            <div key={i} className="flex items-center gap-12 md:gap-32">
+                                {data.logos.map((logo, idx) => (
+                                    <img 
+                                        key={`${i}-${idx}`} 
+                                        src={logo.src} 
+                                        alt={logo.name} 
+                                        className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] opacity-80 hover:opacity-100 transition-opacity" 
+                                    />
+                                ))}
+                            </div>
                         ))}
                     </motion.div>
                 </div>

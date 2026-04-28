@@ -30,7 +30,7 @@ export default function SpeakerGrid() {
     <section className="py-32 bg-black text-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
-          <h2 className="text-7xl font-bold tracking-tighter uppercase italic">Speakers</h2>
+          <h2 className="text-7xl font-semibold tracking-tighter uppercase italic">Speakers</h2>
           <p className="max-w-xs text-white/60">GHC 2027 brings together the most influential names in technology.</p>
         </div>
 
@@ -46,7 +46,7 @@ export default function SpeakerGrid() {
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 filter grayscale group-hover:grayscale-0 transition-all duration-700">
                 <Image src={speaker.image} alt={speaker.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight italic">{speaker.name}</h3>
+              <h3 className="text-2xl font-semibold tracking-tight italic">{speaker.name}</h3>
               <p className="text-white/40 font-medium">{speaker.role}</p>
             </motion.div>
           ))}

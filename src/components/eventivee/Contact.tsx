@@ -25,7 +25,7 @@ export default function Contact({ data }: ContactProps) {
                 viewport={{ once: true }}
                 className="flex-1"
             >
-                <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-tight text-white">
+                <h2 className="text-4xl md:text-7xl font-semibold tracking-tight mb-8 leading-tight text-white">
                     Get in <span className="text-[#A32482]">Touch</span>
                 </h2>
                 <div className="space-y-6">
@@ -54,7 +54,7 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href={data.buttons[0].link} 
-                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-bold transition-all shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
+                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                             <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
@@ -74,7 +74,7 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href="#" 
-                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-white text-[#A32482] font-bold transition-all shadow-xl active:scale-95 whitespace-nowrap z-0 overflow-hidden"
+                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                             <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
@@ -96,7 +96,7 @@ export default function Contact({ data }: ContactProps) {
             viewport={{ once: true }}
             className="w-full border border-[#A32482]/30 rounded-full py-6 md:py-8 text-center px-4"
         >
-            <h3 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 tracking-tight text-white inline-block">
+            <h3 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
                 Tickets starting at <span className="text-[#A32482]">₹3,000</span>
             </h3>
             <p className="text-white/40 text-[10px] md:text-base font-medium tracking-wider uppercase">
