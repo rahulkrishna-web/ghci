@@ -74,7 +74,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-2 md:p-4 text-left flex flex-col items-start ${idx !== 0 ? 'border-l border-white/10 ml-[-1px]' : 'pl-0'}`}
+                className={`p-2 md:p-4 text-left flex flex-col items-start ${idx !== 0 ? 'md:border-l md:border-white/10 md:ml-[-1px]' : 'pl-0'}`}
                 >
                 <div className="mb-4 md:mb-6">
                     <div className="scale-75 md:scale-100 origin-left">
