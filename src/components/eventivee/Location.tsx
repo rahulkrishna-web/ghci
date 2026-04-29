@@ -105,7 +105,7 @@ export default function Location({ data }: LocationProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative border border-white/5 rounded-[10px] p-10 md:p-16 overflow-hidden"
+          className="relative border border-white/5 rounded-[10px] p-10 md:p-10 overflow-hidden"
           style={{
             backgroundImage: 'url(/div.spreadsheet.png)',
             backgroundSize: 'cover',
@@ -117,45 +117,45 @@ export default function Location({ data }: LocationProps) {
 
           <div className="relative z-10">
             <h3 className="text-3xl md:text-4xl font-semibold mb-8">Getting There</h3>
-            <p className="text-white/50 text-lg mb-16 max-w-3xl leading-relaxed">
+            <p className="text-white/50 text-2xl mb-14 max-w-5xl leading-tight">
               {data.gettingThere.description}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
               {/* Option 1 */}
-              <div className="space-y-6 md:pr-8">
-                <img src="/icons/cab.png" alt="Cab" className="w-8 h-8 opacity-80" />
+              <div className="space-y-3 md:pr-4">
+                <img src="/icons/cab.png" alt="Cab" className="w-10 h-10 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
+                    <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[0].title}
                     </h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
+                    <p className="text-white/60 text-lg leading-tight">
                         {data.gettingThere.options[0].desc}
                     </p>
                 </div>
               </div>
 
               {/* Option 2 */}
-              <div className="space-y-6 md:px-12 md:border-l md:border-white/10">
-                <img src="/icons/metro.png" alt="Metro" className="w-8 h-8 opacity-80" />
+              <div className="space-y-3 md:px-12 md:border-l md:border-white/10">
+                <img src="/icons/metro.png" alt="Metro" className="w-10 h-10 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
+                    <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[1].title}
                     </h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
+                    <p className="text-white/60 text-lg leading-tight">
                         {data.gettingThere.options[1].desc}
                     </p>
                 </div>
               </div>
 
               {/* Option 3 */}
-              <div className="space-y-6 md:pl-12 md:border-l md:border-white/10">
-                <img src="/icons/bus.png" alt="Bus" className="w-8 h-8 opacity-80" />
+              <div className="space-y-3 md:pl-12 md:border-l md:border-white/10">
+                <img src="/icons/bus.png" alt="Bus" className="w-10 h-10 opacity-80" />
                 <div className="space-y-4">
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-white/50">
+                    <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[2].title}
                     </h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
+                    <p className="text-white/60 text-lg leading-tight">
                         {data.gettingThere.options[2].desc}
                     </p>
                 </div>
