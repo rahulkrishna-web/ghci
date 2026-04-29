@@ -42,7 +42,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 text-lg max-w-4xl mx-auto"
+            className="text-white text-lg max-w-4xl mx-auto"
           >
             {data.subtitle}
           </motion.p>

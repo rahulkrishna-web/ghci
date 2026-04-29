@@ -96,7 +96,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                 <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="w-full h-full object-cover saturate-0 brightness-90 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover saturate-0 brightness-100 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
                 />
 
                 {/* Animated Noise Overlay - Extra Prominent Version */}
@@ -122,10 +122,10 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                 
                 {/* Speaker Info Overlay */}
                 <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
-                    <h3 className="text-sm md:text-xl font-semibold text-white mb-1 md:mb-2 leading-tight">
+                    <h3 className="text-sm md:text-3xl font-semibold text-white mb-1 md:mb-2 leading-tight">
                     {speaker.name}
                     </h3>
-                    <p className="text-white/80 text-[10px] md:text-xs leading-relaxed max-w-[95%] line-clamp-2">
+                    <p className="text-white text-[10px] md:text-xl leading-tight max-w-[95%] line-clamp-3">
                     {speaker.role}
                     </p>
                 </div>
