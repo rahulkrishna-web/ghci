@@ -650,3 +650,8 @@
 - Updated `IconMap` and rendering logic to support image-based icons with `object-contain` for sharp rendering.
 - Cleaned up unused imports and refactored the component for better maintainability.
 [0.2 hrs]
+
+### Ticket Box Style Customization [2026-04-29 18:55]
+- Increased the size of the ticket "notch" (the circular cutout on the left edge) by 2x in `TicketPerks.tsx`.
+- Updated dimensions to `w-20 h-20` and adjusted the negative offset to `left-[-40px]` to maintain the perfect half-circle aesthetic.
+[0.1 hrs]

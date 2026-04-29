@@ -33,20 +33,20 @@ export default function TicketPerks({ data }: TicketPerksProps) {
            className="relative md:w-2/3 w-full"
         >
           {/* Ticket Body */}
-          <div className="relative rounded-3xl p-8 md:p-12 min-h-[300px] flex items-center overflow-hidden" style={{
+          <div className="relative rounded-3xl p-8 md:p-12  md:pl-20 min-h-[300px] flex items-center overflow-hidden" style={{
             backgroundImage: 'url(/ticket-bg.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}>
             
             {/* Left Notch */}
-            <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-black rounded-full z-10" />
+            <div className="absolute left-[-80px] top-1/2 -translate-y-1/2 w-30 h-30 bg-black rounded-full z-10" />
             
             {/* Dotted Line Perforation */}
             <div className="absolute right-12 md:right-20 top-0 bottom-0 border-l border-white/20 border-dashed" />
 
             {/* Content List */}
-            <ul className="space-y-5 relative z-10 pr-20 md:pr-32">
+            <ul className="space-y-0 relative z-10 pr-20 md:pr-18">
               {data.perks.map((perk, idx) => (
                 <motion.li 
                   key={idx}
@@ -57,7 +57,7 @@ export default function TicketPerks({ data }: TicketPerksProps) {
                   className="flex items-start gap-3"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2.5 shrink-0" />
-                  <span className="text-lg md:text-xl text-white/80 font-medium tracking-tight leading-snug">
+                  <span className="text-lg md:text-2xl text-white font-medium tracking-tight leading-snug">
                     {perk}
                   </span>
                 </motion.li>
