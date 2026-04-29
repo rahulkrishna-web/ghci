@@ -655,3 +655,15 @@
 - Increased the size of the ticket "notch" (the circular cutout on the left edge) by 2x in `TicketPerks.tsx`.
 - Updated dimensions to `w-20 h-20` and adjusted the negative offset to `left-[-40px]` to maintain the perfect half-circle aesthetic.
 [0.1 hrs]
+
+### Contact Section Button Refinement [2026-04-29 19:07]
+- Updated the "Subscribe" button text to "Subscribe to Newsletter" to match the Figma design.
+- Standardized button widths in the Contact section to `w-32 md:w-56` to ensure both buttons are visually identical in size.
+- Enabled text wrapping and adjusted line heights (`leading-tight`) to accommodate the longer newsletter label without increasing button height.
+[0.2 hrs]
+
+### Contact Section Button: Final Width & Wrap [2026-04-29 19:08]
+- Reduced button widths to `w-28 md:w-48` to force the "Subscribe to Newsletter" text to wrap into two lines, matching the design reference.
+- Implemented `flex-col` on button content to ensure centered vertical alignment for multi-line labels.
+- Standardized both buttons to the same width and text styling for perfect symmetry.
+[0.1 hrs]

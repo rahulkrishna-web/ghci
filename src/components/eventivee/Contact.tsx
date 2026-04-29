@@ -54,13 +54,13 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href={data.buttons[0].link} 
-                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-28 md:w-48 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
                                 Register Now
                             </div>
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
                                 Register Now
                             </div>
                         </div>
@@ -74,14 +74,16 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href="#" 
-                        className="h-10 md:h-16 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 whitespace-nowrap z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-28 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
-                                Subscribe
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                                <span>Subscribe to</span>
+                                <span>Newsletter</span>
                             </div>
-                            <div className="h-full w-full flex items-center justify-center px-6 md:px-10 text-[12px] md:text-lg shrink-0">
-                                Subscribe
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                                <span>Subscribe to</span>
+                                <span>Newsletter</span>
                             </div>
                         </div>
                     </a>
@@ -94,16 +96,16 @@ export default function Contact({ data }: ContactProps) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full relative rounded-full p-[1px] overflow-hidden"
+            className="w-full relative rounded-full p-[2px] overflow-hidden"
             style={{
                 background: 'linear-gradient(45deg, rgba(163, 36, 120, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%)'
             }}
         >
             <div className="w-full bg-black rounded-full py-6 md:py-8 text-center px-4">
                 <h3 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
-                    Tickets starting at <span className="text-[#A32482]">₹3,000</span>
+                    <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">Tickets starting at ₹3,000</span>
                 </h3>
-                <p className="text-white text-[10px] md:text-base font-medium tracking-wider uppercase">
+                <p className="text-white text-[10px] md:text-base tracking-wider">
                     Early Bird pricing available for a limited time
                 </p>
             </div>
