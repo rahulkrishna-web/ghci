@@ -667,3 +667,34 @@
 - Implemented `flex-col` on button content to ensure centered vertical alignment for multi-line labels.
 - Standardized both buttons to the same width and text styling for perfect symmetry.
 [0.1 hrs]
+
+### Custom Icon Integration: WhatYouGain [2026-04-29 19:28]
+- Replaced Lucide icons in the "What You'll Gain" section with custom PNG assets located in `public/icons/gain/`.
+- Mapped specific icons to cards based on design requirements: `1.png` (Card 1), `users (2).png` (Card 2), `users2-6.png` (Card 6), etc.
+- Updated `IconMap` and rendering logic to use `img` tags with `object-contain` for sharp visual fidelity.
+- Cleaned up unused imports and refactored the component for better performance.
+[0.2 hrs]
+
+### Vector Icon Restoration: WhatYouGain [2026-04-29 19:30]
+- Reverted the "What You'll Gain" section to use Lucide vector icons (Feather-based) to resolve pixelation issues observed with PNG assets.
+- Restored `Target`, `Users`, `ThumbsUp`, `Sparkles`, `Lightbulb`, and `TrendingUp` icons for crisp, scalable rendering.
+- Re-implemented component-based rendering for better performance and visual consistency with the rest of the site.
+[0.1 hrs]
+
+### Card 4 Icon Update: WhatYouGain [2026-04-29 19:33]
+- Updated the 4th card icon in the "What You'll Gain" section to `MousePointerClick` (the Lucide vector equivalent of `heroicons/cursor-click`) to match the user's specific design request.
+[0.1 hrs]
+
+### Card 5 Icon Confirmation: WhatYouGain [2026-04-29 19:33]
+- Confirmed that the 5th card in the "What You'll Gain" section is using the vector `Lightbulb` icon, providing a sharp and scalable alternative to the `heroicons/light-bulb` asset.
+[0.1 hrs]
+
+### Heroicons Library Integration [2026-04-29 19:37]
+- Installed `@heroicons/react` and integrated it into the "What You'll Gain" section.
+- Replaced the 4th card icon with `CursorArrowRaysIcon` and the 5th card icon with `LightBulbIcon` from the Heroicons library to match specific user design requirements.
+[0.2 hrs]
+
+### SVG Icon Integration: Card 1 [2026-04-29 19:42]
+- Updated the first card in "What You'll Gain" to use a custom SVG asset (`1.svg`) for pixel-perfect sharpness.
+- Refactored `IconMap` to support the new SVG-based icon component.
+[0.1 hrs]

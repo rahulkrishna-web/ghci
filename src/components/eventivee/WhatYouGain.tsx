@@ -1,13 +1,16 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Target, Users, ThumbsUp, Sparkles, Lightbulb, TrendingUp } from 'lucide-react';
+import { Users, ThumbsUp, TrendingUp } from 'lucide-react';
+import { CursorArrowRaysIcon, LightBulbIcon } from '@heroicons/react/24/outline';
+
+const TargetIcon = () => <img src="/icons/gain/1.svg" alt="Target" className="w-8 h-8 md:w-10 md:h-10 object-contain" />;
 
 const IconMap: Record<string, any> = {
-  'target': Target,
+  'target': TargetIcon,
   'users': Users,
   'thumbs-up': ThumbsUp,
-  'sparkles': Sparkles,
-  'lightbulb': Lightbulb,
+  'sparkles': CursorArrowRaysIcon,
+  'lightbulb': LightBulbIcon,
   'trending-up': TrendingUp
 };
 
@@ -56,7 +59,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                 {/* Content */}
                 <div className="absolute inset-0 p-3 pb-12 flex flex-col justify-end">
                   <div className="mb-3 text-white/90 group-hover:text-white transition-colors">
-                    {Icon && <Icon className="w-6 h-6 md:w-8 md:h-8" />}
+                    {Icon && <Icon className="w-8 h-8 md:w-8 md:h-8" />}
                   </div>
                   <p className="text-white text-sm md:text-lg leading-[1.3] transition-all group-hover:text-white">
                     {card.description}
