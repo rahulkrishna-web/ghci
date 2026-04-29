@@ -17,7 +17,7 @@ type HeroProps = {
 
 export default function Hero({ data }: HeroProps) {
   return (
-    <section className="relative min-h-screen md:min-h-[80vh] flex flex-col gap-8 items-center justify-center overflow-hidden bg-black text-white" style={{
+    <section className="relative min-h-screen md:min-h-[80vh] flex flex-col gap-10 items-center justify-center overflow-hidden bg-black text-white" style={{
         backgroundImage: 'url(/lead-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center'

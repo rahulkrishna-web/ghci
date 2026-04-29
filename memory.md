@@ -644,3 +644,9 @@
 - Final `WhoShouldAttend` min-height: `285px` (desktop), `235px` (mobile).
 - Tightened internal vertical margins and padding to maintain optimal visual balance in the shorter format.
 [0.1 hrs]
+
+### Custom Icon Integration: WhoShouldAttend [2026-04-29 18:27]
+- Replaced Lucide icons in the "Who Should Attend" section with custom PNG assets located in `public/icons/who-should-attend/`.
+- Updated `IconMap` and rendering logic to support image-based icons with `object-contain` for sharp rendering.
+- Cleaned up unused imports and refactored the component for better maintainability.
+[0.2 hrs]

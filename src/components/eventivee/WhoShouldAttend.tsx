@@ -2,14 +2,13 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Briefcase, UserCircle, GraduationCap, Users } from 'lucide-react';
 
-const IconMap: Record<string, any> = {
-  'book': BookOpen,
-  'briefcase': Briefcase,
-  'user': UserCircle,
-  'graduation-cap': GraduationCap,
-  'users': Users
+const IconMap: Record<string, string> = {
+  'book': '/icons/who-should-attend/book-open.png',
+  'briefcase': '/icons/who-should-attend/professionals.png',
+  'user': '/icons/who-should-attend/user-circle.png',
+  'graduation-cap': '/icons/who-should-attend/academic-cap.png',
+  'users': '/icons/who-should-attend/users.png'
 };
 
 type WhoShouldAttendProps = {
@@ -51,7 +50,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
         {/* Grid / Slider Container */}
         <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {data.blocks.map((block, idx) => {
-                const Icon = IconMap[block.icon];
+                const iconPath = IconMap[block.icon];
                 const isCenteredOnDesktop = idx >= 3;
                 const isSelected = idx === selectedIndex;
 
@@ -70,7 +69,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         } ${isCenteredOnDesktop ? 'lg:translate-x-1/2' : ''}`}
                     >
                         <div className={`mb-3 transition-colors duration-300 ${isSelected ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>
-                            {Icon && <Icon className="w-10 h-10" />}
+                            {iconPath && <img src={iconPath} alt={block.title} className="w-10 h-10 object-contain" />}
                         </div>
                         <h3 className="text-2xl leading-tight">
                             {block.title}
