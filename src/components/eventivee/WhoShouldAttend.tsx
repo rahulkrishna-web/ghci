@@ -63,7 +63,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
                         onClick={() => setSelectedIndex(idx)}
-                        className={`group py-8 px-6 rounded-[10px] flex flex-col h-full min-w-[65%] md:min-w-0 snap-center cursor-pointer transition-all duration-300 ${
+                        className={`group py-8 px-8 rounded-[10px] flex flex-col h-full min-h-[235px] md:min-h-[285px] min-w-[80%] md:min-w-0 snap-center cursor-pointer transition-all duration-300 ${
                             isSelected 
                             ? 'bg-[#A32482] shadow-2xl shadow-purple-900/20' 
                             : 'bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent'
@@ -77,9 +77,9 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                         </h3>
                         <ul className="space-y-4">
                             {block.points.map((point, pIdx) => (
-                                <li key={pIdx} className="flex items-start gap-4 text-sm font-medium leading-relaxed mb-0">
-                                    <span className={`w-1 h-1 rounded-full mt-2.5 shrink-0 transition-colors duration-300 ${isSelected ? 'bg-white/60' : 'bg-white/20 group-hover:bg-white/60'}`} />
-                                    <span className={`text-xl transition-colors duration-300 ${isSelected ? 'text-white/90' : 'text-white/60'}`}>
+                                <li key={pIdx} className="flex items-start gap-4 text-sm leading-relaxed mb-0">
+                                    <span className={`w-1 h-1 rounded-full mt-2.5 shrink-0 transition-colors duration-300 ${isSelected ? 'bg-white/60' : 'bg-white/80 group-hover:bg-white/60'}`} />
+                                    <span className={`text-xl transition-colors duration-300 ${isSelected ? 'text-white/90' : 'text-white/80'}`}>
                                         <span className={isSelected ? '' : 'group-hover:text-white/90'}>
                                             {point}
                                         </span>

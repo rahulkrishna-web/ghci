@@ -10,6 +10,20 @@ type WhatToExpectProps = {
 };
 
 export default function WhatToExpect({ data }: WhatToExpectProps) {
+  const getTitleWithHighlight = (title: string) => {
+    const parts = title.split(' ');
+    if (parts.length < 2) return title;
+    const lastWord = parts.pop();
+    return (
+      <>
+        {parts.join(' ')}{' '}
+        <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">
+            {lastWord}
+        </span>
+      </>
+    );
+  };
+
   return (
     <section className="py-0 text-white px-4 md:px-12">
       <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch">
@@ -41,8 +55,8 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
           >
             
             <div className="relative z-10">
-              <h3 className="text-[2rem] text-[#A32482] mb-2">
-                {data.sectionTitle}
+              <h3 className="text-[2.2rem] text-white mb-6">
+                {getTitleWithHighlight(data.sectionTitle)}
               </h3>
               
               <ul>

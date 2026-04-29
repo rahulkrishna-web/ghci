@@ -25,8 +25,8 @@ export default function Contact({ data }: ContactProps) {
                 viewport={{ once: true }}
                 className="flex-1"
             >
-                <h2 className="text-4xl md:text-7xl font-semibold tracking-tight mb-8 leading-tight text-white">
-                    Get in <span className="text-[#A32482]">Touch</span>
+                <h2 className="text-4xl md:text-7xl font-medium tracking-[-0.01em] mb-8 leading-tight text-white">
+                    Get in <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">Touch</span>
                 </h2>
                 <div className="space-y-6">
                     <div className="text-white/70 text-base md:text-xl leading-relaxed">

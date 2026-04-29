@@ -42,7 +42,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-          className="text-[40px] leading-[1.1] md:text-10xl lg:text-[7.5rem] md:leading-[7rem] font-semibold text-white/50 tracking-[-0.02em] mb-6 md:mb-2 max-w-6xl md:max-w-8xl  mx-auto flex flex-col items-center mix-blend-plus-lighter"
+          className="text-[40px] leading-[1.1] md:text-10xl lg:text-[7.5rem] md:leading-[7rem] font-medium text-white/50 tracking-[-0.02em] mb-6 md:mb-2 max-w-6xl md:max-w-8xl  mx-auto flex flex-col items-center mix-blend-plus-lighter"
         >
           <span className="block">Grace Hopper</span>
           <span className="block md:whitespace-nowrap">

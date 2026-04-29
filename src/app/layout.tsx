@@ -5,22 +5,22 @@ import "./globals.css";
 const proximaNova = localFont({
   src: [
     {
-      path: "../../public/fonts/proxima-nova/Proxima Nova Light.ttf",
+      path: "../../public/fonts/proxima-nova/Proxima Nova Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/proxima-nova/Proxima Nova Regular.ttf",
+      path: "../../public/fonts/proxima-nova/Proxima Nova Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/proxima-nova/Proxima Nova Semibold.ttf",
-      weight: "600",
+      path: "../../public/fonts/proxima-nova/Proxima Nova Semibold.woff2",
+      weight: "500 600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/proxima-nova/Proxima Nova Extrabold.ttf",
+      path: "../../public/fonts/proxima-nova/Proxima Nova Extrabold.woff2",
       weight: "800",
       style: "normal",
     },

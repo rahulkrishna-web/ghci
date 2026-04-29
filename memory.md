@@ -598,3 +598,49 @@
     - Standardized CTA buttons to follow the "Lead Section" cluster design with 64x64 icon badges and rolling text animations.
 - Updated `ExploreTracks.tsx` Check icons to `w-8 h-8` for improved visual prominence.
 [0.5 hrs]
+
+### Typography Refinement & Font Compatibility [2026-04-29 17:08]
+- Converted all Proxima Nova TTF fonts to WOFF2 for maximum browser compatibility and improved performance.
+- Updated `layout.tsx` to load WOFF2 assets and mapped `Semibold.woff2` to both `500` and `600` weights.
+- Addressed "too bold" title feedback by switching global heading styles from `font-semibold` to `font-medium` (500).
+- Explicitly updated `Hero` and `Contact` titles to `font-medium` and relaxed letter spacing (`tracking-[-0.01em]`) to align with Figma's lighter semibold aesthetic.
+[0.8 hrs]
+
+### Gradient Title Refinements [2026-04-29 17:15]
+- Standardized the premium "white-to-magenta" gradient highlight for section titles across the site.
+- Implemented `getTitleWithHighlight` in `WhatToExpect.tsx` to apply the gradient to the last word ("expect").
+- Updated `Contact.tsx` to apply the same gradient to the "Touch" highlight, ensuring visual consistency with the `WaysToInvolve` section.
+- Increased heading size in `WhatToExpect` to `text-[2.2rem]` and adjusted margins for better visual balance.
+[0.3 hrs]
+
+### WaysToInvolve Content & Style Update [2026-04-29 17:20]
+- Converted all button and badge text in the "Ways to Get Involved" section to sentence case for a cleaner, more modern look.
+- Updated `src/content/ways-to-involve.md` with new sentence case strings (e.g., "Learn more", "Applications closed").
+- Refactored `WaysToInvolve.tsx` to remove `uppercase` and `tracking-wider` classes, and slightly increased font sizes for better legibility in sentence case.
+[0.2 hrs]
+
+### Portrait Card Layout Refinement [2026-04-29 17:30]
+- Resolved the "flat card" issue in `ExploreTracks.tsx` by enforcing a portrait orientation with `min-h-[550px]` (mobile) and `min-h-[620px]` (desktop).
+- Applied similar portrait styling to `WhoShouldAttend.tsx` to ensure consistent verticality across the site.
+- Refined spacing in `ExploreTracks` with `p-10` and `mb-20` for icons, aligning titles and descriptions with generous vertical whitespace to match Figma's premium feel.
+- Standardized title sizes in `ExploreTracks` to `28px` to match design specifications.
+[0.4 hrs]
+
+### ExploreTracks Content Expansion [2026-04-29 17:31]
+- Expanded the "Explore What You'll Learn" section with two new tracks: "Ethics in Practice: People, Policy & Purpose" and "Unconference".
+- Updated `src/content/explore-tracks.md` with high-fidelity descriptions to match design mockups.
+[0.1 hrs]
+
+### Card Layout Refinement: Height Reduction [2026-04-29 17:45]
+- Reduced card heights by 50% in `ExploreTracks.tsx` and `WhoShouldAttend.tsx` per user request for a more compact layout.
+- Updated `ExploreTracks` min-height to `340px` (desktop) and `280px` (mobile).
+- Updated `WhoShouldAttend` min-height to `300px` (desktop) and `250px` (mobile).
+- Adjusted vertical margins for icons and titles to ensure balanced spacing within the shorter card format.
+[0.2 hrs]
+
+### Final Card Height Optimization [2026-04-29 17:47]
+- Further reduced card heights by an additional 5% in `ExploreTracks.tsx` and `WhoShouldAttend.tsx` to finalize the compact aesthetic.
+- Final `ExploreTracks` min-height: `325px` (desktop), `265px` (mobile).
+- Final `WhoShouldAttend` min-height: `285px` (desktop), `235px` (mobile).
+- Tightened internal vertical margins and padding to maintain optimal visual balance in the shorter format.
+[0.1 hrs]

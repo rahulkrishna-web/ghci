@@ -33,7 +33,6 @@ export default function About({ data }: AboutProps) {
             }}
         />
         {/* Dark overlay for consistent cinematic look */}
-        <div className="absolute inset-0 bg-black/60 z-0" />
       <div className="w-full relative z-10">
         
         {/* Floating Gallery */}

@@ -58,7 +58,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                   <div className="mb-3 text-white/90 group-hover:text-white transition-colors">
                     {Icon && <Icon className="w-6 h-6 md:w-8 md:h-8" />}
                   </div>
-                  <p className="text-white/80 text-sm md:text-[24px] font-medium leading-[1.3] transition-all group-hover:text-white">
+                  <p className="text-white text-sm md:text-[24px] leading-[1.3] transition-all group-hover:text-white">
                     {card.description}
                   </p>
                 </div>
