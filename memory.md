@@ -835,3 +835,62 @@
 - Replaced solid dark gradient overlays with a transparent `mask-image` linear gradient.
 - This ensures the bokeh background remains fully visible while the marquee text smoothly fades at the viewport edges.
 [0.1 hrs]
+
+### Custom Elliptical Bokeh Implementation [2026-04-30 18:12]
+- Replaced random bokeh generation with a fixed 6-blob elliptical layout based on user specifications.
+- Implemented specific color ordering: Magenta (#A32482), Navy (#223852), and Burgundy (#22021D) in a Top-Middle-Bottom sequence.
+- Optimized rendering to support elliptical dimensions and dual-side (left/right) positioning.
+[0.2 hrs]
+
+### Expanded Bokeh Debug Controls [2026-04-30 18:14]
+- Increased Bokeh Opacity max to 1.0 and Speed Multiplier to 20x to facilitate precise positioning and animation testing.
+- Refined Blur Amount control with 1px increments for granular visual tuning.
+[0.1 hrs]
+
+### Advanced Individual Bokeh Controls [2026-04-30 18:18]
+- Refactored the bokeh system to allow individual control over each elliptical blob (color, opacity, x/y position, and dimensions).
+- Implemented an interactive debug list with "Add" and "Delete" capabilities for blobs.
+- Updated movement logic: setting Global Speed to 0 now completely freezes all animations.
+- Cleaned up redundant global bokeh settings in favor of granular per-blob customization.
+[0.3 hrs]
+
+### JSX Syntax Fix in Bokeh Debug Panel [2026-04-30 18:21]
+- Resolved "Expected '</', got 'ident'" build error caused by missing wrapper div in bokeh debug section.
+- Corrected div nesting to ensure valid JSX structure.
+[0.1 hrs]
+
+### Unterminated Regexp Literal Fix [2026-04-30 18:22]
+- Fixed "Unterminated regexp literal" error caused by an extra closing div inside a JSX expression.
+- Re-aligned conditional logic and container nesting for the Hero debug panel.
+[0.1 hrs]
+
+### Draggable Debug Panel Upgrades [2026-04-30 18:29]
+- Converted the static debug settings panel into a floating, draggable window using `framer-motion` (`motion.div` with `drag`).
+- Added a dedicated header acting as a drag handle.
+- Implemented `onPointerDownCapture={(e) => e.stopPropagation()}` on the scrollable container to ensure dragging doesn't interfere with inner scrolling or slider interactions.
+- Restored standard scrollbars and improved internal padding/spacing for a cleaner layout.
+[0.2 hrs]
+
+### JSON Settings Export Feature [2026-04-30 18:36]
+- Added an "EXPORT JSON" accordion section to the Hero debug panel.
+- Included a button to directly copy the full `config` state to the clipboard.
+- Displayed the formatted JSON inside a scrollable `<pre>` block for quick visual reference.
+[0.1 hrs]
+
+### Applied Final Bokeh Configuration [2026-04-30 18:38]
+- Updated the default `config` state in the Hero component with the specific JSON exported from the debug panel.
+- This permanently sets the exact blur, speed, and 6 manually-positioned blob coordinates that the user configured.
+[0.1 hrs]
+
+### Refined Location Section Layout [2026-04-30 18:47]
+- Reduced vertical padding in the venue and date info cards from 32px to 20px (py-5).
+- Decreased the gap between info cards from 24px to 16px (gap-4).
+- Removed the fixed aspect-video ratio from the map container, allowing its height to be dynamically driven by the refined height of the adjacent info cards.
+- Reduced the section heading bottom margin for a more compact and balanced layout.
+[0.1 hrs]
+
+### Fixed Layered Border for Ticket Banner [2026-04-30 18:50]
+- Corrected the gradient border for the "Tickets starting at" banner in the Contact section.
+- Added a solid brand-color base layer (#A32482) underneath the linear gradient to match the layered stroke specification in Figma.
+- Updated gradient stops (16% magenta, 86% white) and applied 30% opacity to the gradient layer for accurate visual fidelity.
+[0.1 hrs]

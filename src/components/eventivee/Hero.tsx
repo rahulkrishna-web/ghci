@@ -22,7 +22,7 @@ export default function Hero({ data }: HeroProps) {
   // Debug Settings State - Updated with User's Final Params
   const [showSettings, setShowSettings] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [expandedSection, setExpandedSection] = useState<'title' | 'bokeh' | null>('title');
+  const [expandedSection, setExpandedSection] = useState<'title' | 'bokeh' | 'json' | null>('title');
   const [config, setConfig] = useState({
     // Title Settings
     shineSize: 540,
@@ -35,12 +35,17 @@ export default function Hero({ data }: HeroProps) {
     tracking: -0.02,
     lineHeight: 6.8,
     // Bokeh Settings
-    bokehOpacity: 0.19,
-    bokehBlur: 85,
-    bokehCount: 8,
-    bokehSpeed: 5,
+    bokehBlur: 98,
+    bokehSpeed: 2.2,
     bokehHue: 0,
-    // Cursor Settings
+    blobs: [
+      { id: 1777553719241, color: '#A32482', width: 50, height: 31, x: 4, y: 7, opacity: 0.4 },
+      { id: 1777553719242, color: '#223852', width: 50, height: 35, x: -15, y: 30, opacity: 1 },
+      { id: 1777553719243, color: '#22021D', width: 55, height: 45, x: -5, y: 60, opacity: 1 },
+      { id: 1777553719244, color: '#A32482', width: 50, height: 40, x: 60, y: 15, opacity: 1 },
+      { id: 1777553719245, color: '#223852', width: 22, height: 17, x: 65, y: 18, opacity: 1 },
+      { id: 1777553719246, color: '#22021D', width: 27, height: 23, x: 77, y: 25, opacity: 1 },
+    ],
     cursorSizeDefault: 16,
     cursorSizeHover: 20,
     cursorColorDefault: '#A32482',
@@ -108,49 +113,33 @@ export default function Hero({ data }: HeroProps) {
     // Optional: center or hide the shine when mouse leaves
   };
 
-  // Generate dynamic bokeh blobs
-  const blobs = useMemo(() => Array.from({ length: 20 }).map((_, i) => ({
-    id: i,
-    size: Math.random() * 600 + 400,
-    duration: (Math.random() * 25 + 20),
-    delay: Math.random() * -20,
-    color: i % 2 === 0 ? '#A32482' : i % 3 === 0 ? '#5b1248' : '#7a1b62',
-    initialX: Math.random() * 100 + '%',
-    initialY: Math.random() * 100 + '%',
-    moveX: [0, (Math.random() - 0.5) * 500, (Math.random() - 0.5) * 500, 0],
-    moveY: [0, (Math.random() - 0.5) * 500, (Math.random() - 0.5) * 500, 0],
-  })), []);
 
   return (
     <section className="relative min-h-screen md:min-h-[80vh] flex flex-col gap-10 items-center justify-center overflow-hidden bg-black text-white">
       {/* Moving Bokeh Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" style={{ filter: `hue-rotate(${config.bokehHue}deg)` }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-[#0a0208]" />
-        {mounted && blobs.slice(0, config.bokehCount).map((blob) => (
+        {mounted && config.blobs.map((blob) => (
           <motion.div
             key={blob.id}
-            animate={{
-              x: blob.moveX,
-              y: blob.moveY,
-              scale: [1, 1.2, 0.9, 1],
-            }}
+            animate={config.bokehSpeed > 0 ? {
+              x: [0, 50 * config.bokehSpeed, -50 * config.bokehSpeed, 0],
+              y: [0, -30 * config.bokehSpeed, 30 * config.bokehSpeed, 0],
+            } : {}}
             transition={{
-              duration: blob.duration / config.bokehSpeed,
+              duration: 20 / (config.bokehSpeed || 1),
               repeat: Infinity,
-              delay: blob.delay,
               ease: "easeInOut"
             }}
-            className="absolute rounded-full"
+            className="absolute rounded-[50%]"
             style={{
               backgroundColor: blob.color,
-              width: blob.size,
-              height: blob.size,
-              left: blob.initialX,
-              top: blob.initialY,
-              opacity: config.bokehOpacity,
+              width: `${blob.width}%`,
+              height: `${blob.height}%`,
+              left: `${blob.x}%`,
+              top: `${blob.y}%`,
+              opacity: blob.opacity,
               filter: `blur(${config.bokehBlur}px)`,
-              translateX: '-50%',
-              translateY: '-50%',
             }}
           />
         ))}
@@ -293,19 +282,30 @@ export default function Hero({ data }: HeroProps) {
 
       {/* Debug Settings Panel (Hidden by default, toggle with Ctrl+Shift+D) */}
       {showSettings && (
-        <div className="fixed bottom-6 right-6 z-[999]">
-          <button 
-            onClick={() => setShowSettings(false)}
-            className="p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all shadow-2xl mb-4 float-right"
+        <motion.div 
+          drag
+          dragMomentum={false}
+          className="fixed bottom-6 right-6 z-[999] w-[340px] bg-[#121214]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[80vh]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          {/* Header / Drag Handle */}
+          <div className="flex justify-between items-center p-4 border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white/50">Hero Debug</h3>
+            <button 
+              onClick={() => setShowSettings(false)}
+              className="p-1 hover:bg-white/10 rounded-md transition-colors text-white/50 hover:text-white"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          
+          {/* Scrollable Content */}
+          <div 
+            className="p-5 space-y-5 overflow-y-auto custom-scrollbar"
+            onPointerDownCapture={(e) => e.stopPropagation()}
           >
-            <X className="w-6 h-6" />
-          </button>
-
-          <div className="clear-both w-80 bg-[#121214] border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-xl animate-in slide-in-from-bottom-4 duration-300">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-6">Hero Debug Settings</h3>
-            
-            <div className="space-y-4 overflow-y-auto max-h-[70vh] pr-2 scrollbar-hide">
-              {/* Title Settings Accordion */}
+            {/* Title Settings Accordion */}
               <div className="border border-white/5 rounded-xl overflow-hidden">
                 <button 
                   onClick={() => setExpandedSection(expandedSection === 'title' ? null : 'title')}
@@ -398,45 +398,170 @@ export default function Hero({ data }: HeroProps) {
                   <div className="p-4 space-y-6 bg-black/20">
                     <div className="space-y-3">
                       <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
-                        <span>Blob Count</span>
-                        <span className="text-[#A32482] font-mono">{config.bokehCount}</span>
-                      </div>
-                      <input type="range" min="1" max="20" step="1" value={config.bokehCount} onChange={(e) => setConfig({...config, bokehCount: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
-                        <span>Speed Multiplier</span>
+                        <span>Global Speed</span>
                         <span className="text-[#A32482] font-mono">{config.bokehSpeed}x</span>
                       </div>
-                      <input type="range" min="0.1" max="5" step="0.1" value={config.bokehSpeed} onChange={(e) => setConfig({...config, bokehSpeed: parseFloat(e.target.value)})} className="w-full accent-[#A32482]" />
+                      <input type="range" min="0" max="10" step="0.1" value={config.bokehSpeed} onChange={(e) => setConfig({...config, bokehSpeed: parseFloat(e.target.value)})} className="w-full accent-[#A32482]" />
                     </div>
+                    
                     <div className="space-y-3">
                       <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
-                        <span>Bokeh Opacity</span>
-                        <span className="text-[#A32482] font-mono">{config.bokehOpacity}</span>
-                      </div>
-                      <input type="range" min="0" max="0.5" step="0.01" value={config.bokehOpacity} onChange={(e) => setConfig({...config, bokehOpacity: parseFloat(e.target.value)})} className="w-full accent-[#A32482]" />
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
-                        <span>Blur Amount</span>
+                        <span>Global Blur</span>
                         <span className="text-[#A32482] font-mono">{config.bokehBlur}px</span>
                       </div>
-                      <input type="range" min="0" max="200" step="5" value={config.bokehBlur} onChange={(e) => setConfig({...config, bokehBlur: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
+                      <input type="range" min="0" max="300" step="1" value={config.bokehBlur} onChange={(e) => setConfig({...config, bokehBlur: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
                     </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
-                        <span>Hue Shift</span>
-                        <span className="text-[#A32482] font-mono">{config.bokehHue}°</span>
+
+                    <div className="pt-4 border-t border-white/5 space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">Individual Ellipses</span>
+                        <button 
+                          onClick={() => {
+                            const newBlob = { 
+                              id: Date.now(), 
+                              color: '#A32482', 
+                              width: 40, 
+                              height: 30, 
+                              x: 50, 
+                              y: 50, 
+                              opacity: 0.3 
+                            };
+                            setConfig({...config, blobs: [...config.blobs, newBlob]});
+                          }}
+                          className="px-2 py-1 bg-[#A32482] text-[10px] rounded hover:bg-[#8e1f7c] transition-colors"
+                        >
+                          + Add
+                        </button>
                       </div>
-                      <input type="range" min="0" max="360" step="1" value={config.bokehHue} onChange={(e) => setConfig({...config, bokehHue: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
+
+                      <div className="space-y-6 max-h-[300px] overflow-y-auto pr-2 scrollbar-hide">
+                        {config.blobs.map((blob, idx) => (
+                          <div key={blob.id} className="p-3 bg-white/5 rounded-lg space-y-3 relative group/item">
+                            <button 
+                              onClick={() => setConfig({...config, blobs: config.blobs.filter(b => b.id !== blob.id)})}
+                              className="absolute top-2 right-2 text-white/20 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity"
+                            >
+                              <X size={12} />
+                            </button>
+                            
+                            <div className="grid grid-cols-2 gap-3">
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">Color</span>
+                                <input 
+                                  type="color" 
+                                  value={blob.color} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].color = e.target.value;
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full h-6 bg-transparent border-none cursor-pointer"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">Opacity ({blob.opacity})</span>
+                                <input 
+                                  type="range" min="0" max="1" step="0.01" value={blob.opacity} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].opacity = parseFloat(e.target.value);
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full accent-[#A32482]"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-3">
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">X Position ({blob.x}%)</span>
+                                <input 
+                                  type="range" min="-50" max="150" step="1" value={blob.x} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].x = parseInt(e.target.value);
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full accent-[#A32482]"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">Y Position ({blob.y}%)</span>
+                                <input 
+                                  type="range" min="-50" max="150" step="1" value={blob.y} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].y = parseInt(e.target.value);
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full accent-[#A32482]"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-3">
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">Width ({blob.width}%)</span>
+                                <input 
+                                  type="range" min="5" max="150" step="1" value={blob.width} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].width = parseInt(e.target.value);
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full accent-[#A32482]"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <span className="text-[8px] uppercase text-white/30">Height ({blob.height}%)</span>
+                                <input 
+                                  type="range" min="5" max="150" step="1" value={blob.height} 
+                                  onChange={(e) => {
+                                    const newBlobs = [...config.blobs];
+                                    newBlobs[idx].height = parseInt(e.target.value);
+                                    setConfig({...config, blobs: newBlobs});
+                                  }} 
+                                  className="w-full accent-[#A32482]"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                    </div>
+                  )}
+                </div>
+
+              {/* JSON Export Accordion */}
+              <div className="border border-white/5 rounded-xl overflow-hidden shrink-0">
+                <button 
+                  onClick={() => setExpandedSection(expandedSection === 'json' ? null : 'json')}
+                  className="w-full px-4 py-3 bg-white/5 flex justify-between items-center text-xs font-bold text-white/70 hover:bg-white/10 transition-colors"
+                >
+                  EXPORT JSON
+                  <span className="text-lg">{expandedSection === 'json' ? '−' : '+'}</span>
+                </button>
+                
+                {expandedSection === 'json' && (
+                  <div className="p-4 bg-black/20">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(JSON.stringify(config, null, 2));
+                        // alert('JSON copied to clipboard!'); // Removed alert to keep it clean, relying on visual feedback or just copying silently.
+                      }}
+                      className="mb-3 w-full py-2 bg-[#A32482] hover:bg-[#8e1f7c] text-white text-xs font-semibold rounded-md transition-colors"
+                    >
+                      Copy to Clipboard
+                    </button>
+                    <pre className="text-[10px] text-green-400 font-mono overflow-x-auto max-h-40 p-2 bg-black/40 rounded border border-white/5 whitespace-pre-wrap select-all">
+                      {JSON.stringify(config, null, 2)}
+                    </pre>
                   </div>
                 )}
               </div>
-            </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </section>
   );

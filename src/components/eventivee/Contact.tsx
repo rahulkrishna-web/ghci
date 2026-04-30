@@ -98,14 +98,14 @@ export default function Contact({ data }: ContactProps) {
             viewport={{ once: true }}
             className="w-full relative rounded-full p-[2px] overflow-hidden"
             style={{
-                background: 'linear-gradient(45deg, rgba(163, 36, 120, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%)'
+                background: 'linear-gradient(to right, rgba(163, 36, 120, 0.3) 16%, rgba(255, 255, 255, 0.3) 86%), #A32482'
             }}
         >
             <div className="w-full bg-black rounded-full py-6 md:py-8 text-center px-4">
-                <h3 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
+                <h3 className="text-xl md:text-4xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
                     <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">Tickets starting at ₹3,000</span>
                 </h3>
-                <p className="text-white text-[10px] md:text-base tracking-wider">
+                <p className="text-white text-xl md:text-2xl">
                     Early Bird pricing available for a limited time
                 </p>
             </div>

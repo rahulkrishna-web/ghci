@@ -29,7 +29,7 @@ export default function Location({ data }: LocationProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-medium tracking-tight mb-16 text-white"
+          className="text-4xl md:text-5xl font-medium tracking-tight mb-10 text-white"
         >
           {data.sectionTitle}
         </motion.h2>
@@ -38,12 +38,12 @@ export default function Location({ data }: LocationProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-stretch">
           
           {/* Left Column: Info Cards */}
-          <div className="flex flex-col gap-6 h-full">
+          <div className="flex flex-col gap-4 h-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex-1 bg-white/[0.04] p-8 rounded-[10px] flex items-center gap-6 border border-white/5"
+              className="flex-1 bg-white/[0.04] py-5 px-8 rounded-[10px] flex items-center gap-6 border border-white/5"
             >
               <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                 <MapPin className="w-8 h-8 text-white/70" />
@@ -61,7 +61,7 @@ export default function Location({ data }: LocationProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex-1 bg-white/[0.04] p-8 rounded-[10px] flex items-center gap-6 border border-white/5"
+              className="flex-1 bg-white/[0.04] py-5 px-8 rounded-[10px] flex items-center gap-6 border border-white/5"
             >
               <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                 <Calendar className="w-8 h-8 text-white/70" />
@@ -77,7 +77,7 @@ export default function Location({ data }: LocationProps) {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-[10px] overflow-hidden border border-white/10 aspect-video h-full"
+            className="rounded-[10px] overflow-hidden border border-white/10 h-full"
           >
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.87808540542!2d77.71672157507658!3d12.979648637336428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0dfeba4898b5%3A0x7d4e9b0b1aad9e57!2sKarnataka%20Trade%20Promotion%20Organisation%20(KTPO)!5e0!3m2!1sen!2sin!4v1776982286459!5m2!1sen!2sin" 
@@ -95,7 +95,7 @@ export default function Location({ data }: LocationProps) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-white/60 text-lg md:text-xl leading-relaxed mb-20 max-w-5xl"
+          className="text-white text-lg md:text-2xl leading-tight mb-20"
         >
           {data.description}
         </motion.p>
