@@ -698,3 +698,140 @@
 - Updated the first card in "What You'll Gain" to use a custom SVG asset (`1.svg`) for pixel-perfect sharpness.
 - Refactored `IconMap` to support the new SVG-based icon component.
 [0.1 hrs]
+
+### Hero Title Shine Effect [2026-04-30 16:05]
+- Implemented a mouse-following shine effect on the Hero section title using Framer Motion and radial gradients.
+- Added a light white text stroke (`1px rgba(255, 255, 255, 0.1)`) to the title for better definition.
+- Refactored the title to use `background-clip: text` for the dynamic shine highlight.
+[0.5 hrs]
+
+### Hero Title Shine Refinement [2026-04-30 16:21]
+- Fixed character clipping (C, 7) by increasing line height to `8.5rem`, adding `py-10` padding, and adjusting tracking to `-0.01em`.
+- Brightened character fill by increasing shine opacity to `0.8` and base opacity to `0.2`.
+- Implemented a "shining border" by adding a secondary overlay layer with a `1.5px` stroke that responds to the mouse-following radial gradient.
+[0.5 hrs]
+
+### Hero Title Debug Settings [2026-04-30 16:22]
+- Implemented a floating debug settings panel in the Hero section to customize the glass and shine effect parameters in real-time.
+- Added controls for shine size/opacity, base opacity, stroke widths/opacities, tracking, and line height.
+- Bound all Hero title styling logic to the debug configuration state.
+[0.5 hrs]
+
+### Hero Title Shine Finalization [2026-04-30 16:29]
+- Applied final glass/shine parameters: Shine (540px, 0.6), Base (0.35), Strokes (1px/0.05 & 0.5px/0.55), Tracking (-0.02em).
+- Hidden the debug settings panel by default to maintain a clean production look.
+- Integrated a hidden hotkey (`Ctrl + Shift + D`) to toggle the settings panel for on-the-fly customizations.
+[0.5 hrs]
+
+### Hero Title Clipping Fix [2026-04-30 16:30]
+- Resolved character clipping on 'C' and '7' by adding horizontal padding (`px-10`) to the Hero title layers, expanding the `background-clip` container bounds.
+[0.1 hrs]
+
+### Hero Title Clipping Fix (Expansion) [2026-04-30 16:31]
+- Removed `max-w` constraints from Hero title layers and set `w-full` with `overflow-visible` to prevent horizontal clipping.
+- Increased horizontal padding to `px-20` to accommodate glyph edges for characters like 'C' and '7'.
+[0.1 hrs]
+
+### Hero Animated Bokeh Background [2026-04-30 16:33]
+- Replaced the static Hero background image with an animated Bokeh effect using Framer Motion.
+- Implemented large, blurred circles with slow-moving paths in brand-aligned purple and pink tones.
+- Added a subtle grain overlay for cinematic texture and deep black/purple base layer for contrast.
+[0.5 hrs]
+
+### Hero Debug Panel Reorganization [2026-04-30 16:35]
+- Reorganized the debug settings panel into collapsible accordions for "Title Glass Effect" and "Bokeh Background".
+- Added real-time customization controls for Bokeh opacity and blur amount.
+[0.3 hrs]
+
+### Enhanced Dynamic Bokeh System [2026-04-30 16:38]
+- Upgraded the Bokeh background with a dynamic blob generation system.
+- Added debug controls for Blob Count (up to 20), Speed Multiplier, and Hue Shift.
+- Implemented randomized 3-point animation paths for more active and fluid background movement.
+[0.5 hrs]
+
+### Bokeh Distribution Fix [2026-04-30 16:41]
+- Randomized initial positions (0-100%) for all Bokeh blobs to ensure they fill the entire viewport instead of clustering.
+- Adjusted animation paths to be relative offsets for localized drifting across the screen.
+[0.1 hrs]
+
+### Hero Bokeh Defaults Update [2026-04-30 16:44]
+- Applied user-preferred bokeh settings as defaults: 8 blobs, 5x speed, 0.19 opacity, 85px blur.
+[0.1 hrs]
+
+### Hero Title Clipping Final Fix [2026-04-30 16:46]
+- Switched Hero title containers from `w-full` to `w-max` with `mx-auto` centering.
+- This ensures the `background-clip: text` container expands to the full intrinsic width of the text, preventing background truncation on wide glyphs like 'C' and '7' across all resolutions.
+[0.1 hrs]
+
+### Hero Title Alignment Fix [2026-04-30 16:47]
+- Resolved a misalignment issue where the absolute overlay layer was offset from the base title.
+- Enforced centering on the parent container using `flex flex-col items-center`.
+[0.1 hrs]
+
+### Hero Hydration & Stacking Fix [2026-04-30 16:49]
+- Fixed Next.js hydration error by deferring Bokeh blob rendering to the client-side (using `mounted` state).
+- Resolved title doubling/misalignment by using `absolute inset-0` on the overlay layer within a `w-max` parent container.
+[0.2 hrs]
+
+### Hero Missing Import Fix [2026-04-30 16:50]
+- Fixed a `ReferenceError` by importing `useMemo` from React.
+[0 hrs]
+
+### Hero Title Centering Refinement [2026-04-30 16:51]
+- Implemented a nested centering strategy: `w-full flex justify-center` parent with a `w-max` content box.
+- This ensures the title block is perfectly centered in the viewport while maintaining the exact internal stacking of fill and border layers.
+[0.1 hrs]
+
+### Global Custom Cursor Implementation [2026-04-30 16:53]
+- Created and integrated a `CustomCursor` component with brand magenta styling.
+- Features smooth spring-following motion and dynamic hover expansion (16px to 64px) on interactive elements.
+- Hidden system cursor globally for a premium, cinematic experience.
+[0.3 hrs]
+
+### Custom Cursor Debug Integration [2026-04-30 16:56]
+- Fixed a hydration error in `CustomCursor` by deferring rendering to client-side mount.
+- Added a "CUSTOM CURSOR" accordion to the Hero debug panel.
+- Implemented a custom event system to sync cursor settings (size, border, opacity) globally from the debug panel.
+[0.2 hrs]
+
+### Hero Syntax Error Fix [2026-04-30 16:57]
+- Fixed a build error (`Unexpected token`) caused by a missing closing `div` in the debug panel settings.
+[0 hrs]
+
+### Global System Cursor Suppression [2026-04-30 16:59]
+- Applied `* { cursor: none !important; }` globally in CSS to completely hide the default browser pointer, ensuring the custom cursor is the sole interactive indicator.
+[0.1 hrs]
+
+### Custom Cursor Design Refinement [2026-04-30 17:03]
+- Removed border from the custom cursor.
+- Updated defaults: 16px solid magenta (default), 20px with 0.8 opacity (hover).
+[0.1 hrs]
+
+### Custom Cursor Deactivation [2026-04-30 17:05]
+- Disabled the custom cursor globally and restored the system pointer to ensure a stable build for client feedback.
+- Removed cursor customization settings from the Hero debug panel.
+[0.1 hrs]
+
+### Hero Syntax Cleanup [2026-04-30 17:07]
+- Fixed a build error (`Unterminated regexp literal`) caused by an extra closing `div` remaining after the cursor settings were removed.
+[0 hrs]
+
+### Hero Syntax Fix - Final [2026-04-30 17:08]
+- Resolved the persistent `Unterminated regexp literal` build error by removing a second hidden extra `div` tag.
+[0 hrs]
+
+### Hero Button Hover Synchronization [2026-04-30 17:09]
+- Synchronized hover states for CTA button clusters using `group-hover`.
+- Both the circular icon and rectangular text components now transition to a unified color simultaneously when any part of the cluster is hovered.
+[0.1 hrs]
+
+### Hero Layout Tightening [2026-04-30 17:16]
+- Reduced vertical spacing between Date and Title by adjusting margins (`mb-8` to `mb-2`).
+- Compressed Title line height by updating `config.lineHeight` default (8.5 to 6.8).
+- Removed `py-10` padding from title layers to eliminate excess whitespace.
+[0.1 hrs]
+
+### Marquee Edge Masking Refinement [2026-04-30 17:19]
+- Replaced solid dark gradient overlays with a transparent `mask-image` linear gradient.
+- This ensures the bokeh background remains fully visible while the marquee text smoothly fades at the viewport edges.
+[0.1 hrs]
