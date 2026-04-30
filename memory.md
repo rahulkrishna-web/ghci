@@ -894,3 +894,37 @@
 - Added a solid brand-color base layer (#A32482) underneath the linear gradient to match the layered stroke specification in Figma.
 - Updated gradient stops (16% magenta, 86% white) and applied 30% opacity to the gradient layer for accurate visual fidelity.
 [0.1 hrs]
+
+### Interactive Halftone Background in Contact Section [2026-04-30 19:00]
+- Implemented a dynamic halftone background pattern in the "Get in Touch" section.
+- Added mouse tracking using Framer Motion springs (, ) to drive CSS variables (, ).
+- Used a radial-gradient mask to reveal a magenta halftone dot pattern around the cursor position.
+- Added a subtle spotlight effect that follows the cursor to enhance the cinematic interactive feel.
+[0.2 hrs]
+
+### Interactive Halftone Background in Contact Section [2026-04-30 19:00]
+- Implemented a dynamic halftone background pattern in the "Get in Touch" section.
+- Added mouse tracking using Framer Motion springs (smoothX, smoothY) to drive CSS variables (--x, --y).
+- Used a radial-gradient mask to reveal a magenta halftone dot pattern around the cursor position.
+- Added a subtle spotlight effect that follows the cursor to enhance the cinematic interactive feel.
+[0.2 hrs]
+
+### Build Error Fix in Contact.tsx [2026-04-30 19:01]
+- Fixed a JSX build error caused by a mismatched closing tag (changed </section> to </motion.section>).
+[0.1 hrs]
+
+### Halftone Effect Fix [2026-04-30 19:03]
+- Fixed the missing halftone effect in the Contact section.
+- Added useTransform to append "px" units to mouse motion values, ensuring CSS variables work correctly in radial gradients.
+- Increased visibility of the pattern by boosting dot opacity and spotlight intensity.
+[0.1 hrs]
+
+### Contact Section Debug Panel [2026-04-30 19:05]
+- Implemented a draggable debug settings panel for the Contact section, accessible via Ctrl+Alt+C.
+- Added real-time sliders for halftone pattern (opacity, size, gap) and spotlight shine (radius, strength, color).
+- Included a JSON export feature to copy the final configuration directly to the clipboard.
+[0.3 hrs]
+
+### Applied Final Contact Background Config [2026-04-30 19:07]
+- Updated the default Contact section config with the user's refined parameters (halftoneOpacity: 0.21, halftoneSize: 2.5, shineSize: 460, etc.).
+[0.1 hrs]
