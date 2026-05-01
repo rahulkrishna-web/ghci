@@ -276,9 +276,17 @@ export default function Hero({ data }: HeroProps) {
       </div>
 
       {/* Marquee Integrated into Hero */}
-      <div className="relative  w-full">
+      <div className="relative w-full z-10">
         <Marquee />
       </div>
+
+      {/* Bottom Gradient Fade to merge with next section */}
+      <div 
+        className="absolute bottom-0 left-0 w-full h-[100px] z-20 pointer-events-none"
+        style={{ 
+          background: 'linear-gradient(to bottom, transparent, #070708)' 
+        }}
+      />
 
       {/* Debug Settings Panel (Hidden by default, toggle with Ctrl+Shift+D) */}
       {showSettings && (

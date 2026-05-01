@@ -928,3 +928,7 @@
 ### Applied Final Contact Background Config [2026-04-30 19:07]
 - Updated the default Contact section config with the user's refined parameters (halftoneOpacity: 0.21, halftoneSize: 2.5, shineSize: 460, etc.).
 [0.1 hrs]
+
+### Hero Section Transition Refinement [2026-05-01 10:21]
+- Added a 100px vertical gradient (transparent to #070708) at the bottom of the Hero section for a seamless transition.
+[0.2 hrs]
