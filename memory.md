@@ -967,3 +967,21 @@
 ### Contact Halftone Effect Calibration [2026-05-01 10:38]
 - Updated Contact section halftone parameters to increase opacity (0.9) and refine dot spacing/shine size for a more aggressive cinematic texture.
 [0.1 hrs]
+
+### Custom Cursor Revitalization [2026-05-01 10:42]
+- Reimplemented a high-fidelity custom cursor with a 5px radius (10px diameter) brand magenta (`#A32482`) pointer.
+- Globally disabled the system mouse pointer via `cursor: none !important` in CSS.
+- Configured dynamic hover states: cursor expands to 8px radius (16px diameter) and reduces to 0.9 opacity when interacting with links or buttons.
+- Removed color blending effects to ensure brand magenta remains vibrant and consistent throughout the site.
+[0.3 hrs]
+
+### Custom Cursor Deployment Fix [2026-05-01 10:43]
+- Discovered that the CustomCursor component was not integrated into the main layout.
+- Successfully imported and added `<CustomCursor />` to the RootLayout's body, enabling the effect site-wide.
+- Verified that the system cursor remains hidden while the custom pointer correctly tracks mouse movement.
+[0.1 hrs]
+
+### Custom Cursor Dimension Tuning [2026-05-01 10:45]
+- Fine-tuned CustomCursor dimensions: reduced default size to 8px and hover size to 12px.
+- Adjusted hover opacity to 0.8 for a more subtle interactive feedback.
+[0.1 hrs]

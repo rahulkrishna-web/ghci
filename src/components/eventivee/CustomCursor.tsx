@@ -7,17 +7,14 @@ const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
   
-  // Dynamic settings from debug panel
-  const [settings, setSettings] = useState({
-    sizeDefault: 16,
-    sizeHover: 20,
-    colorDefault: '#A32482',
-    colorHover: 'rgba(163, 36, 130, 0.8)',
-    borderDefault: 0,
-    borderHover: 0,
+  // Revised settings as per latest request
+  const settings = {
+    sizeDefault: 18,
+    sizeHover: 30,
+    color: '#A32482',
     opacityDefault: 1,
     opacityHover: 0.8,
-  });
+  };
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -46,18 +43,12 @@ const CustomCursor = () => {
       setIsHovered(!!isPointer);
     };
 
-    const handleConfigUpdate = (e: any) => {
-      setSettings(e.detail);
-    };
-
     window.addEventListener('mousemove', moveMouse);
     window.addEventListener('mouseover', handleMouseOver);
-    window.addEventListener('cursor-config-update', handleConfigUpdate);
 
     return () => {
       window.removeEventListener('mousemove', moveMouse);
       window.removeEventListener('mouseover', handleMouseOver);
-      window.removeEventListener('cursor-config-update', handleConfigUpdate);
     };
   }, [cursorX, cursorY, isVisible]);
 
@@ -65,20 +56,17 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
         translateX: '-50%',
         translateY: '-50%',
-        borderWidth: isHovered ? settings.borderHover : settings.borderDefault,
-        borderColor: settings.colorDefault, // Border usually stays the same color but can be changed
-        borderStyle: 'solid',
+        backgroundColor: settings.color,
       }}
       animate={{
         width: isHovered ? settings.sizeHover : settings.sizeDefault,
         height: isHovered ? settings.sizeHover : settings.sizeDefault,
-        backgroundColor: isHovered ? settings.colorHover : 'transparent',
         opacity: isVisible ? (isHovered ? settings.opacityHover : settings.opacityDefault) : 0,
       }}
       transition={{

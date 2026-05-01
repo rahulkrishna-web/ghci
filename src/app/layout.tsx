@@ -33,6 +33,8 @@ export const metadata: Metadata = {
   description: "Official microsite for Grace Hopper Celebration India 2027",
 };
 
+import CustomCursor from "@/components/eventivee/CustomCursor";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,6 +46,7 @@ export default function RootLayout({
       className={`${proximaNova.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <CustomCursor />
         {children}
       </body>
     </html>
