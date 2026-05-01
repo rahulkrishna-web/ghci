@@ -48,7 +48,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
         </div>
 
         {/* Grid / Slider Container */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex overflow-x-auto overflow-y-hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {data.blocks.map((block, idx) => {
                 const iconPath = IconMap[block.icon];
                 const isCenteredOnDesktop = idx >= 3;

@@ -985,3 +985,15 @@
 - Fine-tuned CustomCursor dimensions: reduced default size to 8px and hover size to 12px.
 - Adjusted hover opacity to 0.8 for a more subtle interactive feedback.
 [0.1 hrs]
+
+### Card Section Vertical Scroll Glitch Fix [2026-05-01 10:57]
+- Resolved a reported glitch in the ExploreTracks, WhatYouGain, and WhoShouldAttend sections where cards would inadvertently scroll vertically when hovered.
+- Enforced `overflow-y-hidden` on horizontal scroll containers to lock vertical movement and prevent cards from being clipped by section bounds.
+- Verified that horizontal snap-scrolling remains functional while global page scrolling is now properly prioritized when interacting with these sections.
+[0.2 hrs]
+
+### Animation Consistency Alignment [2026-05-01 10:59]
+- Standardized the entry animations for the WhatToExpect section to match the site-wide "fade-in up" pattern.
+- Replaced horizontal slides (`x: -20` / `x: 20`) with vertical translations (`y: 20` to `y: 0`).
+- Implemented a subtle 0.1s delay for the info box to create a more sophisticated, layered reveal effect.
+[0.1 hrs]

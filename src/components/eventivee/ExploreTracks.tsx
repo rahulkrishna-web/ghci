@@ -22,7 +22,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="flex w-full overflow-x-auto gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-16 lg:px-20 scroll-pl-4 md:scroll-pl-16 lg:scroll-pl-14 items-stretch">
+        <div className="flex w-full overflow-x-auto overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-16 lg:px-20 scroll-pl-4 md:scroll-pl-16 lg:scroll-pl-14 items-stretch">
           {data.tracks.map((track, idx) => (
             <motion.div
               key={idx}
