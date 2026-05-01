@@ -22,16 +22,10 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   const secondaryWays = data.ways.filter(w => w.type === 'secondary');
 
   const getTitleWithHighlight = (title: string) => {
-    const parts = title.split(' ');
-    if (parts.length < 2) return title;
-    const lastWord = parts.pop();
     return (
-      <>
-        {parts.join(' ')}{' '}
-        <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">
-            {lastWord}
-        </span>
-      </>
+      <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">
+        {title}
+      </span>
     );
   };
 

@@ -997,3 +997,8 @@
 - Replaced horizontal slides (`x: -20` / `x: 20`) with vertical translations (`y: 20` to `y: 0`).
 - Implemented a subtle 0.1s delay for the info box to create a more sophisticated, layered reveal effect.
 [0.1 hrs]
+
+### Typographic Gradient Expansion [2026-05-01 11:06]
+- Modified the title highlight logic in WaysToInvolve.tsx to apply the brand gradient across the full text block.
+- Removed the previous "last word only" constraint to create a bolder, more cohesive header style for involvement cards.
+[0.1 hrs]
