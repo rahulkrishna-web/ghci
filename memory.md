@@ -1012,3 +1012,8 @@
 - Optimized the CustomCursor's spring physics for zero-latency feel: increased stiffness to 1000 and reduced mass to 0.1.
 - Enabled hardware acceleration by adding `will-change: transform` to the cursor element, ensuring smooth 60fps+ tracking.
 [0.1 hrs]
+
+### Custom Cursor Ultra-Smooth Refinement [2026-05-01 11:14]
+- Pivoted from a high-stiffness "instant" tracking model to a more fluid, weighted "magnetic" spring system (stiffness: 150, damping: 25).
+- Achieving "super smooth" movement by allowing a subtle natural follow trail, creating a more cinematic and premium interactive feel.
+[0.1 hrs]
