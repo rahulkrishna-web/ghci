@@ -1002,3 +1002,13 @@
 - Modified the title highlight logic in WaysToInvolve.tsx to apply the brand gradient across the full text block.
 - Removed the previous "last word only" constraint to create a bolder, more cohesive header style for involvement cards.
 [0.1 hrs]
+
+### Missing Asset & Console Error Fix [2026-05-01 11:09]
+- Resolved a 404 console error in the Hero section caused by a missing 'grain.png' file.
+- Replaced the static image reference with an inline SVG-based noise filter, ensuring the cinematic texture is preserved without external dependencies.
+[0.1 hrs]
+
+### Custom Cursor Performance Optimization [2026-05-01 11:11]
+- Optimized the CustomCursor's spring physics for zero-latency feel: increased stiffness to 1000 and reduced mass to 0.1.
+- Enabled hardware acceleration by adding `will-change: transform` to the cursor element, ensuring smooth 60fps+ tracking.
+[0.1 hrs]
