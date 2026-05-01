@@ -57,15 +57,33 @@ export default function About({ data }: AboutProps) {
                 <img src={topRightImage} alt="Experience 2" className="w-full h-full object-cover grayscale brightness-75" />
             </motion.div>
 
-            {/* Main Center Image */}
+            {/* Main Center Video */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full md:w-[68%] aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
             >
-                <img src={centerImage} alt="Main Experience" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    poster="https://res.cloudinary.com/rahulkrishna/video/upload/v1777645245/GHIC_V6_7April_FINAL_720p_eeyl3h.jpg"
+                    className="w-full h-full object-cover"
+                >
+                    {/* Progressive loading: 1080p for desktop, 720p for others */}
+                    <source 
+                        src="https://res.cloudinary.com/rahulkrishna/video/upload/v1777645279/GHIC_V6_7April_FINAL_f0khnn.mp4" 
+                        type="video/mp4" 
+                        media="(min-width: 1024px)"
+                    />
+                    <source 
+                        src="https://res.cloudinary.com/rahulkrishna/video/upload/v1777645245/GHIC_V6_7April_FINAL_720p_eeyl3h.mp4" 
+                        type="video/mp4" 
+                    />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
             </motion.div>
 
             {/* Bottom Left Floating Image */}

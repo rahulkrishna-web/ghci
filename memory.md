@@ -1017,3 +1017,17 @@
 - Pivoted from a high-stiffness "instant" tracking model to a more fluid, weighted "magnetic" spring system (stiffness: 150, damping: 25).
 - Achieving "super smooth" movement by allowing a subtle natural follow trail, creating a more cinematic and premium interactive feel.
 [0.1 hrs]
+
+### Web Video Optimization for GHCI [2026-05-01 19:28]
+- Optimized the main promotional video for web performance.
+- Reduced file size from 765MB to 85MB (1080p) using CRF 22 for maximum sharpness without pixelation.
+- Created an even lighter 720p version (39MB) for faster mobile loading.
+- Reorganized files: original preserved as _4K.mp4, 1080p set as the default filename.
+[0.5 hrs]
+
+### Ultra-Small WebM Video Optimization [2026-05-01 19:40]
+- Created an ultra-compressed WebM (VP9) version of the GHCI video.
+- Reduced size to 5.4MB (from 765MB original) for extreme web performance.
+- Settings: 540p resolution, 350kbps bitrate, no audio.
+- Target: Faster initial load for mobile and background loops where extreme efficiency is required.
+[0.3 hrs]
