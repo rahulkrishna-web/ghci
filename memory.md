@@ -932,3 +932,38 @@
 ### Hero Section Transition Refinement [2026-05-01 10:21]
 - Added a 100px vertical gradient (transparent to #070708) at the bottom of the Hero section for a seamless transition.
 [0.2 hrs]
+
+### Hero Title Mobile Typography Fix [2026-05-01 10:24]
+- Reduced Hero title line-height to 1.0 on mobile to eliminate excessive gaps and match design specifications.
+- Implemented responsive window resize listener for dynamic layout adjustments.
+[0.3 hrs]
+
+### Hero Title Mobile Layout & Size Enhancement [2026-05-01 10:26]
+- Increased Hero title font size on mobile to 72px (80% increase) to improve visual impact.
+- Standardized mobile title padding to 15px and implemented full-width centering to resolve ghosting and blurring issues.
+- Fixed line-height consistency across title layers for perfect pixel alignment on small screens.
+[0.5 hrs]
+
+### Hero Content Layout Optimization [2026-05-01 10:28]
+- Forced 'Grace Hopper' title segment into a single line on mobile via whitespace-nowrap for better brand prominence.
+- Expanded Hero subtitle max-width to 500px on mobile to create a more balanced and cinematic text block.
+[0.2 hrs]
+
+### Hero Title Alignment Refinement [2026-05-01 10:30]
+- Refined mobile Hero title font size from 72px to 56px to ensure 'Grace Hopper' aligns perfectly with the navbar logo and menu button.
+- Maintained consistent 15px horizontal padding to match global navigation gutters.
+[0.2 hrs]
+
+### Hero Layout Refinement: Marquee Positioning [2026-05-01 10:31]
+- Repositioned the Marquee component to `absolute bottom-4` to eliminate the excessive gap between the Hero section and the following 'Experience' section.
+[0.1 hrs]
+
+### Hero Section Vertical Compression [2026-05-01 10:37]
+- Switched Hero section from full-viewport height (min-h-screen) to auto-height with optimized vertical padding (pt-32 pb-32).
+- Reduced internal spacing gaps (from gap-10 to gap-4) and subtitle bottom margins to create a more compact, content-focused layout matching design.
+- Removed redundant top margins from the content container to streamline the overall vertical flow.
+[0.3 hrs]
+
+### Contact Halftone Effect Calibration [2026-05-01 10:38]
+- Updated Contact section halftone parameters to increase opacity (0.9) and refine dot spacing/shine size for a more aggressive cinematic texture.
+[0.1 hrs]

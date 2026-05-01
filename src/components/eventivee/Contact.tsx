@@ -17,7 +17,7 @@ export default function Contact({ data }: ContactProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'halftone' | 'json' | null>('halftone');
   const [config, setConfig] = useState({
-    halftoneOpacity: 0.21,
+    halftoneOpacity: 0.9,
     halftoneSize: 2.5,
     halftoneGap: 30,
     shineSize: 460,

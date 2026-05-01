@@ -23,6 +23,7 @@ export default function Hero({ data }: HeroProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'title' | 'bokeh' | 'json' | null>('title');
+  const [isMobile, setIsMobile] = useState(false);
   const [config, setConfig] = useState({
     // Title Settings
     shineSize: 540,
@@ -79,13 +80,19 @@ export default function Hero({ data }: HeroProps) {
   // Hidden hotkey to toggle settings (Ctrl + Shift + D)
   useEffect(() => {
     setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'd') {
         setShowSettings(prev => !prev);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   // Mouse position for the shine effect
@@ -115,7 +122,7 @@ export default function Hero({ data }: HeroProps) {
 
 
   return (
-    <section className="relative min-h-screen md:min-h-[80vh] flex flex-col gap-10 items-center justify-center overflow-hidden bg-black text-white">
+    <section className="relative h-auto pt-32 pb-32 md:pt-48 md:pb-40 flex flex-col gap-4 md:gap-8 items-center justify-center overflow-hidden bg-black text-white">
       {/* Moving Bokeh Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-[#0a0208]" />
@@ -147,7 +154,7 @@ export default function Hero({ data }: HeroProps) {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style={{ backgroundImage: 'url(/grain.png)' }} />
       </div>
 
-      <div className="relative z-10 w-full px-6 md:px-40 mt-12 md:mt-16 text-center">
+      <div className="relative z-10 w-full px-6 md:px-40 text-center">
         {/* Date Cluster */}
         <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -160,7 +167,7 @@ export default function Hero({ data }: HeroProps) {
 
         {/* Main Title with Glass Effect & Mouse Shine */}
         <div className="relative group w-full flex flex-col items-center">
-          <div className="relative w-max">
+          <div className="relative w-full md:w-max flex flex-col items-center">
             {/* Main Fill Layer */}
             <motion.h1
               ref={titleRef}
@@ -176,11 +183,11 @@ export default function Hero({ data }: HeroProps) {
                 color: 'transparent',
                 WebkitTextStroke: `${config.strokeWidth}px rgba(255, 255, 255, ${config.strokeOpacity})`,
                 letterSpacing: `${config.tracking}em`,
-                lineHeight: `${config.lineHeight}rem`,
+                lineHeight: isMobile ? '1.0' : `${config.lineHeight}rem`,
               }}
-              className="text-[40px] md:text-10xl lg:text-[7.5rem] font-medium w-max flex flex-col items-center mix-blend-plus-lighter cursor-default px-24 overflow-visible"
+              className="text-[56px] md:text-10xl lg:text-[7.5rem] font-medium w-full md:w-max flex flex-col items-center mix-blend-plus-lighter cursor-default px-[15px] md:px-24 overflow-visible text-center"
             >
-              <span className="block">Grace Hopper</span>
+              <span className="block whitespace-nowrap">Grace Hopper</span>
               <span className="block md:whitespace-nowrap">
                 <span className="block md:inline">Celebration</span>{' '}
                 <span className="block md:inline">India 2027</span>
@@ -200,12 +207,12 @@ export default function Hero({ data }: HeroProps) {
                 color: 'transparent',
                 WebkitTextStroke: `${config.borderStrokeWidth}px rgba(255, 255, 255, ${config.borderStrokeOpacity})`,
                 letterSpacing: `${config.tracking}em`,
-                lineHeight: `${config.lineHeight}rem`,
+                lineHeight: isMobile ? '1.0' : `${config.lineHeight}rem`,
                 pointerEvents: 'none',
               }}
-              className="text-[40px] md:text-10xl lg:text-[7.5rem] font-medium w-max flex flex-col items-center mix-blend-plus-lighter px-24 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0"
+              className="text-[56px] md:text-10xl lg:text-[7.5rem] font-medium w-full md:w-max flex flex-col items-center mix-blend-plus-lighter px-[15px] md:px-24 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 text-center"
             >
-              <span className="block">Grace Hopper</span>
+              <span className="block whitespace-nowrap">Grace Hopper</span>
               <span className="block md:whitespace-nowrap">
                 <span className="block md:inline">Celebration</span>{' '}
                 <span className="block md:inline">India 2027</span>
@@ -219,7 +226,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-white text-xl md:text-2xl max-w-[320px] md:max-w-4xl mx-auto mb-10 leading-relaxed px-4"
+          className="text-white text-xl md:text-2xl max-w-[500px] md:max-w-4xl mx-auto mb-6 md:mb-10 leading-relaxed px-4"
         >
           {data.subtitle}
         </motion.p>
@@ -276,7 +283,7 @@ export default function Hero({ data }: HeroProps) {
       </div>
 
       {/* Marquee Integrated into Hero */}
-      <div className="relative w-full z-10">
+      <div className="absolute bottom-4 md:bottom-8 w-full z-10">
         <Marquee />
       </div>
 
