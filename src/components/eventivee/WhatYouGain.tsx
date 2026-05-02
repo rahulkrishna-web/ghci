@@ -29,7 +29,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl tracking-tight mb-10 text-center"
+          className="text-4xl md:text-6xl tracking-tight mb-12 text-center"
         >
           {data.sectionTitle}
         </motion.h2>
