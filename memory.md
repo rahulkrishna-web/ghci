@@ -1049,4 +1049,5 @@
 - Restored missing `'use client'` directive in `About.tsx` to fix the hook-related build error.
 - Added a play/pause toggle button to the gallery video in `About.tsx`, positioned alongside the unmute button for full playback control.
 - Updated the official contact email address to `ghci@anitabindia.org` across the `Contact.tsx` section and buttons.
-[2.2 hrs]
+- Optimized `Marquee.tsx` by replacing JavaScript-driven Framer Motion animations with pure CSS `translate3d` animations for buttery-smooth movement, especially on mobile.
+[2.3 hrs]
