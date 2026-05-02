@@ -1031,3 +1031,11 @@
 - Settings: 540p resolution, 350kbps bitrate, no audio.
 - Target: Faster initial load for mobile and background loops where extreme efficiency is required.
 [0.3 hrs]
+
+### Custom Cursor Performance Optimization [2026-05-02 12:15]
+- Replaced the laggy JS-based custom cursor with a native CSS SVG cursor.
+- Implemented `cursor: url(...)` in `globals.css` for both default and pointer states.
+- Removed `CustomCursor.tsx` and its integration in `layout.tsx` to eliminate JS overhead.
+- This provides hardware-accelerated cursor rendering, resolving the lag reported by the user.
+- Fixed Hero title cursor by removing explicit `cursor-default` and applying global `*` CSS rule.
+[0.6 hrs]

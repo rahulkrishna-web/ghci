@@ -47,35 +47,7 @@ export default function Hero({ data }: HeroProps) {
       { id: 1777553719245, color: '#223852', width: 22, height: 17, x: 65, y: 18, opacity: 1 },
       { id: 1777553719246, color: '#22021D', width: 27, height: 23, x: 77, y: 25, opacity: 1 },
     ],
-    cursorSizeDefault: 16,
-    cursorSizeHover: 20,
-    cursorColorDefault: '#A32482',
-    cursorColorHover: 'rgba(163, 36, 130, 0.8)',
-    cursorBorderDefault: 0,
-    cursorBorderHover: 0,
-    cursorOpacityDefault: 1,
-    cursorOpacityHover: 0.8,
   });
-
-  // Dispatch cursor config updates
-  useEffect(() => {
-    const event = new CustomEvent('cursor-config-update', { detail: {
-      sizeDefault: config.cursorSizeDefault,
-      sizeHover: config.cursorSizeHover,
-      colorDefault: config.cursorColorDefault,
-      colorHover: config.cursorColorHover,
-      borderDefault: config.cursorBorderDefault,
-      borderHover: config.cursorBorderHover,
-      opacityDefault: config.cursorOpacityDefault,
-      opacityHover: config.cursorOpacityHover,
-    }});
-    window.dispatchEvent(event);
-  }, [
-    config.cursorSizeDefault, config.cursorSizeHover, 
-    config.cursorColorDefault, config.cursorColorHover,
-    config.cursorBorderDefault, config.cursorBorderHover,
-    config.cursorOpacityDefault, config.cursorOpacityHover
-  ]);
 
   // Hidden hotkey to toggle settings (Ctrl + Shift + D)
   useEffect(() => {
@@ -191,7 +163,7 @@ export default function Hero({ data }: HeroProps) {
                 letterSpacing: `${config.tracking}em`,
                 lineHeight: isMobile ? '1.0' : `${config.lineHeight}rem`,
               }}
-              className="text-[56px] md:text-10xl lg:text-[7.5rem] font-medium w-full md:w-max flex flex-col items-center mix-blend-plus-lighter cursor-default px-[15px] md:px-24 overflow-visible text-center"
+              className="text-[56px] md:text-10xl lg:text-[7.5rem] font-medium w-full md:w-max flex flex-col items-center mix-blend-plus-lighter px-[15px] md:px-24 overflow-visible text-center"
             >
               <span className="block whitespace-nowrap">Grace Hopper</span>
               <span className="block md:whitespace-nowrap">
