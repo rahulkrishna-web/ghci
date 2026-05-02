@@ -1050,5 +1050,6 @@
 - Added a play/pause toggle button to the gallery video in `About.tsx`, positioned alongside the unmute button for full playback control.
 - Updated the official contact email address to `ghci@anitabindia.org` across the `Contact.tsx` section and buttons.
 - Optimized `Marquee.tsx` by replacing JavaScript-driven Framer Motion animations with pure CSS `translate3d` animations for buttery-smooth movement, especially on mobile.
-- Refactored `ExperienceStats.tsx` to synchronize counter animations by triggering all stats simultaneously via a parent container ref. Optimized mobile performance with hardware-accelerated transforms.
-[2.5 hrs]
+- Refactored `ExperienceStats.tsx` to synchronize counter animations and implemented direct DOM manipulation (bypassing React state) for "buttery smooth" 60fps performance. Added `tabular-nums` to eliminate horizontal text jitter.
+- Replaced transportation icons in `Location.tsx` with official brand SVGs from the `/getting-there/` directory.
+[2.8 hrs]

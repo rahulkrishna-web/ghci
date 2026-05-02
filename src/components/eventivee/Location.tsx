@@ -124,7 +124,7 @@ export default function Location({ data }: LocationProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
               {/* Option 1 */}
               <div className="space-y-3 md:pr-4">
-                <img src="/icons/cab.png" alt="Cab" className="w-10 h-10 opacity-80 mix-blend-luminosity" />
+                <img src="/getting-there/cab-pink.svg" alt="Cab" className="w-10 h-10" />
                 <div className="space-y-4">
                     <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[0].title}
@@ -137,7 +137,7 @@ export default function Location({ data }: LocationProps) {
 
               {/* Option 2 */}
               <div className="space-y-3 md:px-12 md:border-l md:border-white/10">
-                <img src="/icons/metro.png" alt="Metro" className="w-10 h-10 opacity-80 mix-blend-luminosity" />
+                <img src="/getting-there/metro pink.svg" alt="Metro" className="w-10 h-10" />
                 <div className="space-y-4">
                     <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[1].title}
@@ -150,7 +150,7 @@ export default function Location({ data }: LocationProps) {
 
               {/* Option 3 */}
               <div className="space-y-3 md:pl-12 md:border-l md:border-white/10">
-                <img src="/icons/bus.png" alt="Bus" className="w-10 h-10 opacity-80 mix-blend-luminosity" />
+                <img src="/getting-there/bus-pink.svg" alt="Bus" className="w-10 h-10" />
                 <div className="space-y-4">
                     <h4 className="text-lg uppercase text-white/50">
                         {data.gettingThere.options[2].title}

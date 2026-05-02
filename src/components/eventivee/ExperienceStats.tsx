@@ -10,29 +10,36 @@ type ExperienceStatsProps = {
 };
 
 function Counter({ value, trigger }: { value: string; trigger: boolean }) {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  
   // Extract number and suffix
   const numericPart = value.replace(/[^0-9]/g, '');
   const numericValue = parseInt(numericPart, 10) || 0;
   const suffix = value.replace(/[0-9,]/g, '');
-  
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => {
-    return Math.floor(latest).toLocaleString() + suffix;
-  });
 
   useEffect(() => {
-    if (trigger) {
-      const controls = animate(count, numericValue, {
+    if (trigger && nodeRef.current) {
+      const controls = animate(0, numericValue, {
         duration: 2.5,
         ease: [0.16, 1, 0.3, 1],
+        onUpdate(latest) {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = Math.floor(latest).toLocaleString() + suffix;
+          }
+        },
       });
       return controls.stop;
-    } else {
-      count.set(0);
     }
-  }, [trigger, numericValue, count]);
+  }, [trigger, numericValue, suffix]);
 
-  return <motion.span>{rounded}</motion.span>;
+  return (
+    <span 
+      ref={nodeRef} 
+      className="tabular-nums inline-block min-w-[1.2ch]"
+    >
+      0{suffix}
+    </span>
+  );
 }
 
 export default function ExperienceStats({ data }: ExperienceStatsProps) {
