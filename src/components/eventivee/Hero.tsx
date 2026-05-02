@@ -261,7 +261,7 @@ export default function Hero({ data }: HeroProps) {
       </div>
 
       {/* Marquee Integrated into Hero */}
-      <div className="absolute bottom-4 md:bottom-8 w-full z-10">
+      <div className="absolute bottom-4 md:bottom-8 w-full z-30">
         <Marquee />
       </div>
 

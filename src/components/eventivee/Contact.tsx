@@ -18,8 +18,8 @@ export default function Contact({ data }: ContactProps) {
   const [expandedSection, setExpandedSection] = useState<'halftone' | 'json' | null>('halftone');
   const [config, setConfig] = useState({
     halftoneOpacity: 0.9,
-    halftoneSize: 2.5,
-    halftoneGap: 30,
+    halftoneSize: 1.2,
+    halftoneGap: 24,
     shineSize: 460,
     shineStrength: 0.06,
     shineColor: '#A32482'
@@ -79,7 +79,7 @@ export default function Contact({ data }: ContactProps) {
             }}
         />
 
-      <div className="w-full">
+      <div className="w-full relative z-10">
         <div className="flex flex-row justify-between items-start gap-4 md:gap-12 mb-20">
             
             {/* Left Side: Content (75% approx) */}

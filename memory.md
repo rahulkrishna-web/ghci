@@ -1038,4 +1038,8 @@
 - Removed `CustomCursor.tsx` and its integration in `layout.tsx` to eliminate JS overhead.
 - This provides hardware-accelerated cursor rendering, resolving the lag reported by the user.
 - Fixed Hero title cursor by removing explicit `cursor-default` and applying global `*` CSS rule.
-[0.6 hrs]
+- Fixed dim Marquee text by increasing its z-index (z-30) to sit above the Hero bottom gradient.
+- Implemented smart navigation arrows in `ExploreTracks.tsx` with dynamic scroll detection and smooth transition states.
+- Updated `Contact.tsx` halftone effect settings with optimized parameters for better visual texture.
+- Fixed halftone overlay issue in `Contact.tsx` by increasing content z-index (z-10) to move the effect to the background.
+[1.2 hrs]
