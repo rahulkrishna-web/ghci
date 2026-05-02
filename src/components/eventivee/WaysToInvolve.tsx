@@ -30,7 +30,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   };
 
   return (
-    <section id="get-involved" className="py-24 relative overflow-hidden text-white px-4 md:px-12" style={{
+    <section id="get-involved" className="pt-0 pb-24 relative overflow-hidden text-white px-4 md:px-12" style={{
       backgroundImage: 'url(/get-involved.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
