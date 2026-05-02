@@ -1048,4 +1048,5 @@
 - Integrated an unmute toggle button into the floating gallery video in `About.tsx` with premium glassmorphic styling and persistence.
 - Restored missing `'use client'` directive in `About.tsx` to fix the hook-related build error.
 - Added a play/pause toggle button to the gallery video in `About.tsx`, positioned alongside the unmute button for full playback control.
-[2.1 hrs]
+- Updated the official contact email address to `ghci@anitabindia.org` across the `Contact.tsx` section and buttons.
+[2.2 hrs]
