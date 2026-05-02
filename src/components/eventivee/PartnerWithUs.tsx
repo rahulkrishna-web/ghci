@@ -34,7 +34,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
      
       <div className="w-full relative z-10 px-4 md:px-12">
             {/* Header Row */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-6 mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-8 mb-6">
                 <div className="max-w-6xl">
                     <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-6 leading-relaxed tracking-wider opacity-90">
                         {data.title}

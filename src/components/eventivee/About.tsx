@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 import ScrollReveal from '../ui/ScrollReveal';
@@ -24,11 +24,23 @@ export default function About({ data }: AboutProps) {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -98,17 +110,32 @@ export default function About({ data }: AboutProps) {
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 
-                {/* Unmute Toggle Button */}
-                <button 
-                  onClick={toggleMute}
-                  className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group"
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5 text-white/70 group-hover:text-white" />
-                  ) : (
-                    <Volume2 className="w-5 h-5 text-white group-hover:text-white" />
-                  )}
-                </button>
+                {/* Video Controls Toggle Cluster */}
+                <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
+                    {/* Play/Pause Toggle Button */}
+                    <button 
+                      onClick={togglePlay}
+                      className="p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group"
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-5 h-5 text-white/70 group-hover:text-white" />
+                      ) : (
+                        <Play className="w-5 h-5 text-white group-hover:text-white" />
+                      )}
+                    </button>
+
+                    {/* Unmute Toggle Button */}
+                    <button 
+                      onClick={toggleMute}
+                      className="p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group"
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-5 h-5 text-white/70 group-hover:text-white" />
+                      ) : (
+                        <Volume2 className="w-5 h-5 text-white group-hover:text-white" />
+                      )}
+                    </button>
+                </div>
             </motion.div>
 
             {/* Bottom Left Floating Image */}

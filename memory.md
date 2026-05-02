@@ -1047,4 +1047,5 @@
 - Refactored `ExploreTracks.tsx`: Centered the title and moved navigation arrows to float over the cards at the vertical center with smart visibility.
 - Integrated an unmute toggle button into the floating gallery video in `About.tsx` with premium glassmorphic styling and persistence.
 - Restored missing `'use client'` directive in `About.tsx` to fix the hook-related build error.
-[1.9 hrs]
+- Added a play/pause toggle button to the gallery video in `About.tsx`, positioned alongside the unmute button for full playback control.
+[2.1 hrs]
