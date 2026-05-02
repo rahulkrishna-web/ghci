@@ -24,10 +24,6 @@ const faqs = [
     q: 'Will there be a virtual option?',
     a: 'GHCI 2027 is planned as an in-person event to maximize networking and interaction. We will provide highlights and recorded sessions for selected tracks post-event.',
   },
-  {
-    q: 'Can I transfer or cancel my ticket?',
-    a: 'Tickets are non-refundable. However, you can transfer your ticket to another person up to 2 weeks before the event. Please note that cancellations do not qualify for a refund.',
-  },
 ];
 
 export default function FAQ() {
