@@ -1042,4 +1042,5 @@
 - Implemented smart navigation arrows in `ExploreTracks.tsx` with dynamic scroll detection and smooth transition states.
 - Updated `Contact.tsx` halftone effect settings with optimized parameters for better visual texture.
 - Fixed halftone overlay issue in `Contact.tsx` by increasing content z-index (z-10) to move the effect to the background.
-[1.2 hrs]
+- Standardized image entrance transitions in `About.tsx` to "fade in up" (y: 20 -> 0) to maintain consistent motion language across the site.
+[1.3 hrs]
