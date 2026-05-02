@@ -1,5 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
+import { Volume2, VolumeX } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 import ScrollReveal from '../ui/ScrollReveal';
 
@@ -19,6 +21,16 @@ export default function About({ data }: AboutProps) {
   const topRightImage = gallery[2];
   const bottomLeftImage = gallery[3];
   const bottomRightImage = gallery[4];
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
 
   return (
     <section id="experience" className="py-6 relative overflow-hidden bg-black text-white px-4 md:px-15">
@@ -65,9 +77,10 @@ export default function About({ data }: AboutProps) {
                 className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full md:w-[68%] aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
             >
                 <video 
+                    ref={videoRef}
                     autoPlay 
                     loop 
-                    muted 
+                    muted={isMuted}
                     playsInline 
                     poster="https://res.cloudinary.com/rahulkrishna/video/upload/v1777645245/GHIC_V6_7April_FINAL_720p_eeyl3h.jpg"
                     className="w-full h-full object-cover"
@@ -84,6 +97,18 @@ export default function About({ data }: AboutProps) {
                     />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                
+                {/* Unmute Toggle Button */}
+                <button 
+                  onClick={toggleMute}
+                  className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group"
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5 text-white/70 group-hover:text-white" />
+                  ) : (
+                    <Volume2 className="w-5 h-5 text-white group-hover:text-white" />
+                  )}
+                </button>
             </motion.div>
 
             {/* Bottom Left Floating Image */}

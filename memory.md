@@ -1045,4 +1045,6 @@
 - Standardized image entrance transitions in `About.tsx` to "fade in up" (y: 20 -> 0) to maintain consistent motion language across the site.
 - Applied `mix-blend-luminosity` to transport icons in `Location.tsx` for enhanced visual integration with the background.
 - Refactored `ExploreTracks.tsx`: Centered the title and moved navigation arrows to float over the cards at the vertical center with smart visibility.
-[1.6 hrs]
+- Integrated an unmute toggle button into the floating gallery video in `About.tsx` with premium glassmorphic styling and persistence.
+- Restored missing `'use client'` directive in `About.tsx` to fix the hook-related build error.
+[1.9 hrs]
