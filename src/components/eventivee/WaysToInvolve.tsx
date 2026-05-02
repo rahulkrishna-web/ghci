@@ -79,7 +79,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                 <h3 className="text-xl md:text-[2.2rem] mb-4 md:mb-6 leading-tight">
                   {getTitleWithHighlight(way.title)}
                 </h3>
-                <p className="text-white text-[13px] md:text-base mb-6 md:mb-10 flex-grow leading-relaxed">
+                <p className="text-white text-xl md:text-2xl mb-6 md:mb-10 flex-grow leading-relaxed">
                   {way.description}
                 </p>
                 <div className="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4">
@@ -87,7 +87,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                     <a
                       key={lIdx}
                       href={link.url}
-                      className={`h-8 md:h-12 inline-flex flex-col rounded-full text-xs md:text-sm font-semibold text-center transition-all overflow-hidden group/btn ${
+                      className={`h-8 md:h-12 inline-flex flex-col rounded-full text-xs md:text-xl font-semibold text-center transition-all overflow-hidden group/btn ${
                         link.variant === 'solid' 
                           ? 'bg-[#A32482] text-white hover:bg-[#8e1f7c] shadow-lg shadow-purple-900/20' 
                           : 'border border-[#A32482] text-[#A32482] hover:bg-[#A32482]/10'
