@@ -1044,4 +1044,5 @@
 - Fixed halftone overlay issue in `Contact.tsx` by increasing content z-index (z-10) to move the effect to the background.
 - Standardized image entrance transitions in `About.tsx` to "fade in up" (y: 20 -> 0) to maintain consistent motion language across the site.
 - Applied `mix-blend-luminosity` to transport icons in `Location.tsx` for enhanced visual integration with the background.
-[1.4 hrs]
+- Refactored `ExploreTracks.tsx`: Centered the title and moved navigation arrows to float over the cards at the vertical center with smart visibility.
+[1.6 hrs]
