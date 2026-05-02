@@ -9,10 +9,7 @@ type ExperienceStatsProps = {
   };
 };
 
-function Counter({ value }: { value: string }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
-  
+function Counter({ value, trigger }: { value: string; trigger: boolean }) {
   // Extract number and suffix
   const numericPart = value.replace(/[^0-9]/g, '');
   const numericValue = parseInt(numericPart, 10) || 0;
@@ -20,43 +17,41 @@ function Counter({ value }: { value: string }) {
   
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => {
-    const val = Math.floor(latest);
-    return val.toLocaleString() + suffix;
+    return Math.floor(latest).toLocaleString() + suffix;
   });
 
   useEffect(() => {
-    if (isInView) {
+    if (trigger) {
       const controls = animate(count, numericValue, {
-        duration: 2,
-        ease: [0.16, 1, 0.3, 1], // Custom easeOutExpo
+        duration: 2.5,
+        ease: [0.16, 1, 0.3, 1],
       });
       return controls.stop;
     } else {
       count.set(0);
     }
-  }, [isInView, numericValue, count]);
+  }, [trigger, numericValue, count]);
 
-  return <motion.span ref={ref}>{rounded}</motion.span>;
+  return <motion.span>{rounded}</motion.span>;
 }
 
 export default function ExperienceStats({ data }: ExperienceStatsProps) {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
   return (
     <section id="experience-stats" className="py-6 relative overflow-hidden bg-black text-white px-4 md:px-12">
-        {/* Background Graphic Layer */}
-        <div 
-            className="absolute inset-0 pointer-events-none"
-        />
         {/* Dark overlay for consistent cinematic look */}
         <div className="absolute inset-0 bg-black/60 z-0" />
         
-      <div className="w-full relative z-10">
+      <div className="w-full relative z-10" ref={containerRef}>
         {/* Section Content */}
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl tracking-tight mb-10 md:mb-22"
+            className="text-4xl md:text-6xl tracking-tight mb-16 md:mb-22"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -66,14 +61,14 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex flex-col md:flex-row justify-center items-stretch gap-0 max-w-8xl mx-auto"
+            className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-0 max-w-8xl mx-auto"
           >
             {data.stats.map((stat, idx) => (
-              <div key={idx} className={`flex-1 px-4 md:px-18 py-6 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-[40px] md:text-5xl font-semibold mb-2">
-                  <Counter value={stat.value} />
+              <div key={idx} className={`flex-1 px-4 md:px-18 py-8 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
+                <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-5xl md:text-7xl font-semibold mb-3">
+                  <Counter value={stat.value} trigger={isInView} />
                 </div>
-                <p className="text-white text-base md:text-[24px] leading-tight max-w-[200px]">
+                <p className="text-white text-xl md:text-2xl leading-tight max-w-[220px]">
                     {stat.label}
                 </p>
               </div>
