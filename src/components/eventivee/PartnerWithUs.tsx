@@ -36,12 +36,13 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             {/* Header Row */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-8 mb-6">
                 <div className="max-w-6xl">
-                    <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-6 leading-relaxed tracking-wider opacity-90">
-                        {data.title}
-                    </h4>
                     <h2 className="text-4xl md:text-6xl text-white tracking-tight font-semibold">
                         {data.sectionName}
                     </h2>
+                    <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-6 leading-relaxed tracking-wider opacity-90">
+                        {data.title}
+                    </h4>
+                    
                 </div>
 
                 {/* CTA Button (Desktop) */}
