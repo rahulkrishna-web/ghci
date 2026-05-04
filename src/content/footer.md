@@ -19,6 +19,10 @@ columns:
         href: "#location"
       - label: "Tickets"
         href: "#pricing"
+      - label: "Call for Presenters"
+        href: "https://ghci27.stutzee.com/#cfp"
+      - label: "Call for Jurors"
+        href: "https://ghci27.stutzee.com/#cfj"
   - title: "Support"
     links:
       - label: "Contact Us"
@@ -27,4 +31,14 @@ columns:
         href: "#faq"
       - label: "Sponsorship"
         href: "#"
+      - label: "Terms & Conditions"
+        href: "https://anitabindia.org/event-terms-and-conditions/"
+      - label: "Code of Conduct"
+        href: "https://anitab.org/code-of-conduct"
+  - title: "AnitaB.org"
+    links:
+      - label: "AnitaB India"
+        href: "https://anitabindia.org/"
+      - label: "Membership"
+        href: "https://membership.anitab.org/"
 ---

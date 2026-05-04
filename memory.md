@@ -1053,3 +1053,10 @@
 - Refactored `ExperienceStats.tsx` to synchronize counter animations and implemented direct DOM manipulation (bypassing React state) for "buttery smooth" 60fps performance. Added `tabular-nums` to eliminate horizontal text jitter.
 - Replaced transportation icons in `Location.tsx` with official brand SVGs from the `/getting-there/` directory.
 [2.8 hrs]
+
+### Content Updates: New Links Integration [2026-05-04 19:10]
+- Integrated Call For Presenters (CFP) and Call For Jurors (CFJ) URLs into the "Ways to Get Involved" section.
+- Expanded the Footer with new links: AnitaB India, Membership, Terms & Conditions, and Code of Conduct.
+- Added a third column "AnitaB.org" to the footer for better categorization of institutional links.
+- Updated CFP and CFJ links in the Footer's "GHCI" column for easy accessibility.
+[0.5 hrs]

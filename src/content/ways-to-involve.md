@@ -7,7 +7,7 @@ ways:
     type: "primary"
     links:
       - text: "Learn more"
-        url: "#"
+        url: "https://ghci27.stutzee.com/#cfp"
         variant: "solid"
   - title: "Call For Jurors"
     description: "Help recognize excellence in tech. Evaluate submissions, support talent, and shape industry benchmarks."
@@ -17,7 +17,7 @@ ways:
         url: "#"
         variant: "outline"
       - text: "View program details"
-        url: "#"
+        url: "https://ghci27.stutzee.com/#cfj"
         variant: "solid"
   - title: "Advancing Inclusion Program"
     description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
