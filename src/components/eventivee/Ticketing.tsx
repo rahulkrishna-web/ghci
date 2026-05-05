@@ -243,7 +243,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
 
       {/* Content */}
       <div className="relative z-10  flex flex-col h-full flex-1">
-        <div className="p-8 md:p-10 pt-16 md:pt-16">
+        <div className="p-8 md:p-10 pt-16 md:pt-16 pb-2 md:pb-2">
           <h3 className="text-3xl md:text-4xl mb-3">{ticket.name}</h3>
           <p className="text-white/60 text-xl md:text-xl ">
             {ticket.description}
@@ -251,11 +251,11 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
         </div>
         <div className="border-t border-dashed border-white/20 py-0 w-full" />
         <div className="px-8 md:px-10">
-            <div className="flex flex-col justify-end min-h-[110px] mb-2">
+            <div className="flex flex-col justify-end min-h-[100px] mb-2">
             {ticket.oldPrice ? (
               <span className="text-white/40 text-xl font-medium line-through decoration-white/40 leading-none h-7 flex items-end mb-1">{ticket.oldPrice}</span>
             ) : (
-              <div className="h-4 mb-1" /> // Spacer to align prices
+              <div className="h-4 mb-4" /> // Spacer to align prices
             )}
             <span className="text-2xl md:text-6xl leading-none">{ticket.price}</span>
           </div>
