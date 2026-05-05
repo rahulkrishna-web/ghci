@@ -18,7 +18,7 @@ const defaultTickets = [
       'Attendee certification + digital badges (via Verix)',
       'Virtual access available'
     ],
-    cardBlur: 0,
+    cardBlur: 70,
     blobsDesktop: [
       { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
       { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
@@ -426,7 +426,7 @@ export default function Ticketing() {
   const [activeTicketId, setActiveTicketId] = useState<string | null>(null);
 
   const DEFAULT_CONFIG = {
-    bokehSpeed: 0,
+    bokehSpeed: 2,
     tickets: [
       {
         id: "last-year",
@@ -451,10 +451,11 @@ export default function Ticketing() {
         ],
         blobsMobile: [
           { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+          { color: "#223852", width: 26, height: 50, x: -8, y: -100, opacity: 1 }
+        ],
+        blobs: [
+          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 }
         ]
       },
       {
@@ -485,6 +486,10 @@ export default function Ticketing() {
           { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
           { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
           { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -27, opacity: 1 }
+        ],
+        blobs: [
+          { color: "#22021D", width: 80, height: 60, x: 10, y: 40, opacity: 0.8 },
+          { color: "#A32482", width: 50, height: 40, x: 60, y: 70, opacity: 0.5 }
         ]
       },
       {
@@ -514,11 +519,15 @@ export default function Ticketing() {
           { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
           { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
           { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+        ],
+        blobs: [
+          { color: "#4284c2", width: 40, height: 30, x: -10, y: -5, opacity: 0.3 },
+          { color: "#A32482", width: 60, height: 40, x: 40, y: 10, opacity: 0.4 }
         ]
       }
     ],
     bgType: "color" as "color" | "gradient",
-    bgColor: "#000",
+    bgColor: "#000000",
     bgGradient: "linear-gradient(180deg, #050510 0%, #000 100%)",
     titleText: "What You Get With Your Ticket",
     titleColor: "#FFFFFF",
@@ -526,11 +535,11 @@ export default function Ticketing() {
     bgShineDefaultOpacity: 0,
     borderShineHoverOpacity: 0.55,
     borderShineDefaultOpacity: 0.15,
-    borderOpacityDesktop: 0.8,
-    borderOpacityMobile: 0.8,
-    notchSizeDesktop: 25,
+    borderOpacityDesktop: 0.1,
+    borderOpacityMobile: 0.05,
+    notchSizeDesktop: 46,
     notchSizeMobile: 20,
-    dividerOpacityDesktop: 0.3,
+    dividerOpacityDesktop: 0.25,
     dividerOpacityMobile: 0.3,
     divider1DashDesktop: 4,
     divider1GapDesktop: 4,

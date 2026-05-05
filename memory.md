@@ -1179,3 +1179,7 @@
 [2026-05-06 05:20]
 - Fixed missing borders on desktop ticket card corners by aligning the static border stroke radius (`rounded-[2.5rem]`) with the outer container's overflow mask.
 [0.1 hrs]
+
+[2026-05-06 05:25]
+- Applied a new comprehensive `DEFAULT_CONFIG` for the Ticketing component per user request, updating blobs layout, bokeh speed, border/divider opacities, and notch sizes.
+[0.1 hrs]
