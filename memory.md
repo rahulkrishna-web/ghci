@@ -1151,3 +1151,11 @@
 [2026-05-06 03:47]
 - Upgraded the Ticketing component's CTA button to feature the signature smooth vertical scroll text animation on hover, matching the high-fidelity interaction seen in the Hero component.
 [0.1 hrs]
+
+[2026-05-06 04:09]
+- Expanded the Debug Panel's capabilities by introducing dedicated 'Notch Size' range sliders, allowing real-time radius manipulation of the CSS masking elements for both desktop and mobile layouts.
+[0.1 hrs]
+
+[2026-05-06 04:14]
+- Fixed a TypeScript compilation error (`Object is of type 'unknown'`) during Vercel builds by explicitly casting the destructured variables array `([x, y]: number[])` inside the `useTransform` hook in the Ticketing component.
+[0.1 hrs]

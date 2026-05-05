@@ -126,12 +126,13 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
   // Mouse-reactive border shine (Hero-style)
   const borderBackground = useTransform(
     [springX, springY],
-    ([x, y]) => `radial-gradient(800px circle at ${x * 100}% ${y * 100}%, rgba(255,255,255,1) 0%, transparent 60%)`
+    ([x, y]: number[]) => `radial-gradient(800px circle at ${x * 100}% ${y * 100}%, rgba(255,255,255,1) 0%, transparent 60%)`
   );
 
-  const notchGradient = `radial-gradient(circle at 50% 0px, transparent 25px, rgba(255,255,255,${config.borderShineDefaultOpacity}) 26px, rgba(255,255,255,${config.borderShineDefaultOpacity}) 27.5px, transparent 28px)`;
-  const notchHoverGradient = `radial-gradient(circle at 50% 0px, transparent 25px, rgba(255,255,255,${config.borderShineHoverOpacity}) 26px, rgba(255,255,255,${config.borderShineHoverOpacity}) 27.5px, transparent 28px)`;
-  const notchStaticGradient = `radial-gradient(circle at 50% 0px, transparent 25px, rgba(255,255,255,${config.borderOpacityDesktop}) 26px, rgba(255,255,255,${config.borderOpacityDesktop}) 27.5px, transparent 28px)`;
+  const nSize = config.notchSizeDesktop || 25;
+  const notchGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 1}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
+  const notchHoverGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 1}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
+  const notchStaticGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 1}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
 
   const d1Dash = config.divider1DashDesktop || 4;
   const d1Gap = config.divider1GapDesktop || 4;
@@ -149,8 +150,8 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       transition={{ delay: idx * 0.1, duration: 0.6 }}
       className="relative w-full h-full min-h-[600px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
-        maskImage: 'radial-gradient(circle at 50% 0px, transparent 25px, black 26px)',
-        WebkitMaskImage: 'radial-gradient(circle at 50% 0px, transparent 25px, black 26px)',
+        maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 1}px)`,
+        WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 1}px)`,
       }}
     >
       {/* Glassy Border Layer */}
@@ -260,7 +261,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
           </div>
           <p className="text-white/40 text-2xl mb-4">{ticket.gst}</p>
           
-          <button className="group mb-4 h-12 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white font-bold text-lg active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden">
+          <button className="group mb-4 h-12 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden">
             <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                 <div className="h-full w-full flex items-center justify-center px-8 shrink-0">
                     {ticket.cta}
@@ -294,6 +295,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
     const d1Gap = config.divider1GapMobile || 2;
     const d2Dash = config.divider2DashMobile || 8;
     const d2Gap = config.divider2GapMobile || 4;
+    const nSize = config.notchSizeMobile || 20;
 
     return (
         <motion.div
@@ -304,8 +306,8 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row min-h-[300px]"
             style={{
                 borderColor: `rgba(255, 255, 255, ${config.borderOpacityMobile ?? 0.05})`,
-                maskImage: 'radial-gradient(circle at 0px 50%, transparent 20px, black 21px)',
-                WebkitMaskImage: 'radial-gradient(circle at 0px 50%, transparent 20px, black 21px)',
+                maskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 1}px)`,
+                WebkitMaskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 1}px)`,
             }}
         >
              {/* Background Blobs */}
@@ -518,6 +520,8 @@ export default function Ticketing() {
     borderShineDefaultOpacity: 0.15,
     borderOpacityDesktop: 0.1,
     borderOpacityMobile: 0.05,
+    notchSizeDesktop: 25,
+    notchSizeMobile: 20,
     dividerOpacityDesktop: 0.3,
     dividerOpacityMobile: 0.3,
     divider1DashDesktop: 4,
@@ -844,6 +848,28 @@ export default function Ticketing() {
                             <div className="space-y-1.5">
                                 <label className="text-[8px] text-white/40 font-bold uppercase">Text Color</label>
                                 <input type="color" value={config.titleColor} onChange={(e) => saveSettings({...config, titleColor: e.target.value})} className="w-full h-8 bg-transparent border-none cursor-pointer" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-4 pt-4 border-t border-white/5">
+                        <label className="text-[10px] font-bold text-white/30 uppercase tracking-widest">Card Notches</label>
+                        <div className="space-y-4">
+                            <div className="space-y-2">
+                                <span className="text-[7px] text-[#A32482] uppercase font-bold tracking-wider">Desktop Notch Size</span>
+                                <div className="flex justify-between text-[8px] font-bold text-white/40 uppercase">
+                                    <span>Radius</span>
+                                    <span>{config.notchSizeDesktop || 25}px</span>
+                                </div>
+                                <input type="range" min="0" max="60" step="1" value={config.notchSizeDesktop || 25} onChange={(e) => saveSettings({...config, notchSizeDesktop: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
+                            </div>
+                            <div className="space-y-2">
+                                <span className="text-[7px] text-[#A32482] uppercase font-bold tracking-wider">Mobile Notch Size</span>
+                                <div className="flex justify-between text-[8px] font-bold text-white/40 uppercase">
+                                    <span>Radius</span>
+                                    <span>{config.notchSizeMobile || 20}px</span>
+                                </div>
+                                <input type="range" min="0" max="60" step="1" value={config.notchSizeMobile || 20} onChange={(e) => saveSettings({...config, notchSizeMobile: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
                             </div>
                         </div>
                     </div>
