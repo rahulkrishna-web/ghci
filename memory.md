@@ -1171,3 +1171,7 @@
 [2026-05-06 04:30]
 - Reduced the thickness of the CSS radial-gradient notch border strokes by 50% (from 1.5px to ~0.75px/1px visual) and refined the accompanying maskImage gradient stops for a cleaner anti-aliased edge on both Desktop and Mobile.
 [0.1 hrs]
+
+[2026-05-06 04:33]
+- Updated the `DEFAULT_CONFIG` for the Ticketing component to set both `borderOpacityDesktop` and `borderOpacityMobile` to 0.8.
+[0.1 hrs]
