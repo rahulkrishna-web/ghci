@@ -61,7 +61,8 @@ export default function EventiveePage() {
       <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
       <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
       <div id="location">{locationData && <Location data={locationData as any} />}</div>
-      <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div>
+      {/* 
+      <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div> */}
       
       {/* New Ticketing Section */}
       <Ticketing />
