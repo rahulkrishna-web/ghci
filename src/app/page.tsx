@@ -17,6 +17,7 @@ import TicketPerks from '@/components/eventivee/TicketPerks';
 import Contact from '@/components/eventivee/Contact';
 import FAQ from '@/components/eventivee/FAQ';
 import Footer from '@/components/eventivee/Footer';
+import Ticketing from '@/components/eventivee/Ticketing';
 
 // Data loader
 import { getContentData } from '@/lib/content';
@@ -40,30 +41,34 @@ export default function EventiveePage() {
   return (
     <main className="min-h-screen bg-[#070708] selection:bg-[#b02677] selection:text-white font-sans text-white overflow-x-hidden">
       <Navbar />
-      {heroData && <Hero data={heroData as any} />}
-      {aboutData && <About data={aboutData as any} />}
-      {aboutData && <ExperienceStats data={aboutData as any} />}
-      {gainData && <WhatYouGain data={gainData as any} />}
-      {/* {perksData && <Perks data={perksData as any} />} */}
-      {/* <Schedule /> */}
+      <div id="hero">{heroData && <Hero data={heroData as any} />}</div>
+      <div id="about">{aboutData && <About data={aboutData as any} />}</div>
+      <div id="experience">{aboutData && <ExperienceStats data={aboutData as any} />}</div>
+      <div id="gain">{gainData && <WhatYouGain data={gainData as any} />}</div>
       
-      {attendData && <WhoShouldAttend data={attendData as any} />}
+      <div id="attend">{attendData && <WhoShouldAttend data={attendData as any} />}</div>
       
       <section 
+        id="explore"
         className="w-full relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/expect-bg.png)' }}
       >
-        {tracksData && <ExploreTracks data={tracksData as any} />}
-        {expectData && <WhatToExpect data={expectData as any} />}
+        <div id="tracks">{tracksData && <ExploreTracks data={tracksData as any} />}</div>
+        <div id="expect">{expectData && <WhatToExpect data={expectData as any} />}</div>
       </section>
-      {speakersData && <SpeakerGrid data={speakersData as any} />}
-      {involveData && <WaysToInvolve data={involveData as any} />}
-      {partnerData && <PartnerWithUs data={partnerData as any} />}
-      {locationData && <Location data={locationData as any} />}
-      {ticketPerksData && <TicketPerks data={ticketPerksData as any} />}
-      {contactData && <Contact data={contactData as any} />}
-      <FAQ />
-      {footerData && <Footer data={footerData as any} />}
+      
+      <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
+      <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
+      <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
+      <div id="location">{locationData && <Location data={locationData as any} />}</div>
+      <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div>
+      
+      {/* New Ticketing Section */}
+      <Ticketing />
+      
+      <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
+      <div id="faq"><FAQ /></div>
+      <div id="footer">{footerData && <Footer data={footerData as any} />}</div>
     </main>
   );
 }

@@ -27,13 +27,18 @@ export default function Contact({ data }: ContactProps) {
 
   // Hotkey to toggle settings (Ctrl + Alt + C)
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'c') {
-        setShowSettings(prev => !prev);
-      }
+    const handleOpenSettings = () => setShowSettings(true);
+    window.addEventListener('open-settings-contact', handleOpenSettings);
+    
+    const handleUpdateSettings = (e: any) => {
+        if (e.detail) setConfig(e.detail);
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('update-settings-contact', handleUpdateSettings);
+
+    return () => {
+      window.removeEventListener('open-settings-contact', handleOpenSettings);
+      window.removeEventListener('update-settings-contact', handleUpdateSettings);
+    };
   }, []);
 
   const mouseX = useMotionValue(0);

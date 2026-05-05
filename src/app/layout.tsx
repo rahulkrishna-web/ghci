@@ -33,6 +33,8 @@ export const metadata: Metadata = {
   description: "Official microsite for Grace Hopper Celebration India 2027",
 };
 
+import ControlPanel from "@/components/eventivee/ControlPanel";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,6 +47,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}
+        <ControlPanel />
       </body>
     </html>
   );

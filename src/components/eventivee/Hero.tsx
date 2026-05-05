@@ -55,14 +55,19 @@ export default function Hero({ data }: HeroProps) {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'd') {
-        setShowSettings(prev => !prev);
-      }
+    
+    const handleOpenSettings = () => setShowSettings(true);
+    window.addEventListener('open-settings-hero', handleOpenSettings);
+    
+    // Listen for global settings updates
+    const handleUpdateSettings = (e: any) => {
+        if (e.detail) setConfig(e.detail);
     };
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('update-settings-hero', handleUpdateSettings);
+
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('open-settings-hero', handleOpenSettings);
+      window.removeEventListener('update-settings-hero', handleUpdateSettings);
       window.removeEventListener('resize', checkMobile);
     };
   }, []);

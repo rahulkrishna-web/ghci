@@ -4,6 +4,8 @@
 
 ### Eventivee UI Recreation (2026-04-03)
 - recreated full eventivee.framer.website UI in Next.js 16 + Tailwind v4
+- Hardcoded the user's finalized Ticketing configuration (content, bokeh blobs, background colors, and border intensities) into the component's initial state.
+- [0.1 hrs]
 - 14 components in `src/components/eventivee/`: Navbar, Hero, Marquee, About, Features, SpeakerGrid, Schedule, Testimonials, Pricing, Partners, Host, FAQ, CTA, Gallery, Footer
 - Navbar uses Framer Motion `layout` wrapper so the glass pill expands natively into a unified surface on click, instead of rendering a separate dropdown menu.
 - `PricingCard` component features a circular ticket-style cutout via `maskImage`.
@@ -34,6 +36,9 @@
 - **Testimonials Marquee**: Replaced manual scroll on the Testimonials section with an infinite marquee effect. Removed scrollbar and added dark gradient edge-fades.
 
 ### Website Redesign and Content Abstraction [2026-04-21 16:44]
+- Fixed missing glassy border on ticketing card top notch using specialized radial gradients.
+- Added debug controls for Default and Hover border shine intensities (0-100%).
+[0.3 hrs]
 - Refactored components to read content from markdown files in `src/content/` using `gray-matter`.
 - Replaced Hero layout with centered design and background image.
 - Transformed glassy Navbar into horizontal top-bar layout.
@@ -211,7 +216,15 @@
 [0.5 hrs]
 - Adjusted Footer watermark vertical offset to translate-y-[10%] for 10% bottom clipping. [2026-04-24 10:30] [0.1 hrs]
 - Integrated lead-bg.png as the background for the Hero (lead) section with a readability overlay. [2026-04-24 10:31] [0.2 hrs]
-- Restored "What You Get With Your Ticket" section before Contact. [2026-04-24 10:33]
+- Fixed a runtime TypeError in `Ticketing.tsx` caused by stale `localStorage` data. Added structural validation and safety fallbacks for the `tickets` state array.
+- Restored "What You Get With Your Ticket" section before Contact. [2026-05-05 21:45]
+- Implemented high-fidelity Ticketing section after TicketPerks with blurred background blobs and hover-parallax effects.
+- Created a centralized Control Panel (Ctrl + Alt + C) for section navigation and global JSON settings management.
+- Unified debug hotkeys: removed individual listeners from Hero and Contact, consolidating them into the Control Panel launcher.
+- Added event-based settings synchronization between Control Panel and individual section debug panels.
+- Integrated Ticketing section content: Last Year Attendees (₹10k), Super Early (₹11k), and Regular (₹15k).
+- Implemented horizontal ticket layout for mobile viewports with left-side notches as per design specs.
+[3.5 hrs]
 - Updated ticket card background to use ticket-bg.png. [0.3 hrs]
 - Set div.spreadsheet.png as the background for the "Getting There" card in Location.tsx. [2026-04-24 10:43] [0.2 hrs]
 - Switched entire page layout to fluid width with 1rem (px-4) horizontal padding. [2026-04-24 10:49]
@@ -220,11 +233,25 @@
 - Fixed JSX syntax error in WhatToExpect.tsx (extra closing div). [2026-04-24 10:55] [0.1 hrs]
 - Fixed horizontal scroll issue by adding overflow-x-hidden to the main layout wrapper. [2026-04-24 10:58] [0.2 hrs]
 - Increased global horizontal padding to 10rem (px-40) on desktop for all sections. [2026-04-24 11:03]
+- Fixed dashed divider rendering by adding robust fallbacks for config values to prevent undefined values from breaking CSS `linear-gradient` parsing.
+- Made both dashed dividers edge-to-edge by utilizing negative horizontal margins (`-mx-8 md:-mx-10`) to break out of the card padding.
+- Moved the `flex-grow` spacer to reside immediately after Divider 1, effectively pushing the Price and CTA block to the bottom of the card, ensuring strict horizontal alignment across all tiers.
+[0.2 hrs]
+- Decoupled dashed divider settings, introducing independent variables (`divider1DashDesktop`, `divider1DashMobile`, etc.) for fine-grained control over stroke and gap dimensions across viewports.
+- Decoupled opacity settings, introducing independent variables (`borderOpacityDesktop`, `dividerOpacityMobile`, etc.) for finer control of border strokes and dashes.
+- Updated the debug panel layout to nest Mobile and Desktop sliders inside the divider and opacity sections.
+[0.2 hrs]
+- Refactored TicketingCard to a vertical stack layout as per latest design standards.
+- Implemented dual horizontal dashed dividers with varying stroke lengths (frequent vs. long) using `linear-gradient` background repeating patterns.
+[0.2 hrs]
+- Applied finalized split-shine intensities (Border Edge vs Background Fill) to the Ticketing component. [0.1 hrs]
+- Fixed `ReferenceError: isHovered is not defined` in `Ticketing.tsx` by adding missing state and mouse event handlers. [2026-04-24 11:20] [0.1 hrs]
 - Maintained 1rem (px-4) mobile padding for responsive consistency. [0.4 hrs]
 - Integrated premium assets for "What To Expect" section (what-to-expect.png and card background). [2026-04-24 11:10]
 - Removed legacy grid pattern from What To Expect card. [0.2 hrs]
 - Refined what-to-expect card background to fill 100% of the container and removed the redundant border. [2026-04-24 11:13] [0.1 hrs]
 - Integrated ScrollReveal component from reactbits.dev (without tilt effect). [2026-04-24 11:21]
+- Implemented a glassy, mouse-reactive border effect for Ticketing cards: added a radial gradient "shine" layer that follows the cursor, emulating the Hero section's premium aesthetic. [2026-05-05 22:37] [0.3 hrs]
 - Applied ScrollReveal animation to the About section content for a premium entrance effect. [1.2 hrs]
 
 ### Contact Section Refinement [2026-04-27 15:55]
@@ -986,7 +1013,10 @@
 - Adjusted hover opacity to 0.8 for a more subtle interactive feedback.
 [0.1 hrs]
 
-### Card Section Vertical Scroll Glitch Fix [2026-05-01 10:57]
+### Card Section Vertical Scroll Glitch Fix [2026-05-05 22:05]
+- Synced Ticketing section title style with other sections (`text-4xl md:text-6xl font-semibold`).
+- Implemented uniform button alignment across ticketing cards by adding a fixed minimum height and spacers to the price section.
+[0.3 hrs]
 - Resolved a reported glitch in the ExploreTracks, WhatYouGain, and WhoShouldAttend sections where cards would inadvertently scroll vertically when hovered.
 - Enforced `overflow-y-hidden` on horizontal scroll containers to lock vertical movement and prevent cards from being clipped by section bounds.
 - Verified that horizontal snap-scrolling remains functional while global page scrolling is now properly prioritized when interacting with these sections.
@@ -1060,3 +1090,64 @@
 - Added a third column "AnitaB.org" to the footer for better categorization of institutional links.
 - Updated CFP and CFJ links in the Footer's "GHCI" column for easy accessibility.
 [0.5 hrs]
+
+[2026-05-05 21:45]
+- Implemented high-fidelity Ticketing section after TicketPerks with blurred background blobs and hover-parallax effects.
+- Created a centralized Control Panel (Ctrl + Alt + C) for section navigation and global JSON settings management.
+- Unified debug hotkeys: removed individual listeners from Hero and Contact, consolidating them into the Control Panel launcher.
+- Added event-based settings synchronization between Control Panel and individual section debug panels.
+- Integrated Ticketing section content: Last Year Attendees (₹10k), Super Early (₹11k), and Regular (₹15k).
+- Implemented horizontal ticket layout for mobile viewports with left-side notches as per design specs.
+[3.5 hrs]
+
+[2026-05-05 21:50]
+- Refined Ticketing card alignment by introducing spacers for the `oldPrice` field, ensuring "Get the Pass" buttons are perfectly aligned.
+- Enhanced background movement in Ticketing cards: added a drifting bokeh animation and fixed the hover-parallax interaction.
+- Added "Bokeh Speed" control to the Ticketing debug panel for live adjustment of background animation speed.
+[0.5 hrs]
+
+[2026-05-05 22:00]
+- Upgraded Ticketing section to v2.0: implemented a fully dynamic ticket management system with individual background blobs and content.
+- Redesigned Ticketing debug UI to a hierarchical "file-manager" style with nested navigation (Back button, Ticket List, Ticket Editor).
+- Added support for adding/removing ticket tiers live and persisting the entire configuration (including individual card blobs) in JSON/localStorage.
+[1.2 hrs]
+- Switched Ticketing cards container from `flex` to `grid` (3 columns) to prevent wrapping issues caused by restrictive padding.
+[0.2 hrs]
+- Fixed a runtime TypeError in `Ticketing.tsx` caused by stale `localStorage` data. Added structural validation and safety fallbacks for the `tickets` state array.
+
+[2026-05-05 22:10]
+- Synced Ticketing section title style with other sections (`text-4xl md:text-6xl font-semibold`).
+- Implemented uniform button alignment across ticketing cards by adding a fixed minimum height and spacers to the price section.
+- Added comprehensive section styling to Ticketing config: background type (solid/gradient), background colors, and title text/color customization.
+[0.7 hrs]
+
+[2026-05-05 22:23]
+- Simplified Ticketing title configuration: merged primary/secondary text into a single field and enforced a single color for the entire title.
+[0.1 hrs]
+
+[2026-05-05 22:25]
+- Added "Back to Control Panel" navigation and a "Copy Config JSON" button to the Ticketing debug panel for easier configuration sharing and workflow.
+[0.2 hrs]
+
+[2026-05-05 21:35]
+- Decoupled background blobs (ellipses) for desktop and mobile views in the Ticketing component.
+- Implemented dynamic ellipse generation supporting arbitrary counts with independent size (width, height), curve radius, position (x, y), opacity, and color settings per viewport.
+- Updated the Debug Panel to provide separate management interfaces for Desktop and Mobile ellipses.
+- Adjusted default blob configurations to approximate the requested visual design layout.
+[1.0 hrs]
+
+[2026-05-06 03:25]
+- Copied the highly customized `blobsDesktop` background settings from the 'Last Year Attendees' ticket to the 'Regular' ticket in the default configuration to ensure visual consistency.
+[0.1 hrs]
+
+[2026-05-06 03:36]
+- Overhauled the Ticketing component's default configuration by injecting the provided comprehensive JSON payload, syncing the number of background blobs, position mapping, opacity tokens, and shape settings across all ticketing tiers to ensure parity with the desired Visual Editor state.
+[0.1 hrs]
+
+[2026-05-06 03:42]
+- Resolved TypeScript compilation errors in the Debug Panel caused by strict type checking against the deprecated `blobs` property on ticket configurations by correctly casting fallback references to `any`.
+[0.1 hrs]
+
+[2026-05-06 03:47]
+- Upgraded the Ticketing component's CTA button to feature the signature smooth vertical scroll text animation on hover, matching the high-fidelity interaction seen in the Hero component.
+[0.1 hrs]
