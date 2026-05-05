@@ -519,7 +519,7 @@ export default function Ticketing() {
     borderShineHoverOpacity: 0.55,
     borderShineDefaultOpacity: 0.15,
     borderOpacityDesktop: 0.1,
-    borderOpacityMobile: 0.05,
+    borderOpacityMobile: 1,
     notchSizeDesktop: 25,
     notchSizeMobile: 20,
     dividerOpacityDesktop: 0.3,

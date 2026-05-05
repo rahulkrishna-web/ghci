@@ -1159,3 +1159,7 @@
 [2026-05-06 04:14]
 - Fixed a TypeScript compilation error (`Object is of type 'unknown'`) during Vercel builds by explicitly casting the destructured variables array `([x, y]: number[])` inside the `useTransform` hook in the Ticketing component.
 [0.1 hrs]
+
+[2026-05-06 04:20]
+- Updated the DEFAULT_CONFIG to set `borderOpacityMobile` to 1, providing a solid 1px white border out-of-the-box for ticket cards on mobile layouts.
+[0.1 hrs]
