@@ -130,9 +130,9 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
   );
 
   const nSize = config.notchSizeDesktop || 25;
-  const notchGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 1}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
-  const notchHoverGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 1}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
-  const notchStaticGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 1}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
+  const notchGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 0.5}px, rgba(255,255,255,${config.borderShineDefaultOpacity}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
+  const notchHoverGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 0.5}px, rgba(255,255,255,${config.borderShineHoverOpacity}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
+  const notchStaticGradient = `radial-gradient(circle at 50% 0px, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 0.5}px, rgba(255,255,255,${config.borderOpacityDesktop}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
 
   const d1Dash = config.divider1DashDesktop || 4;
   const d1Gap = config.divider1GapDesktop || 4;
@@ -150,8 +150,8 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       transition={{ delay: idx * 0.1, duration: 0.6 }}
       className="relative w-full h-full min-h-[600px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
-        maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 1}px)`,
-        WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 1}px)`,
+        maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
+        WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
       }}
     >
       {/* Glassy Border Layer */}
@@ -297,7 +297,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
     const d2Gap = config.divider2GapMobile || 4;
     const nSize = config.notchSizeMobile || 20;
 
-    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
+    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 0.5}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
 
     return (
         <motion.div
@@ -308,8 +308,8 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row min-h-[300px]"
             style={{
                 borderColor: `rgba(255, 255, 255, ${config.borderOpacityMobile ?? 0.05})`,
-                maskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 1}px)`,
-                WebkitMaskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 1}px)`,
+                maskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 0.5}px)`,
+                WebkitMaskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 0.5}px)`,
             }}
         >
             {/* Notch Border Stroke */}
@@ -398,7 +398,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 />
 
                 {/* Inclusions Section */}
-                <div className="flex basis-[49%] justify-center flex-col px-4">
+                <div className="flex basis-[49%] justify-center flex-col pl-4 pr-2">
                   <div>
                     <p className="text-white/50 text-lg mb-2">What&apos;s included</p>
                     <ul className="space-y-1">

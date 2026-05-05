@@ -1167,3 +1167,7 @@
 [2026-05-06 04:23]
 - Implemented a continuous border trace inside the mobile ticket notch cutout using an absolute overlay with a radial-gradient stroke.
 [0.1 hrs]
+
+[2026-05-06 04:30]
+- Reduced the thickness of the CSS radial-gradient notch border strokes by 50% (from 1.5px to ~0.75px/1px visual) and refined the accompanying maskImage gradient stops for a cleaner anti-aliased edge on both Desktop and Mobile.
+[0.1 hrs]
