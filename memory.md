@@ -1163,3 +1163,7 @@
 [2026-05-06 04:20]
 - Updated the DEFAULT_CONFIG to set `borderOpacityMobile` to 1, providing a solid 1px white border out-of-the-box for ticket cards on mobile layouts.
 [0.1 hrs]
+
+[2026-05-06 04:23]
+- Implemented a continuous border trace inside the mobile ticket notch cutout using an absolute overlay with a radial-gradient stroke.
+[0.1 hrs]

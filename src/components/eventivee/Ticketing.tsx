@@ -297,6 +297,8 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
     const d2Gap = config.divider2GapMobile || 4;
     const nSize = config.notchSizeMobile || 20;
 
+    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 2.5}px, transparent ${nSize + 3}px)`;
+
     return (
         <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -310,6 +312,12 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 WebkitMaskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 1}px)`,
             }}
         >
+            {/* Notch Border Stroke */}
+            <div 
+                className="absolute top-1/2 left-0 -translate-y-1/2 w-12 h-24 z-30 pointer-events-none"
+                style={{ background: notchStaticGradientMobile }}
+            />
+
              {/* Background Blobs */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[#070708]" />
