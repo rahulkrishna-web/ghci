@@ -1175,3 +1175,7 @@
 [2026-05-06 04:33]
 - Updated the `DEFAULT_CONFIG` for the Ticketing component to set both `borderOpacityDesktop` and `borderOpacityMobile` to 0.8.
 [0.1 hrs]
+
+[2026-05-06 05:20]
+- Fixed missing borders on desktop ticket card corners by aligning the static border stroke radius (`rounded-[2.5rem]`) with the outer container's overflow mask.
+[0.1 hrs]

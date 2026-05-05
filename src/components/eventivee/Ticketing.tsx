@@ -155,10 +155,10 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       }}
     >
       {/* Glassy Border Layer */}
-      <div className="absolute inset-0 p-[1.5px] rounded-[1rem] z-20 pointer-events-none">
+      <div className="absolute inset-0 p-[1.5px] rounded-[2.5rem] z-20 pointer-events-none">
           {/* Static Border Stroke */}
           <div 
-            className="absolute inset-0 rounded-[1rem] border border-white" 
+            className="absolute inset-0 rounded-[2.5rem] border border-white" 
             style={{ opacity: config.borderOpacityDesktop ?? 0.05 }}
           />
           <div 
