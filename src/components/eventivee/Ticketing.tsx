@@ -307,7 +307,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             transition={{ delay: idx * 0.1, duration: 0.6 }}
             className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row min-h-[300px]"
             style={{
-                borderColor: `rgba(255, 255, 255, ${config.borderOpacityMobile ?? 0.05})`,
+                borderColor: `rgba(255, 255, 255, 0.20)`,
                 maskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 0.5}px)`,
                 WebkitMaskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 0.5}px)`,
             }}
@@ -536,7 +536,7 @@ export default function Ticketing() {
     borderShineHoverOpacity: 0.55,
     borderShineDefaultOpacity: 0.15,
     borderOpacityDesktop: 0.1,
-    borderOpacityMobile: 0.05,
+    borderOpacityMobile: 0.8,
     notchSizeDesktop: 46,
     notchSizeMobile: 20,
     dividerOpacityDesktop: 0.25,
