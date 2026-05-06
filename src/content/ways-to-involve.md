@@ -6,7 +6,7 @@ ways:
     description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
     type: "primary"
     links:
-      - text: "Learn more"
+      - text: "Apply Now"
         url: "https://ghci27.stutzee.com/#cfp"
         variant: "solid"
   - title: "Call For Jurors"
