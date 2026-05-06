@@ -1183,3 +1183,7 @@
 [2026-05-06 05:25]
 - Applied a new comprehensive `DEFAULT_CONFIG` for the Ticketing component per user request, updating blobs layout, bokeh speed, border/divider opacities, and notch sizes.
 [0.1 hrs]
+
+[2026-05-06 06:27]
+- Removed custom cursor SVG overrides from `src/app/globals.css` per user request.
+[0.1 hrs]

@@ -297,7 +297,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
     const d2Gap = config.divider2GapMobile || 4;
     const nSize = config.notchSizeMobile || 20;
 
-    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 0.5}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
+    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,0.05) ${nSize + 0.5}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
 
     return (
         <motion.div
@@ -350,9 +350,9 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
 
             <div className="relative z-10 flex w-full p-4 pl-8 md:p-10 ">
                 {/* Header Section */}
-                <div className="basis-[55%]">
-                    <h3 className="text-xl md:text-xl mb-2 leading-tight">{ticket.name}</h3>
-                    <p className="text-white/60 text-lg md:text-md leading-tight">{ticket.description}</p>
+                <div className="basis-[55%] pr-2">
+                    <h3 className="text-lg md:text-xl mb-2 leading-tight">{ticket.name}</h3>
+                    <p className="text-white/60 text-md md:text-md leading-tight">{ticket.description}</p>
                     {/* Divider 1: Custom Dashes (Edge to Edge) */}
                 <div 
                     className="h-[1px] w-auto -mx-0 md:-mx-10 mb-2 self-stretch shrink-0"
@@ -401,7 +401,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 />
 
                 {/* Inclusions Section */}
-                <div className="flex basis-[43%] justify-center flex-col pl-4 pr-2">
+                <div className="flex basis-[43%] justify-center flex-col pl-4 pr-1">
                   <div>
                     <p className="text-white/50 text-lg mb-2">What&apos;s included</p>
                     <ul className="space-y-1">
