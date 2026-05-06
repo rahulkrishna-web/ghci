@@ -47,7 +47,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience-stats" className="py-6 relative overflow-hidden bg-black text-white px-4 md:px-12">
+    <section id="experience-stats" className="py-4 relative overflow-hidden bg-black text-white px-4 md:px-12">
         {/* Dark overlay for consistent cinematic look */}
         <div className="absolute inset-0 bg-black/60 z-0" />
         
@@ -58,7 +58,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl tracking-tight mb-16 md:mb-22"
+            className="text-4xl md:text-6xl tracking-tight mb-8 md:mb-22"
           >
             {data.sectionTitle}
           </motion.h2>
@@ -71,7 +71,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
             className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-0 max-w-8xl mx-auto"
           >
             {data.stats.map((stat, idx) => (
-              <div key={idx} className={`flex-1 px-4 md:px-18 py-8 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
+              <div key={idx} className={`flex-1 px-4 md:px-18 py-4 md:py-0 text-center flex flex-col items-center justify-start ${idx !== 0 ? 'md:border-l border-white/10' : ''}`}>
                 <div className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent text-5xl md:text-7xl font-semibold mb-3">
                   <Counter value={stat.value} trigger={isInView} />
                 </div>

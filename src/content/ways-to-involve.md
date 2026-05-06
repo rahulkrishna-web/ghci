@@ -20,7 +20,7 @@ ways:
         url: "https://ghci27.stutzee.com/#cfj"
         variant: "solid"
   - title: "Advancing Inclusion Program"
-    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
+    description: "Access curated opportunities for learning, mentorship, and community engagement."
     type: "secondary"
     links:
       - text: "Learn more"

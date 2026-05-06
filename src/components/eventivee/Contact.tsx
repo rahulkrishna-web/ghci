@@ -63,7 +63,7 @@ export default function Contact({ data }: ContactProps) {
             '--x': xPx,
             '--y': yPx
         } as any}
-        className="py-24 bg-black text-white px-4 md:px-40 border-t border-white/[0.05] relative overflow-hidden group/contact"
+        className="py-6 md:py-24 bg-black text-white px-4 md:px-40 border-t border-white/[0.05] relative overflow-hidden group/contact"
     >
         {/* Halftone Overlay */}
         <div 
@@ -85,7 +85,7 @@ export default function Contact({ data }: ContactProps) {
         />
 
       <div className="w-full relative z-10">
-        <div className="flex flex-row justify-between items-start gap-4 md:gap-12 mb-20">
+        <div className="flex flex-row justify-between items-start gap-4 md:gap-12 mb-12">
             
             {/* Left Side: Content (75% approx) */}
             <motion.div
@@ -170,11 +170,11 @@ export default function Contact({ data }: ContactProps) {
                 background: 'linear-gradient(to right, rgba(163, 36, 120, 0.3) 16%, rgba(255, 255, 255, 0.3) 86%), #A32482'
             }}
         >
-            <div className="w-full bg-black rounded-full py-6 md:py-8 text-center px-4">
-                <h3 className="text-xl md:text-4xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
+            <div className="w-full bg-black rounded-full py-2 md:py-8 text-center px-6">
+                <h3 className="text-2xl md:text-4xl font-semibold mb-1 md:mb-2 tracking-tight text-white inline-block">
                     <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">Tickets starting at ₹3,000</span>
                 </h3>
-                <p className="text-white text-xl md:text-2xl">
+                <p className="text-white text-lg md:text-2xl">
                     Early Bird pricing available for a limited time
                 </p>
             </div>

@@ -20,7 +20,7 @@ export default function Partners({ data }: PartnersProps) {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/topography.png')] mix-blend-screen" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Partners({ data }: PartnersProps) {
         </div>
 
         {/* Stats Row */}
-        <div className="flex flex-wrap justify-center gap-12 md:gap-24 mb-16 border-y border-white/10 py-10">
+        <div className="flex flex-wrap justify-center gap-12 md:gap-24 mb-8 md:mb-16 border-y border-white/10 py-10">
           {data.stats.map((stat, idx) => (
             <motion.div
               key={idx}

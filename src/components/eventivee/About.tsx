@@ -60,7 +60,7 @@ export default function About({ data }: AboutProps) {
       <div className="w-full relative z-10">
         
         {/* Floating Gallery */}
-        <div className="relative h-[300px] md:h-[700px] mb-12 md:mb-20">
+        <div className="relative h-[300px] md:h-[700px] mb-0 md:mb-20">
             {/* Top Left Floating Image */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

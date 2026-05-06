@@ -23,7 +23,7 @@ type WhatYouGainProps = {
 
 export default function WhatYouGain({ data }: WhatYouGainProps) {
   return (
-    <section className="py-12 bg-black text-white px-4 md:px-12">
+    <section className="py-4 bg-black text-white px-4 md:px-12">
       <div className="w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

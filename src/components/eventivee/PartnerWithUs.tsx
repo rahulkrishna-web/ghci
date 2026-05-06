@@ -74,7 +74,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </p>
 
             {/* CTA Button (Mobile Only) */}
-            <div className="flex md:hidden justify-start items-center mb-16">
+            <div className="flex md:hidden justify-start items-center mb-12">
                 <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
                     <div className="w-10 h-10 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
                         <UserPlus className="w-5 h-5 text-white" />
@@ -96,7 +96,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-0 mb-16">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-0 mb-12 md:mb-16">
             {data.benefits.map((benefit, idx) => (
                 <motion.div
                 key={idx}
@@ -126,7 +126,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
             </div>
 
             {/* Trusted By Section */}
-            <div className="relative pt-12 border-t border-white/5 text-center overflow-hidden">
+            <div className="relative border-t border-white/5 text-center overflow-hidden">
                 <span className="text-white text-xl md:text-3xl font-medium tracking-wide mb-10 block">
                     {data.trustedByText}
                 </span>

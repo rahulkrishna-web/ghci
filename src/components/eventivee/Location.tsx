@@ -19,7 +19,7 @@ type LocationProps = {
 
 export default function Location({ data }: LocationProps) {
   return (
-    <section id="location" className="py-12 relative overflow-hidden text-white" style={{
+    <section id="location" className="py-6 md:py-12 relative overflow-hidden text-white" style={{
       backgroundImage: 'url(/location-bg.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'top center'
@@ -95,7 +95,7 @@ export default function Location({ data }: LocationProps) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-white text-lg md:text-2xl leading-tight mb-20"
+          className="text-white text-lg md:text-2xl leading-tight mb-12 md:mb-20"
         >
           {data.description}
         </motion.p>
