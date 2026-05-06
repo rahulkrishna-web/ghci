@@ -105,9 +105,9 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className={`p-2 md:py-10 text-left flex flex-col items-start relative 
-                    ${idx === 0 ? 'md:pl-0 md:pr-12' : ''} 
-                    ${idx === 1 ? 'md:px-12' : ''} 
-                    ${idx === 2 ? 'md:pl-12 md:pr-0' : ''}
+                    ${idx === 0 ? 'md:pl-24 md:pr-24' : ''} 
+                    ${idx === 1 ? 'md:pl-24 md:pr-24' : ''} 
+                    ${idx === 2 ? 'md:pl-24 md:pr-24' : ''}
                     ${idx !== 0 ? 'md:before:content-[""] md:before:absolute md:before:left-0 md:before:top-1/4 md:before:h-1/2 md:before:w-[1px] md:before:bg-white/10' : ''}`}
                 >
                 <div className="mb-4 md:mb-8">
