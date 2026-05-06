@@ -350,7 +350,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
 
             <div className="relative z-10 flex w-full p-4 pl-8 md:p-10 ">
                 {/* Header Section */}
-                <div className="basis-[50%]">
+                <div className="basis-[55%]">
                     <h3 className="text-xl md:text-xl mb-2 leading-tight">{ticket.name}</h3>
                     <p className="text-white/60 text-lg md:text-md leading-tight">{ticket.description}</p>
                     {/* Divider 1: Custom Dashes (Edge to Edge) */}
@@ -401,7 +401,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 />
 
                 {/* Inclusions Section */}
-                <div className="flex basis-[49%] justify-center flex-col pl-4 pr-2">
+                <div className="flex basis-[43%] justify-center flex-col pl-4 pr-2">
                   <div>
                     <p className="text-white/50 text-lg mb-2">What&apos;s included</p>
                     <ul className="space-y-1">
