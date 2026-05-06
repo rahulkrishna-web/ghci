@@ -351,8 +351,8 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             <div className="relative z-10 flex w-full p-4 pl-10 md:p-10 ">
                 {/* Header Section */}
                 <div className="basis-[50%]">
-                    <h3 className="text-2xl md:text-xl mb-2 leading-tight">{ticket.name}</h3>
-                    <p className="text-white/60 text-lg md:text-md leading-relaxed">{ticket.description}</p>
+                    <h3 className="text-xl md:text-xl mb-2 leading-tight">{ticket.name}</h3>
+                    <p className="text-white/60 text-lg md:text-md leading-tight">{ticket.description}</p>
                     {/* Divider 1: Custom Dashes (Edge to Edge) */}
                 <div 
                     className="h-[1px] w-auto -mx-0 md:-mx-10 mb-2 self-stretch shrink-0"
