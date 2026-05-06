@@ -45,7 +45,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
   };
 
   return (
-    <section className="py-4 text-white relative overflow-hidden">
+    <section className="py-4 md:py-12 text-white relative overflow-hidden">
       <div className="w-full">
         {/* Centered Section Title */}
         <div className="px-4 md:px-16 lg:px-20 mb-16 text-center">

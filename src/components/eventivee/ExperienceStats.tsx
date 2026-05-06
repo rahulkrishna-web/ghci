@@ -47,7 +47,7 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience-stats" className="py-4 relative overflow-hidden bg-black text-white px-4 md:px-12">
+    <section id="experience-stats" className="py-4 md:py-12 relative overflow-hidden bg-black text-white px-4 md:px-12">
         {/* Dark overlay for consistent cinematic look */}
         <div className="absolute inset-0 bg-black/60 z-0" />
         
