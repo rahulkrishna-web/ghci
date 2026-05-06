@@ -297,7 +297,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
     const d2Gap = config.divider2GapMobile || 4;
     const nSize = config.notchSizeMobile || 20;
 
-    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,0.05) ${nSize + 0.5}px, rgba(255,255,255,${config.borderOpacityMobile ?? 0.05}) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
+    const notchStaticGradientMobile = `radial-gradient(circle at 0px 50%, transparent ${nSize}px, rgba(255,255,255,0.2) ${nSize + 0.5}px, rgba(255,255,255,0.2) ${nSize + 1.5}px, transparent ${nSize + 2}px)`;
 
     return (
         <motion.div

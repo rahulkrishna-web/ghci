@@ -1187,3 +1187,7 @@
 [2026-05-06 06:27]
 - Removed custom cursor SVG overrides from `src/app/globals.css` per user request.
 [0.1 hrs]
+
+[2026-05-06 06:39]
+- Adjusted the opacity of the mobile notch stroke to 0.20 to perfectly match the updated main ticket card border opacity.
+[0.1 hrs]
