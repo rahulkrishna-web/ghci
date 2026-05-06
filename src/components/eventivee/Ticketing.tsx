@@ -305,7 +305,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.6 }}
-            className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row min-h-[300px]"
+            className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row"
             style={{
                 borderColor: `rgba(255, 255, 255, 0.20)`,
                 maskImage: `radial-gradient(circle at 0px 50%, transparent ${nSize}px, black ${nSize + 0.5}px)`,
@@ -350,7 +350,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
 
             <div className="relative z-10 flex w-full p-4 pl-8 md:p-10 ">
                 {/* Header Section */}
-                <div className="basis-[55%]">
+                <div className="basis-[50%]">
                     <h3 className="text-xl md:text-xl mb-2 leading-tight">{ticket.name}</h3>
                     <p className="text-white/60 text-lg md:text-md leading-tight">{ticket.description}</p>
                     {/* Divider 1: Custom Dashes (Edge to Edge) */}
@@ -365,9 +365,12 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 {/* Price & CTA Section */}
                 <div className="flex flex-col mr-4">
                     <div className="flex flex-col">
-                        {ticket.oldPrice && (
-                            <span className="text-white/40 text-lg line-through decoration-white/40">{ticket.oldPrice}</span>
-                        )}
+                        
+                        {ticket.oldPrice ? (
+              <span className="text-white/40 text-lg line-through decoration-white/40 leading-none h-7 flex items-end mb-1">{ticket.oldPrice}</span>
+            ) : (
+              <div className="h-2 mb-2" /> // Spacer to align prices
+            )}
                         <span className="text-4xl md:text-lg tracking-tight">{ticket.price}</span>
                     </div>
                     <p className="text-white/40 text-xs md:text-sm mb-2">{ticket.gst}</p>
@@ -398,7 +401,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 />
 
                 {/* Inclusions Section */}
-                <div className="flex basis-[44%] justify-center flex-col pl-4 pr-2">
+                <div className="flex basis-[49%] justify-center flex-col pl-4 pr-2">
                   <div>
                     <p className="text-white/50 text-lg mb-2">What&apos;s included</p>
                     <ul className="space-y-1">
