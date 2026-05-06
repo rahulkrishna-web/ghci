@@ -403,7 +403,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                 {/* Inclusions Section */}
                 <div className="flex basis-[43%] justify-center flex-col pl-4 pr-1">
                   <div>
-                    <p className="text-white/50 text-lg mb-2">What&apos;s included</p>
+                    <p className="text-white/50 text-md mb-2">What&apos;s included</p>
                     <ul className="space-y-1">
                         {ticket.features.map((feature: string, fIdx: number) => (
                             <li key={fIdx} className="flex items-start gap-3 text-[10px] md:text-lg text-white/80 leading-snug">
