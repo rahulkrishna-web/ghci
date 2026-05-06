@@ -104,7 +104,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                     </a>
                   ))}
                   {way.badge && (
-                    <div className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-[11px] md:text-[13px] font-semibold w-fit shadow-lg shadow-purple-900/20">
+                    <div className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-xs md:text-xl font-semibold w-fit shadow-lg shadow-purple-900/20">
                       {way.badge}
                     </div>
                   )}

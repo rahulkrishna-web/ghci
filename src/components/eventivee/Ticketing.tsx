@@ -249,7 +249,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
             {ticket.description}
           </p>
         </div>
-        <div className="border-t border-dashed border-white/20 py-0 w-full" />
+        {/* <div className="border-t border-dashed border-white/20 py-0 w-full" /> */}
         <div className="px-8 md:px-10">
             <div className="flex flex-col justify-end min-h-[100px] mb-2">
             {ticket.oldPrice ? (
@@ -354,13 +354,13 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                     <h3 className="text-lg md:text-xl mb-2 leading-tight">{ticket.name}</h3>
                     <p className="text-white/60 text-md md:text-md leading-tight">{ticket.description}</p>
                     {/* Divider 1: Custom Dashes (Edge to Edge) */}
-                <div 
+                {/* <div 
                     className="h-[1px] w-auto -mx-0 md:-mx-10 mb-2 self-stretch shrink-0"
                     style={{
                         backgroundImage: `repeating-linear-gradient(to right, rgba(255,255,255,1) 0, rgba(255,255,255,1) ${d1Dash}px, transparent ${d1Dash}px, transparent ${d1Dash + d1Gap}px)`,
                         opacity: config.dividerOpacityMobile ?? 0.2
                     }}
-                />
+                /> */}
 
                 {/* Price & CTA Section */}
                 <div className="flex flex-col mr-4">
