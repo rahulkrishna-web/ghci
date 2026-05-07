@@ -34,7 +34,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="flex overflow-x-auto overflow-y-hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-1 snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex items-stretch overflow-x-auto overflow-y-hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-1 snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {data.cards.map((card, idx) => {
             const Icon = IconMap[card.icon];
             return (
@@ -57,11 +57,11 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
                 <div className="absolute inset-0 bg-[#A32482]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 
                 {/* Content */}
-                <div className="absolute inset-0 p-3 pb-12 flex flex-col justify-end">
+                <div className="absolute inset-0 p-3 pb-3 flex flex-col justify-end">
                   <div className="mb-3 text-white/90 group-hover:text-white transition-colors">
                     {Icon && <Icon className="w-8 h-8 md:w-8 md:h-8" />}
                   </div>
-                  <p className="text-white text-sm md:text-xl leading-[1.3] transition-all group-hover:text-white">
+                  <p className="text-white text-md md:text-xl leading-[1.3] transition-all group-hover:text-white">
                     {card.description}
                   </p>
                 </div>

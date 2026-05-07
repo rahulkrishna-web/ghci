@@ -85,14 +85,14 @@ export default function Contact({ data }: ContactProps) {
         />
 
       <div className="w-full relative z-10">
-        <div className="flex flex-row justify-between items-start gap-4 md:gap-12 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-12 mb-12">
             
             {/* Left Side: Content (75% approx) */}
             <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="flex-1"
+                className="w-full md:flex-1"
             >
                 <h2 className="text-4xl md:text-7xl font-medium tracking-[-0.01em] mb-8 leading-tight text-white">
                     Get in <span className="bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent">Touch</span>
@@ -114,22 +114,22 @@ export default function Contact({ data }: ContactProps) {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="shrink-0 flex flex-col gap-6 items-end pt-2"
+                className="w-full md:w-auto shrink-0 flex flex-row md:flex-col gap-2 md:gap-6 items-center md:items-end pt-2 mt-8 md:mt-0"
             >
                 {/* Register Cluster */}
                 <div className="flex items-center group gap-0">
                     <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center shrink-0 z-10 transition-colors group-hover:bg-[#8e1f7c]">
-                        <img src="/icons/register-now.png" alt="Register" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
+                        <img src="/icons/Ticket.png" alt="Register" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
                     </div>
                     <a 
                         href={data.buttons[0].link} 
-                        className="h-10 md:h-16 w-28 md:w-48 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
                                 Register Now
                             </div>
-                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
                                 Register Now
                             </div>
                         </div>
@@ -143,14 +143,14 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href="#" 
-                        className="h-10 md:h-16 w-28 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
                                 <span>Subscribe to</span>
                                 <span>Newsletter</span>
                             </div>
-                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[9px] md:text-lg leading-tight text-center shrink-0">
+                            <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
                                 <span>Subscribe to</span>
                                 <span>Newsletter</span>
                             </div>

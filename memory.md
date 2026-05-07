@@ -1191,3 +1191,50 @@
 [2026-05-06 06:39]
 - Adjusted the opacity of the mobile notch stroke to 0.20 to perfectly match the updated main ticket card border opacity.
 [0.1 hrs]
+
+[2026-05-07 15:58]
+- Fixed inconsistent card heights in WhoShouldAttend by implementing items-stretch and flex-1.
+[0.2 hrs]
+
+[2026-05-07 16:05]
+- Redesigned mobile menu as a high-fidelity blurred popup overlay with spring animations.
+- Implemented backdrop-blur-2xl and rounded card aesthetic for the mobile navigation popup.
+[0.5 hrs]
+
+[2026-05-07 16:06]
+- Integrated high-fidelity button clusters (Register Now & Explore Agenda) into the mobile menu popup, matching the site-wide cinematic CTA style.
+[0.2 hrs]
+
+[2026-05-07 16:07]
+- Centered the mobile menu modal by moving it outside the nav container and using flex alignment.
+- Resolved layout constraints caused by parent transforms on the fixed overlay.
+[0.2 hrs]
+
+[2026-05-07 16:10]
+- Removed the button clusters from the mobile menu footer to streamline the modal navigation UX.
+[0.1 hrs]
+
+[2026-05-07 16:11]
+- Added scroll-padding-top to the global HTML styles to prevent the fixed navbar from overlapping section headers during anchor navigation.
+[0.1 hrs]
+
+[2026-05-07 16:16]
+- Reordered Contact section layout: moved CTA buttons below the text and aligned them horizontally on mobile to match the Hero section's aesthetic.
+[0.1 hrs]
+
+[2026-05-07 16:19]
+- Standardized the font size of CTA buttons in the Contact section to 15px (mobile) and 18px (desktop) to perfectly match the Hero section.
+[0.1 hrs]
+
+[2026-05-07 16:28]
+- Fixed visual artifacts in the Getting There card by adding a fallback background color (#2d0b26) behind the spreadsheet image.
+- Adjusted the background position of the Getting There card on mobile to center 10% for better focal point alignment.
+[0.2 hrs]
+
+[2026-05-07 16:33]
+- Restricted the Getting There card's background color (#2d0b26) and 100% size settings to mobile viewports only, reverting to default 'cover' behavior on desktop.
+[0.1 hrs]
+
+[2026-05-07 16:34]
+- Set background-repeat to 'no-repeat' for the Getting There card to prevent tiling of the spreadsheet background image.
+[0.1 hrs]

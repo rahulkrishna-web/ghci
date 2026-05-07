@@ -30,7 +30,7 @@ export default function Footer({ data }: FooterProps) {
         backgroundPosition: 'center'
     }}>
         <div className="w-full relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-16 md:gap-8 pb-20">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-8 pb-20">
                 
                 {/* Brand & Socials */}
                 <div className="flex flex-col gap-12">
@@ -57,9 +57,9 @@ export default function Footer({ data }: FooterProps) {
                 {/* Columns */}
                 <div className="flex gap-20 md:gap-32">
                     {data.columns.map((col, idx) => (
-                        <div key={idx} className="flex flex-col gap-8">
+                        <div key={idx} className="flex flex-col gap-4">
                             <h4 className="text-white text-lg font-semibold tracking-wide">{col.title}</h4>
-                            <ul className="flex flex-col gap-5">
+                            <ul className="flex flex-col gap-2">
                                 {col.links.map((link, lIdx) => (
                                     <li key={lIdx}>
                                         <a href={link.href} className="text-white/50 hover:text-white transition-colors text-[15px] font-medium tracking-tight">

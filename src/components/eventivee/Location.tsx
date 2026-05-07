@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Car, Train, Bus } from 'lucide-react';
 
@@ -18,6 +19,14 @@ type LocationProps = {
 };
 
 export default function Location({ data }: LocationProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section id="location" className="py-6 md:py-12 relative overflow-hidden text-white" style={{
       backgroundImage: 'url(/location-bg.png)',
@@ -107,9 +116,11 @@ export default function Location({ data }: LocationProps) {
           viewport={{ once: true }}
           className="relative border border-white/5 rounded-[10px] p-10 md:p-10 overflow-hidden"
           style={{
+            backgroundColor: isMobile ? '#2d0b26' : 'transparent',
             backgroundImage: 'url(/div.spreadsheet.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundSize: isMobile ? '100%' : 'cover',
+            backgroundPosition: isMobile ? 'center top' : 'center',
+            backgroundRepeat: 'no-repeat'
           }}
         >
           {/* Subtle overlay to ensure text contrast if the image is busy */}
