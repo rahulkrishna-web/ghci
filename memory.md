@@ -1238,3 +1238,7 @@
 [2026-05-07 16:34]
 - Set background-repeat to 'no-repeat' for the Getting There card to prevent tiling of the spreadsheet background image.
 [0.1 hrs]
+
+[2026-05-07 16:51]
+- Linked the 'Tickets' navbar link to the #ticketing section to ensure smooth anchor navigation to the pricing tiers.
+[0.1 hrs]

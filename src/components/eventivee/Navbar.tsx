@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'About', href: '#attendees' },
   { label: 'Agenda', href: '#' },
   { label: 'Speakers', href: '#speakers' },
-  { label: 'Tickets', href: '#pricing' },
+  { label: 'Tickets', href: '#ticketing' },
   { label: 'Contact', href: '#contact' },
 ];
 
