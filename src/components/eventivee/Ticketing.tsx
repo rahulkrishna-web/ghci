@@ -6,91 +6,100 @@ import { Shield, X, ChevronLeft, Plus, Settings, Trash2, Edit3, Type, Image as I
 // Default data as a starting point
 const defaultTickets = [
   {
-    id: 'last-year',
-    name: 'Last Year Attendees',
-    description: 'All Access 3-day pass. Offer valid till 2nd June 2026',
-    price: '₹10,000',
-    gst: '18% GST Applicable',
-    cta: 'Get the Pass',
+    id: "last-year",
+    name: "Privilege Offer",
+    description: "For GHCI 25 attendees ",
+    footnote: "Offer valid till June 2, 2026",
+    price: "₹10,000",
+    gst: "18% GST Applicable",
+    cta: "Get the Pass",
     features: [
-      'Full access to GHCI 27 (sessions, workshops & networking)',
-      '1-year AnitaB.org Global Membership',
-      'Attendee certification + digital badges (via Verix)',
-      'Virtual access available'
+      "Full access to GHCI 27 (sessions, workshops & networking)",
+      "1-year AnitaB.org Global Membership",
+      "Attendee certification + digital badges (via Verix)"
     ],
-    cardBlur: 70,
+    cardBlur: 0,
     blobsDesktop: [
-      { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-      { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-      { color: '#223852', width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-      { color: '#223852', width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-      { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
     ],
     blobsMobile: [
-      { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-      { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 1 },
-      { color: '#223852', width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 1 },
-      { color: '#223852', width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 1 },
-      { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -100, opacity: 1 }
+    ],
+    blobs: [
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 }
     ]
   },
   {
-    id: 'super-early',
-    name: 'Super Early',
-    description: 'All Access 3-day pass. Offer valid till 19th June 2026',
-    price: '₹11,000',
-    oldPrice: '₹15,000',
-    gst: '18% GST Applicable',
-    cta: 'Get the Pass',
+    id: "super-early",
+    name: "Super Early Bird",
+    description: "All Access 3-day pass. ",
+    footnote: "Offer valid till June 19, 2026",
+    price: "₹11,000",
+    oldPrice: "₹15,000",
+    gst: "18% GST Applicable",
+    cta: "Get the Pass",
     features: [
-      'Full access to GHCI 27 (sessions, workshops & networking)',
-      '1-year AnitaB.org Global Membership',
-      'Attendee certification + digital badges (via Verix)',
-      'Virtual access available'
+      "Full access to GHCI 27 (sessions, workshops & networking)",
+      "1-year AnitaB.org Global Membership",
+      "Attendee certification + digital badges (via Verix)"
     ],
     cardBlur: 70,
     blobsDesktop: [
-        { color: '#a32482', width: 52, height: 82, x: 67, y: -37, opacity: 1 },
-        { color: '#223852', width: 40, height: 65, x: -5, y: 14, opacity: 0.6 },
-        { color: '#223852', width: 27, height: 69, curve: 50, x: 51, y: 31, opacity: 0.5 },
-        { color: '#223852', width: 38, height: 67, curve: 47, x: 78, y: 60, opacity: 0.5 },
-        { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: 39, opacity: 1 }
+      { color: "#a32482", width: 52, height: 82, x: 67, y: -37, opacity: 1 },
+      { color: "#223852", width: 40, height: 65, x: -5, y: 14, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 51, y: 31, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 78, y: 60, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: 39, opacity: 1 }
     ],
     blobsMobile: [
-        { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-        { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-        { color: '#223852', width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-        { color: '#223852', width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-        { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: -27, opacity: 1 }
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -27, opacity: 1 }
+    ],
+    blobs: [
+      { color: "#22021D", width: 80, height: 60, x: 10, y: 40, opacity: 0.8 },
+      { color: "#A32482", width: 50, height: 40, x: 60, y: 70, opacity: 0.5 }
     ]
   },
   {
-    id: 'regular',
-    name: 'Regular',
-    description: 'All Access 3-day pass. Offer valid till 19th June 2026',
-    price: '₹15,000',
-    gst: '18% GST Applicable',
-    cta: 'Get the Pass',
+    id: "regular",
+    name: "Regular",
+    description: "Academia / Faculty / Startup / Return-to-Work ",
+    footnote: "Offer valid till June 19, 2026",
+    price: "₹9,000",
+    gst: "18% GST Applicable",
+    cta: "Get the Pass",
     features: [
-      'Full access to GHCI 27 (sessions, workshops & networking)',
-      '1-year AnitaB.org Global Membership',
-      'Attendee certification + digital badges (via Verix)',
-      'Virtual access available'
+      "Full access to GHCI 27 (sessions, workshops & networking)",
+      "1-year AnitaB.org Global Membership",
+      "Attendee certification + digital badges (via Verix)"
     ],
     cardBlur: 70,
     blobsDesktop: [
-        { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-        { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-        { color: '#223852', width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-        { color: '#223852', width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-        { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
     ],
     blobsMobile: [
-        { color: '#a32482', width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-        { color: '#223852', width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-        { color: '#223852', width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-        { color: '#223852', width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-        { color: '#22021d', width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
+    ],
+    blobs: [
+      { color: "#4284c2", width: 40, height: 30, x: -10, y: -5, opacity: 0.3 },
+      { color: "#A32482", width: 60, height: 40, x: 40, y: 10, opacity: 0.4 }
     ]
   },
 ];
@@ -274,9 +283,9 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
         </div>
         <div className="border-t border-dashed border-white/20 my-0 w-full" />
 
-        <div className="flex-1 p-8 md:p-10">
+        <div className="flex-1 p-8 md:p-10 pb-4 md:pb-4">
           <p className="text-white/50 text-2xl  mb-6">What&apos;s included</p>
-          <ul className="space-y-4">
+          <ul className="space-y-4 mb-8">
             {ticket.features.map((feature: string, fIdx: number) => (
               <li key={fIdx} className="flex items-start gap-3 text-sm md:text-base text-white/80">
                 <span className="text-white text-2xl mt-[-2px]">+</span>
@@ -284,6 +293,11 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
               </li>
             ))}
           </ul>
+          {ticket.footnote && (
+            <p className="text-white text-xs md:text-sm text-center mt-auto border-t border-white/5 pt-4 uppercase tracking-widest font-bold">
+                {ticket.footnote}
+            </p>
+          )}
         </div>
       </div>
     </motion.div>
@@ -402,9 +416,9 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
 
                 {/* Inclusions Section */}
                 <div className="flex basis-[43%] justify-center flex-col pl-4 pr-1">
-                  <div>
+                  <div className="flex flex-col h-full">
                     <p className="text-white/50 text-md mb-2">What&apos;s included</p>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 mb-4">
                         {ticket.features.map((feature: string, fIdx: number) => (
                             <li key={fIdx} className="flex items-start gap-3 text-[10px] md:text-lg text-white/80 leading-snug">
                                 <span className="text-white text-lg leading-none">+</span>
@@ -412,6 +426,11 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                             </li>
                         ))}
                     </ul>
+                    {ticket.footnote && (
+                        <p className="text-white/30 text-[8px] text-center mt-auto border-t border-white/5 pt-2 uppercase tracking-widest font-bold">
+                            {ticket.footnote}
+                        </p>
+                    )}
                     </div>
                 </div>
             </div>
@@ -433,18 +452,18 @@ export default function Ticketing() {
     tickets: [
       {
         id: "last-year",
-        name: "Last Year Attendees",
-        description: "All Access 3-day pass. Offer valid till 2nd June 2026",
+        name: "Privilege Offer",
+        description: "For GHCI 25 attendees ",
+        footnote: "Offer valid till June 2, 2026",
         price: "₹10,000",
         gst: "18% GST Applicable",
         cta: "Get the Pass",
         features: [
           "Full access to GHCI 27 (sessions, workshops & networking)",
           "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)",
-          "Virtual access available"
+          "Attendee certification + digital badges (via Verix)"
         ],
-        cardBlur: 70,
+        cardBlur: 0,
         blobsDesktop: [
           { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
           { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
@@ -463,8 +482,9 @@ export default function Ticketing() {
       },
       {
         id: "super-early",
-        name: "Super Early",
-        description: "All Access 3-day pass. Offer valid till 19th June 2026",
+        name: "Super Early Bird",
+        description: "All Access 3-day pass. ",
+        footnote: "Offer valid till June 19, 2026",
         price: "₹11,000",
         oldPrice: "₹15,000",
         gst: "18% GST Applicable",
@@ -472,8 +492,7 @@ export default function Ticketing() {
         features: [
           "Full access to GHCI 27 (sessions, workshops & networking)",
           "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)",
-          "Virtual access available"
+          "Attendee certification + digital badges (via Verix)"
         ],
         cardBlur: 70,
         blobsDesktop: [
@@ -498,15 +517,15 @@ export default function Ticketing() {
       {
         id: "regular",
         name: "Regular",
-        description: "All Access 3-day pass. Offer valid till 19th June 2026",
-        price: "₹15,000",
+        description: "Academia / Faculty / Startup / Return-to-Work ",
+        footnote: "Offer valid till June 19, 2026",
+        price: "₹9,000",
         gst: "18% GST Applicable",
         cta: "Get the Pass",
         features: [
           "Full access to GHCI 27 (sessions, workshops & networking)",
           "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)",
-          "Virtual access available"
+          "Attendee certification + digital badges (via Verix)"
         ],
         cardBlur: 70,
         blobsDesktop: [
@@ -532,14 +551,14 @@ export default function Ticketing() {
     bgType: "color" as "color" | "gradient",
     bgColor: "#000000",
     bgGradient: "linear-gradient(180deg, #050510 0%, #000 100%)",
-    titleText: "What You Get With Your Ticket",
+    titleText: "Choose Your Pass",
     titleColor: "#FFFFFF",
     bgShineHoverOpacity: 0.05,
     bgShineDefaultOpacity: 0,
     borderShineHoverOpacity: 0.55,
     borderShineDefaultOpacity: 0.15,
     borderOpacityDesktop: 0.1,
-    borderOpacityMobile: 0.8,
+    borderOpacityMobile: 0.05,
     notchSizeDesktop: 46,
     notchSizeMobile: 20,
     dividerOpacityDesktop: 0.25,
@@ -577,10 +596,12 @@ export default function Ticketing() {
                     // We only spread parsedTicket, but we don't want its old 'blobs' to take precedence.
                     // Wait, if we just do { ...defaultTicket, ...parsedTicket }, parsedTicket's blobsDesktop will be undefined if it doesn't exist.
                     // So we manually pick the right blobsDesktop.
+                    // Ensure "Virtual access available" is always removed even from cached settings
+                    const features = (parsedTicket.features || defaultTicket.features).filter((f: string) => f !== 'Virtual access available');
                     const blobsDesktop = parsedTicket.blobsDesktop || defaultTicket.blobsDesktop;
                     const blobsMobile = parsedTicket.blobsMobile || defaultTicket.blobsMobile;
                     
-                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile };
+                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features };
                 });
                 setConfig({ ...DEFAULT_CONFIG, ...parsed, tickets: mergedTickets });
             } else {
@@ -771,13 +792,25 @@ export default function Ticketing() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center mb-12 md:mb-20">
           {tickets.map((ticket, idx) => (
             isMobile 
               ? <TicketingCardMobile key={ticket.id} ticket={ticket} idx={idx} config={config} />
               : <TicketingCard key={ticket.id} ticket={ticket} idx={idx} config={config} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center"
+        >
+          <p className="text-white text-sm md:text-xl">
+            For registration or discount code queries, contact <a href="mailto:support-ghci@anitabindia.org" className="text-white hover:text-[#A32482] transition-colors underline underline-offset-4">support-ghci@anitabindia.org</a>
+          </p>
+        </motion.div>
       </div>
 
       {/* Advanced Debug Settings Panel */}

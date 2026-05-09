@@ -3,11 +3,13 @@ copyright: "© 2027 GHCI. All rights reserved."
 designedBy: "AnitaB.org India"
 socialLinks:
   - icon: "instagram"
-    link: "#"
+    link: "https://www.instagram.com/anitab.orgindia/"
   - icon: "linkedin"
-    link: "#"
+    link: "https://www.linkedin.com/company/anitaborg-india"
   - icon: "twitter"
-    link: "#"
+    link: "https://twitter.com/AnitaBorg_India"
+  - icon: "facebook"
+    link: "https://www.facebook.com/anitab.india.98"
 columns:
   - title: "GHCI"
     links:

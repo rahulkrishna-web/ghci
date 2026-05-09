@@ -1302,3 +1302,31 @@
 [2026-05-09 13:56]
 - Restored the subtitle and refined content hierarchy in the PartnerWithUs section.
 [0.1 hrs]
+
+[2026-05-09 14:00]
+- Added social media links (Twitter, Instagram, Facebook, LinkedIn) to footer.md and updated Footer.tsx to support Facebook icon.
+[0.1 hrs]
+
+[2026-05-09 14:04]
+- Updated Ticketing section: changed heading to "Choose Your Pass", moved "Offer valid till" to a centralized footnote at the bottom of cards, updated date formatting to US English, and removed "Virtual access available".
+[0.1 hrs]
+
+[2026-05-09 14:06]
+- Explicitly filtered out "Virtual access available" from all tickets, including those loaded from cached browser settings, to ensure consistent UI across sessions.
+[0.1 hrs]
+
+[2026-05-09 14:07]
+- Fixed ReferenceError in Ticketing.tsx by restoring definitions for blobsDesktop and blobsMobile in the merge logic.
+[0.1 hrs]
+
+[2026-05-09 14:18]
+- Applied a comprehensive ticketing configuration update, including tier name changes (e.g., "Privilege Offer"), revised pricing, and specific visual parameters like notch sizes and background opacities.
+[0.1 hrs]
+
+[2026-05-09 14:19]
+- Added support contact information ("For registration or discount code queries, contact support-ghci@anitabindia.org") to the bottom of all ticket cards for both desktop and mobile views.
+[0.1 hrs]
+
+[2026-05-09 14:20]
+- Moved the support contact message from individual ticket cards to the section level, centrally aligned below the ticket grid for a cleaner presentation.
+[0.1 hrs]
