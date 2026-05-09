@@ -228,8 +228,6 @@ export default function Hero({ data }: HeroProps) {
                 </div>
                 <a
                     href={data.primaryButtonLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
                 >
                     <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
@@ -243,8 +241,8 @@ export default function Hero({ data }: HeroProps) {
                 </a>
             </div>
 
-            {/* Agenda Cluster */}
-            <div className="flex items-center group gap-0 justify-center">
+            {/* Agenda Cluster - Hidden for now */}
+            {/* <div className="flex items-center group gap-0 justify-center">
                 <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white border border-white/10 flex items-center justify-center group-hover:bg-neutral-200 transition-all z-10">
                     <img src="/icons/calender.png" alt="Calendar" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
                 </div>
@@ -261,7 +259,7 @@ export default function Hero({ data }: HeroProps) {
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> */}
         </motion.div>
       </div>
 

@@ -1,10 +1,10 @@
 'use client';
 
 const items = [
-  'Limited Tickets Available',
-  'Limited Tickets Available',
-  'Limited Tickets Available',
-  'Limited Tickets Available',
+  'Super Early Bird Now Live • Limited Spots',
+  'Super Early Bird Now Live • Limited Spots',
+  'Super Early Bird Now Live • Limited Spots',
+  'Super Early Bird Now Live • Limited Spots',
 ];
 
 export default function Marquee() {

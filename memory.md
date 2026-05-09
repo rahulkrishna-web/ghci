@@ -1242,3 +1242,63 @@
 [2026-05-07 16:51]
 - Linked the 'Tickets' navbar link to the #ticketing section to ensure smooth anchor navigation to the pricing tiers.
 [0.1 hrs]
+
+[2026-05-09 13:40]
+- Updated footer links for "Event Terms & Conditions" and "Code of Conduct" in src/content/footer.md.
+[0.1 hrs]
+
+[2026-05-09 13:41]
+- Added "Tech Expo featuring cutting-edge demos and innovations" to the 'What to expect' section in src/content/what-to-expect.md.
+[0.1 hrs]
+
+[2026-05-09 13:42]
+- Updated marquee text in Marquee.tsx to "Super Early Bird Now Live • Limited Spots".
+[0.1 hrs]
+
+[2026-05-09 13:43]
+- Updated FAQ text in FAQ.tsx: replaced "non-binary people" with "allies".
+[0.1 hrs]
+
+[2026-05-09 13:43]
+- Updated footer links: "Tickets" now points to #ticketing and "Sponsorship" points to #partner in src/content/footer.md.
+[0.1 hrs]
+
+[2026-05-09 13:44]
+- Updated FAQ text in FAQ.tsx: revised answer for "Will there be a virtual option?".
+[0.1 hrs]
+
+[2026-05-09 13:45]
+- Updated FAQ text in FAQ.tsx: revised answer for "Can I refund or transfer my ticket?".
+[0.1 hrs]
+
+[2026-05-09 13:46]
+- Hid the "Tickets starting at ₹3,000" banner in src/components/eventivee/Contact.tsx.
+[0.1 hrs]
+
+[2026-05-09 13:47]
+- Replaced "GHCI Ambassadors" tile with "Abie Awards" in src/content/ways-to-involve.md.
+[0.1 hrs]
+
+[2026-05-09 13:49]
+- Updated "Call For Jurors" in ways-to-involve.md: moved to end, updated link to CFJ page, removed "View program details" button, and set type to secondary.
+[0.1 hrs]
+
+[2026-05-09 13:50]
+- Changed "Advancing Inclusion Program" to primary type in ways-to-involve.md to align with the grid layout.
+[0.1 hrs]
+
+[2026-05-09 13:52]
+- Updated Hero section: hid "Explore Agenda" button and updated "Register Now" to link to #ticketing section.
+[0.1 hrs]
+
+[2026-05-09 13:52]
+- Updated "Ethics in Practice" track title in explore-tracks.md: removed the word "Policy".
+[0.1 hrs]
+
+[2026-05-09 13:55]
+- Refined PartnerWithUs section: centralized heading and description, normalized text sizes, and moved CTA button below the text.
+[0.1 hrs]
+
+[2026-05-09 13:56]
+- Restored the subtitle and refined content hierarchy in the PartnerWithUs section.
+[0.1 hrs]

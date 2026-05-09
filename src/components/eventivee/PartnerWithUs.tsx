@@ -33,66 +33,62 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
     }}>
      
       <div className="w-full relative z-10 px-4 md:px-12">
-            {/* Header Row */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end text-left md:text-left gap-4 md:gap-8">
-                <div className="max-w-6xl">
-                    <h2 className="text-4xl md:text-6xl text-white tracking-tight font-semibold mb-2 md:mb-4">
-                        {data.sectionName}
-                    </h2>
-                    <h4 className="text-white text-sm md:text-4xl font-medium max-w-4xl mb-2 md:mb-4">
-                        {data.title}
-                    </h4>
-                    
-                </div>
+            {/* Header / Intro (Centralized) */}
+            <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-12 md:mb-20">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-6xl text-white tracking-tight font-normal mb-6"
+                >
+                    {data.sectionName}
+                </motion.h2>
+                
+                <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-white text-lg md:text-3xl font-medium leading-relaxed mb-6"
+                >
+                    {data.title}
+                </motion.p>
 
-                {/* CTA Button (Desktop) */}
-                <div className="hidden md:flex justify-start md:justify-end items-center mb-4">
-                    <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
-                            <UserPlus className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                        </div>
-                        <a
-                            href={data.ctaLink}
-                            className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
-                        >
-                            <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                                <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
-                                    {data.ctaText}
-                                </div>
-                                <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
-                                    {data.ctaText}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.15 }}
+                    className="text-white/70 text-base md:text-xl leading-relaxed mb-10 max-w-3xl"
+                >
+                    {data.description}
+                </motion.p>
 
-            {/* Description */}
-            <p className="text-white text-lg md:text-[28px] max-w-4xl mx-0 md:mx-0 text-left md:text-left mb-12 leading-tight opacity-100 font-medium">
-                {data.description}
-            </p>
-
-            {/* CTA Button (Mobile Only) */}
-            <div className="flex md:hidden justify-start items-center mb-12">
-                <div className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95">
-                    <div className="w-10 h-10 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
-                        <UserPlus className="w-5 h-5 text-white" />
+                {/* CTA Button (Centralized) */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="flex items-center group cursor-pointer z-10 transition-transform active:scale-95"
+                >
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#A32482] transition-colors z-10">
+                        <UserPlus className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
                     <a
                         href={data.ctaLink}
-                        className="h-10 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
+                        className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                            <div className="h-full w-full flex items-center justify-center px-6 text-sm shrink-0">
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
                                 {data.ctaText}
                             </div>
-                            <div className="h-full w-full flex items-center justify-center px-6 text-sm shrink-0">
+                            <div className="h-full w-full flex items-center justify-center px-6 md:px-8 text-base md:text-lg shrink-0">
                                 {data.ctaText}
                             </div>
                         </div>
                     </a>
-                </div>
+                </motion.div>
             </div>
 
             {/* Benefits Grid */}

@@ -5,4 +5,5 @@ points:
   - "Keynotes from industry leaders"
   - "Hands-on workshops and hackathons"
   - "Panels across AI, leadership, and innovation"
+  - "Tech Expo featuring cutting-edge demos and innovations"
 ---

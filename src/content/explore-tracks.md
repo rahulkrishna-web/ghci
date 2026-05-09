@@ -11,7 +11,7 @@ tracks:
     description: "Turn ideas into ventures, from pitch to product to scale, and learn what it takes to build and grow a startup."
   - title: "The Leadership Blueprint: Insight that Influences"
     description: "A practical guide to leadership in a complex landscape, focusing on the AI era for policy, ethics, bias, isolation, and decision-making."
-  - title: "Ethics in Practice: People, Policy & Purpose"
+  - title: "Ethics in Practice: People & Purpose"
     description: "Engage with real challenges around fairness, bias, and responsibility, and learn how to turn ethical thinking into action."
   - title: "Unconference"
     description: "Less structure, more connection. Experience the human side of the conference through stories, conversations, and shared moments."

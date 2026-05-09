@@ -160,8 +160,8 @@ export default function Contact({ data }: ContactProps) {
             </motion.div>
         </div>
 
-        {/* Bottom Banner */}
-        <motion.div
+        {/* Bottom Banner - Hidden for now */}
+        {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -178,7 +178,7 @@ export default function Contact({ data }: ContactProps) {
                     Early Bird pricing available for a limited time
                 </p>
             </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Debug Settings Panel (Toggle with Ctrl+Alt+C) */}
         {showSettings && (

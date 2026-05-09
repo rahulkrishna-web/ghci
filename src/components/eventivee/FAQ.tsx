@@ -6,7 +6,7 @@ import { Plus } from 'lucide-react';
 const faqs = [
   {
     q: 'Who should attend GHCI?',
-    a: "GHCI is designed for women and non-binary people in technology, including students, professionals, industry leaders, and researchers. Anyone looking to grow their career, network, and contribute to the tech community is welcome.",
+    a: "GHCI is designed for women and allies in technology, including students, professionals, industry leaders, and researchers. Anyone looking to grow their career, network, and contribute to the tech community is welcome.",
   },
   {
     q: 'Are student tickets available?',
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: 'Can I refund or transfer my ticket?',
-    a: "Tickets are non-refundable. However, you can transfer your registration to another colleague or peer up to 15 days before the event. Please contact our support team for assistance.",
+    a: "Tickets are non-refundable. However, you can transfer your registration to another colleague or peer until December 15, 2026. Please contact our support team for assistance.",
   },
   {
     q: 'What does the ticket include?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'Will there be a virtual option?',
-    a: 'GHCI 2027 is planned as an in-person event to maximize networking and interaction. We will provide highlights and recorded sessions for selected tracks post-event.',
+    a: 'Yes, a virtual option will also be available, with registrations opening soon.',
   },
 ];
 
