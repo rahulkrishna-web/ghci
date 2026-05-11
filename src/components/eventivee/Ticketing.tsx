@@ -818,9 +818,9 @@ export default function Ticketing() {
       "name": "Virtual",
       "description": "Access GHCI 27 virtually from anywhere",
       "footnote": "",
-      "price": "Coming soon",
+      "price": "Launching soon",
       "gst": "",
-      "cta": "Coming soon",
+      "cta": "Launching soon",
       "disabled": true,
       "features": [
         "Full access to GHCI 27, including sessions, workshops, and networking",
