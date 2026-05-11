@@ -1364,4 +1364,5 @@
 - Optimized card proportions and whitespace: reduced overall height to `680px`, tightened section heights (Header: `140px`, Price/CTA: `170px`, Footer: `60px`), and adjusted font sizes for a more compact, high-density editorial feel.
 - Updated Virtual pass status text from "Coming soon" to "Launching soon" for both price and CTA.
 - Configured the site to use `favicon.png` from the public folder via Next.js metadata.
-[2.1 hrs]
+- Updated the 'Register Now' button in the Navbar (desktop and mobile) to link to the `#ticketing` section for smoother internal navigation.
+[2.2 hrs]

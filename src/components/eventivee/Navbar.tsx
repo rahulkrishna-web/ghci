@@ -61,9 +61,7 @@ export default function Navbar() {
             ))}
             
             <a
-              href="https://konfhub.com/ghci-2027"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#ticketing"
               className="h-10 inline-flex flex-col rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95 overflow-hidden group"
             >
               <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
@@ -153,9 +151,7 @@ export default function Navbar() {
                    transition={{ delay: 0.4 }}
                 >
                   <a
-                    href="https://konfhub.com/ghci-2027"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#ticketing"
                     onClick={() => setIsOpen(false)}
                     className="w-full py-5 rounded-full bg-white text-black font-bold text-xl text-center block active:scale-95 transition-transform"
                   >
