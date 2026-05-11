@@ -1363,4 +1363,5 @@
 - Finalized Ticketing layout resilience: applied `flex-shrink-0` to all fixed-height containers (header, price, footer) to prevent compression on cards with more content (like Virtual), ensuring perfect cross-tier alignment.
 - Optimized card proportions and whitespace: reduced overall height to `680px`, tightened section heights (Header: `140px`, Price/CTA: `170px`, Footer: `60px`), and adjusted font sizes for a more compact, high-density editorial feel.
 - Updated Virtual pass status text from "Coming soon" to "Launching soon" for both price and CTA.
-[2.0 hrs]
+- Configured the site to use `favicon.png` from the public folder via Next.js metadata.
+[2.1 hrs]
