@@ -75,7 +75,7 @@ export default function FAQ() {
                   >
                     <div className="px-7 pb-7 pt-0">
                         <div className="h-[1px] w-full bg-white/10 mb-6" />
-                        <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
+                        <p className="text-white/50 text-lg leading-relaxed">
                           {faq.a}
                         </p>
                     </div>

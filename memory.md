@@ -1365,4 +1365,5 @@
 - Updated Virtual pass status text from "Coming soon" to "Launching soon" for both price and CTA.
 - Configured the site to use `favicon.png` from the public folder via Next.js metadata.
 - Updated the 'Register Now' button in the Navbar (desktop and mobile) to link to the `#ticketing` section for smoother internal navigation.
-[2.2 hrs]
+- Removed the `max-w-2xl` constraint from the FAQ answer paragraphs to allow full-width text expansion on desktop.
+[2.3 hrs]
