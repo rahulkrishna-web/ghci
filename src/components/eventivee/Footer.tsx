@@ -40,7 +40,7 @@ export default function Footer({ data }: FooterProps) {
                     <img 
                       src="/ghci27-logo.png" 
                       alt="GHCI 2027" 
-                      className="h-16 w-auto"
+                      className="h-24 w-auto object-contain"
                     />
                     
                     <div className="flex flex-col gap-4">
@@ -83,7 +83,7 @@ export default function Footer({ data }: FooterProps) {
             <img 
               src="/GHCI.svg" 
               alt="GHCI Watermark" 
-              className="w-[100%] max-w-[1400px] h-auto translate-y-[10%] opacity-100"
+              className="w-[100%] max-w-[1400px] h-auto object-contain translate-y-[10%] opacity-100"
             />
         </div>
     </footer>

@@ -12,6 +12,7 @@ import Schedule from '@/components/eventivee/Schedule';
 import WaysToInvolve from '@/components/eventivee/WaysToInvolve';
 import Perks from '@/components/eventivee/Perks';
 import PartnerWithUs from '@/components/eventivee/PartnerWithUs';
+import TrustedBy from '@/components/eventivee/TrustedBy';
 import Location from '@/components/eventivee/Location';
 import TicketPerks from '@/components/eventivee/TicketPerks';
 import Contact from '@/components/eventivee/Contact';
@@ -57,6 +58,7 @@ export default function EventiveePage() {
         <div id="expect">{expectData && <WhatToExpect data={expectData as any} />}</div>
       </section>
       
+      <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
       <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
       <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
       <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
@@ -66,6 +68,8 @@ export default function EventiveePage() {
       
       {/* New Ticketing Section */}
       <Ticketing />
+
+
       
       <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
       <div id="faq"><FAQ /></div>

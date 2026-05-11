@@ -1330,3 +1330,18 @@
 [2026-05-09 14:20]
 - Moved the support contact message from individual ticket cards to the section level, centrally aligned below the ticket grid for a cleaner presentation.
 [0.1 hrs]
+
+[2026-05-11 13:03]
+- Reverted Ticketing section move to its original position.
+- Relocated the 'Partner With Us' section (containing the 'Trusted By' logo carousel) to sit directly above the Past Speakers (SpeakerGrid) section in `page.tsx`.
+[0.1 hrs]
+
+[2026-05-11 13:05]
+- Extracted the 'Trusted By' logo carousel from `PartnerWithUs` into a separate `TrustedBy` component.
+- Relocated the new `TrustedBy` section to sit directly above the Past Speakers (SpeakerGrid) section in `page.tsx`.
+- Reverted the rest of the `PartnerWithUs` section to its original position after `WaysToInvolve`.
+[0.2 hrs]
+
+[2026-05-11 13:11]
+- Fixed logo stretching in the footer by adding `object-contain` to both the primary logo and the large background watermark.
+[0.1 hrs]
