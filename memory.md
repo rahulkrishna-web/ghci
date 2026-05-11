@@ -1366,4 +1366,9 @@
 - Configured the site to use `favicon.png` from the public folder via Next.js metadata.
 - Updated the 'Register Now' button in the Navbar (desktop and mobile) to link to the `#ticketing` section for smoother internal navigation.
 - Removed the `max-w-2xl` constraint from the FAQ answer paragraphs to allow full-width text expansion on desktop.
-[2.3 hrs]
+- Standardized horizontal padding to `md:px-13` across all major sections (Hero, FAQ, Contact, TicketPerks, Footer, and Ticketing) to ensure a unified page width that aligns perfectly with the navbar.
+- Updated the site title to "GHCI 2027" and configured the `favicon.png` for a complete branding refresh.
+- Updated ticket offer deadlines: Privilege Offer (August 2, 2026), Super Early Bird (June 14, 2026), and removed the deadline for the Regular tier.
+- Fixed an issue where `localStorage` was overwriting new deadlines by prioritizing `DEFAULT_CONFIG` footnotes during hydration.
+- Removed the "Agenda" link from the footer and updated the Facebook social link to the official AnitaBorg India page.
+[2.8 hrs]

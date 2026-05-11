@@ -9,7 +9,7 @@ const defaultTickets = [
     id: "last-year",
     name: "Privilege Offer",
     description: "For GHCI 25 attendees ",
-    footnote: "Offer valid till June 2, 2026",
+    footnote: "Offer valid till August 2, 2026",
     price: "₹10,000",
     gst: "18% GST Applicable",
     cta: "Get the Pass",
@@ -39,7 +39,7 @@ const defaultTickets = [
     id: "super-early",
     name: "Super Early Bird",
     description: "All Access 3-day pass. ",
-    footnote: "Offer valid till June 19, 2026",
+    footnote: "Offer valid till June 14, 2026",
     price: "₹11,000",
     oldPrice: "₹15,000",
     gst: "18% GST Applicable",
@@ -73,7 +73,7 @@ const defaultTickets = [
     id: "regular",
     name: "Regular",
     description: "Academia / Faculty / Startup / Return-to-Work ",
-    footnote: "Offer valid till June 19, 2026",
+    footnote: "",
     price: "₹9,000",
     gst: "18% GST Applicable",
     cta: "Get the Pass",
@@ -474,7 +474,7 @@ export default function Ticketing() {
       "id": "last-year",
       "name": "Privilege Offer",
       "description": "For GHCI 25 attendees ",
-      "footnote": "Offer valid till June 2, 2026",
+      "footnote": "Offer valid till August 2, 2026",
       "price": "₹10,000",
       "gst": "18% GST Applicable",
       "cta": "Get the Pass",
@@ -570,7 +570,7 @@ export default function Ticketing() {
       "id": "super-early",
       "name": "Super Early Bird",
       "description": "",
-      "footnote": "Offer valid till June 19, 2026",
+      "footnote": "Offer valid till June 14, 2026",
       "price": "₹11,000",
       "oldPrice": "₹15,000",
       "gst": "18% GST Applicable",
@@ -694,7 +694,7 @@ export default function Ticketing() {
       "id": "regular",
       "name": "Academia / Faculty / Startup / Return-to-Work ",
       "description": "",
-      "footnote": "Offer valid till June 19, 2026",
+      "footnote": "",
       "price": "₹9,000",
       "gst": "18% GST Applicable",
       "cta": "Get the Pass",
@@ -988,7 +988,7 @@ export default function Ticketing() {
                     const blobsDesktop = parsedTicket.blobsDesktop || defaultTicket.blobsDesktop;
                     const blobsMobile = parsedTicket.blobsMobile || defaultTicket.blobsMobile;
                     
-                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features };
+                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features, footnote: defaultTicket.footnote };
                 });
 
                 // Append any new default tickets that aren't in localStorage
@@ -1168,7 +1168,7 @@ export default function Ticketing() {
   return (
     <section 
         id="ticketing" 
-        className="py-6 md:py-12 text-white px-6 md:px-12 relative overflow-hidden"
+        className="py-6 md:py-12 text-white px-6 md:px-13 relative overflow-hidden"
         style={{
             background: config.bgType === 'gradient' ? config.bgGradient : config.bgColor
         }}

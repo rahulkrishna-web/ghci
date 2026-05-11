@@ -9,14 +9,12 @@ socialLinks:
   - icon: "twitter"
     link: "https://twitter.com/AnitaBorg_India"
   - icon: "facebook"
-    link: "https://www.facebook.com/anitab.india.98"
+    link: "https://www.facebook.com/p/AnitaBorg-India-61557310412390/"
 columns:
   - title: "GHCI"
     links:
       - label: "Speakers"
         href: "#speakers"
-      - label: "Agenda"
-        href: "#schedule"
       - label: "Venue"
         href: "#location"
       - label: "Tickets"

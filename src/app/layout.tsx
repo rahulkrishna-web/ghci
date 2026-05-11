@@ -29,7 +29,7 @@ const proximaNova = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "GHCI 2027 Microsite",
+  title: "GHCI 2027",
   description: "Official microsite for Grace Hopper Celebration India 2027",
   icons: {
     icon: "/favicon.png",

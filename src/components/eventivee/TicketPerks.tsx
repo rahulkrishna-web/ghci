@@ -10,7 +10,7 @@ type TicketPerksProps = {
 
 export default function TicketPerks({ data }: TicketPerksProps) {
   return (
-    <section className="py-24 bg-black text-white px-4 md:px-40">
+    <section className="py-24 bg-black text-white px-4 md:px-13">
       <div className="w-full flex flex-col md:flex-row items-center justify-between gap-16">
         
         {/* Left Side: Title */}

@@ -27,7 +27,7 @@ export default function Footer({ data }: FooterProps) {
   if (!data) return null;
 
   return (
-    <footer className="pt-24 pb-0 bg-black text-white px-4 md:px-40 relative overflow-hidden flex flex-col min-h-[600px] justify-between" style={{
+    <footer className="pt-24 pb-0 bg-black text-white px-4 md:px-13 relative overflow-hidden flex flex-col min-h-[600px] justify-between" style={{
         backgroundImage: 'url(/footer-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center'

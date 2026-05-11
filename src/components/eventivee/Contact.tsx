@@ -63,7 +63,7 @@ export default function Contact({ data }: ContactProps) {
             '--x': xPx,
             '--y': yPx
         } as any}
-        className="py-6 md:py-24 bg-black text-white px-4 md:px-40 border-t border-white/[0.05] relative overflow-hidden group/contact"
+        className="py-6 md:py-24 bg-black text-white px-4 md:px-13 border-t border-white/[0.05] relative overflow-hidden group/contact"
     >
         {/* Halftone Overlay */}
         <div 
