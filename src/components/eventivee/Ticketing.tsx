@@ -157,7 +157,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
-      className="relative w-full h-full min-h-[600px] rounded-[2.5rem] overflow-hidden group flex flex-col"
+      className="relative w-full h-[680px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
         maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
         WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
@@ -252,52 +252,67 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
 
       {/* Content */}
       <div className="relative z-10  flex flex-col h-full flex-1">
-        <div className="p-8 md:p-10 pt-16 md:pt-16 pb-2 md:pb-2">
-          <h3 className="text-3xl md:text-4xl mb-3">{ticket.name}</h3>
-          <p className="text-white/60 text-xl md:text-xl ">
-            {ticket.description}
-          </p>
+        <div className="p-8 md:p-10 pt-16 md:pt-14 pb-2 md:pb-2 h-[140px] flex flex-col justify-center flex-shrink-0">
+          <h3 className="text-xl md:text-2xl mb-2 leading-tight">{ticket.name}</h3>
+          {ticket.description && (
+            <p className="text-white/60 text-sm md:text-base leading-snug line-clamp-2">
+              {ticket.description}
+            </p>
+          )}
         </div>
         {/* <div className="border-t border-dashed border-white/20 py-0 w-full" /> */}
-        <div className="px-8 md:px-10">
-            <div className="flex flex-col justify-end min-h-[100px] mb-2">
+        <div className="px-8 md:px-10 h-[170px] flex flex-col justify-end pb-6 flex-shrink-0">
+            <div className="flex flex-col justify-end h-[80px] mb-2">
             {ticket.oldPrice ? (
-              <span className="text-white/40 text-xl font-medium line-through decoration-white/40 leading-none h-7 flex items-end mb-1">{ticket.oldPrice}</span>
+              <span className="text-white/40 text-lg font-medium line-through decoration-white/40 leading-none h-6 flex items-end mb-1">{ticket.oldPrice}</span>
             ) : (
-              <div className="h-4 mb-4" /> // Spacer to align prices
+              <div className="h-6 mb-1" /> // Spacer
             )}
-            <span className="text-2xl md:text-6xl leading-none">{ticket.price}</span>
+            <span className={`leading-none ${ticket.price.toLowerCase().includes('soon') ? 'text-xl md:text-2xl text-white/60' : 'text-xl md:text-4xl'}`}>
+              {ticket.price}
+            </span>
           </div>
-          <p className="text-white/40 text-2xl mb-4">{ticket.gst}</p>
+          <p className="text-white/40 text-lg mb-4 leading-none h-4">{ticket.gst}</p>
           
-          <button className="group mb-4 h-12 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden">
-            <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                <div className="h-full w-full flex items-center justify-center px-8 shrink-0">
+          <button 
+            disabled={ticket.disabled}
+            className={`group w-full h-16 relative rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-xl font-bold active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+          >
+            <div className={`h-[200%] w-full flex flex-col absolute top-0 left-0 ${ticket.disabled ? '' : 'transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2'}`}>
+                <div className="h-1/2 w-full flex items-center justify-center px-8">
                     {ticket.cta}
                 </div>
-                <div className="h-full w-full flex items-center justify-center px-8 shrink-0">
-                    {ticket.cta}
-                </div>
+                {!ticket.disabled && (
+                  <div className="h-1/2 w-full flex items-center justify-center px-8">
+                      {ticket.cta}
+                  </div>
+                )}
             </div>
           </button>
         </div>
         <div className="border-t border-dashed border-white/20 my-0 w-full" />
 
-        <div className="flex-1 p-8 md:p-10 pb-4 md:pb-4">
-          <p className="text-white/50 text-2xl  mb-6">What&apos;s included</p>
-          <ul className="space-y-4 mb-8">
+        <div className="flex-1 p-8 md:p-10 py-6 md:py-8 flex flex-col overflow-hidden">
+          <p className="text-white/50 text-lg mb-4">What&apos;s included</p>
+          <ul className="space-y-3 flex-1">
             {ticket.features.map((feature: string, fIdx: number) => (
               <li key={fIdx} className="flex items-start gap-3 text-sm md:text-base text-white/80">
-                <span className="text-white text-2xl mt-[-2px]">+</span>
-                <span>{feature}</span>
+                <span className="text-white text-xl mt-[-2px]">+</span>
+                <span className="line-clamp-2">{feature}</span>
               </li>
             ))}
           </ul>
-          {ticket.footnote && (
-            <p className="text-white text-xs md:text-sm text-center mt-auto border-t border-white/5 pt-4 uppercase tracking-widest font-bold">
-                {ticket.footnote}
-            </p>
-          )}
+          <div className="pt-4 border-t border-white/5 h-[60px] flex items-center justify-center flex-shrink-0">
+            {ticket.footnote ? (
+              <p className="text-white text-[10px] md:text-xs text-center uppercase tracking-widest font-bold leading-none">
+                  {ticket.footnote}
+              </p>
+            ) : (
+              <p className="text-white/20 text-[10px] md:text-xs text-center uppercase tracking-widest font-bold leading-none">
+                  GHCI 27 • BENGALURU
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -385,11 +400,16 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
             ) : (
               <div className="h-2 mb-2" /> // Spacer to align prices
             )}
-                        <span className="text-4xl md:text-lg tracking-tight">{ticket.price}</span>
+                        <span className={`tracking-tight ${ticket.price.toLowerCase().includes('soon') ? 'text-xl md:text-lg text-white/60' : 'text-4xl md:text-lg'}`}>
+                            {ticket.price}
+                        </span>
                     </div>
                     <p className="text-white/40 text-xs md:text-sm mb-2">{ticket.gst}</p>
 
-                    <button className="w-full p-2 rounded-full bg-[#A32482] text-white font-bold text-base shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform">
+                    <button 
+                        disabled={ticket.disabled}
+                        className={`w-full py-2.5 rounded-full bg-[#A32482] text-white font-bold text-sm shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+                    >
                         {ticket.cta}
                     </button>
                 </div>
@@ -448,130 +468,502 @@ export default function Ticketing() {
   const [activeTicketId, setActiveTicketId] = useState<string | null>(null);
 
   const DEFAULT_CONFIG = {
-    bokehSpeed: 2,
-    tickets: [
-      {
-        id: "last-year",
-        name: "Privilege Offer",
-        description: "For GHCI 25 attendees ",
-        footnote: "Offer valid till June 2, 2026",
-        price: "₹10,000",
-        gst: "18% GST Applicable",
-        cta: "Get the Pass",
-        features: [
-          "Full access to GHCI 27 (sessions, workshops & networking)",
-          "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)"
-        ],
-        cardBlur: 0,
-        blobsDesktop: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
-        ],
-        blobsMobile: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -100, opacity: 1 }
-        ],
-        blobs: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 }
-        ]
-      },
-      {
-        id: "super-early",
-        name: "Super Early Bird",
-        description: "All Access 3-day pass. ",
-        footnote: "Offer valid till June 19, 2026",
-        price: "₹11,000",
-        oldPrice: "₹15,000",
-        gst: "18% GST Applicable",
-        cta: "Get the Pass",
-        features: [
-          "Full access to GHCI 27 (sessions, workshops & networking)",
-          "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)"
-        ],
-        cardBlur: 70,
-        blobsDesktop: [
-          { color: "#a32482", width: 52, height: 82, x: 67, y: -37, opacity: 1 },
-          { color: "#223852", width: 40, height: 65, x: -5, y: 14, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 51, y: 31, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 78, y: 60, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: 39, opacity: 1 }
-        ],
-        blobsMobile: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -27, opacity: 1 }
-        ],
-        blobs: [
-          { color: "#22021D", width: 80, height: 60, x: 10, y: 40, opacity: 0.8 },
-          { color: "#A32482", width: 50, height: 40, x: 60, y: 70, opacity: 0.5 }
-        ]
-      },
-      {
-        id: "regular",
-        name: "Regular",
-        description: "Academia / Faculty / Startup / Return-to-Work ",
-        footnote: "Offer valid till June 19, 2026",
-        price: "₹9,000",
-        gst: "18% GST Applicable",
-        cta: "Get the Pass",
-        features: [
-          "Full access to GHCI 27 (sessions, workshops & networking)",
-          "1-year AnitaB.org Global Membership",
-          "Attendee certification + digital badges (via Verix)"
-        ],
-        cardBlur: 70,
-        blobsDesktop: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
-        ],
-        blobsMobile: [
-          { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
-          { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
-          { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
-          { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
-          { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -15, opacity: 1 }
-        ],
-        blobs: [
-          { color: "#4284c2", width: 40, height: 30, x: -10, y: -5, opacity: 0.3 },
-          { color: "#A32482", width: 60, height: 40, x: 40, y: 10, opacity: 0.4 }
-        ]
-      }
-    ],
-    bgType: "color" as "color" | "gradient",
-    bgColor: "#000000",
-    bgGradient: "linear-gradient(180deg, #050510 0%, #000 100%)",
-    titleText: "Choose Your Pass",
-    titleColor: "#FFFFFF",
-    bgShineHoverOpacity: 0.05,
-    bgShineDefaultOpacity: 0,
-    borderShineHoverOpacity: 0.55,
-    borderShineDefaultOpacity: 0.15,
-    borderOpacityDesktop: 0.1,
-    borderOpacityMobile: 0.05,
-    notchSizeDesktop: 46,
-    notchSizeMobile: 20,
-    dividerOpacityDesktop: 0.25,
-    dividerOpacityMobile: 0.3,
-    divider1DashDesktop: 4,
-    divider1GapDesktop: 4,
-    divider2DashDesktop: 14,
-    divider2GapDesktop: 6,
-    divider1DashMobile: 2,
-    divider1GapMobile: 2,
-    divider2DashMobile: 8,
-    divider2GapMobile: 4
+  "bokehSpeed": 2,
+  "tickets": [
+    {
+      "id": "last-year",
+      "name": "Privilege Offer",
+      "description": "For GHCI 25 attendees ",
+      "footnote": "Offer valid till June 2, 2026",
+      "price": "₹10,000",
+      "gst": "18% GST Applicable",
+      "cta": "Get the Pass",
+      "features": [
+        "Full access to GHCI 27 (sessions, workshops & networking)",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges (via Verix)"
+      ],
+      "cardBlur": 0,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -15,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -100,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        }
+      ]
+    },
+    {
+      "id": "super-early",
+      "name": "Super Early Bird",
+      "description": "",
+      "footnote": "Offer valid till June 19, 2026",
+      "price": "₹11,000",
+      "oldPrice": "₹15,000",
+      "gst": "18% GST Applicable",
+      "cta": "Get the Pass",
+      "features": [
+        "Full access to GHCI 27 (sessions, workshops & networking)",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges (via Verix)"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 52,
+          "height": 82,
+          "x": 67,
+          "y": -37,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 40,
+          "height": 65,
+          "x": -5,
+          "y": 14,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 51,
+          "y": 31,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 78,
+          "y": 60,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": 39,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -27,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#22021D",
+          "width": 80,
+          "height": 60,
+          "x": 10,
+          "y": 40,
+          "opacity": 0.8
+        },
+        {
+          "color": "#A32482",
+          "width": 50,
+          "height": 40,
+          "x": 60,
+          "y": 70,
+          "opacity": 0.5
+        }
+      ]
+    },
+    {
+      "id": "regular",
+      "name": "Academia / Faculty / Startup / Return-to-Work ",
+      "description": "",
+      "footnote": "Offer valid till June 19, 2026",
+      "price": "₹9,000",
+      "gst": "18% GST Applicable",
+      "cta": "Get the Pass",
+      "features": [
+        "Full access to GHCI 27 (sessions, workshops & networking)",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges (via Verix)"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -15,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -15,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#4284c2",
+          "width": 40,
+          "height": 30,
+          "x": -10,
+          "y": -5,
+          "opacity": 0.3
+        },
+        {
+          "color": "#A32482",
+          "width": 60,
+          "height": 40,
+          "x": 40,
+          "y": 10,
+          "opacity": 0.4
+        }
+      ]
+    },
+    {
+      "id": "virtual",
+      "name": "Virtual",
+      "description": "Access GHCI 27 virtually from anywhere",
+      "footnote": "",
+      "price": "Coming soon",
+      "gst": "",
+      "cta": "Coming soon",
+      "disabled": true,
+      "features": [
+        "Full access to GHCI 27, including sessions, workshops, and networking",
+        "Live Q&A, chats, polls, and curated networking opportunities",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges (via Verix)"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 52,
+          "height": 82,
+          "x": 67,
+          "y": -37,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 40,
+          "height": 65,
+          "x": -5,
+          "y": 14,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 51,
+          "y": 31,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 78,
+          "y": 60,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": 39,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -27,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#22021D",
+          "width": 80,
+          "height": 60,
+          "x": 10,
+          "y": 40,
+          "opacity": 0.8
+        },
+        {
+          "color": "#A32482",
+          "width": 50,
+          "height": 40,
+          "x": 60,
+          "y": 70,
+          "opacity": 0.5
+        }
+      ]
+    }
+  ],
+  "bgType": "color" as "color" | "gradient",
+  "bgColor": "#000000",
+  "bgGradient": "linear-gradient(180deg, #050510 0%, #000 100%)",
+  "titleText": "Choose Your Pass",
+  "titleColor": "#FFFFFF",
+  "bgShineHoverOpacity": 0.05,
+  "bgShineDefaultOpacity": 0,
+  "borderShineHoverOpacity": 0.55,
+  "borderShineDefaultOpacity": 0.15,
+  "borderOpacityDesktop": 0.1,
+  "borderOpacityMobile": 0.05,
+  "notchSizeDesktop": 46,
+  "notchSizeMobile": 20,
+  "dividerOpacityDesktop": 0.25,
+  "dividerOpacityMobile": 0.3,
+  "divider1DashDesktop": 4,
+  "divider1GapDesktop": 4,
+  "divider2DashDesktop": 14,
+  "divider2GapDesktop": 6,
+  "divider1DashMobile": 2,
+  "divider1GapMobile": 2,
+  "divider2DashMobile": 8,
+  "divider2GapMobile": 4
   };
+
 
   const [config, setConfig] = useState(DEFAULT_CONFIG);
 
@@ -592,18 +984,22 @@ export default function Ticketing() {
                     const defaultTicket = DEFAULT_CONFIG.tickets.find(t => t.id === parsedTicket.id);
                     if (!defaultTicket) return parsedTicket;
                     
-                    // If parsed ticket does not explicitly have blobsDesktop/blobsMobile, don't overwrite the new defaults
-                    // We only spread parsedTicket, but we don't want its old 'blobs' to take precedence.
-                    // Wait, if we just do { ...defaultTicket, ...parsedTicket }, parsedTicket's blobsDesktop will be undefined if it doesn't exist.
-                    // So we manually pick the right blobsDesktop.
-                    // Ensure "Virtual access available" is always removed even from cached settings
                     const features = (parsedTicket.features || defaultTicket.features).filter((f: string) => f !== 'Virtual access available');
                     const blobsDesktop = parsedTicket.blobsDesktop || defaultTicket.blobsDesktop;
                     const blobsMobile = parsedTicket.blobsMobile || defaultTicket.blobsMobile;
                     
                     return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features };
                 });
-                setConfig({ ...DEFAULT_CONFIG, ...parsed, tickets: mergedTickets });
+
+                // Append any new default tickets that aren't in localStorage
+                const finalTickets = [...mergedTickets];
+                DEFAULT_CONFIG.tickets.forEach(dt => {
+                    if (!finalTickets.find(t => t.id === dt.id)) {
+                        finalTickets.push(dt);
+                    }
+                });
+
+                setConfig({ ...DEFAULT_CONFIG, ...parsed, tickets: finalTickets });
             } else {
                 console.warn('Stale ticketing settings found, keeping defaults.');
             }
@@ -792,11 +1188,14 @@ export default function Ticketing() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center mb-12 md:mb-20">
+        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto md:snap-x md:snap-mandatory gap-8 justify-items-center md:justify-start mb-12 md:mb-20 pb-8 scrollbar-hide scroll-smooth">
           {tickets.map((ticket, idx) => (
-            isMobile 
-              ? <TicketingCardMobile key={ticket.id} ticket={ticket} idx={idx} config={config} />
-              : <TicketingCard key={ticket.id} ticket={ticket} idx={idx} config={config} />
+            <div key={ticket.id} className="w-full md:min-w-[calc((100%-96px)/3.5)] md:snap-start flex">
+              {isMobile 
+                ? <TicketingCardMobile key={ticket.id} ticket={ticket} idx={idx} config={config} />
+                : <TicketingCard key={ticket.id} ticket={ticket} idx={idx} config={config} />
+              }
+            </div>
           ))}
         </div>
 

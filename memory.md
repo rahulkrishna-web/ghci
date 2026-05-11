@@ -1345,3 +1345,21 @@
 [2026-05-11 13:11]
 - Fixed logo stretching in the footer by adding `object-contain` to both the primary logo and the large background watermark.
 [0.1 hrs]
+
+[2026-05-11 15:56]
+- Added "Virtual" ticket tier with "Coming soon" pricing and disabled CTA.
+- Updated desktop ticketing layout to a horizontal scroll container showing 3.5 cards.
+- Implemented visual disabled state for ticket buttons (opacity, grayscale, no hover animation).
+- Fixed issue where new default tickets (like "Virtual") wouldn't appear for users with existing localStorage settings by updating the hydration logic to append missing default tiers.
+- Removed the visible horizontal scrollbar on desktop using the `scrollbar-hide` utility.
+- Updated "Virtual" ticket feature points and refined the "Coming soon" price presentation to be more subtle (smaller font, reduced opacity).
+- Synchronized "Virtual" ticket background blobs (desktop, mobile, and base) with the "Super Early Bird" settings as requested.
+- Fully synchronized the Ticketing component's `DEFAULT_CONFIG` with the user-provided JSON configuration.
+- Fixed syntax errors in the configuration (missing quotes/colons for `gst`, `cta`, and `price` keys) that were causing build failures.
+- Re-synchronized the Ticketing component's `DEFAULT_CONFIG` with the final, error-free JSON provided by the user.
+- Implemented uniform card alignment by standardizing header/footer heights (using `min-h`), fixing the card height to `850px`, and utilizing flexbox growth to align CTA buttons and dividers across all tiers.
+- Refined card layout to reduce whitespace and ensure perfect alignment: standardized header (`160px`), price/CTA (`190px`), and footer (`70px`) heights, reduced overall card height to `780px`, and adjusted typography sizes for a more compact, premium look.
+- Fixed "broken" buttons by applying `w-full`, correcting the `relative/absolute` positioning for the sliding text animation, and ensuring perfect vertical centering within the button container.
+- Finalized Ticketing layout resilience: applied `flex-shrink-0` to all fixed-height containers (header, price, footer) to prevent compression on cards with more content (like Virtual), ensuring perfect cross-tier alignment.
+- Optimized card proportions and whitespace: reduced overall height to `680px`, tightened section heights (Header: `140px`, Price/CTA: `170px`, Footer: `60px`), and adjusted font sizes for a more compact, high-density editorial feel.
+[1.9 hrs]
