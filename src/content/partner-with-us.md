@@ -3,7 +3,7 @@ title: "Looking to hire, build your brand, or support the ecosystem?"
 sectionName: "Partner With Us"
 description: "Partner with GHCI to access top tech talent, build brand visibility, and engage with a highly skilled and diverse community at scale."
 ctaText: "Enquire Now"
-ctaLink: "#"
+ctaLink: "mailto:corporate@anitabindia.org"
 benefits:
   - title: "Access top technology talent"
     desc: "Connect with 10,000+ professionals across roles and experience levels"

@@ -1371,4 +1371,5 @@
 - Updated ticket offer deadlines: Privilege Offer (August 2, 2026), Super Early Bird (June 14, 2026), and removed the deadline for the Regular tier.
 - Fixed an issue where `localStorage` was overwriting new deadlines by prioritizing `DEFAULT_CONFIG` footnotes during hydration.
 - Removed the "Agenda" link from the footer and updated the Facebook social link to the official AnitaBorg India page.
-[2.8 hrs]
+- Updated "Advancing Inclusion Program" in the involvement section to "Launching soon" and changed the "Partner With Us" enquiry button to link to `corporate@anitabindia.org`.
+[2.9 hrs]
