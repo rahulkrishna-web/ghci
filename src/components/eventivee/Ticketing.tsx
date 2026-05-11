@@ -11,7 +11,7 @@ const defaultTickets = [
     description: "For GHCI 25 attendees ",
     footnote: "Offer valid till August 2, 2026",
     price: "₹10,000",
-    gst: "18% GST Applicable",
+    gst: "+ applicable charges",
     cta: "Get the Pass",
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
@@ -476,7 +476,7 @@ export default function Ticketing() {
       "description": "For GHCI 25 attendees ",
       "footnote": "Offer valid till August 2, 2026",
       "price": "₹10,000",
-      "gst": "18% GST Applicable",
+      "gst": "+ applicable charges",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
@@ -573,7 +573,7 @@ export default function Ticketing() {
       "footnote": "Offer valid till June 14, 2026",
       "price": "₹11,000",
       "oldPrice": "₹15,000",
-      "gst": "18% GST Applicable",
+      "gst": "+ applicable charges",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
@@ -696,7 +696,7 @@ export default function Ticketing() {
       "description": "",
       "footnote": "",
       "price": "₹9,000",
-      "gst": "18% GST Applicable",
+      "gst": "+ applicable charges",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
@@ -988,7 +988,7 @@ export default function Ticketing() {
                     const blobsDesktop = parsedTicket.blobsDesktop || defaultTicket.blobsDesktop;
                     const blobsMobile = parsedTicket.blobsMobile || defaultTicket.blobsMobile;
                     
-                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features, footnote: defaultTicket.footnote };
+                    return { ...defaultTicket, ...parsedTicket, blobsDesktop, blobsMobile, features, footnote: defaultTicket.footnote, gst: defaultTicket.gst };
                 });
 
                 // Append any new default tickets that aren't in localStorage

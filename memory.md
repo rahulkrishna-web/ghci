@@ -1372,4 +1372,5 @@
 - Fixed an issue where `localStorage` was overwriting new deadlines by prioritizing `DEFAULT_CONFIG` footnotes during hydration.
 - Removed the "Agenda" link from the footer and updated the Facebook social link to the official AnitaBorg India page.
 - Updated "Advancing Inclusion Program" in the involvement section to "Launching soon" and changed the "Partner With Us" enquiry button to link to `corporate@anitabindia.org`.
-[2.9 hrs]
+- Replaced "18% GST Applicable" with "+ applicable charges" across all ticket tiers to account for additional fees (District fee, etc.).
+[3.0 hrs]
