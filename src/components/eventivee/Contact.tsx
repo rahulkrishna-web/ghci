@@ -2,6 +2,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Ticket, Mail, X, Settings } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
+import NewsletterModal from './NewsletterModal';
 
 type ContactProps = {
   data: {
@@ -15,6 +16,7 @@ type ContactProps = {
 export default function Contact({ data }: ContactProps) {
   // Debug Settings State
   const [showSettings, setShowSettings] = useState(false);
+  const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'halftone' | 'json' | null>('halftone');
   const [config, setConfig] = useState({
     halftoneOpacity: 0.9,
@@ -143,6 +145,10 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href="#" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsNewsletterModalOpen(true);
+                        }}
                         className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
@@ -159,6 +165,11 @@ export default function Contact({ data }: ContactProps) {
                 </div>
             </motion.div>
         </div>
+
+        <NewsletterModal 
+            isOpen={isNewsletterModalOpen} 
+            onClose={() => setIsNewsletterModalOpen(false)} 
+        />
 
         {/* Bottom Banner - Hidden for now */}
         {/* <motion.div

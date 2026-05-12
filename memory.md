@@ -1374,3 +1374,8 @@
 - Updated "Advancing Inclusion Program" in the involvement section to "Launching soon" and changed the "Partner With Us" enquiry button to link to `corporate@anitabindia.org`.
 - Replaced "18% GST Applicable" with "+ applicable charges" across all ticket tiers to account for additional fees (District fee, etc.).
 [3.0 hrs]
+- Provided technical requirements for Brevo newsletter integration (API Key v3, List ID, and Opt-in preferences). [0.2 hrs]
+- Discussed Brevo integration methods: Recommended API-based custom form over standard embed code for better UI/UX consistency. [0.1 hrs]
+- Implemented a custom newsletter signup popup modal with Framer Motion animations. [0.5 hrs]
+- Connected the popup to Brevo API using a Next.js Server Action to securely handle the API key and subscribe users to List ID 15. [0.5 hrs]
+- Migrated hardcoded Brevo API key from the server action to `.env.local` to adhere to security best practices. [0.1 hrs]
