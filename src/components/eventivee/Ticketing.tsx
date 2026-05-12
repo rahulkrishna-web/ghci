@@ -694,7 +694,7 @@ export default function Ticketing() {
       "id": "regular",
       "name": "Academia / Faculty / Startup / Return-to-Work ",
       "description": "",
-      "footnote": "",
+      "footnote": "For discount code support, contact the Support ID below",
       "price": "₹9,000",
       "gst": "+ applicable charges",
       "cta": "Get the Pass",
