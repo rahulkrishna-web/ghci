@@ -1379,3 +1379,6 @@
 - Implemented a custom newsletter signup popup modal with Framer Motion animations. [0.5 hrs]
 - Connected the popup to Brevo API using a Next.js Server Action to securely handle the API key and subscribe users to List ID 15. [0.5 hrs]
 - Migrated hardcoded Brevo API key from the server action to `.env.local` to adhere to security best practices. [0.1 hrs]
+
+### Navigation Menu Refinement [2026-05-13 16:43]
+- Removed the "Agenda" link from the main navigation menu in `Navbar.tsx` for both desktop and mobile views. [0.1 hrs]
