@@ -58,9 +58,10 @@ export default function EventiveePage() {
         <div id="expect">{expectData && <WhatToExpect data={expectData as any} />}</div>
       </section>
       
-      <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
+      
       <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
       <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
+      <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
       <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
       <div id="location">{locationData && <Location data={locationData as any} />}</div>
       {/* 

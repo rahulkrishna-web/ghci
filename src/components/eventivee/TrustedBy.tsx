@@ -10,7 +10,7 @@ type TrustedByProps = {
 
 export default function TrustedBy({ data }: TrustedByProps) {
   return (
-    <section className="pt-12 pb-0 md:pt-24 relative overflow-hidden text-white bg-[#22021d]">
+    <section className="p-12 md:p-24 relative overflow-hidden text-white bg-[#22021d]">
       <div className="w-full relative z-10 px-4 md:px-12">
         <div className="relative text-center overflow-hidden">
             <span className="text-white text-xl md:text-3xl font-medium tracking-wide mb-10 block">
