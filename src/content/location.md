@@ -2,7 +2,7 @@
 sectionTitle: "Our Location"
 venueName: "Karnataka Trade Promotion Organisation (KTPO)"
 venueArea: "Whitefield, Bengaluru"
-dates: "20-22 JANUARY 2027"
+dates: "January 20-22, 2027"
 mapUrl: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80"
 description: "Located in Bengaluru's leading technology corridor, KTPO is a large-scale, modern venue designed to host high-impact global conferences and exhibitions. KTPO is fully accessible, with ramps, elevators, and inclusive facilities designed to support all attendees comfortably."
 gettingThere:
