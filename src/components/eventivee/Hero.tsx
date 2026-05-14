@@ -228,7 +228,7 @@ export default function Hero({ data }: HeroProps) {
                 </div>
                 <a
                     href={data.primaryButtonLink}
-                    className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden"
+                    className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
                 >
                     <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                         <div className="h-full w-full flex items-center justify-center px-4 md:px-8 shrink-0">

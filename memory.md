@@ -1385,3 +1385,6 @@
 
 ### Ticketing Link Update [2026-05-14 12:56]
 - Updated "Get the Pass" buttons in `Ticketing.tsx` (Desktop & Mobile) to link to the registration URL: https://link.district.in/DSTRKT/GHCI2027PartnerWebsite. [0.2 hrs]
+
+### Button Interactivity Polish [2026-05-14 13:04]
+- Added standard 'cursor-pointer' feedback to all main CTA buttons across Ticketing, Hero, Navbar, and Contact sections to improve user clickability awareness. [0.2 hrs]

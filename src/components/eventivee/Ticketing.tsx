@@ -278,11 +278,11 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
             href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
             target="_blank"
             rel="noopener noreferrer"
-            className={`block w-full ${ticket.disabled ? 'pointer-events-none' : ''}`}
+            className={`block w-full cursor-pointer ${ticket.disabled ? 'pointer-events-none' : ''}`}
           >
             <button 
               disabled={ticket.disabled}
-              className={`group w-full h-16 relative rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-xl font-bold active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+              className={`group w-full h-16 relative rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-xl font-bold active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : 'cursor-pointer'}`}
             >
               <div className={`h-[200%] w-full flex flex-col absolute top-0 left-0 ${ticket.disabled ? '' : 'transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2'}`}>
                   <div className="h-1/2 w-full flex items-center justify-center px-8">
@@ -417,11 +417,11 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                         href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`block w-full ${ticket.disabled ? 'pointer-events-none' : ''}`}
+                        className={`block w-full cursor-pointer ${ticket.disabled ? 'pointer-events-none' : ''}`}
                     >
                         <button 
                             disabled={ticket.disabled}
-                            className={`w-full py-2.5 rounded-full bg-[#A32482] text-white font-bold text-sm shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+                            className={`w-full py-2.5 rounded-full bg-[#A32482] text-white font-bold text-sm shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : 'cursor-pointer'}`}
                         >
                             {ticket.cta}
                         </button>

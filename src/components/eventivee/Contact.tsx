@@ -125,7 +125,7 @@ export default function Contact({ data }: ContactProps) {
                     </div>
                     <a 
                         href={data.buttons[0].link} 
-                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] text-white font-semibold transition-all shadow-xl shadow-purple-900/20 active:scale-95 z-0 overflow-hidden cursor-pointer"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                             <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
@@ -149,7 +149,7 @@ export default function Contact({ data }: ContactProps) {
                             e.preventDefault();
                             setIsNewsletterModalOpen(true);
                         }}
-                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden"
+                        className="h-10 md:h-16 w-38 md:w-48 inline-flex flex-col rounded-full bg-white text-[#A32482] font-semibold transition-all shadow-xl active:scale-95 z-0 overflow-hidden cursor-pointer"
                     >
                         <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                             <div className="h-full w-full flex flex-col items-center justify-center px-4 md:px-6 text-[15px] md:text-lg leading-tight text-center shrink-0">
