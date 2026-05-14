@@ -1382,3 +1382,6 @@
 
 ### Navigation Menu Refinement [2026-05-13 16:43]
 - Removed the "Agenda" link from the main navigation menu in `Navbar.tsx` for both desktop and mobile views. [0.1 hrs]
+
+### Ticketing Link Update [2026-05-14 12:56]
+- Updated "Get the Pass" buttons in `Ticketing.tsx` (Desktop & Mobile) to link to the registration URL: https://link.district.in/DSTRKT/GHCI2027PartnerWebsite. [0.2 hrs]

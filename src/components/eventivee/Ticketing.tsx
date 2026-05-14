@@ -274,21 +274,28 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
           </div>
           <p className="text-white/40 text-lg mb-4 leading-none h-4">{ticket.gst}</p>
           
-          <button 
-            disabled={ticket.disabled}
-            className={`group w-full h-16 relative rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-xl font-bold active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+          <a 
+            href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block w-full ${ticket.disabled ? 'pointer-events-none' : ''}`}
           >
-            <div className={`h-[200%] w-full flex flex-col absolute top-0 left-0 ${ticket.disabled ? '' : 'transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2'}`}>
-                <div className="h-1/2 w-full flex items-center justify-center px-8">
-                    {ticket.cta}
-                </div>
-                {!ticket.disabled && (
+            <button 
+              disabled={ticket.disabled}
+              className={`group w-full h-16 relative rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-xl font-bold active:scale-95 shadow-xl shadow-purple-900/20 overflow-hidden ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+            >
+              <div className={`h-[200%] w-full flex flex-col absolute top-0 left-0 ${ticket.disabled ? '' : 'transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2'}`}>
                   <div className="h-1/2 w-full flex items-center justify-center px-8">
                       {ticket.cta}
                   </div>
-                )}
-            </div>
-          </button>
+                  {!ticket.disabled && (
+                    <div className="h-1/2 w-full flex items-center justify-center px-8">
+                        {ticket.cta}
+                    </div>
+                  )}
+              </div>
+            </button>
+          </a>
         </div>
         <div className="border-t border-dashed border-white/20 my-0 w-full" />
 
@@ -406,12 +413,19 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                     </div>
                     <p className="text-white/40 text-xs md:text-sm mb-2">{ticket.gst}</p>
 
-                    <button 
-                        disabled={ticket.disabled}
-                        className={`w-full py-2.5 rounded-full bg-[#A32482] text-white font-bold text-sm shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+                    <a 
+                        href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block w-full ${ticket.disabled ? 'pointer-events-none' : ''}`}
                     >
-                        {ticket.cta}
-                    </button>
+                        <button 
+                            disabled={ticket.disabled}
+                            className={`w-full py-2.5 rounded-full bg-[#A32482] text-white font-bold text-sm shadow-lg shadow-purple-900/40 active:scale-[0.98] transition-transform ${ticket.disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
+                        >
+                            {ticket.cta}
+                        </button>
+                    </a>
                 </div>
                 </div>
 
