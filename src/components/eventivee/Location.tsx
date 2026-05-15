@@ -28,11 +28,7 @@ export default function Location({ data }: LocationProps) {
   }, []);
 
   return (
-    <section id="location" className="py-6 md:py-12 relative overflow-hidden text-white" style={{
-      backgroundImage: 'url(/location-bg.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'top center'
-    }}>
+    <section id="location" className="py-6 md:py-12 relative overflow-hidden text-white" >
       <div className="w-full relative z-10 px-4 md:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

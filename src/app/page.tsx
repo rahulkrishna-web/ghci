@@ -57,13 +57,13 @@ export default function EventiveePage() {
         <div id="tracks">{tracksData && <ExploreTracks data={tracksData as any} />}</div>
         <div id="expect">{expectData && <WhatToExpect data={expectData as any} />}</div>
       </section>
-      
+      <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
       
       <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
-      <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
+      
       <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
       <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
-      <div id="location">{locationData && <Location data={locationData as any} />}</div>
+      
       {/* 
       <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div> */}
       
@@ -71,9 +71,10 @@ export default function EventiveePage() {
       <Ticketing />
 
 
-      
-      <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
       <div id="faq"><FAQ /></div>
+      <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
+      
+      <div id="location">{locationData && <Location data={locationData as any} />}</div>
       <div id="footer">{footerData && <Footer data={footerData as any} />}</div>
     </main>
   );

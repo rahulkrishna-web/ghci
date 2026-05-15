@@ -30,10 +30,10 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   };
 
   return (
-    <section id="get-involved" className="pt-0 pb-12 relative overflow-hidden text-white px-4 md:px-12" style={{
-      backgroundImage: 'url(/get-involved.png)',
+    <section id="get-involved" className="pt-12 pb-12 relative overflow-hidden text-white px-4 md:px-12" style={{
+      backgroundImage: 'url(/speaker.png)',
       backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      backgroundPosition: 'top center'
     }}>
       <div className="w-full">
         
@@ -73,7 +73,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                 transition={{ delay: idx * 0.1 }}
                 className={`
                   ${isLast ? 'col-span-2 md:col-span-2' : isPrimary ? 'col-span-1 md:col-span-3' : 'col-span-1 md:col-span-2'}
-                  bg-white/[0.03] border border-white/5 rounded-[10px] p-5 md:p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all
+                  bg-black/[0.2] border border-white/5 rounded-[10px] p-5 md:p-10 flex flex-col h-full hover:bg-white/[0.05] transition-all
                 `}
               >
                 <h3 className="text-xl md:text-[2.2rem] mb-4 md:mb-6 leading-tight">

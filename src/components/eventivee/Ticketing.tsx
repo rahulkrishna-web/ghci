@@ -1184,7 +1184,10 @@ export default function Ticketing() {
         id="ticketing" 
         className="py-6 md:py-12 text-white px-6 md:px-13 relative overflow-hidden"
         style={{
-            background: config.bgType === 'gradient' ? config.bgGradient : config.bgColor
+            background: config.bgType === 'gradient' ? config.bgGradient : config.bgColor,
+            backgroundImage: 'url(/location-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center'
         }}
     >
       <div className="mx-auto relative z-10">

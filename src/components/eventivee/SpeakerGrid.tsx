@@ -29,9 +29,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
 
   return (
     <section id="speakers" className="py-12 md:py-24 relative overflow-hidden text-white" style={{
-      backgroundImage: 'url(/speaker.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      background: 'linear-gradient(to bottom, #120110, #22021d)'
     }}>
       {/* Dark overlay for readability */}
     

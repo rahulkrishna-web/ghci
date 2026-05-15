@@ -1388,3 +1388,13 @@
 
 ### Button Interactivity Polish [2026-05-14 13:04]
 - Added standard 'cursor-pointer' feedback to all main CTA buttons across Ticketing, Hero, Navbar, and Contact sections to improve user clickability awareness. [0.2 hrs]
+
+### Homepage Layout & Section Refinement [2026-05-15 18:14]
+- Reordered homepage sections in `page.tsx`: shifted "Ways to Get Involved" after "Explore What You'll Learn" and moved "Location" after "Contact".
+- Increased top padding on "Ways to Get Involved" section for better spacing.
+- Integrated `location-bg.png` background with cover sizing to the `Ticketing` section and removed it from the `Location` section.
+- [0.5 hrs]
+
+### Speaker Section Background Update [2026-05-15 18:44]
+- Applied a vertical linear gradient background (#120110 to #22021d) to the SpeakerGrid section.
+- [0.1 hrs]
