@@ -1398,3 +1398,7 @@
 ### Speaker Section Background Update [2026-05-15 18:44]
 - Applied a vertical linear gradient background (#120110 to #22021d) to the SpeakerGrid section.
 - [0.1 hrs]
+
+### Meta Title Update [2026-05-20 19:30]
+- Changed page meta title to "GHCI 27 - AnitaB.org India".
+- [0.1 hrs]
