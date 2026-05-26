@@ -1040,6 +1040,18 @@ export default function Ticketing() {
     };
   }, []);
 
+  useEffect(() => {
+    if (mounted && window.location.hash === '#ticketing') {
+      const scrollTimer = setTimeout(() => {
+        const element = document.getElementById('ticketing');
+        if (element) {
+          element.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+      }, 100);
+      return () => clearTimeout(scrollTimer);
+    }
+  }, [mounted]);
+
   const saveSettings = (newConfig: any) => {
     setConfig(newConfig);
     localStorage.setItem('ghci-ticketing-settings', JSON.stringify(newConfig));

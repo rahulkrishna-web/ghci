@@ -1402,3 +1402,6 @@
 ### Meta Title Update [2026-05-20 19:30]
 - Changed page meta title to "GHCI 27 - AnitaB.org India".
 - [0.1 hrs]
+
+### Ticketing Hash Navigation Fix [2026-05-26 14:40]
+- Added a useEffect in Ticketing.tsx to scroll to the ticketing section on mount when navigated with the #ticketing hash. [0.2 hrs]
