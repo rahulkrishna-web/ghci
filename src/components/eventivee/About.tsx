@@ -94,17 +94,17 @@ export default function About({ data }: AboutProps) {
                     loop 
                     muted={isMuted}
                     playsInline 
-                    poster="https://res.cloudinary.com/djwqsomya/video/upload/v1778670422/GHIC_V6_7April_FINAL_720p_eeyl3h_xumhwq.jpg"
+                    poster="https://res.cloudinary.com/dqbznm05c/video/upload/v1779778108/GHIC_V6_7April_FINAL_720p_eeyl3h_mipaio.jpg"
                     className="w-full h-full object-cover"
                 >
                     {/* Progressive loading: 1080p for desktop, 720p for others */}
                     <source 
-                        src="https://res.cloudinary.com/djwqsomya/video/upload/v1778670443/GHIC_V6_7April_FINAL_f0khnn_cnhq1i.mp4" 
+                        src="https://res.cloudinary.com/dqbznm05c/video/upload/v1779778124/GHIC_V6_7April_FINAL_f0khnn_tjzzcw.mp4" 
                         type="video/mp4" 
                         media="(min-width: 1024px)"
                     />
                     <source 
-                        src="https://res.cloudinary.com/djwqsomya/video/upload/v1778670422/GHIC_V6_7April_FINAL_720p_eeyl3h_xumhwq.mp4" 
+                        src="https://res.cloudinary.com/dqbznm05c/video/upload/v1779778108/GHIC_V6_7April_FINAL_720p_eeyl3h_mipaio.mp4" 
                         type="video/mp4" 
                     />
                 </video>
