@@ -1405,3 +1405,9 @@
 
 ### Ticketing Hash Navigation Fix [2026-05-26 14:40]
 - Added a useEffect in Ticketing.tsx to scroll to the ticketing section on mount when navigated with the #ticketing hash. [0.2 hrs]
+
+### Abie Awards Renaming [2026-05-29 11:15]
+- Updated "Abie Awards" to "Anita Borg Impact Awards" in `src/content/ways-to-involve.md`. [0.1 hrs]
+
+### CFP Deadline Extension [2026-05-29 11:17]
+- Added "Apply by June 30, 2026, 11:59 PM IST" text next to the CFP CTA button in `WaysToInvolve.tsx`. [0.1 hrs]

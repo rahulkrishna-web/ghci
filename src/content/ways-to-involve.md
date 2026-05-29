@@ -17,7 +17,7 @@ ways:
     description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
     type: "secondary"
     badge: "Launching soon"
-  - title: "Abie Awards"
+  - title: "Anita Borg Impact Awards"
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
     type: "secondary"
     badge: "Launching soon"

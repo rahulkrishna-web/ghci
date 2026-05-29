@@ -82,7 +82,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                 <p className="text-white text-xl md:text-2xl mb-6 md:mb-10 flex-grow leading-relaxed">
                   {way.description}
                 </p>
-                <div className="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4">
+                <div className="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-start md:items-center">
                   {way.links?.map((link, lIdx) => (
                     <a
                       key={lIdx}
@@ -103,6 +103,11 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                       </div>
                     </a>
                   ))}
+                  {way.title === "Call For Presenters" && (
+                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
+                      Apply by June 30, 2026, 11:59 PM IST
+                    </span>
+                  )}
                   {way.badge && (
                     <div className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-xs md:text-xl font-semibold w-fit shadow-lg shadow-purple-900/20">
                       {way.badge}
