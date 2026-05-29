@@ -1411,3 +1411,26 @@
 
 ### CFP Deadline Extension [2026-05-29 11:17]
 - Added "Apply by June 30, 2026, 11:59 PM IST" text next to the CFP CTA button in `WaysToInvolve.tsx`. [0.1 hrs]
+
+### Trusted By Logo Additions [2026-05-29 11:56]
+- Downloaded logos for Google, Uber, Amex, Twilio, and Oracle from Simple Icons CDN as SVGs.
+- Appended these brands to the start of the `logos` list in `partner-with-us.md`. [0.2 hrs]
+
+### Marquee Hover Stop [2026-05-29 11:59]
+- Added CSS pause-on-hover rules for `.animate-marquee` and `.animate-marquee-slow` in `globals.css`.
+- Refactored `TrustedBy` and `Testimonials` from Framer Motion animations to CSS marquee animations. [0.2 hrs]
+
+### Wordmark Logo Updates [2026-05-29 12:45]
+- Replaced the Google and Oracle icons/logos with their full wordmark SVGs from Wikimedia Commons.
+- Cleaned up the American Express SVG by removing the background block to leave a clean, transparent logotype. [0.2 hrs]
+
+### Jio Institute Logo Fix [2026-05-29 12:51]
+- Restructured `jio-institute.png` by converting the white "Jio" letters inside the circle into alpha-transparent cut-outs, preventing them from disappearing under CSS brightness-0 invert filters. [0.1 hrs]
+
+### Twilio Logo & Logo Sizing Consistency [2026-05-29 12:56]
+- Downloaded the official Twilio wordmark SVG from the correct Wikimedia Commons path, replacing the broken URL.
+- Cropped empty vertical letterboxing from `amex.svg` and `uber.svg` to optimize visual sizing.
+- Normalized logo scale heights by adjusting the image class to `h-7 md:h-9` and widening the `max-w` to `max-w-[160px] md:max-w-[220px]` in `TrustedBy.tsx` to prevent wide logos from shrinking. [0.2 hrs]
+
+### Logo Margin Cropping [2026-05-29 13:08]
+- Cropped empty vertical transparent padding from `jio-institute.png`, `mycareernet.png`, and `avalara.png` using PIL to normalize their height scaling. [0.1 hrs]

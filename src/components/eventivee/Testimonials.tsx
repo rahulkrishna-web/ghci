@@ -38,15 +38,7 @@ export default function Testimonials() {
 
       <div className="max-w-[100vw] mx-auto">
         <div className="flex w-full overflow-hidden">
-          <motion.div
-            className="flex whitespace-nowrap gap-6"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{
-              repeat: Infinity,
-              duration: 40,
-              ease: 'linear',
-            }}
-          >
+          <div className="flex whitespace-nowrap gap-6 animate-marquee-slow">
             {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((t, idx) => (
               <div
                 key={idx}
@@ -76,7 +68,7 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

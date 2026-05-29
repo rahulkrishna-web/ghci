@@ -155,3 +155,13 @@
   animation: marquee 30s linear infinite;
   will-change: transform;
 }
+
+.animate-marquee-slow {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}

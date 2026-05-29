@@ -18,18 +18,7 @@ export default function TrustedBy({ data }: TrustedByProps) {
             </span>
 
             <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-                <motion.div 
-                    animate={{
-                        x: [0, "-50%"]
-                    }}
-                    transition={{
-                        duration: 30,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "linear"
-                    }}
-                    className="flex items-center gap-12 md:gap-32 whitespace-nowrap min-w-max brightness-0 invert py-4"
-                >
+                <div className="flex items-center gap-12 md:gap-32 whitespace-nowrap min-w-max brightness-0 invert py-4 animate-marquee">
                     {[...Array(4)].map((_, i) => (
                         <div key={i} className="flex items-center gap-12 md:gap-32">
                             {data.logos.map((logo, idx) => (
@@ -37,12 +26,12 @@ export default function TrustedBy({ data }: TrustedByProps) {
                                     key={`${i}-${idx}`} 
                                     src={logo.src} 
                                     alt={logo.name} 
-                                    className="h-8 md:h-12 w-auto object-contain max-w-[120px] md:max-w-[150px] opacity-80 hover:opacity-100 transition-opacity" 
+                                    className="h-7 md:h-9 w-auto object-contain max-w-[160px] md:max-w-[220px] opacity-80 hover:opacity-100 transition-opacity" 
                                 />
                             ))}
                         </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </div>
       </div>
