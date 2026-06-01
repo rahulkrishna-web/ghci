@@ -1434,3 +1434,8 @@
 
 ### Logo Margin Cropping [2026-05-29 13:08]
 - Cropped empty vertical transparent padding from `jio-institute.png`, `mycareernet.png`, and `avalara.png` using PIL to normalize their height scaling. [0.1 hrs]
+
+### Google Tag Manager Integration [2026-06-01 14:58]
+- Added Google Tag Manager script to layout `<head>` tag.
+- Added Google Tag Manager noscript iframe fallback to layout `<body>` tag.
+[0.1 hrs]
