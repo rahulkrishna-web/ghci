@@ -88,21 +88,12 @@ export default function AipHero({ data }: AipHeroProps) {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="lg:col-span-5 w-full flex justify-center"
           >
-            <div className="relative w-full aspect-[4/3] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex flex-col items-center justify-center group shadow-2xl p-6">
-              {/* Inner glowing core for the placeholder */}
-              <div className="absolute w-[80%] h-[80%] rounded-full bg-gradient-to-tr from-[#A32482]/10 to-[#223852]/25 opacity-70 blur-3xl pointer-events-none" />
-              
-              <div className="relative z-10 flex flex-col items-center gap-4 text-center">
-                <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 group-hover:text-white/60 transition-colors group-hover:scale-105 duration-500">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                </div>
-                <span className="text-white/40 text-lg font-medium tracking-tight group-hover:text-white/60 transition-colors duration-500">
-                  Image Space Placeholder
-                </span>
-                <span className="text-white/20 text-xs font-mono max-w-xs leading-normal">
-                  Fills with hero illustration / audience scene in the next step
-                </span>
-              </div>
+            <div className="relative w-full aspect-[4/3] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
+              <img 
+                src="/aip/aip-lead-img.png" 
+                alt="Advancing Inclusion Program"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
             </div>
           </motion.div>
         </div>

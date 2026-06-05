@@ -1494,6 +1494,11 @@
 - Inserted responsive background images (`/aip/who-why-desktop.png` and `/aip/who-why-mobile.png`) to the "Who Should Apply / Why Apply" section in `AipSplitSection.tsx`.
 - Hidden the mobile version on desktop and the desktop version on mobile for both sections using Tailwind responsive visibility modifiers, with content layered on top using `relative z-10`. [0.2 hrs]
 
+### AIP Hero Lead Image Update [2026-06-06 04:14]
+- Replaced the placeholder block inside the right column of the `AipHero` component with the actual hero image `/aip/aip-lead-img.png`.
+- Applied a transition hover scale effect to the image element. [0.05 hrs]
+
+
 
 
 
