@@ -1,0 +1,52 @@
+---
+metaTitle: "Advancing Inclusion Program (AIP) - GHCI 27"
+metaDescription: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully Sponsored."
+heroTitle: "Advancing Inclusion Program (AIP)"
+heroSubtitle: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully Sponsored."
+heroCtaText: "Apply Now"
+heroCtaLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
+heroImage: "/aip-hero-placeholder.png"
+
+whatIsTitle: "What is AIP?"
+whatIsText: "The Advancing Inclusion Program is designed to help women who would benefit from access to the learning, networking, mentorship, and career opportunities available through GHCI."
+
+categoriesTitle: "Scholarship Categories"
+categories:
+  - title: "Students in STEM"
+    description: "Undergraduate, postgraduate, and doctoral students in technology and related fields."
+    icon: "book"
+    highlight: true
+  - title: "Professionals in Technology"
+    description: "Women in technology looking to learn, connect, and grow their careers."
+    icon: "briefcase"
+  - title: "Academicians"
+    description: "Faculty members, researchers, and educators supporting the next generation of technologists."
+    icon: "graduation-cap"
+  - title: "Women Returning to Work"
+    description: "Women preparing to return to the technology workforce after a career break."
+    icon: "users"
+
+benefitsTitle: "Scholarship Benefits"
+benefits:
+  - title: "Complimentary Access to GHCI 27"
+    description: "Attend three days of keynotes, technical sessions, workshops, career opportunities, and community experiences."
+  - title: "Learning & Development"
+    description: "Learn from industry leaders, practitioners, and subject matter experts."
+  - title: "Networking Opportunities"
+    description: "Connect with peers, mentors, employers, and ecosystem leaders."
+  - title: "Mentorship & Community"
+    description: "Become part of a supportive community of women in technology."
+  - title: "Career Opportunities"
+    description: "Explore career options, resume reviews, and recruitment events."
+
+whoShouldApplyTitle: "Who Should Apply"
+whoShouldApplyText: "Women who are passionate about technology and would benefit from access to learning, mentorship, networking, and career opportunities through GHCI."
+
+whyApplyTitle: "Why Apply"
+whyApplyText: "GHCI brings together thousands of technologists, leaders, educators, students, and innovators.\n\nAIP helps ensure that women with potential and ambition can access these opportunities, regardless of financial barriers."
+
+ctaSectionTitle: "Applications Are Now Open"
+ctaSectionText: "Apply for the Advancing Inclusion Program and join one of Asia's largest gatherings of women\nand allies in technology."
+ctaSectionButtonText: "APPLY NOW"
+ctaSectionButtonLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
+---

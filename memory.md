@@ -1439,3 +1439,71 @@
 - Added Google Tag Manager script to layout `<head>` tag.
 - Added Google Tag Manager noscript iframe fallback to layout `<body>` tag.
 [0.1 hrs]
+
+### Advancing Inclusion Program (AIP) Route Creation [2026-06-05 21:32]
+- Created `/aip` page route configuration and dynamic content source file `src/content/aip.md`.
+- Implemented standard components `AipNavbar`, `AipHero`, `AipWhatIs`, `AipCategories`, `AipBenefits`, `AipSplitSection`, and `AipCTA` mimicking homepage design guidelines.
+- Configured absolute relative link mappings for reused Footer and AipNavbar components to ensure route continuity.
+- Successfully compiled and verified page structures with no build or type errors. [1.2 hrs]
+
+### AIP Subpage Sections Width Alignment [2026-06-06 03:19]
+- Removed `max-w-7xl` constraints from `AipWhatIs`, `AipCategories`, `AipBenefits`, and `AipSplitSection` to match full screen-width layout behavior of Navbar and Hero sections.
+- Re-aligned horizontal scrolling padding margins in `AipBenefits` to match standard padding styles. [0.2 hrs]
+
+### AIP Bottom CTA Gradient Overlay Alignment [2026-06-06 03:22]
+- Updated `AipCTA` bottom call-to-action title to render the last two words ("Now Open") with the white-to-magenta gradient overlay (`bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent`).
+- Re-styled the outline button in `AipCTA` with a brand-magenta outline and matching text (`border-[#A32482]` and `text-[#A32482]`) that transforms into a solid magenta background with white text on hover. [0.15 hrs]
+
+### AIP Bottom CTA Full Title Gradient Alignment [2026-06-06 03:24]
+- Modified `AipCTA` to apply the white-to-magenta gradient overlay to the entire title ("Applications Are Now Open") rather than just the last two words, matching the design specification. [0.1 hrs]
+
+### AIP Bottom CTA Button Gradient Alignment [2026-06-06 03:28]
+- Applied the white-to-magenta text gradient (`bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent`) to the active state layer of the CTA button text ("APPLY NOW"), keeping the hover/slide-up text copy solid white. [0.1 hrs]
+
+### AIP Bottom CTA Button Border Gradient Alignment [2026-06-06 03:29]
+- Applied the white-to-magenta gradient overlay to the CTA button border ring by utilizing a 2px-padded `bg-gradient-to-r` wrapper with an inner dark container that shifts bg color on hover. [0.1 hrs]
+
+### AIP Bottom CTA Proportions & Wrapping Alignment [2026-06-06 03:31]
+- Inserted newline in description text inside `aip.md` and added `whitespace-pre-line` / `max-w-4xl` to align the line wrap exactly with Figma.
+- Enlarged CTA button dimensions to `min-w-[680px]` and font size to `text-xl md:text-[2.25rem]` to match design specs. [0.15 hrs]
+
+### AIP Categories Icons White Filter Alignment [2026-06-06 03:34]
+- Applied `brightness-0 invert` filter class to category icons in `AipCategories` to force dark-colored PNG icons to display as solid white. [0.1 hrs]
+
+### AIP "What is AIP?" Padding Alignment [2026-06-06 03:37]
+- Added responsive desktop-based horizontal padding (`lg:px-[12%] xl:px-[16%]`) to the `AipWhatIs` section, aligning its contents inwards to match the horizontal boundaries of surrounding page content. [0.1 hrs]
+
+### AIP "What is AIP?" Border, Wrapping, and Font Alignment [2026-06-06 03:41]
+- Removed the top horizontal line divider from the `AipWhatIs` section wrapper.
+- Set heading grid width to `md:col-span-5` and added `md:whitespace-nowrap` to prevent "What is AIP?" from wrapping to a second line.
+- Reduced description grid width to `md:col-span-7` and text size from `text-[2rem]` to `text-lg md:text-2xl` (font weight normal) to align proportions with the design mockup. [0.15 hrs]
+
+### AIP "What is AIP?" Horizontal Padding Decreased [2026-06-06 03:45]
+- Decreased the horizontal padding of the `AipWhatIs` section by 50px on each side on desktop, updating classes to `lg:px-[8%] xl:px-[12.5%]`. [0.05 hrs]
+
+### AIP "What is AIP?" Heading Title Gradient Alignment [2026-06-06 03:47]
+- Replaced the last-word gradient highlighting with the exact design CSS gradient `linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)` applied to the entire "What is AIP?" title text via custom style properties.
+- Removed the unused `getTitleWithHighlight` helper function from the component code. [0.08 hrs]
+
+### AIP "Applications Are Now Open" Gradient Alignment [2026-06-06 03:48]
+- Updated the "Applications Are Now Open" title gradient in `AipCTA.tsx` to match the exact design CSS gradient `linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)`.
+- Synchronized the CTA button border ring and the button's gradient text overlay to use the same premium gradient specification. [0.1 hrs]
+
+### AIP Scholarship Benefits and Split Section Background Images [2026-06-06 04:01]
+- Inserted responsive background images (`/aip/scholarship-benefits-desktop.png` and `/aip/scholarship-benefits-mobile.png`) to the Scholarship Benefits section in `AipBenefits.tsx`.
+- Inserted responsive background images (`/aip/who-why-desktop.png` and `/aip/who-why-mobile.png`) to the "Who Should Apply / Why Apply" section in `AipSplitSection.tsx`.
+- Hidden the mobile version on desktop and the desktop version on mobile for both sections using Tailwind responsive visibility modifiers, with content layered on top using `relative z-10`. [0.2 hrs]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
