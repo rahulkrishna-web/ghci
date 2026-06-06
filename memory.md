@@ -1498,17 +1498,23 @@
 - Replaced the placeholder block inside the right column of the `AipHero` component with the actual hero image `/aip/aip-lead-img.png`.
 - Applied a transition hover scale effect to the image element. [0.05 hrs]
 
+### AIP Mobile Content Centering [2026-06-06 16:25]
+- Centered the title, subtitle, and CTA button in the AipHero component on mobile.
+- Centered both heading and description content in the AipWhatIs component on mobile. [0.1 hrs]
 
+### AIP Scholarship Categories Slider on Mobile [2026-06-06 16:36]
+- Converted the Scholarship Categories section on mobile viewports from a vertical list of cards into a horizontal snap-scroll slider.
+- Reduced the icon sizes by 50% on mobile (w-6 h-6 vs w-12 h-12 on desktop) inside the category cards. [0.15 hrs]
 
+### AIP Scholarship Categories Card Width Adjustment [2026-06-06 16:40]
+- Adjusted mobile width of the Scholarship Categories cards to min-w-[44%] to display approximately 2.2 cards simultaneously.
+- Updated scroll snap behavior to snap-start. [0.08 hrs]
 
+### AIP Scholarship Categories Card Width Adjusted to 1.5 [2026-06-06 16:55]
+- Updated mobile width of categories cards to min-w-[65%] to display exactly 1.5 cards at once, preventing thin card proportions. [0.05 hrs]
 
+### AIP Scholarship Categories Mobile Padding Offset Alignment [2026-06-06 16:57]
+- Aligned the mobile left padding offset of the categories slider container with the scholarship benefits slider layout (removed parent section padding, added px-4 md:px-13 and scroll-pl-4 classes directly on the inner elements). [0.08 hrs]
 
-
-
-
-
-
-
-
-
-
+### AIP Scholarship Benefits Mobile Card Width Adjusted to 1.5 [2026-06-06 17:07]
+- Adjusted card width on mobile for Scholarship Benefits section from w-[85%] to w-[65%] to display exactly 1.5 cards at once. [0.05 hrs]

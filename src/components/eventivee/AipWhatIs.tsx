@@ -18,7 +18,7 @@ export default function AipWhatIs({ data }: AipWhatIsProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-5"
+            className="md:col-span-5 text-center md:text-left"
           >
             <h2 
               className="text-4xl md:text-5xl lg:text-[3.5rem] tracking-tight font-medium leading-none text-transparent bg-clip-text md:whitespace-nowrap pb-1"
@@ -37,7 +37,7 @@ export default function AipWhatIs({ data }: AipWhatIsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="md:col-span-7"
+            className="md:col-span-7 text-center md:text-left"
           >
             <p className="text-white/80 text-lg md:text-2xl leading-relaxed font-normal">
               {data.whatIsText}

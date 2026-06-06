@@ -112,7 +112,7 @@ export default function AipBenefits({ data }: AipBenefitsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-8 md:p-10 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col min-h-[265px] md:min-h-[290px] hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[85%] md:w-[46%] lg:w-[23.5%] snap-start"
+                className="p-8 md:p-10 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col min-h-[265px] md:min-h-[290px] hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[65%] md:w-[46%] lg:w-[23.5%] snap-start"
               >
                 {/* Checkmark icon in brand color */}
                 <div className="mb-8 md:mb-12">
