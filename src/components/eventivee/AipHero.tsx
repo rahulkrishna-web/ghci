@@ -1,5 +1,6 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
 
 type AipHeroProps = {
   data: {
@@ -11,6 +12,41 @@ type AipHeroProps = {
 };
 
 export default function AipHero({ data }: AipHeroProps) {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Mouse position for the shine effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth spring for the shine movement
+  const mouseXSpring = useSpring(mouseX, { damping: 25, stiffness: 150 });
+  const mouseYSpring = useSpring(mouseY, { damping: 25, stiffness: 150 });
+
+  // Create a radial gradient that follows the mouse
+  const background = useTransform(
+    [mouseXSpring, mouseYSpring],
+    ([x, y]) => `radial-gradient(540px circle at ${x}px ${y}px, rgba(255,255,255,0.6) 0%, transparent 60%), linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35))`
+  );
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!titleRef.current) return;
+    const rect = titleRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
+  const handleMouseLeave = () => {
+    // Optional: center or hide the shine when mouse leaves
+  };
+
   return (
     <section className="relative h-auto pt-36 pb-20 md:pt-48 md:pb-28 flex flex-col items-center justify-center overflow-hidden bg-black text-white px-4 md:px-13">
       {/* Background Bokeh Glows */}
@@ -36,15 +72,54 @@ export default function AipHero({ data }: AipHeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Copy & Call to Action */}
           <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-              className="text-[44px] md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight font-medium mb-6 text-white"
-            >
-              Advancing Inclusion <br className="hidden md:inline" />
-              Program (AIP)
-            </motion.h1>
+            <div className="relative group w-full flex flex-col items-center lg:items-start mb-6">
+              <div className="relative w-full lg:w-max flex flex-col items-center lg:items-start">
+                {/* Main Fill Layer */}
+                <motion.h1
+                  ref={titleRef}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
+                  style={{
+                    backgroundImage: background,
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    WebkitTextStroke: '1px rgba(255, 255, 255, 0.05)',
+                    letterSpacing: '-0.02em',
+                    lineHeight: isMobile ? '1.0' : '1.05',
+                  }}
+                  className="text-[44px] md:text-7xl lg:text-[5.5rem] font-medium w-full lg:w-max flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible text-center lg:text-left"
+                >
+                  <span className="block md:whitespace-nowrap">Advancing Inclusion</span>
+                  <span className="block md:whitespace-nowrap">Program (AIP)</span>
+                </motion.h1>
+
+                {/* Border Shine Layer (Overlay) */}
+                <motion.h1
+                  aria-hidden="true"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
+                  style={{
+                    backgroundImage: background,
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.55)',
+                    letterSpacing: '-0.02em',
+                    lineHeight: isMobile ? '1.0' : '1.05',
+                    pointerEvents: 'none',
+                  }}
+                  className="text-[44px] md:text-7xl lg:text-[5.5rem] font-medium w-full lg:w-max flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 text-center lg:text-left"
+                >
+                  <span className="block md:whitespace-nowrap">Advancing Inclusion</span>
+                  <span className="block md:whitespace-nowrap">Program (AIP)</span>
+                </motion.h1>
+              </div>
+            </div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

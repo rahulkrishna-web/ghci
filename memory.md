@@ -1518,3 +1518,9 @@
 
 ### AIP Scholarship Benefits Mobile Card Width Adjusted to 1.5 [2026-06-06 17:07]
 - Adjusted card width on mobile for Scholarship Benefits section from w-[85%] to w-[65%] to display exactly 1.5 cards at once. [0.05 hrs]
+
+### AIP CTA Section Line Break Adjustment [2026-06-06 17:18]
+- Moved the line break in CTA description in aip.md to after "join" to prevent "of women and allies in technology" from breaking across multiple lines. [0.03 hrs]
+
+### AIP Hero Glass Effect and Mouse Shine Implementation [2026-06-06 17:20]
+- Ported the interactive glass title effect and mouse-shine tracking calculations from the homepage Hero component into the AIP Hero title. [0.1 hrs]
