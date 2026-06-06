@@ -1524,3 +1524,6 @@
 
 ### AIP Hero Glass Effect and Mouse Shine Implementation [2026-06-06 17:20]
 - Ported the interactive glass title effect and mouse-shine tracking calculations from the homepage Hero component into the AIP Hero title. [0.1 hrs]
+
+### AIP CTA Section Line Break Removed [2026-06-06 17:33]
+- Removed the hardcoded line break entirely from CTA description in aip.md to allow natural fluid wrapping on all screen sizes. [0.03 hrs]

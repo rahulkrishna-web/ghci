@@ -46,7 +46,7 @@ whyApplyTitle: "Why Apply"
 whyApplyText: "GHCI brings together thousands of technologists, leaders, educators, students, and innovators.\n\nAIP helps ensure that women with potential and ambition can access these opportunities, regardless of financial barriers."
 
 ctaSectionTitle: "Applications Are Now Open"
-ctaSectionText: "Apply for the Advancing Inclusion Program and join\none of Asia's largest gatherings of women and allies in technology."
+ctaSectionText: "Apply for the Advancing Inclusion Program and join one of Asia's largest gatherings of women and allies in technology."
 ctaSectionButtonText: "APPLY NOW"
 ctaSectionButtonLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
 ---
