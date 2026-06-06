@@ -11,7 +11,7 @@ type AipWhatIsProps = {
 export default function AipWhatIs({ data }: AipWhatIsProps) {
   return (
     <section className="py-16 md:py-24 bg-[#070708] text-white px-4 md:px-13 lg:px-[8%] xl:px-[12.5%]">
-      <div className="w-full pt-16">
+      <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left Column: Heading */}
           <motion.div

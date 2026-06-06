@@ -1527,3 +1527,6 @@
 
 ### AIP CTA Section Line Break Removed [2026-06-06 17:33]
 - Removed the hardcoded line break entirely from CTA description in aip.md to allow natural fluid wrapping on all screen sizes. [0.03 hrs]
+
+### AIP WhatIs Spacing Symmetry Adjustment [2026-06-06 17:38]
+- Removed the redundant pt-16 top padding from the inner container in AipWhatIs.tsx to make the top and bottom spacing of the section identical. [0.03 hrs]
