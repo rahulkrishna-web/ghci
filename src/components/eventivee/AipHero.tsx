@@ -20,12 +20,12 @@ export default function AipHero({ data }: AipHeroProps) {
   const [debugMode, setDebugMode] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'bokeh' | 'json' | null>('bokeh');
   const [config, setConfig] = useState({
-    bokehBlur: 33,
+    bokehBlur: 40,
     bokehSpeed: 0,
     blobs: [
-      { id: 1, color: '#A32482', width: 35, height: 25, x: 5, y: 18, opacity: 0.38 },
-      { id: 2, color: '#223852', width: 32, height: 22, x: 2, y: 29, opacity: 0.42 },
-      { id: 3, color: '#22021D', width: 36, height: 24, x: 5, y: 45, opacity: 0.65 },
+      { id: 1, color: '#A32482', width: 40, height: 30, x: 5, y: 13, opacity: 0.38 },
+      { id: 2, color: '#223852', width: 38, height: 22, x: -1, y: 41, opacity: 0.42 },
+      { id: 3, color: '#22021D', width: 47, height: 24, x: 2, y: 62, opacity: 0.65 },
       { id: 5, color: '#A32482', width: 59, height: 38, x: 49, y: 25, opacity: 0.42 },
       { id: 6, color: '#22021D', width: 24, height: 15, x: 67, y: 43, opacity: 0.65 },
       { id: 1780892019974, color: '#223852', width: 20, height: 15, x: 53, y: 33, opacity: 0.3 }

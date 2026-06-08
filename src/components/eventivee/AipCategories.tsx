@@ -1,18 +1,17 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const IconMap: Record<string, string> = {
-  'book': '/icons/who-should-attend/book-open.png',
-  'briefcase': '/icons/who-should-attend/professionals.png',
-  'graduation-cap': '/icons/who-should-attend/academic-cap.png',
-  'users': '/icons/who-should-attend/users.png'
+  'book': '/aip/icons/students.svg',
+  'briefcase': '/aip/icons/professionals.svg',
+  'graduation-cap': '/aip/icons/academecians.svg',
+  'users': '/aip/icons/users.svg'
 };
 
 type AipCategoriesProps = {
   data: {
     categoriesTitle: string;
-    categories: { title: string; description: string; icon: string }[];
+    categories: { title: string; description: string; icon: string; highlight?: boolean }[];
   };
 };
 
@@ -44,16 +43,24 @@ export default function AipCategories({ data }: AipCategoriesProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group p-6 md:p-10 rounded-[10px] flex flex-col justify-between min-h-[220px] md:min-h-[240px] min-w-[65%] md:min-w-0 snap-start cursor-pointer bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:border-transparent hover:shadow-2xl hover:shadow-purple-900/20 transition-all duration-300"
+                className="group p-6 md:p-10 rounded-[10px] flex flex-col justify-between min-h-[220px] md:min-h-[240px] min-w-[65%] md:min-w-0 snap-start cursor-pointer transition-all duration-300 bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:border-transparent hover:shadow-2xl hover:shadow-purple-900/20"
               >
                 <div>
                   {/* Icon */}
-                  <div className="mb-4 md:mb-6 transition-colors duration-300 opacity-40 group-hover:opacity-100">
+                  <div className="mb-4 md:mb-6 transition-colors duration-300 text-white/40 group-hover:text-white">
                     {iconPath && (
-                      <img 
-                        src={iconPath} 
-                        alt={category.title} 
-                        className="w-6 h-6 md:w-12 md:h-12 object-contain brightness-0 invert" 
+                      <div 
+                        className="w-6 h-6 md:w-12 md:h-12 bg-current" 
+                        style={{
+                          maskImage: `url(${iconPath})`,
+                          maskSize: 'contain',
+                          maskRepeat: 'no-repeat',
+                          maskPosition: 'center',
+                          WebkitMaskImage: `url(${iconPath})`,
+                          WebkitMaskSize: 'contain',
+                          WebkitMaskRepeat: 'no-repeat',
+                          WebkitMaskPosition: 'center'
+                        }}
                       />
                     )}
                   </div>

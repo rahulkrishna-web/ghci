@@ -1597,3 +1597,13 @@
 - Scaled up the Interactive Image Card max-width to `xl:max-w-[900px] 2xl:max-w-[1100px] min-[1920px]:max-w-[1300px]` for widescreen layout parity.
 - Constrained the What Is description paragraph text using `max-w-5xl` for readability on high-res screens.
 - Aligned Benefits title container horizontal padding to standard `px-4 md:px-13`. [0.15 hrs]
+
+### AIP Hero Bokeh Background Configuration Update [2026-06-08 11:01]
+- Updated the default bokeh parameters (coordinates, sizes, blur, and opacity) inside `AipHero.tsx` to match the user's updated specifications. [0.05 hrs]
+
+### AIP Scholarship Categories Sharp SVGs and Dynamics [2026-06-08 11:12]
+- Updated the three slight gray SVG icons (`academecians.svg`, `professionals.svg`, `users.svg`) in `public/aip/icons/` to be pure white (`stroke="white"`).
+- Refactored `AipCategories.tsx` to use the new sharp SVG paths, implement CSS mask color inheritance (`bg-current` mapping dynamically to current text color), and support the highlighted card state on load. [0.15 hrs]
+
+### AIP Scholarship Categories Hover Highlight Reversion [2026-06-08 11:15]
+- Reverted initial highlighted state on card load inside `AipCategories.tsx`, changing layout behavior to hover-only highlight. [0.05 hrs]
