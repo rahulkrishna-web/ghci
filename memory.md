@@ -1581,3 +1581,6 @@
 
 ### AIP Hero Customized Background Configuration [2026-06-08 09:48]
 - Integrated the user's customized JSON coordinates, opacities, speeds, and dimensions into the initial default configuration of `AipHero.tsx`. [0.05 hrs]
+
+### AIP Hero Customized Background Configuration Update [2026-06-08 09:56]
+- Updated the default `bokehBlur` value to `33` in the default configuration structure inside `AipHero.tsx`. [0.05 hrs]

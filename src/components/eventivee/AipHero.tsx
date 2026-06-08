@@ -20,7 +20,7 @@ export default function AipHero({ data }: AipHeroProps) {
   const [debugMode, setDebugMode] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'bokeh' | 'json' | null>('bokeh');
   const [config, setConfig] = useState({
-    bokehBlur: 20,
+    bokehBlur: 33,
     bokehSpeed: 0,
     blobs: [
       { id: 1, color: '#A32482', width: 35, height: 25, x: 5, y: 18, opacity: 0.38 },
