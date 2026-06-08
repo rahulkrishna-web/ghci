@@ -1549,3 +1549,6 @@
 
 ### AIP Subtitle Line Break Restoration [2026-06-08 08:14]
 - Restored `whitespace-pre-line` class to AipHero's subtitle `<p>` tag and reverted the content file to use `\n` to properly render the manual line break. [0.05 hrs]
+
+### AIP 4K Layout Constraint [2026-06-08 08:23]
+- Applied `max-w-[1400px] mx-auto` constraints to inner wrappers of AIP Hero, WhatIs, Categories, Benefits, and SplitSection to prevent content columns from drifting apart on ultra-wide / 4K displays. [0.1 hrs]

@@ -60,7 +60,7 @@ export default function AipBenefits({ data }: AipBenefitsProps) {
         />
       </div>
 
-      <div className="w-full relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto relative z-10">
         {/* Centered Section Title */}
         <div className="px-4 md:px-16 lg:px-20 mb-16 text-center">
           <motion.h2
