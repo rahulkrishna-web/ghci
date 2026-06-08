@@ -1564,3 +1564,20 @@
 
 ### AIP Why Apply Gradient Stop Adjust [2026-06-08 09:06]
 - Modified the color stop for the pink gradient in the "Why Apply" header to `70%` in `AipSplitSection.tsx`, shifting the pink part to the right so that the word "Apply" transitions perfectly. [0.05 hrs]
+
+### AIP Hero Background Bokeh Layout [2026-06-08 09:11]
+- Restructured the background bokeh glows in `AipHero.tsx` into 6 separate layered ellipses matching the exact coordinates, sizes, colors, and opacity stops of the Figma mask design. [0.05 hrs]
+
+### AIP Hero Debug Settings & Hotkeys [2026-06-08 09:20]
+- Added interactive drag-and-drop debug settings overlay to `AipHero.tsx` with hotkey `Ctrl + Alt + A` and integrated it with the `ControlPanel` micro-management list under the `aip-hero` section. [0.05 hrs]
+
+### AIP Dynamic Ellipse Creation and Animations [2026-06-08 09:30]
+- Added full support to `AipHero` settings panel for adding, duplicating, deleting ellipses on-the-fly and configuring global speed and blur settings just like the homepage. [0.05 hrs]
+
+### AIP Hero Helper Mode and LocalStorage Mount Sync [2026-06-08 09:38]
+- Integrated a `ghci-aip-hero-settings` localStorage parser to preserve customized configurations on page load and update automatically on change.
+- Allowed the Global Blur slider range to go down to `0px`.
+- Introduced a togglable "Helper Mode" which sets active blurs to 0px, forces visible opacities, and highlights each ellipse with a dashed boundary border and number tag for easy positioning. [0.05 hrs]
+
+### AIP Hero Customized Background Configuration [2026-06-08 09:48]
+- Integrated the user's customized JSON coordinates, opacities, speeds, and dimensions into the initial default configuration of `AipHero.tsx`. [0.05 hrs]

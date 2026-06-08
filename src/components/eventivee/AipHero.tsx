@@ -1,6 +1,7 @@
 'use client';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { Settings, X } from 'lucide-react';
 
 type AipHeroProps = {
   data: {
@@ -14,13 +15,69 @@ type AipHeroProps = {
 export default function AipHero({ data }: AipHeroProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [debugMode, setDebugMode] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<'bokeh' | 'json' | null>('bokeh');
+  const [config, setConfig] = useState({
+    bokehBlur: 20,
+    bokehSpeed: 0,
+    blobs: [
+      { id: 1, color: '#A32482', width: 35, height: 25, x: 5, y: 18, opacity: 0.38 },
+      { id: 2, color: '#223852', width: 32, height: 22, x: 2, y: 29, opacity: 0.42 },
+      { id: 3, color: '#22021D', width: 36, height: 24, x: 5, y: 45, opacity: 0.65 },
+      { id: 5, color: '#A32482', width: 59, height: 38, x: 49, y: 25, opacity: 0.42 },
+      { id: 6, color: '#22021D', width: 24, height: 15, x: 67, y: 43, opacity: 0.65 },
+      { id: 1780892019974, color: '#223852', width: 20, height: 15, x: 53, y: 33, opacity: 0.3 }
+    ]
+  });
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+
+    // Load from localStorage on mount
+    const saved = localStorage.getItem('ghci-aip-hero-settings');
+    if (saved) {
+      try {
+        setConfig(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to parse ghci-aip-hero-settings:', e);
+      }
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        setShowSettings(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    const handleOpenSettings = () => setShowSettings(true);
+    window.addEventListener('open-settings-aip-hero', handleOpenSettings);
+
+    const handleUpdateSettings = (e: any) => {
+      if (e.detail) setConfig(e.detail);
+    };
+    window.addEventListener('update-settings-aip-hero', handleUpdateSettings);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('open-settings-aip-hero', handleOpenSettings);
+      window.removeEventListener('update-settings-aip-hero', handleUpdateSettings);
+    };
   }, []);
+
+  // Save settings whenever configuration changes
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('ghci-aip-hero-settings', JSON.stringify(config));
+    }
+  }, [config, mounted]);
 
   // Mouse position for the shine effect
   const mouseX = useMotionValue(0);
@@ -48,15 +105,43 @@ export default function AipHero({ data }: AipHeroProps) {
   };
 
   return (
-    <section className="relative h-auto pt-36 pb-20 md:pt-44 md:pb-28 flex flex-col items-center justify-center overflow-hidden bg-black text-white px-4 md:px-13">
+    <section id="aip-hero" className="relative h-auto pt-36 pb-20 md:pt-44 md:pb-28 flex flex-col items-center justify-center overflow-hidden bg-black text-white px-4 md:px-13">
       {/* Background Bokeh Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-[#0a0208]" />
         
-        {/* Glowing blobs matching the premium homepage mesh gradients */}
-        <div className="absolute rounded-full w-[45%] h-[40%] left-[-10%] top-[10%] bg-[#A32482] opacity-35 blur-[120px]" />
-        <div className="absolute rounded-full w-[40%] h-[35%] right-[-5%] top-[5%] bg-[#223852] opacity-40 blur-[110px]" />
-        <div className="absolute rounded-full w-[35%] h-[30%] right-[25%] bottom-[-10%] bg-[#22021D] opacity-60 blur-[100px]" />
+        {/* Glowing blobs matching the Figma ellipse layers and positioning */}
+        {mounted && config.blobs.map((blob, idx) => (
+          <motion.div
+            key={blob.id}
+            animate={config.bokehSpeed > 0 ? {
+              x: [0, 50 * config.bokehSpeed, -50 * config.bokehSpeed, 0],
+              y: [0, -30 * config.bokehSpeed, 30 * config.bokehSpeed, 0],
+            } : {}}
+            transition={{
+              duration: 20 / (config.bokehSpeed || 1),
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute rounded-[50%] flex items-center justify-center transition-all duration-300"
+            style={{
+              backgroundColor: blob.color,
+              filter: debugMode ? 'none' : `blur(${config.bokehBlur}px)`,
+              width: `${blob.width}%`,
+              height: `${blob.height}%`,
+              left: `${blob.x}%`,
+              top: `${blob.y}%`,
+              opacity: debugMode ? 0.95 : blob.opacity,
+              border: debugMode ? '2px dashed rgba(255, 255, 255, 0.8)' : '2px solid transparent',
+            }}
+          >
+            {debugMode && (
+              <span className="text-white text-xs md:text-sm font-bold bg-black/80 px-3 py-1 rounded-full border border-white/20 select-none pointer-events-none shadow-lg">
+                Ellipse #{idx + 1}
+              </span>
+            )}
+          </motion.div>
+        ))}
 
         {/* SVG Noise Overlay for premium texture */}
         <div 
@@ -183,6 +268,225 @@ export default function AipHero({ data }: AipHeroProps) {
           background: 'linear-gradient(to bottom, transparent, #070708)' 
         }}
       />
+
+      {/* Debug Settings Panel (Hidden by default, toggle with Ctrl+Alt+A) */}
+      {showSettings && (
+        <motion.div 
+          drag
+          dragMomentum={false}
+          className="fixed bottom-6 right-6 z-[999] w-[340px] bg-[#121214]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[80vh]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          {/* Header / Drag Handle */}
+          <div className="flex justify-between items-center p-4 border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white/50">AIP Hero Debug</h3>
+            <button 
+              onClick={() => setShowSettings(false)}
+              className="p-1 hover:bg-white/10 rounded-md transition-colors text-white/50 hover:text-white"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          
+          {/* Scrollable Content */}
+          <div 
+            className="p-5 space-y-5 overflow-y-auto custom-scrollbar"
+            onPointerDownCapture={(e) => e.stopPropagation()}
+          >
+            {/* Bokeh Background Accordion */}
+            <div className="border border-white/5 rounded-xl overflow-hidden">
+              <button 
+                onClick={() => setExpandedSection(expandedSection === 'bokeh' ? null : 'bokeh')}
+                className="w-full px-4 py-3 bg-white/5 flex justify-between items-center text-xs font-bold text-white/70 hover:bg-white/10 transition-colors"
+              >
+                BOKEH BACKGROUND MESH
+                <span className="text-lg">{expandedSection === 'bokeh' ? '−' : '+'}</span>
+              </button>
+              
+              {expandedSection === 'bokeh' && (
+                <div className="p-4 space-y-6 bg-black/20">
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
+                      <span>Global Speed</span>
+                      <span className="text-[#A32482] font-mono">{config.bokehSpeed}x</span>
+                    </div>
+                    <input type="range" min="0" max="10" step="0.1" value={config.bokehSpeed} onChange={(e) => setConfig({...config, bokehSpeed: parseFloat(e.target.value)})} className="w-full accent-[#A32482]" />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-[10px] font-medium uppercase tracking-tight text-white/40">
+                      <span>Global Blur</span>
+                      <span className="text-[#A32482] font-mono">{config.bokehBlur}px</span>
+                    </div>
+                    <input type="range" min="0" max="300" step="1" value={config.bokehBlur} onChange={(e) => setConfig({...config, bokehBlur: parseInt(e.target.value)})} className="w-full accent-[#A32482]" />
+                  </div>
+
+                  <div className="pt-4 border-t border-white/5 space-y-4">
+                    <div className="flex justify-between items-center bg-white/5 p-2.5 rounded-lg border border-white/5">
+                      <span className="text-[10px] font-bold uppercase text-white/40">Helper Mode (Outlines)</span>
+                      <button
+                        onClick={() => setDebugMode(!debugMode)}
+                        className={`px-3 py-1 text-[9px] font-bold rounded transition-colors ${
+                          debugMode ? 'bg-green-600 text-white font-bold' : 'bg-white/10 text-white/40'
+                        }`}
+                      >
+                        {debugMode ? 'ON' : 'OFF'}
+                      </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">Individual Ellipses</span>
+                      <button 
+                        onClick={() => {
+                          const newBlob = { 
+                            id: Date.now(), 
+                            color: '#A32482', 
+                            width: 40, 
+                            height: 30, 
+                            x: 50, 
+                            y: 50, 
+                            opacity: 0.3 
+                          };
+                          setConfig({...config, blobs: [...config.blobs, newBlob]});
+                        }}
+                        className="px-2 py-1 bg-[#A32482] text-[10px] rounded hover:bg-[#8e1f7c] transition-colors text-white font-bold"
+                      >
+                        + Add
+                      </button>
+                    </div>
+
+                    <div className="space-y-6 max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
+                      {config.blobs.map((blob, idx) => (
+                        <div key={blob.id} className="p-3 bg-white/5 rounded-lg border border-white/5 space-y-3 relative group/item">
+                          <button 
+                            onClick={() => setConfig({...config, blobs: config.blobs.filter(b => b.id !== blob.id)})}
+                            className="absolute top-2 right-2 text-white/20 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity"
+                          >
+                            <X size={12} />
+                          </button>
+
+                          <div className="flex justify-between items-center">
+                            <span className="text-[10px] font-bold text-[#A32482] uppercase">Ellipse #{idx + 1}</span>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">Color</span>
+                              <input 
+                                type="color" value={blob.color} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].color = e.target.value;
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full h-6 bg-transparent border-none cursor-pointer"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">Opacity ({blob.opacity})</span>
+                              <input 
+                                type="range" min="0" max="1" step="0.01" value={blob.opacity} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].opacity = parseFloat(e.target.value);
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full accent-[#A32482]"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">X Position ({blob.x}%)</span>
+                              <input 
+                                type="range" min="-50" max="150" step="1" value={blob.x} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].x = parseInt(e.target.value);
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full accent-[#A32482]"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">Y Position ({blob.y}%)</span>
+                              <input 
+                                type="range" min="-50" max="150" step="1" value={blob.y} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].y = parseInt(e.target.value);
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full accent-[#A32482]"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">Width ({blob.width}%)</span>
+                              <input 
+                                type="range" min="5" max="150" step="1" value={blob.width} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].width = parseInt(e.target.value);
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full accent-[#A32482]"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <span className="text-[8px] uppercase text-white/30">Height ({blob.height}%)</span>
+                              <input 
+                                type="range" min="5" max="150" step="1" value={blob.height} 
+                                onChange={(e) => {
+                                  const newBlobs = [...config.blobs];
+                                  newBlobs[idx].height = parseInt(e.target.value);
+                                  setConfig({...config, blobs: newBlobs});
+                                }} 
+                                className="w-full accent-[#A32482]"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* JSON Export Accordion */}
+            <div className="border border-white/5 rounded-xl overflow-hidden shrink-0">
+              <button 
+                onClick={() => setExpandedSection(expandedSection === 'json' ? null : 'json')}
+                className="w-full px-4 py-3 bg-white/5 flex justify-between items-center text-xs font-bold text-white/70 hover:bg-white/10 transition-colors"
+              >
+                EXPORT JSON
+                <span className="text-lg">{expandedSection === 'json' ? '−' : '+'}</span>
+              </button>
+              
+              {expandedSection === 'json' && (
+                <div className="p-4 bg-black/20">
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(JSON.stringify(config, null, 2));
+                    }}
+                    className="mb-3 w-full py-2 bg-[#A32482] hover:bg-[#8e1f7c] text-white text-xs font-semibold rounded-md transition-colors"
+                  >
+                    Copy to Clipboard
+                  </button>
+                  <pre className="text-[10px] text-green-400 font-mono overflow-x-auto max-h-40 p-2 bg-black/40 rounded border border-white/5 whitespace-pre-wrap select-all">
+                    {JSON.stringify(config, null, 2)}
+                  </pre>
+                </div>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }
