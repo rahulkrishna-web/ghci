@@ -12,7 +12,10 @@ ways:
   - title: "Advancing Inclusion Program"
     description: "Access curated opportunities for learning, mentorship, and community engagement."
     type: "primary"
-    badge: "Launching soon"
+    links:
+      - text: "Apply Now"
+        url: "/aip"
+        variant: "solid"
   - title: "WeQuest"
     description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
     type: "secondary"

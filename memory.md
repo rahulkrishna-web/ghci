@@ -1610,3 +1610,6 @@
 
 ### AIP Hero Image Update [2026-06-08 11:46]
 - Changed the hardcoded hero image inside `AipHero.tsx` and the markdown frontmatter of `aip.md` to point to the new asset `ghci-aip-lead.jpeg`. [0.05 hrs]
+
+### AIP Section Apply Now Link [2026-06-08 13:00]
+- Changed the Advancing Inclusion Program card's "Launching soon" badge to an "Apply Now" button linking to `/aip`. [0.1 hrs]
