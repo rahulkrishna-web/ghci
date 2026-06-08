@@ -1552,3 +1552,6 @@
 
 ### AIP 4K Layout Constraint [2026-06-08 08:23]
 - Applied `max-w-[1400px] mx-auto` constraints to inner wrappers of AIP Hero, WhatIs, Categories, Benefits, and SplitSection to prevent content columns from drifting apart on ultra-wide / 4K displays. [0.1 hrs]
+
+### AIP CTA Button Size Scaling [2026-06-08 08:44]
+- Scaled down the CTA apply button in `AipCTA.tsx` from its oversized desktop layout (680px width, 80px height, 2.25rem text) to a standard premium button size (280px width, 64px height, 1.125rem text) as per Figma. [0.05 hrs]

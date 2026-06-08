@@ -52,7 +52,7 @@ export default function AipCTA({ data }: AipCTAProps) {
         >
           <a
             href={data.ctaSectionButtonLink}
-            className="inline-flex rounded-full p-[2px] min-w-[280px] md:min-w-[680px] h-14 md:h-20 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
+            className="inline-flex rounded-full p-[2px] min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
             style={{
               backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)'
             }}
@@ -60,7 +60,7 @@ export default function AipCTA({ data }: AipCTAProps) {
             <div className="w-full h-full bg-[#070708] rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
               <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                 <div 
-                  className="h-full w-full flex items-center justify-center px-10 shrink-0 text-transparent bg-clip-text text-xl md:text-[2.25rem] font-semibold tracking-[0.1em] uppercase pb-1"
+                  className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-transparent bg-clip-text text-sm md:text-2xl font-semibold tracking-[0.08em] uppercase pb-0.5"
                   style={{
                     backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
                     WebkitBackgroundClip: 'text'
@@ -68,7 +68,7 @@ export default function AipCTA({ data }: AipCTAProps) {
                 >
                   {data.ctaSectionButtonText}
                 </div>
-                <div className="h-full w-full flex items-center justify-center px-10 shrink-0 text-white text-xl md:text-[2.25rem] font-semibold tracking-[0.1em] uppercase pb-1">
+                <div className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-white text-sm md:text-2xl font-semibold tracking-[0.08em] uppercase pb-0.5">
                   {data.ctaSectionButtonText}
                 </div>
               </div>
