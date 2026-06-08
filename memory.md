@@ -1607,3 +1607,6 @@
 
 ### AIP Scholarship Categories Hover Highlight Reversion [2026-06-08 11:15]
 - Reverted initial highlighted state on card load inside `AipCategories.tsx`, changing layout behavior to hover-only highlight. [0.05 hrs]
+
+### AIP Hero Image Update [2026-06-08 11:46]
+- Changed the hardcoded hero image inside `AipHero.tsx` and the markdown frontmatter of `aip.md` to point to the new asset `ghci-aip-lead.jpeg`. [0.05 hrs]

@@ -252,7 +252,7 @@ export default function AipHero({ data }: AipHeroProps) {
           >
             <div className="relative w-full max-w-[760px] xl:max-w-[900px] 2xl:max-w-[1100px] min-[1920px]:max-w-[1300px] aspect-[708/488] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
               <img 
-                src="/aip/aip-lead-img.png" 
+                src="/aip/ghci-aip-lead.jpeg" 
                 alt="Advancing Inclusion Program"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
