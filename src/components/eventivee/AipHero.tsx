@@ -154,7 +154,7 @@ export default function AipHero({ data }: AipHeroProps) {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 xl:gap-16 items-center">
           {/* Left Column: Copy & Call to Action */}
           <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="relative group w-full flex flex-col items-center lg:items-start mb-6">
