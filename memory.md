@@ -1555,3 +1555,12 @@
 
 ### AIP CTA Button Size Scaling [2026-06-08 08:44]
 - Scaled down the CTA apply button in `AipCTA.tsx` from its oversized desktop layout (680px width, 80px height, 2.25rem text) to a standard premium button size (280px width, 64px height, 1.125rem text) as per Figma. [0.05 hrs]
+
+### AIP Categories Hover Effect [2026-06-08 09:00]
+- Removed default selected/focus state from `AipCategories.tsx` so that all card highlight styles trigger dynamically on mouse hover, matching the figma interaction requirements. [0.05 hrs]
+
+### AIP Split Section Gradient Headers [2026-06-08 09:02]
+- Applied the premium pink-to-white diagonal gradient text styling (`linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)`) to both "Who Should Apply" and "Why Apply" headers in `AipSplitSection.tsx`. [0.05 hrs]
+
+### AIP Why Apply Gradient Stop Adjust [2026-06-08 09:06]
+- Modified the color stop for the pink gradient in the "Why Apply" header to `70%` in `AipSplitSection.tsx`, shifting the pink part to the right so that the word "Apply" transitions perfectly. [0.05 hrs]
