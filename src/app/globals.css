@@ -45,6 +45,9 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
+  /* Custom Spacing */
+  --spacing-13: 3.25rem;
+
   /* Custom Colors */
   --color-eventivee-bg: rgb(7, 7, 8);
   --color-think-accent: rgb(204, 172, 245);

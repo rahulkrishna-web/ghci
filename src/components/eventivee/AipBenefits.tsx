@@ -62,7 +62,7 @@ export default function AipBenefits({ data }: AipBenefitsProps) {
 
       <div className="w-full relative z-10">
         {/* Centered Section Title */}
-        <div className="px-4 md:px-16 lg:px-20 mb-16 text-center">
+        <div className="px-4 md:px-13 mb-16 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

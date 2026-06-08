@@ -39,7 +39,7 @@ export default function AipWhatIs({ data }: AipWhatIsProps) {
             transition={{ delay: 0.15 }}
             className="md:col-span-7 text-center md:text-left"
           >
-            <p className="text-white/80 text-lg md:text-2xl leading-relaxed font-normal">
+            <p className="text-white/80 text-lg md:text-2xl leading-relaxed font-normal max-w-4xl lg:max-w-5xl">
               {data.whatIsText}
             </p>
           </motion.div>

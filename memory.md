@@ -1590,3 +1590,10 @@
 
 ### AIP Page Layout Alignment Matching Homepage [2026-06-08 10:31]
 - Removed the `max-w-[1400px] mx-auto` layout constraints from `AipNavbar.tsx`, `AipHero.tsx`, `AipWhatIs.tsx`, `AipCategories.tsx`, `AipBenefits.tsx`, and `AipSplitSection.tsx`, restoring full-width layout using standard page paddings (`px-4 md:px-13`) to match the homepage width behavior. [0.1 hrs]
+
+### AIP Layout Padding and Widescreen Formatting [2026-06-08 10:50]
+- Defined the `--spacing-13` CSS theme token inside `globals.css` to activate custom layout spacing (`px-13`) across all sections.
+- Enabled inline rendering of AIP Hero title spans on desktop viewports to prevent wrapping columns on high-res monitors.
+- Scaled up the Interactive Image Card max-width to `xl:max-w-[900px] 2xl:max-w-[1100px] min-[1920px]:max-w-[1300px]` for widescreen layout parity.
+- Constrained the What Is description paragraph text using `max-w-5xl` for readability on high-res screens.
+- Aligned Benefits title container horizontal padding to standard `px-4 md:px-13`. [0.15 hrs]

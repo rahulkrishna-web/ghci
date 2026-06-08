@@ -178,9 +178,9 @@ export default function AipHero({ data }: AipHeroProps) {
                   }}
                   className="text-[35px] md:text-[58px] lg:text-[3.6rem] xl:text-[4.4rem] font-medium w-full flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible text-center lg:text-left"
                 >
-                  <span className="block">Advancing</span>
-                  <span className="block">Inclusion</span>
-                  <span className="block whitespace-nowrap">Program (AIP)</span>
+                  <span className="block lg:inline">Advancing </span>
+                  <span className="block lg:inline">Inclusion </span>
+                  <span className="block lg:inline whitespace-nowrap">Program (AIP)</span>
                 </motion.h1>
 
                 {/* Border Shine Layer (Overlay) */}
@@ -201,9 +201,9 @@ export default function AipHero({ data }: AipHeroProps) {
                   }}
                   className="text-[35px] md:text-[58px] lg:text-[3.6rem] xl:text-[4.4rem] font-medium w-full flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 text-center lg:text-left"
                 >
-                  <span className="block">Advancing</span>
-                  <span className="block">Inclusion</span>
-                  <span className="block whitespace-nowrap">Program (AIP)</span>
+                  <span className="block lg:inline">Advancing </span>
+                  <span className="block lg:inline">Inclusion </span>
+                  <span className="block lg:inline whitespace-nowrap">Program (AIP)</span>
                 </motion.h1>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function AipHero({ data }: AipHeroProps) {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="lg:col-span-6 w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[760px] aspect-[708/488] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
+            <div className="relative w-full max-w-[760px] xl:max-w-[900px] 2xl:max-w-[1100px] min-[1920px]:max-w-[1300px] aspect-[708/488] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
               <img 
                 src="/aip/aip-lead-img.png" 
                 alt="Advancing Inclusion Program"
