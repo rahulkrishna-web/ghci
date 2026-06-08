@@ -2,11 +2,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const IconMap: Record<string, string> = {
-  'book': '/icons/who-should-attend/book-open.png',
-  'briefcase': '/icons/who-should-attend/professionals.png',
-  'graduation-cap': '/icons/who-should-attend/academic-cap.png',
-  'users': '/icons/who-should-attend/users.png'
+import { BookOpen, Briefcase, GraduationCap, Users } from 'lucide-react';
+
+const IconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  'book': BookOpen,
+  'briefcase': Briefcase,
+  'graduation-cap': GraduationCap,
+  'users': Users
 };
 
 type AipCategoriesProps = {
@@ -35,7 +37,7 @@ export default function AipCategories({ data }: AipCategoriesProps) {
         {/* Slider on mobile, 2x2 Grid on desktop */}
         <div className="flex w-full overflow-x-auto overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch md:grid md:grid-cols-2">
           {data.categories.map((category, idx) => {
-            const iconPath = IconMap[category.icon];
+            const IconComponent = IconMap[category.icon];
 
             return (
               <motion.div
@@ -48,13 +50,9 @@ export default function AipCategories({ data }: AipCategoriesProps) {
               >
                 <div>
                   {/* Icon */}
-                  <div className="mb-4 md:mb-6 transition-colors duration-300 opacity-40 group-hover:opacity-100">
-                    {iconPath && (
-                      <img 
-                        src={iconPath} 
-                        alt={category.title} 
-                        className="w-6 h-6 md:w-12 md:h-12 object-contain brightness-0 invert" 
-                      />
+                  <div className="mb-4 md:mb-6 transition-colors duration-300 opacity-40 group-hover:opacity-100 text-white">
+                    {IconComponent && (
+                      <IconComponent className="w-6 h-6 md:w-12 md:h-12 stroke-[1.5]" />
                     )}
                   </div>
 

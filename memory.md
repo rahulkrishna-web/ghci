@@ -1597,3 +1597,6 @@
 - Scaled up the Interactive Image Card max-width to `xl:max-w-[900px] 2xl:max-w-[1100px] min-[1920px]:max-w-[1300px]` for widescreen layout parity.
 - Constrained the What Is description paragraph text using `max-w-5xl` for readability on high-res screens.
 - Aligned Benefits title container horizontal padding to standard `px-4 md:px-13`. [0.15 hrs]
+
+### AIP Categories Vector Icons Integration [2026-06-08 10:53]
+- Replaced low-resolution raster PNG icons in the Scholarship Categories grid with Lucide React vector SVG components (`BookOpen`, `Briefcase`, `GraduationCap`, `Users`) to achieve sharpness at high-DPI and Retina display settings. [0.05 hrs]
