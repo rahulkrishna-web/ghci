@@ -27,7 +27,7 @@ export default function AipSplitSection({ data }: AipSplitSectionProps) {
         />
       </div>
 
-      <div className="w-full max-w-[1400px] mx-auto relative z-10">
+      <div className="w-full relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {/* Who Should Apply Card */}
           <motion.div

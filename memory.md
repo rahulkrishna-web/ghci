@@ -1584,3 +1584,9 @@
 
 ### AIP Hero Customized Background Configuration Update [2026-06-08 09:56]
 - Updated the default `bokehBlur` value to `33` in the default configuration structure inside `AipHero.tsx`. [0.05 hrs]
+
+### AIP Navbar Width Alignment [2026-06-08 10:30]
+- Wrapped the inner logo and navigation layout structure inside `AipNavbar.tsx` with a `max-w-[1400px] mx-auto` container to vertically match the alignment of the AIP page's constrained sections on QHD/4K screens. [0.05 hrs]
+
+### AIP Page Layout Alignment Matching Homepage [2026-06-08 10:31]
+- Removed the `max-w-[1400px] mx-auto` layout constraints from `AipNavbar.tsx`, `AipHero.tsx`, `AipWhatIs.tsx`, `AipCategories.tsx`, `AipBenefits.tsx`, and `AipSplitSection.tsx`, restoring full-width layout using standard page paddings (`px-4 md:px-13`) to match the homepage width behavior. [0.1 hrs]

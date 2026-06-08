@@ -19,7 +19,7 @@ type AipCategoriesProps = {
 export default function AipCategories({ data }: AipCategoriesProps) {
   return (
     <section className="py-16 md:py-24 bg-[#070708] text-white relative overflow-hidden">
-      <div className="w-full max-w-[1400px] mx-auto">
+      <div className="w-full">
         {/* Header */}
         <div className="text-center mb-16 px-4 md:px-13">
           <motion.h2
