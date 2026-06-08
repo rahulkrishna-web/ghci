@@ -1530,3 +1530,22 @@
 
 ### AIP WhatIs Spacing Symmetry Adjustment [2026-06-06 17:38]
 - Removed the redundant pt-16 top padding from the inner container in AipWhatIs.tsx to make the top and bottom spacing of the section identical. [0.03 hrs]
+
+### AIP Hero Design Alignment [2026-06-08 07:48]
+- Updated title text layout to stack into three lines to match Figma.
+- Configured title to use fluid font sizes (`lg:text-[4.5rem] xl:text-[5.5rem]`).
+- Decreased description font size (`text-base md:text-lg`) and weight (`font-normal`), setting text color opacity to `70%`.
+- Formatted description content in `aip.md` with explicit design line wrap.
+- Switched desktop columns from 7:5 to 6:6 and set image aspect ratio to natural `1.45` to prevent horizontal cropping. [0.4 hrs]
+
+### AIP Hero Image & Description Rescale [2026-06-08 07:53]
+- Shifted grid column split from 6:6 to 5:7, giving the image 58.3% of the desktop layout width.
+- Expanded the image's maximum width constraint from 620px to 760px for a more dominant visual presence.
+- Increased description font size to `text-lg md:text-[1.35rem]` and opacity to `80%` to match Figma proportions.
+- Added `whitespace-nowrap` to `Program (AIP)` text segments to prevent any internal wrapping inside the narrower column. [0.1 hrs]
+
+### AIP Hero Title Size Reduction [2026-06-08 08:06]
+- Reduced font size of both title and shine-overlay layers by 20% across all responsive viewports. [0.05 hrs]
+
+### AIP Subtitle Line Break Restoration [2026-06-08 08:14]
+- Restored `whitespace-pre-line` class to AipHero's subtitle `<p>` tag and reverted the content file to use `\n` to properly render the manual line break. [0.05 hrs]

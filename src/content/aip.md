@@ -2,7 +2,7 @@
 metaTitle: "Advancing Inclusion Program (AIP) - GHCI 27"
 metaDescription: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully Sponsored."
 heroTitle: "Advancing Inclusion Program (AIP)"
-heroSubtitle: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully Sponsored."
+heroSubtitle: "A Scholarship Designed to Expand Access.\nAttend GHCI 27. Fully Sponsored."
 heroCtaText: "Apply Now"
 heroCtaLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
 heroImage: "/aip-hero-placeholder.png"

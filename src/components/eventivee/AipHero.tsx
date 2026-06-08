@@ -48,7 +48,7 @@ export default function AipHero({ data }: AipHeroProps) {
   };
 
   return (
-    <section className="relative h-auto pt-36 pb-20 md:pt-48 md:pb-28 flex flex-col items-center justify-center overflow-hidden bg-black text-white px-4 md:px-13">
+    <section className="relative h-auto pt-36 pb-20 md:pt-44 md:pb-28 flex flex-col items-center justify-center overflow-hidden bg-black text-white px-4 md:px-13">
       {/* Background Bokeh Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-[#0a0208]" />
@@ -69,11 +69,11 @@ export default function AipHero({ data }: AipHeroProps) {
       </div>
 
       <div className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-4 items-center">
           {/* Left Column: Copy & Call to Action */}
-          <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="relative group w-full flex flex-col items-center lg:items-start mb-6">
-              <div className="relative w-full lg:w-max flex flex-col items-center lg:items-start">
+              <div className="relative w-full flex flex-col items-center lg:items-start">
                 {/* Main Fill Layer */}
                 <motion.h1
                   ref={titleRef}
@@ -91,10 +91,11 @@ export default function AipHero({ data }: AipHeroProps) {
                     letterSpacing: '-0.02em',
                     lineHeight: isMobile ? '1.0' : '1.05',
                   }}
-                  className="text-[44px] md:text-7xl lg:text-[5.5rem] font-medium w-full lg:w-max flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible text-center lg:text-left"
+                  className="text-[35px] md:text-[58px] lg:text-[3.6rem] xl:text-[4.4rem] font-medium w-full flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible text-center lg:text-left"
                 >
-                  <span className="block md:whitespace-nowrap">Advancing Inclusion</span>
-                  <span className="block md:whitespace-nowrap">Program (AIP)</span>
+                  <span className="block">Advancing</span>
+                  <span className="block">Inclusion</span>
+                  <span className="block whitespace-nowrap">Program (AIP)</span>
                 </motion.h1>
 
                 {/* Border Shine Layer (Overlay) */}
@@ -113,10 +114,11 @@ export default function AipHero({ data }: AipHeroProps) {
                     lineHeight: isMobile ? '1.0' : '1.05',
                     pointerEvents: 'none',
                   }}
-                  className="text-[44px] md:text-7xl lg:text-[5.5rem] font-medium w-full lg:w-max flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 text-center lg:text-left"
+                  className="text-[35px] md:text-[58px] lg:text-[3.6rem] xl:text-[4.4rem] font-medium w-full flex flex-col items-center lg:items-start mix-blend-plus-lighter px-4 lg:px-0 overflow-visible opacity-40 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 text-center lg:text-left"
                 >
-                  <span className="block md:whitespace-nowrap">Advancing Inclusion</span>
-                  <span className="block md:whitespace-nowrap">Program (AIP)</span>
+                  <span className="block">Advancing</span>
+                  <span className="block">Inclusion</span>
+                  <span className="block whitespace-nowrap">Program (AIP)</span>
                 </motion.h1>
               </div>
             </div>
@@ -125,7 +127,7 @@ export default function AipHero({ data }: AipHeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.6 }}
-              className="text-white/80 text-xl md:text-2xl max-w-2xl mb-10 leading-relaxed font-medium"
+              className="text-white text-lg md:text-[2rem] max-w-6xl mb-10 font-normal whitespace-pre-line"
             >
               {data.heroSubtitle}
             </motion.p>
@@ -161,9 +163,9 @@ export default function AipHero({ data }: AipHeroProps) {
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="lg:col-span-5 w-full flex justify-center"
+            className="lg:col-span-6 w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-full aspect-[4/3] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
+            <div className="relative w-full max-w-[760px] aspect-[708/488] rounded-[10px] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md flex items-center justify-center group shadow-2xl">
               <img 
                 src="/aip/aip-lead-img.png" 
                 alt="Advancing Inclusion Program"
