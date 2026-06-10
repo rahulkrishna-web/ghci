@@ -4,6 +4,7 @@ import AipWhatIs from '@/components/eventivee/AipWhatIs';
 import AipCategories from '@/components/eventivee/AipCategories';
 import AipBenefits from '@/components/eventivee/AipBenefits';
 import AipSplitSection from '@/components/eventivee/AipSplitSection';
+import AipHowToApply from '@/components/eventivee/AipHowToApply';
 import AipCTA from '@/components/eventivee/AipCTA';
 import Footer from '@/components/eventivee/Footer';
 
@@ -54,6 +55,8 @@ export default function AipPage() {
       <AipBenefits data={aipData as any} />
       
       <AipSplitSection data={aipData as any} />
+      
+      <AipHowToApply data={aipData as any} />
       
       <AipCTA data={aipData as any} />
       

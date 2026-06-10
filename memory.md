@@ -1613,3 +1613,22 @@
 
 ### AIP Section Apply Now Link [2026-06-08 13:00]
 - Changed the Advancing Inclusion Program card's "Launching soon" badge to an "Apply Now" button linking to `/aip`. [0.1 hrs]
+
+### AIP How to Apply Section [2026-06-10 10:00]
+- Added "How to Apply" component (`AipHowToApply.tsx`) between SplitSection and CTA sections on the AIP page.
+- Extracted step details to frontmatter inside `src/content/aip.md`.
+- Implemented smooth timeline animations and responsive visual design. [0.4 hrs]
+
+### AIP Timeline Styling & Gap Refinement [2026-06-10 10:04]
+- Reduced vertical spacing between timeline steps from 8/12 to 5/8.
+- Added a horizontal white-to-magenta gradient to the "How to Apply" section title to match standard page headers. [0.1 hrs]
+
+### AIP Timeline Connecting Line Refinement [2026-06-10 10:24]
+- Refactored connecting line logic to use relative flex-stretch segment elements for each step, ensuring the connecting line stops exactly at point 6 instead of extending below it. [0.1 hrs]
+
+### AIP Apply Now Link Update [2026-06-10 10:27]
+- Updated AIP CTA section and Hero "Apply Now" links to point directly to https://ghci27.stutzee.com/applications/scholarship/create. [0.05 hrs]
+
+
+
+

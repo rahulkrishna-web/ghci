@@ -4,7 +4,7 @@ metaDescription: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully
 heroTitle: "Advancing Inclusion Program (AIP)"
 heroSubtitle: "A Scholarship Designed to Expand Access.\nAttend GHCI 27. Fully Sponsored."
 heroCtaText: "Apply Now"
-heroCtaLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
+heroCtaLink: "https://ghci27.stutzee.com/applications/scholarship/create"
 heroImage: "/aip/ghci-aip-lead.jpeg"
 
 whatIsTitle: "What is AIP?"
@@ -48,5 +48,15 @@ whyApplyText: "GHCI brings together thousands of technologists, leaders, educato
 ctaSectionTitle: "Applications Are Now Open"
 ctaSectionText: "Apply for the Advancing Inclusion Program and join one of Asia's largest gatherings of women and allies in technology."
 ctaSectionButtonText: "APPLY NOW"
-ctaSectionButtonLink: "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"
+ctaSectionButtonLink: "https://ghci27.stutzee.com/applications/scholarship/create"
+
+howToApplyTitle: "How to Apply"
+howToApplySteps:
+  - "Click on Apply Now"
+  - "Create an account or sign in to your existing Stutzee account"
+  - "Click on New Application"
+  - "Select AIP (GHCI Scholarships)"
+  - "Fill in your application details — you can save your progress anytime using the 'Save Draft' option"
+  - "Once ready, submit your application. You can view your submitted application but please note that it cannot be edited after submission"
 ---
+
