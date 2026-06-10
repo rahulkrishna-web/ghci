@@ -30,7 +30,7 @@ export default function AipHowToApply({ data }: AipHowToApplyProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-4xl md:text-6xl font-medium tracking-tight text-transparent bg-clip-text pb-2"
+          className="text-center text-4xl md:text-6xl font-medium tracking-tight text-transparent bg-clip-text pb-4"
           style={{
             backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
             WebkitBackgroundClip: 'text'
