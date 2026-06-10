@@ -1629,6 +1629,11 @@
 ### AIP Apply Now Link Update [2026-06-10 10:27]
 - Updated AIP CTA section and Hero "Apply Now" links to point directly to https://ghci27.stutzee.com/applications/scholarship/create. [0.05 hrs]
 
+### AIP Timeline Header Margin Refinement [2026-06-10 10:33]
+- Removed the wrapping title div with `mb-16` in `AipHowToApply.tsx`.
+- Applied `mb-5` directly to the `h2` to reduce the gap between the title and first point to 20px across viewports. [0.05 hrs]
+
+
 
 
 

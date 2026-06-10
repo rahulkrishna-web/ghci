@@ -26,20 +26,18 @@ export default function AipHowToApply({ data }: AipHowToApplyProps) {
 
       <div className="w-full max-w-4xl mx-auto relative z-10">
         {/* Title */}
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-medium tracking-tight text-transparent bg-clip-text pb-1"
-            style={{
-              backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
-              WebkitBackgroundClip: 'text'
-            }}
-          >
-            {title}
-          </motion.h2>
-        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-4xl md:text-6xl font-medium tracking-tight text-transparent bg-clip-text pb-1"
+          style={{
+            backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
+            WebkitBackgroundClip: 'text'
+          }}
+        >
+          {title}
+        </motion.h2>
 
         {/* Timeline container */}
         <div className="relative max-w-2xl mx-auto">
