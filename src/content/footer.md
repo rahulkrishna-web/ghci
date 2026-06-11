@@ -30,7 +30,7 @@ columns:
       - label: "FAQ"
         href: "#faq"
       - label: "Sponsorship"
-        href: "#partner"
+        href: "/partner"
       - label: "Event Terms & Conditions"
         href: "https://anitab.org/event-terms-conditions"
       - label: "Code of Conduct"

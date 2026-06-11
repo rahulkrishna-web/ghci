@@ -13,9 +13,10 @@ type PartnerWithUsProps = {
     trustedByText: string;
     logos: { name: string; src: string }[];
   };
+  isPage?: boolean;
 };
 
-export default function PartnerWithUs({ data }: PartnerWithUsProps) {
+export default function PartnerWithUs({ data, isPage = false }: PartnerWithUsProps) {
   const getIcon = (name: string) => {
     switch (name) {
       case 'bolt': return <img src="/icons/access-technology.png" alt="Access Technology" className="w-10 h-10 object-contain" />;
@@ -26,7 +27,7 @@ export default function PartnerWithUs({ data }: PartnerWithUsProps) {
   };
 
   return (
-    <section id="partners" className="py-6 relative overflow-hidden text-white" style={{
+    <section id="partners" className={`${isPage ? 'pt-32 pb-12 md:pt-44 md:pb-24' : 'py-6'} relative overflow-hidden text-white`} style={{
       backgroundImage: 'url(/partner-bg.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'bottom center'

@@ -1633,6 +1633,11 @@
 - Removed the wrapping title div with `mb-16` in `AipHowToApply.tsx`.
 - Applied `mb-5` directly to the `h2` to reduce the gap between the title and first point to 20px across viewports. [0.05 hrs]
 
+### Create /partner Route and Page [2026-06-11 20:22]
+- Created the new `/partner` subpage in `src/app/partner/page.tsx` loading partner details.
+- Updated `PartnerWithUs.tsx` to support the `isPage` prop for dynamic spacing when displayed as a standalone page.
+- Updated the Sponsorship footer link in `footer.md` to point to `/partner`. [0.4 hrs]
+
 
 
 
