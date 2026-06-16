@@ -16,7 +16,7 @@ const defaultTickets = [
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges (via Verix)"
+      "Attendee certification + digital badges"
     ],
     cardBlur: 0,
     blobsDesktop: [
@@ -39,7 +39,7 @@ const defaultTickets = [
     id: "super-early",
     name: "Super Early Bird",
     description: "All Access 3-day pass. ",
-    footnote: "Offer valid till June 14, 2026",
+    footnote: "Offer valid till June 30, 2026",
     price: "₹11,000",
     oldPrice: "₹15,000",
     gst: "18% GST Applicable",
@@ -47,7 +47,7 @@ const defaultTickets = [
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges (via Verix)"
+      "Attendee certification + digital badges"
     ],
     cardBlur: 70,
     blobsDesktop: [
@@ -80,7 +80,7 @@ const defaultTickets = [
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges (via Verix)"
+      "Attendee certification + digital badges"
     ],
     cardBlur: 70,
     blobsDesktop: [
@@ -495,7 +495,7 @@ export default function Ticketing() {
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges (via Verix)"
+        "Attendee certification + digital badges"
       ],
       "cardBlur": 0,
       "blobsDesktop": [
@@ -584,7 +584,7 @@ export default function Ticketing() {
       "id": "super-early",
       "name": "Super Early Bird",
       "description": "",
-      "footnote": "Offer valid till June 14, 2026",
+      "footnote": "Offer valid till June 30, 2026",
       "price": "₹11,000",
       "oldPrice": "₹15,000",
       "gst": "+ applicable charges",
@@ -592,7 +592,7 @@ export default function Ticketing() {
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges (via Verix)"
+        "Attendee certification + digital badges"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -715,7 +715,7 @@ export default function Ticketing() {
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges (via Verix)"
+        "Attendee certification + digital badges"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -840,7 +840,7 @@ export default function Ticketing() {
         "Full access to GHCI 27, including sessions, workshops, and networking",
         "Live Q&A, chats, polls, and curated networking opportunities",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges (via Verix)"
+        "Attendee certification + digital badges"
       ],
       "cardBlur": 70,
       "blobsDesktop": [

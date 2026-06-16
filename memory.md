@@ -1627,7 +1627,7 @@
 - Refactored connecting line logic to use relative flex-stretch segment elements for each step, ensuring the connecting line stops exactly at point 6 instead of extending below it. [0.1 hrs]
 
 ### AIP Apply Now Link Update [2026-06-10 10:27]
-- Updated AIP CTA section and Hero "Apply Now" links to point directly to https://ghci27.stutzee.com/applications/scholarship/create. [0.05 hrs]
+- Updated AIP CTA section and Hero "Apply Now" links to point directly to https://ghci27.stutzee.com/applications/scholarship/create. [0.05 hrs]                                                                
 
 ### AIP Timeline Header Margin Refinement [2026-06-10 10:33]
 - Removed the wrapping title div with `mb-16` in `AipHowToApply.tsx`.
@@ -1638,7 +1638,21 @@
 - Updated `PartnerWithUs.tsx` to support the `isPage` prop for dynamic spacing when displayed as a standalone page.
 - Updated the Sponsorship footer link in `footer.md` to point to `/partner`. [0.4 hrs]
 
+### Verification of GTM tracking code [2026-06-12 14:10]
+- Inspected the project and verified Google Tag Manager is configured in `src/app/layout.tsx` (ID: `GTM-MRFZ6J6W`). [0.05 hrs]
+- Verified that all subpages (including `/aip` and `/partner`) inherit the Root Layout and thus include GTM tracking. [0.05 hrs]
 
+### Task Auditing & Man-Hour Summary [2026-06-15 04:52]
+- Audited development log records inside `memory.md` to extract, compile, and aggregate task details and man-hours.
+- Generated a structured categorization of tasks across major components (AIP, Ticketing, Hero, etc.) and created a detailed report artifact `task_hours_summary.md`.
+[0.2 hrs]
 
+### Ticketing Offer Date Update [2026-06-16 13:30]
+- Updated the Super Early Bird offer validity date from June 14, 2026 to June 30, 2026.
+[0.05 hrs]
+
+### Remove via Verix from Tickets/Passes [2026-06-16 13:32]
+- Removed "(via Verix)" reference from all passes/tickets inside Ticketing.tsx and ticket-perks.md.
+[0.05 hrs]
 
 
