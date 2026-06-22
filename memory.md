@@ -1655,4 +1655,7 @@
 - Removed "(via Verix)" reference from all passes/tickets inside Ticketing.tsx and ticket-perks.md.
 [0.05 hrs]
 
-
+### Countdown Timer Test Page [2026-06-22 12:51]
+- Created dynamic countdown timer component (`CountdownTimer.tsx`) with sliding animation for individual digits, glassmorphism card containers, and glowing hover borders.
+- Created `/test` subpage under `src/app/test/page.tsx` displaying the countdown timer, subpage navbar, intro copy, premium ticket CTA button, animated bokeh backgrounds, and standard footer.
+[0.8 hrs]
