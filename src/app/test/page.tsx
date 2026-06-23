@@ -53,7 +53,7 @@ export default function TestCountdownPage() {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center">
           
           {/* Section tag / label in brand mono styling */}
           <div className="mb-4 font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-[#A32482] font-semibold">

@@ -1659,3 +1659,22 @@
 - Created dynamic countdown timer component (`CountdownTimer.tsx`) with sliding animation for individual digits, glassmorphism card containers, and glowing hover borders.
 - Created `/test` subpage under `src/app/test/page.tsx` displaying the countdown timer, subpage navbar, intro copy, premium ticket CTA button, animated bokeh backgrounds, and standard footer.
 [0.8 hrs]
+
+### Countdown Timer Cards Background Shine [2026-06-23 13:06]
+- Ported the homepage lead text interactive mouseover shine effect to the countdown cards background and borders in `/test`.
+[0.3 hrs]
+
+### Countdown Timer Cards Alignment Refinement [2026-06-23 13:08]
+- Fixed 3-digit alignment issue on the Days card by changing the rigid grid to a flexible flex layout with content-driven dynamic widths (`w-auto`) on desktop/tablet.
+- Adjusted digit box width, margins, and font sizes to fit 3 digits comfortably within mobile grid columns without boundary overflow.
+[0.2 hrs]
+
+### Countdown Timer Cards Boundary Overflow Fix [2026-06-23 13:12]
+- Fixed card boundary compression/overflow by adding `shrink-0` class to `CountdownCard` container.
+- Expanded the parent content wrapper max-width to `max-w-6xl` in `/src/app/test/page.tsx` to accommodate the expanded width requirements of the countdown cards row.
+[0.1 hrs]
+
+### Countdown Timer Cards Single Row Layout on Mobile [2026-06-23 13:14]
+- Refactored the cards container to lock to a single non-wrapping row (`flex-row flex-nowrap`) across all viewports.
+- Implemented responsive, percentage/pixel-precise digit container dimensions, font sizes, margins, gaps, and border radii to ensure that 4 cards fit on narrow mobile screens (360px+).
+[0.2 hrs]
