@@ -94,17 +94,17 @@ export default function About({ data }: AboutProps) {
                     loop 
                     muted={isMuted}
                     playsInline 
-                    poster="https://res.cloudinary.com/dzzh2uxoj/video/upload/v1781075317/GHIC_V6_7April_FINAL_720p_eeyl3h_zj0c3a.jpg"
+                    poster="https://cdn.clyrix.com/drive/GHIC_V6_7April_FINAL_720p_eeyl3h.jpg"
                     className="w-full h-full object-cover"
                 >
                     {/* Progressive loading: 1080p for desktop, 720p for others */}
                     <source 
-                        src="https://res.cloudinary.com/dzzh2uxoj/video/upload/v1781075345/GHIC_V6_7April_FINAL_f0khnn_evrnei.mp4" 
+                        src="https://cdn.clyrix.com/drive/GHIC_V6_7April_FINAL_f0khnn.mp4" 
                         type="video/mp4" 
                         media="(min-width: 1024px)"
                     />
                     <source 
-                        src="https://res.cloudinary.com/dzzh2uxoj/video/upload/v1781075317/GHIC_V6_7April_FINAL_720p_eeyl3h_zj0c3a.mp4" 
+                        src="https://cdn.clyrix.com/drive/GHIC_V6_7April_FINAL_720p_eeyl3h.mp4" 
                         type="video/mp4" 
                     />
                 </video>
