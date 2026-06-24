@@ -142,7 +142,7 @@ function CountdownCard({ unit, mounted }: CountdownCardProps) {
   );
 }
 
-export default function CountdownTimer() {
+export default function CountdownTimer({ className = "py-12 px-4" }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -180,7 +180,7 @@ export default function CountdownTimer() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-12 px-4 flex flex-col items-center">
+    <div className={`w-full max-w-6xl mx-auto flex flex-col items-center ${className}`}>
       {/* Outer flex container */}
       <div className="flex flex-row flex-nowrap gap-2 sm:gap-4 md:gap-6 lg:gap-8 w-full justify-center items-stretch">
         {timeUnits.map((unit) => (

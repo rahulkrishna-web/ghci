@@ -1678,3 +1678,8 @@
 - Refactored the cards container to lock to a single non-wrapping row (`flex-row flex-nowrap`) across all viewports.
 - Implemented responsive, percentage/pixel-precise digit container dimensions, font sizes, margins, gaps, and border radii to ensure that 4 cards fit on narrow mobile screens (360px+).
 [0.2 hrs]
+
+### Countdown Timer Hero Integration [2026-06-24 17:39]
+- Updated `CountdownTimer.tsx` to support a customizable `className` prop to allow styling overrides.
+- Integrated `CountdownTimer` into the homepage `Hero.tsx` below the button cluster and above the bottom marquee with no top/bottom helper text (counting down to Jan 20th, 2027).
+[0.25 hrs]

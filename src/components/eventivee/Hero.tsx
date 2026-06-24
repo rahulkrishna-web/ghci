@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Calendar, Ticket, Settings, X } from 'lucide-react';
 import { useRef, useState, useEffect, useMemo } from 'react';
 import Marquee from './Marquee';
+import CountdownTimer from './CountdownTimer';
 
 type HeroProps = {
   data: {
@@ -260,6 +261,16 @@ export default function Hero({ data }: HeroProps) {
                     </div>
                 </a>
             </div> */}
+        </motion.div>
+
+        {/* Countdown Timer */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-6 md:mt-10"
+        >
+          <CountdownTimer className="py-2 md:py-4 px-4" />
         </motion.div>
       </div>
 
