@@ -1683,3 +1683,96 @@
 - Updated `CountdownTimer.tsx` to support a customizable `className` prop to allow styling overrides.
 - Integrated `CountdownTimer` into the homepage `Hero.tsx` below the button cluster and above the bottom marquee with no top/bottom helper text (counting down to Jan 20th, 2027).
 [0.25 hrs]
+
+### WeQuest Landing Page Creation [2026-06-24 18:27]
+- Created `/wequest` static page route matching the layout and design patterns of the landing page.
+- Generated and set up a custom tech conference background image for the WeQuest Hero.
+- Created `src/content/wequest.md` and 9 modular section components representing the WeQuest presentation, timeline, benefits, criteria, selection tags, and key dates.
+- Linked the homepage WeQuest section button directly to the new `/wequest` route.
+[1.0 hrs]
+
+### WeQuest Layout Alignment with Figma [2026-06-24 18:36]
+- Modified `src/content/wequest.md` to update evaluation criteria parameters and date strings to match Figma.
+- Updated `WequestSelection.tsx` to display inline list items separated by vertical lines inside a custom plum-colored card.
+- Redesigned `WequestDates.tsx` using a gap-based CSS grid layout for perfectly aligned borders and updated titles to bold title case.
+[0.3 hrs]
+
+### WeQuest Selection Card Width Increase [2026-06-24 18:37]
+- Updated `WequestSelection.tsx` to expand the card container to `max-w-6xl` and reduced horizontal padding and margin sizes between the text items to fit them entirely on a single horizontal row on desktop.
+[0.1 hrs]
+
+### WeQuest Selection Container Expanded [2026-06-24 18:39]
+- Expanded the parent block container in `WequestSelection.tsx` to `max-w-6xl` to remove the 1024px maximum width constraint that was preventing the card scaling.
+- Configured the flex layout on the evaluation list items with `md:flex-nowrap` to prevent "Growth Potential" from wrapping to the next line on desktop.
+[0.1 hrs]
+
+### WeQuest Key Dates Text Gradient [2026-06-24 18:42]
+- Updated date values in `WequestDates.tsx` from solid magenta (`#A32482`) to the requested gradient: `linear-gradient(258.31deg, #A32478 44%, #FFFFFF 90.99%)`.
+[0.1 hrs]
+
+### WeQuest Key Dates Transparent Cell Cards [2026-06-24 18:44]
+- Refactored `WequestDates.tsx` to set transparent backgrounds (`bg-transparent`) on each date card.
+- Replaced the grid-gap border layout with a grid wrapper border and responsive single-pixel borders inside to prevent doubling of borders.
+[0.1 hrs]
+
+### WeQuest Key Dates Fully Rounded Cards [2026-06-24 18:46]
+- Modified `WequestDates.tsx` to set `rounded-[12px] border border-white/10` on all four corners of each date card cell.
+- Placed the cells inside a transparent grid with `gap-4` spacing.
+[0.1 hrs]
+
+### WeQuest Key Dates Grid Gap Removal [2026-06-24 18:47]
+- Updated `WequestDates.tsx` to set `gap-0` on the grid container, letting the fully rounded date card cells touch each other directly.
+[0.1 hrs]
+
+### WeQuest Application Process Layout Alignment [2026-06-24 18:48]
+- Updated `WequestProcess.tsx` to stack the step title on the first line and description on the next line, removing the em-dash divider.
+- Updated `wequest.md` copy for process steps to match the exact wording of the shared Figma design.
+[0.2 hrs]
+
+### WeQuest Who Can Apply Card Alignment [2026-06-24 18:53]
+- Updated `WequestWhoCanApply.tsx` to center card contents vertically (`justify-center` instead of `justify-end`).
+- Tightened space between step title and description by reducing text gap wrapper from `space-y-4` to `space-y-2`.
+[0.1 hrs]
+
+### WeQuest Who Can Apply Hover Interactivity [2026-06-24 18:54]
+- Modified `WequestWhoCanApply.tsx` to make all cards uniform by default.
+- Implemented hover effects to apply the magenta-purple gradient background, border styling, drop shadow, and brightened description text (`text-white/90` from `text-white/60`) interactively.
+[0.1 hrs]
+
+### WeQuest What You'll Gain Card Updates [2026-06-24 18:56]
+- Modified `WequestGains.tsx` to remove the circular background container behind the check icon.
+- Refactored the layout to use a horizontal scroll view with navigation arrows, positioning the 5th card slightly off-screen on the right.
+- Updated `wequest.md` copy for all gain items and added the 5th card (`Founder Community`) matching Figma.
+[0.2 hrs]
+
+### WeQuest Hero Contained Card & Illuminate Effect [2026-06-24 19:02]
+- Copied lead background image from Downloads and optimized to high-compression WebP (`wequest-hero-bg.webp`) reducing size by ~95% (36 KB).
+- Modified `WequestHero.tsx` to wrap the hero contents in an almost full-width rounded card component matching the Figma design.
+- Realigned title styling and container bounds to correctly enable the mouse-shine illuminate hover effect matching the homepage text.
+- Stacked and cleaned up sub-descriptions inside the card into a unified three-line list.
+- Fixed alignment/overlapping bug on the title layers in `WequestHero.tsx` by introducing the same `w-full md:w-max` container wrapping layer as the homepage lead title.
+[0.4 hrs]
+
+### WeQuest What Is Section Layout & Copy Alignment [2026-06-24 19:08]
+- Updated `wequest.md` whatIsText content to match the exact copy from Figma.
+- Refactored `WequestWhatIs.tsx` to align container width (`max-w-5xl mx-auto`), broke heading to two lines with specific blocks, split text into standard paragraph blocks, and scaled text sizes (`text-base md:text-[18px] lg:text-[20px]`) for a clean font size proportion.
+[0.2 hrs]
+
+### WeQuest What Is Section Width & Copy Verification [2026-06-24 19:11]
+- Verified the description copy exactly matches the Figma specs.
+- Widened the description text column in `WequestWhatIs.tsx` by ~30% by increasing the outer container max-width to `max-w-[1140px]` and shifting the grid column spans to `md:col-span-4` (heading) and `md:col-span-8` (paragraphs).
+[0.1 hrs]
+
+### WeQuest Why Apply Section Container & Alignment Fix [2026-06-24 19:13]
+- Refactored `WequestWhyApply.tsx` to match the exact container margins (`max-w-[1140px]`), grid layout (`md:col-span-4` and `md:col-span-8`), broken heading design, and text size proportions (`text-[18px]` bullets and `text-base md:text-[18px] lg:text-[20px]` paragraphs) of the "What is WeQuest?" section.
+[0.1 hrs]
+
+### WeQuest Why Apply Title Layout Fix [2026-06-24 19:14]
+- Re-structured `WequestWhyApply.tsx` headingText to render on a single line with the text gradient spanning both words "Why Apply?".
+[0.1 hrs]
+
+### WeQuest Section Backgrounds Integration [2026-06-24 19:37]
+- Optimized and converted the new background images `/public/wequest/why_apply_bg.png` and `how_to_apply_bg.png` to highly compressed WebP format, achieving ~87% file size reductions.
+- Added `/wequest/why_apply_bg.webp` background to the section tag in `WequestWhyApply.tsx`.
+- Added `/wequest/how_to_apply_bg.webp` background to the section tag in `WequestProcess.tsx`.
+[0.1 hrs]
