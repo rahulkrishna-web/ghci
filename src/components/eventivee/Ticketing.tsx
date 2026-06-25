@@ -1081,7 +1081,50 @@ export default function Ticketing() {
 
   if (!mounted) return null;
   
-  const tickets = config.tickets || [];
+  // Dynamic scheduling logic for Super Early Bird (July 1, 2026 cutoff)
+  const getProcessedTickets = () => {
+    const rawTickets = config.tickets || [];
+    const queryDate = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('testDate') : null;
+    let now = new Date();
+    if (queryDate) {
+      const formatted = queryDate.includes('T') ? queryDate : `${queryDate}T00:00:00`;
+      const withTimezone = formatted.includes('+') || formatted.endsWith('Z') ? formatted : `${formatted}+05:30`;
+      now = new Date(withTimezone);
+    }
+    const isJuly1OrLater = now >= new Date('2026-07-01T00:00:00+05:30');
+
+    let processed = rawTickets.map(t => {
+      if (t.id === 'super-early' && isJuly1OrLater) {
+        return {
+          ...t,
+          disabled: true,
+          cta: 'Sold Out'
+        };
+      }
+      return t;
+    });
+
+    if (isJuly1OrLater) {
+      // Find the super-early ticket
+      const superEarlyTicket = processed.find(t => t.id === 'super-early');
+      if (superEarlyTicket) {
+        // Remove super-early from its current position
+        const filtered = processed.filter(t => t.id !== 'super-early');
+        // Find index of virtual ticket
+        const virtualIdx = filtered.findIndex(t => t.id === 'virtual');
+        if (virtualIdx !== -1) {
+          // Insert after virtual
+          filtered.splice(virtualIdx + 1, 0, superEarlyTicket);
+        } else {
+          filtered.push(superEarlyTicket);
+        }
+        processed = filtered;
+      }
+    }
+    return processed;
+  };
+
+  const tickets = getProcessedTickets();
   const activeTicket = tickets.find(t => t.id === activeTicketId);
 
   const renderBlobEditor = (blobType: 'blobsDesktop' | 'blobsMobile') => (

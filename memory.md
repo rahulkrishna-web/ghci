@@ -1798,3 +1798,18 @@
 ### Attendee Count Stat Update [2026-06-25 15:29]
 - Updated attendee statistics from 10,000+ to 12,000+ in `about.md` (homepage stat section), `wequest.md`, `WequestHero.tsx` (WeQuest description), and `partner-with-us.md`.
 [0.05 hrs]
+
+### Mobile Carousel Navigation Arrows Alignment [2026-06-25 15:37]
+- Hid absolute navigation chevrons on mobile viewports using `hidden md:block` in `WequestGains.tsx`, `AipBenefits.tsx`, and `ExploreTracks.tsx` to prevent arrows from overlapping card content.
+[0.1 hrs]
+
+### Ticket Tiers Scheduling and Reordering [2026-06-25 16:09]
+- Implemented client-side and SSR-safe date-based scheduling logic in `Ticketing.tsx` and `Marquee.tsx`.
+- Automatically disables the "Super Early Bird" pass, changes its CTA to "Sold Out", and reorders it to appear after the "Virtual" pass on/after July 1, 2026.
+- Added support for a URL query parameter `?testDate=YYYY-MM-DD` (e.g. `?testDate=2026-07-01`) to allow immediate manual verification of the scheduled ticket state.
+[0.15 hrs]
+
+### Timezone Alignment to IST [2026-06-25 16:10]
+- Verified that the homepage `CountdownTimer.tsx` already targets Indian Standard Time (IST, `+05:30`) correctly.
+- Aligned date comparison checks in `Ticketing.tsx` and `Marquee.tsx` to use the explicit `+05:30` IST timezone offset, ensuring timezone-independent scheduling for global visitors.
+[0.05 hrs]

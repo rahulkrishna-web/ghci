@@ -68,7 +68,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               onClick={() => scroll('left')}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group/btn"
+              className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group/btn"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
             </motion.button>
@@ -81,7 +81,7 @@ export default function ExploreTracks({ data }: ExploreTracksProps) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               onClick={() => scroll('right')}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group/btn"
+              className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-[#A32482] transition-all group/btn"
             >
               <ChevronRight className="w-6 h-6 text-white" />
             </motion.button>
