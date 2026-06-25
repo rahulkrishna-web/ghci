@@ -1782,3 +1782,11 @@
 - Changed grid items alignment to middle-align the titles in `WequestWhyApply.tsx` and `WequestWhatIs.tsx`.
 - Changed the font weight of criteria card titles in `WequestWhoCanApply.tsx` from bold to medium.
 [0.5 hrs]
+
+### WeQuest Hero Background Gradient Alignment [2026-06-25 15:24]
+- Applied a vertical linear gradient overlay (rgba(0, 0, 0, 0.9) 0% to rgba(0, 0, 0, 0) 100%) over the background image in `WequestHero.tsx` and removed the bottom-to-top vignette to match Figma.
+[0.1 hrs]
+
+### WeQuest Hero Subtitle Title Case Update [2026-06-25 15:26]
+- Removed the `uppercase` class from the subtitle in `WequestHero.tsx` to render "Pitch. Connect. Grow." in title case as requested.
+[0.05 hrs]

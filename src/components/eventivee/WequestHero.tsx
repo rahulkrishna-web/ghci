@@ -59,15 +59,12 @@ export default function WequestHero({ data }: WequestHeroProps) {
         id="wequest-hero" 
         className="relative flex-grow rounded-[24px] md:rounded-[32px] overflow-hidden flex flex-col items-center justify-center text-center py-20 md:py-28 px-6 md:px-12"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75)), url(${data.heroImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%), url(${data.heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 25%',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Background vignette & gradient fades inside the card */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none z-0" />
-        
         {/* SVG Noise Overlay */}
         <div 
           className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay z-0" 
@@ -130,7 +127,7 @@ export default function WequestHero({ data }: WequestHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="text-2xl md:text-4xl lg:text-[2.6rem] font-semibold tracking-tight text-white mb-6 uppercase"
+            className="text-2xl md:text-4xl lg:text-[2.6rem] font-semibold tracking-tight text-white mb-6"
           >
             {data.heroSubtitle}
           </motion.p>
@@ -160,12 +157,12 @@ export default function WequestHero({ data }: WequestHeroProps) {
             transition={{ delay: 0.35, duration: 0.6 }}
             className="flex flex-row items-center group gap-0 cursor-pointer"
           >
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10 animate-in fade-in zoom-in duration-200">
-              <img src="/icons/Ticket.png" alt="Ticket" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+            <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10 animate-in fade-in zoom-in duration-200">
+              <img src="/icons/Ticket.png" alt="Ticket" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
             </div>
             <a
               href={data.heroCtaLink}
-              className="h-12 md:h-14 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-xs md:text-sm font-bold tracking-wider shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
+              className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-bold tracking-wider shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
             >
               <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                 <div className="h-full w-full flex items-center justify-center px-6 md:px-8 shrink-0">
