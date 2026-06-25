@@ -6,7 +6,7 @@ ctaText: "Enquire Now"
 ctaLink: "mailto:corporate@anitabindia.org"
 benefits:
   - title: "Access top technology talent"
-    desc: "Connect with 10,000+ professionals across roles and experience levels"
+    desc: "Connect with 12,000+ professionals across roles and experience levels"
     icon: "bolt"
   - title: "Strengthen your brand presence"
     desc: "Position your organization at the center of a high-impact tech ecosystem"

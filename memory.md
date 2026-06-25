@@ -1790,3 +1790,11 @@
 ### WeQuest Hero Subtitle Title Case Update [2026-06-25 15:26]
 - Removed the `uppercase` class from the subtitle in `WequestHero.tsx` to render "Pitch. Connect. Grow." in title case as requested.
 [0.05 hrs]
+
+### WeQuest Hero CTA Button Sizing Alignment [2026-06-25 15:27]
+- Aligned the CTA button and icon size in `WequestHero.tsx` with the larger homepage lead CTA button dimensions (icon container to `w-16 h-16` / button container to `h-16`).
+[0.05 hrs]
+
+### Attendee Count Stat Update [2026-06-25 15:29]
+- Updated attendee statistics from 10,000+ to 12,000+ in `about.md` (homepage stat section), `wequest.md`, `WequestHero.tsx` (WeQuest description), and `partner-with-us.md`.
+[0.05 hrs]

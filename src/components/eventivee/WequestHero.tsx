@@ -140,7 +140,7 @@ export default function WequestHero({ data }: WequestHeroProps) {
             className="text-white/90 text-sm md:text-lg lg:text-[20px] max-w-3xl mb-10 leading-relaxed font-medium space-y-1.5"
           >
             <p>
-              Pitch before 10,000+ attendees at <span className="font-bold">GHCI 27</span>.
+              Pitch before 12,000+ attendees at <span className="font-bold">GHCI 27</span>.
             </p>
             <p>
               Connect with investors, mentors, and ecosystem leaders.

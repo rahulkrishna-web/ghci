@@ -1,7 +1,7 @@
 ---
 sectionTitle: "Experience GHCI"
 stats:
-  - value: "10,000+"
+  - value: "12,000+"
     label: "attendees across experience levels"
   - value: "350+"
     label: "speakers and industry leaders"
