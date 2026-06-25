@@ -47,7 +47,7 @@ export default function WequestWhoCanApply({ data }: WequestWhoCanApplyProps) {
               >
                 <div className="space-y-2">
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight text-white">
+                  <h3 className="text-xl md:text-2xl font-medium leading-tight text-white">
                     {item.title}
                   </h3>
                   

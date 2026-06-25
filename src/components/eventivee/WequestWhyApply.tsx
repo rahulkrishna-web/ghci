@@ -75,7 +75,7 @@ export default function WequestWhyApply({ data }: WequestWhyApplyProps) {
 
       {/* Container brought inside and widened to match what-is section */}
       <div className="max-w-[1140px] mx-auto w-full px-4 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 lg:gap-24 items-center">
           {/* Left Column: Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

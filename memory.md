@@ -1776,3 +1776,9 @@
 - Added `/wequest/why_apply_bg.webp` background to the section tag in `WequestWhyApply.tsx`.
 - Added `/wequest/how_to_apply_bg.webp` background to the section tag in `WequestProcess.tsx`.
 [0.1 hrs]
+
+### WeQuest Page Improvements [2026-06-25 15:13]
+- Optimized the 20.5MB `DSC00648.JPG` image into a 180KB WebP asset (`/public/wequest-hero-bg.webp`) to replace the WeQuest lead hero background.
+- Changed grid items alignment to middle-align the titles in `WequestWhyApply.tsx` and `WequestWhatIs.tsx`.
+- Changed the font weight of criteria card titles in `WequestWhoCanApply.tsx` from bold to medium.
+[0.5 hrs]
