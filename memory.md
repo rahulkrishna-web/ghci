@@ -1819,3 +1819,9 @@
 - Configured dynamic scheduling logic to keep "Early Bird Ticket" hidden until July 1st, after which it seamlessly replaces "Super Early Bird" (which is pushed to the end as 'Sold Out').
 - Ensured properties match the user specs: Base price ₹12,000, footnote LAST DATE - August 31.
 [0.2 hrs]
+
+### Ticket Card Content Overlap Fix [2026-07-01 00:01]
+- Resolved an overlap bug in `TicketingCard` (Desktop) where the strikethrough price and actual price would clip into the header description.
+- Increased the fixed height constraint for the header block (`h-[140px]` -> `h-[160px]`) and the price/CTA block (`h-[170px]` -> `h-[210px]`) to safely accommodate multiline descriptions and the 196px intrinsic height of the price/CTA block without `justify-end` pushing overflow content upwards.
+[0.1 hrs]
+

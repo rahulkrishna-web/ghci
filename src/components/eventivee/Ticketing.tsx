@@ -286,7 +286,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
 
       {/* Content */}
       <div className="relative z-10  flex flex-col h-full flex-1">
-        <div className="p-8 md:p-10 pt-16 md:pt-14 pb-2 md:pb-2 h-[140px] flex flex-col justify-center flex-shrink-0">
+        <div className="p-8 md:p-10 pt-16 md:pt-14 pb-2 md:pb-2 h-[160px] flex flex-col justify-center flex-shrink-0">
           <h3 className="text-xl md:text-2xl mb-2 leading-tight">{ticket.name}</h3>
           {ticket.description && (
             <p className="text-white/60 text-sm md:text-base leading-snug line-clamp-2">
@@ -295,7 +295,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
           )}
         </div>
         {/* <div className="border-t border-dashed border-white/20 py-0 w-full" /> */}
-        <div className="px-8 md:px-10 h-[170px] flex flex-col justify-end pb-6 flex-shrink-0">
+        <div className="px-8 md:px-10 h-[210px] flex flex-col justify-end pb-6 flex-shrink-0">
             <div className="flex flex-col justify-end h-[80px] mb-2">
             {ticket.oldPrice ? (
               <span className="text-white/40 text-lg font-medium line-through decoration-white/40 leading-none h-6 flex items-end mb-1">{ticket.oldPrice}</span>
