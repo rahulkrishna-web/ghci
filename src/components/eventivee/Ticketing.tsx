@@ -70,6 +70,40 @@ const defaultTickets = [
     ]
   },
   {
+    id: "early-bird",
+    name: "Early Bird Ticket",
+    description: "All Access 3-day pass. ",
+    footnote: "LAST DATE – August 31",
+    price: "₹12,000",
+    oldPrice: "₹15,000",
+    gst: "+ applicable charges",
+    cta: "Get the Pass",
+    features: [
+      "Full access to GHCI 27 (sessions, workshops & networking)",
+      "1-year AnitaB.org Global Membership",
+      "Attendee certification + digital badges"
+    ],
+    cardBlur: 70,
+    blobsDesktop: [
+      { color: "#a32482", width: 52, height: 82, x: 67, y: -37, opacity: 1 },
+      { color: "#223852", width: 40, height: 65, x: -5, y: 14, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 51, y: 31, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 78, y: 60, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: 39, opacity: 1 }
+    ],
+    blobsMobile: [
+      { color: "#a32482", width: 33, height: 82, x: -9, y: 73, opacity: 1 },
+      { color: "#223852", width: 26, height: 50, x: -8, y: -16, opacity: 0.6 },
+      { color: "#223852", width: 27, height: 69, curve: 50, x: 19, y: 11, opacity: 0.5 },
+      { color: "#223852", width: 38, height: 67, curve: 47, x: 69, y: 45, opacity: 0.5 },
+      { color: "#22021d", width: 48, height: 83, curve: 44, x: 27, y: -27, opacity: 1 }
+    ],
+    blobs: [
+      { color: "#22021D", width: 80, height: 60, x: 10, y: 40, opacity: 0.8 },
+      { color: "#A32482", width: 50, height: 40, x: 60, y: 70, opacity: 0.5 }
+    ]
+  },
+  {
     id: "regular",
     name: "Regular",
     description: "Academia / Faculty / Startup / Return-to-Work ",
@@ -705,6 +739,130 @@ export default function Ticketing() {
       ]
     },
     {
+      "id": "early-bird",
+      "name": "Early Bird Ticket",
+      "description": "All Access 3-day pass. ",
+      "footnote": "LAST DATE – August 31",
+      "price": "₹12,000",
+      "oldPrice": "₹15,000",
+      "gst": "+ applicable charges",
+      "cta": "Get the Pass",
+      "features": [
+        "Full access to GHCI 27 (sessions, workshops & networking)",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 52,
+          "height": 82,
+          "x": 67,
+          "y": -37,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 40,
+          "height": 65,
+          "x": -5,
+          "y": 14,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 51,
+          "y": 31,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 78,
+          "y": 60,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": 39,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -27,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#22021D",
+          "width": 80,
+          "height": 60,
+          "x": 10,
+          "y": 40,
+          "opacity": 0.8
+        },
+        {
+          "color": "#A32482",
+          "width": 50,
+          "height": 40,
+          "x": 60,
+          "y": 70,
+          "opacity": 0.5
+        }
+      ]
+    },
+    {
       "id": "regular",
       "name": "Academia / Faculty / Startup / Return-to-Work ",
       "description": "",
@@ -1120,6 +1278,9 @@ export default function Ticketing() {
         }
         processed = filtered;
       }
+    } else {
+      // Hide early-bird before July 1st
+      processed = processed.filter(t => t.id !== 'early-bird');
     }
     return processed;
   };

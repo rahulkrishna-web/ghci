@@ -1813,3 +1813,9 @@
 - Verified that the homepage `CountdownTimer.tsx` already targets Indian Standard Time (IST, `+05:30`) correctly.
 - Aligned date comparison checks in `Ticketing.tsx` and `Marquee.tsx` to use the explicit `+05:30` IST timezone offset, ensuring timezone-independent scheduling for global visitors.
 [0.05 hrs]
+
+### Early Bird Ticket Addition [2026-06-30 23:33]
+- Added "Early Bird Ticket" configuration to `Ticketing.tsx` in both default and fallback configs.
+- Configured dynamic scheduling logic to keep "Early Bird Ticket" hidden until July 1st, after which it seamlessly replaces "Super Early Bird" (which is pushed to the end as 'Sold Out').
+- Ensured properties match the user specs: Base price ₹12,000, footnote LAST DATE - August 31.
+[0.2 hrs]
