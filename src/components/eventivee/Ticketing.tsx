@@ -39,7 +39,7 @@ const defaultTickets = [
     id: "super-early",
     name: "Super Early Bird",
     description: "All Access 3-day pass. ",
-    footnote: "Offer valid till June 30, 2026",
+    footnote: "",
     price: "₹11,000",
     oldPrice: "₹15,000",
     gst: "18% GST Applicable",
@@ -191,7 +191,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
-      className="relative w-full h-[680px] rounded-[2.5rem] overflow-hidden group flex flex-col"
+      className="relative w-full h-[740px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
         maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
         WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
@@ -618,7 +618,7 @@ export default function Ticketing() {
       "id": "super-early",
       "name": "Super Early Bird",
       "description": "",
-      "footnote": "Offer valid till June 30, 2026",
+      "footnote": "",
       "price": "₹11,000",
       "oldPrice": "₹15,000",
       "gst": "+ applicable charges",

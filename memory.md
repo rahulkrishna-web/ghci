@@ -1830,4 +1830,9 @@
 - Standardized footnote copy to "Offer valid till August 31" to ensure consistency with other ticket tiles on the page.
 [0.1 hrs]
 
+### Super Early Bird Footnote Update [2026-07-01 10:29]
+- Removed the "Offer valid till" footnote from the Super Early Bird ticket as the cutoff date has passed and the ticket is now marked as Sold Out.
+[0.1 hrs]
+
+
 
