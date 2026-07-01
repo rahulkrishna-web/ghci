@@ -1825,3 +1825,9 @@
 - Increased the fixed height constraint for the header block (`h-[140px]` -> `h-[160px]`) and the price/CTA block (`h-[170px]` -> `h-[210px]`) to safely accommodate multiline descriptions and the 196px intrinsic height of the price/CTA block without `justify-end` pushing overflow content upwards.
 [0.1 hrs]
 
+### Early Bird Copy Update [2026-07-01 10:27]
+- Updated ticket name from "Early Bird Ticket" to "Early Bird" for cleaner styling.
+- Standardized footnote copy to "Offer valid till August 31" to ensure consistency with other ticket tiles on the page.
+[0.1 hrs]
+
+

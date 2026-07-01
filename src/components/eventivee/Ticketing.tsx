@@ -71,9 +71,9 @@ const defaultTickets = [
   },
   {
     id: "early-bird",
-    name: "Early Bird Ticket",
+    name: "Early Bird",
     description: "All Access 3-day pass. ",
-    footnote: "LAST DATE – August 31",
+    footnote: "Offer valid till August 31",
     price: "₹12,000",
     oldPrice: "₹15,000",
     gst: "+ applicable charges",
@@ -740,9 +740,9 @@ export default function Ticketing() {
     },
     {
       "id": "early-bird",
-      "name": "Early Bird Ticket",
+      "name": "Early Bird",
       "description": "All Access 3-day pass. ",
-      "footnote": "LAST DATE – August 31",
+      "footnote": "Offer valid till August 31",
       "price": "₹12,000",
       "oldPrice": "₹15,000",
       "gst": "+ applicable charges",
