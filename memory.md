@@ -1834,5 +1834,12 @@
 - Removed the "Offer valid till" footnote from the Super Early Bird ticket as the cutoff date has passed and the ticket is now marked as Sold Out.
 [0.1 hrs]
 
+### Ticket Card Height Overflow Fix [2026-07-01 10:30]
+- Resolved an issue where the Virtual ticket's multiline feature list caused the footer section to overlap into the footnote area.
+- Increased the total card height (`h-[680px]` -> `h-[740px]`) to compensate for the vertical space reallocated to the top section in the previous fix, restoring the necessary breathing room for longer feature lists.
+[0.1 hrs]
 
+### Early Bird Footnote Year Addition [2026-07-01 10:34]
+- Appended ", 2026" to the Early Bird footnote, changing it from "Offer valid till August 31" to "Offer valid till August 31, 2026".
+[0.05 hrs]
 
