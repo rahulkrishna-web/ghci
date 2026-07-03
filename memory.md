@@ -1843,3 +1843,7 @@
 - Appended ", 2026" to the Early Bird footnote, changing it from "Offer valid till August 31" to "Offer valid till August 31, 2026".
 [0.05 hrs]
 
+
+### Ticketing Strike-off Price Update [2026-07-03 10:04]
+- Increased oldPrice (strike-off price) from 15000 to 25000 for Super Early Bird and Early Bird tiers in Ticketing.tsx.
+[0.05 hrs]

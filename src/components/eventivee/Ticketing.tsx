@@ -41,7 +41,7 @@ const defaultTickets = [
     description: "All Access 3-day pass. ",
     footnote: "",
     price: "₹11,000",
-    oldPrice: "₹15,000",
+    oldPrice: "₹25,000",
     gst: "18% GST Applicable",
     cta: "Get the Pass",
     features: [
@@ -75,7 +75,7 @@ const defaultTickets = [
     description: "All Access 3-day pass. ",
     footnote: "Offer valid till August 31, 2026",
     price: "₹12,000",
-    oldPrice: "₹15,000",
+    oldPrice: "₹25,000",
     gst: "+ applicable charges",
     cta: "Get the Pass",
     features: [
@@ -620,7 +620,7 @@ export default function Ticketing() {
       "description": "",
       "footnote": "",
       "price": "₹11,000",
-      "oldPrice": "₹15,000",
+      "oldPrice": "₹25,000",
       "gst": "+ applicable charges",
       "cta": "Get the Pass",
       "features": [
@@ -744,7 +744,7 @@ export default function Ticketing() {
       "description": "All Access 3-day pass. ",
       "footnote": "Offer valid till August 31, 2026",
       "price": "₹12,000",
-      "oldPrice": "₹15,000",
+      "oldPrice": "₹25,000",
       "gst": "+ applicable charges",
       "cta": "Get the Pass",
       "features": [
