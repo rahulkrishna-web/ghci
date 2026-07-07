@@ -32,7 +32,7 @@ columns:
       - label: "Sponsorship"
         href: "/partner"
       - label: "Event Terms & Conditions"
-        href: "https://anitab.org/event-terms-conditions"
+        href: "https://anitabindia.org/event-terms-and-conditions/"
       - label: "Code of Conduct"
         href: "https://anitab.org/code-of-conduct"
   - title: "AnitaB.org"

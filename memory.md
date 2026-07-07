@@ -1856,3 +1856,7 @@
 ### Ways to Involve Order Update [2026-07-07 10:41]
 - Swapped the order of "Advancing Inclusion Program" and "Call For Presenters" in `src/content/ways-to-involve.md` so that AIP appears on the left and CFP on the right.
 [0.05 hrs]
+
+### Footer Terms Link Update [2026-07-07 11:23]
+- Replaced the Event Terms & Conditions link in `src/content/footer.md` to `https://anitabindia.org/event-terms-and-conditions/`.
+[0.05 hrs]
