@@ -2,13 +2,6 @@
 sectionTitle: "Ways to Get Involved"
 subtitle: "Explore opportunities to speak, contribute, compete, and engage with the GHCI community."
 ways:
-  - title: "Call For Presenters"
-    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
-    type: "primary"
-    links:
-      - text: "Apply Now"
-        url: "https://ghci27.stutzee.com/#cfp"
-        variant: "solid"
   - title: "Advancing Inclusion Program"
     description: "Access curated opportunities for learning, mentorship, and community engagement."
     type: "primary"
@@ -16,6 +9,13 @@ ways:
       - text: "Apply Now"
         url: "/aip"
         variant: "solid"
+  - title: "Call For Presenters"
+    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
+    type: "primary"
+    links:
+      - text: "Applications Closed"
+        url: "https://ghci27.stutzee.com/#cfp"
+        variant: "outline"
   - title: "WeQuest"
     description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
     type: "secondary"

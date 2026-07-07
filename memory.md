@@ -1847,3 +1847,12 @@
 ### Ticketing Strike-off Price Update [2026-07-03 10:04]
 - Increased oldPrice (strike-off price) from 15000 to 25000 for Super Early Bird and Early Bird tiers in Ticketing.tsx.
 [0.05 hrs]
+
+### Call For Presenters Update [2026-07-07 10:39]
+- Changed the "Apply Now" button for "Call For Presenters" to "Applications Closed" and changed button variant to "outline" in `src/content/ways-to-involve.md`.
+- Removed the hardcoded "Apply by June 30, 2026, 11:59 PM IST" deadline message for "Call For Presenters" in `src/components/eventivee/WaysToInvolve.tsx`.
+[0.1 hrs]
+
+### Ways to Involve Order Update [2026-07-07 10:41]
+- Swapped the order of "Advancing Inclusion Program" and "Call For Presenters" in `src/content/ways-to-involve.md` so that AIP appears on the left and CFP on the right.
+[0.05 hrs]
