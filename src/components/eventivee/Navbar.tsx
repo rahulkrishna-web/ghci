@@ -59,19 +59,37 @@ export default function Navbar() {
               </a>
             ))}
             
-            <a
-              href="#ticketing"
-              className="h-10 inline-flex flex-col rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95 overflow-hidden group cursor-pointer"
-            >
-              <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                  <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
-                      Register Now
-                  </div>
-                  <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
-                      Register Now
-                  </div>
-              </div>
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://ghci27registration.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 inline-flex flex-col rounded-full border border-white/50 text-white hover:bg-white/10 transition-all text-[1rem] active:scale-95 overflow-hidden group cursor-pointer"
+              >
+                <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                    <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                        Login
+                    </div>
+                    <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                        Login
+                    </div>
+                </div>
+              </a>
+              
+              <a
+                href="#ticketing"
+                className="h-10 inline-flex flex-col rounded-full bg-white text-black hover:bg-white/90 transition-all text-[1rem] active:scale-95 overflow-hidden group cursor-pointer"
+              >
+                <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                    <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                        Register Now
+                    </div>
+                    <div className="h-full w-full flex items-center justify-center px-6 shrink-0">
+                        Register Now
+                    </div>
+                </div>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -148,11 +166,21 @@ export default function Navbar() {
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.4 }}
+                   className="flex flex-col gap-3"
                 >
+                  <a
+                    href="https://ghci27registration.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full py-5 rounded-full border border-white/50 text-white hover:bg-white/10 font-bold text-xl text-center block active:scale-95 transition-all cursor-pointer"
+                  >
+                    Login
+                  </a>
                   <a
                     href="#ticketing"
                     onClick={() => setIsOpen(false)}
-                    className="w-full py-5 rounded-full bg-white text-black font-bold text-xl text-center block active:scale-95 transition-transform cursor-pointer"
+                    className="w-full py-5 rounded-full bg-white text-black font-bold text-xl text-center block active:scale-95 transition-all cursor-pointer"
                   >
                     Register Now
                   </a>

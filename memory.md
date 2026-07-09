@@ -1868,3 +1868,7 @@
 ### Ways to Involve Reorder [2026-07-09 15:31]
 - Rearranged items in `src/content/ways-to-involve.md`: upgraded WeQuest to `primary` (top right), downgraded Call For Presenters to `secondary` and moved it to the last position.
 - [0.1 hrs]
+
+### Navbar Login Button [2026-07-09 15:39]
+- Added an outline "Login" button next to "Register Now" in `Navbar.tsx` (desktop and mobile) redirecting to `https://ghci27registration.com/` for users who have purchased tickets.
+- [0.1 hrs]
