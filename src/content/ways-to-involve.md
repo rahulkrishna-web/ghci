@@ -9,16 +9,9 @@ ways:
       - text: "Apply Now"
         url: "/aip"
         variant: "solid"
-  - title: "Call For Presenters"
-    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
-    type: "primary"
-    links:
-      - text: "Applications Closed"
-        url: "https://ghci27.stutzee.com/#cfp"
-        variant: "outline"
   - title: "WeQuest"
     description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
-    type: "secondary"
+    type: "primary"
     links:
       - text: "Apply Now"
         url: "/wequest"
@@ -33,5 +26,12 @@ ways:
     links:
       - text: "Applications closed"
         url: "https://ghci27.stutzee.com/#cfj"
+        variant: "outline"
+  - title: "Call For Presenters"
+    description: "Take the stage at GHCI. Share your ideas, spark conversations, and inspire change across tech and leadership."
+    type: "secondary"
+    links:
+      - text: "Applications Closed"
+        url: "https://ghci27.stutzee.com/#cfp"
         variant: "outline"
 ---

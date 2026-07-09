@@ -1860,3 +1860,11 @@
 ### Footer Terms Link Update [2026-07-07 11:23]
 - Replaced the Event Terms & Conditions link in `src/content/footer.md` to `https://anitabindia.org/event-terms-and-conditions/`.
 [0.05 hrs]
+
+### Advancing Inclusion Program Deadline [2026-07-09 15:29]
+- Added deadline message "Apply by July 15, 2026, 11:59 PM IST" to the Advancing Inclusion Program in `WaysToInvolve.tsx` to match previous CFP style.
+- [0.1 hrs]
+
+### Ways to Involve Reorder [2026-07-09 15:31]
+- Rearranged items in `src/content/ways-to-involve.md`: upgraded WeQuest to `primary` (top right), downgraded Call For Presenters to `secondary` and moved it to the last position.
+- [0.1 hrs]
