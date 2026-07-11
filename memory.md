@@ -1872,3 +1872,8 @@
 ### Navbar Login Button [2026-07-09 15:39]
 - Added an outline "Login" button next to "Register Now" in `Navbar.tsx` (desktop and mobile) redirecting to `https://ghci27registration.com/` for users who have purchased tickets.
 - [0.1 hrs]
+
+### Blocking Bot Traffic [2026-07-11 18:55]
+- Added a Next.js `middleware.ts` to block known spam referrers (e.g., `trafficcheap.cc`) and generic user agents.
+- Provided instructions on filtering ghost spam out directly via Google Analytics 4 settings.
+- [0.1 hrs]
