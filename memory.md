@@ -1877,3 +1877,7 @@
 - Added a Next.js `middleware.ts` to block known spam referrers (e.g., `trafficcheap.cc`) and generic user agents.
 - Provided instructions on filtering ghost spam out directly via Google Analytics 4 settings.
 - [0.1 hrs]
+
+### Button Labels Title Case [2026-07-13 12:47]
+- Updated button labels in `ways-to-involve.md` to Title Case format.
+- [0.1 hrs]
