@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { label: 'About', href: '/#attendees' },
   { label: 'Speakers', href: '/#speakers' },
-  { label: 'Tickets', href: '/#ticketing' },
+  { label: 'Passes', href: '/#ticketing' },
   { label: 'Contact', href: '/#contact' },
 ];
 
@@ -31,8 +31,8 @@ export default function AipNavbar() {
           backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0)',
           backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
           borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0)',
-          paddingTop: isScrolled ? '1rem' : '2rem',
-          paddingBottom: isScrolled ? '1rem' : '2rem',
+          paddingTop: '0.5rem',
+          paddingBottom: '0.5rem',
         }}
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="fixed top-0 left-0 right-0 z-50 px-4 md:px-13"
@@ -41,9 +41,9 @@ export default function AipNavbar() {
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
             <img 
-              src="/ghci27-logo.png" 
+              src="/ghci27-logo-white.png" 
               alt="GHCI 2027" 
-              className="h-14 w-auto object-contain"
+              className="h-[60px] w-auto object-contain"
             />
           </a>
 
@@ -114,7 +114,7 @@ export default function AipNavbar() {
                 {/* Header inside popup */}
                 <div className="flex items-center justify-between mb-10">
                   <img 
-                    src="/ghci27-logo.png" 
+                    src="/ghci27-logo-white.png" 
                     alt="GHCI 2027" 
                     className="h-10 w-auto object-contain"
                   />

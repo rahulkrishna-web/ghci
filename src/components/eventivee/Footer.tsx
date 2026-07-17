@@ -38,9 +38,9 @@ export default function Footer({ data }: FooterProps) {
                 {/* Brand & Socials */}
                 <div className="flex flex-col gap-12">
                     <img 
-                      src="/ghci27-logo.png" 
+                      src="/ghci27-logo-white.png" 
                       alt="GHCI 2027" 
-                      className="h-24 w-auto object-contain"
+                      className="h-[76px] w-auto object-contain"
                     />
                     
                     <div className="flex flex-col gap-4">

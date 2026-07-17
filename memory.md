@@ -1881,3 +1881,28 @@
 ### Button Labels Title Case [2026-07-13 12:47]
 - Updated button labels in `ways-to-involve.md` to Title Case format.
 - [0.1 hrs]
+
+### Replace tickets with Passes [2026-07-17 17:40]
+- Replaced occurrences of 'tickets' with 'passes' and 'Tickets' with 'Passes' across various components (FAQ, Pricing, Navbar, AipNavbar, CTA, Schedule, Contact).
+- [0.2 hrs]
+
+### Update Logo [2026-07-17 17:45]
+- Renamed new logo to 'ghci27-logo-white.png' and updated references in Navbar, AipNavbar, and Footer.
+- [0.1 hrs]
+
+### Increase Logo Size in Navbars [2026-07-17 17:47]
+- Increased the desktop logo size from h-14 to h-20 in Navbar.tsx and AipNavbar.tsx.
+- [0.1 hrs]
+
+### Fine-tune Navbar Padding and Logo [2026-07-17 17:52]
+- Set navbar top/bottom padding to 0.5rem statically (removed scroll-based padding change).
+- Adjusted navbar logo height to h-[60px] (approx h-15) down from h-20.
+- [0.1 hrs]
+
+### Reduce Footer Logo Size [2026-07-17 17:54]
+- Reduced footer logo height by ~20% (from h-24 to h-[76px]) in Footer.tsx.
+- [0.1 hrs]
+
+### Dynamic Privilege Offer Expiration [2026-07-17 17:55]
+- Implemented dynamic logic in Ticketing.tsx to automatically change the Privilege Offer last date from August 2, 2026 to August 31, 2026 at midnight IST.
+- [0.1 hrs]

@@ -9,16 +9,16 @@ const faqs = [
     a: "GHCI is designed for women and allies in technology, including students, professionals, industry leaders, and researchers. Anyone looking to grow their career, network, and contribute to the tech community is welcome.",
   },
   {
-    q: 'Are student tickets available?',
-    a: 'Yes, we offer special discounted rates for students. You will need to provide a valid student ID during the registration process to qualify for these tickets.',
+    q: 'Are student passes available?',
+    a: 'Yes, we offer special discounted rates for students. You will need to provide a valid student ID during the registration process to qualify for these passes.',
   },
   {
-    q: 'Can I refund or transfer my ticket?',
-    a: "Tickets are non-refundable. However, you can transfer your registration to another colleague or peer until December 15, 2026. Please contact our support team for assistance.",
+    q: 'Can I refund or transfer my pass?',
+    a: "Passes are non-refundable. However, you can transfer your registration to another colleague or peer until December 15, 2026. Please contact our support team for assistance.",
   },
   {
-    q: 'What does the ticket include?',
-    a: 'Your ticket provides full access to keynotes, technical sessions, workshops, networking lounges, and the career fair. Meals and coffee breaks during the event are also included.',
+    q: 'What does the pass include?',
+    a: 'Your pass provides full access to keynotes, technical sessions, workshops, networking lounges, and the career fair. Meals and coffee breaks during the event are also included.',
   },
   {
     q: 'Will there be a virtual option?',

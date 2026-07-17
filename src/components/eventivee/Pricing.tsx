@@ -149,7 +149,7 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="text-purple-400 text-sm font-mono tracking-wider mb-4 block">[Tickets]</span>
+          <span className="text-purple-400 text-sm font-mono tracking-wider mb-4 block">[Passes]</span>
           <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
             Unlock the Experience{' '}
             <span className="text-white/40">That Suits You</span>

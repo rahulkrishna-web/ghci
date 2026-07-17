@@ -3,13 +3,18 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 import { useState, useRef, useEffect } from 'react';
 import { Shield, X, ChevronLeft, Plus, Settings, Trash2, Edit3, Type, Image as ImageIcon, Copy, ExternalLink, Check } from 'lucide-react';
 
+const getPrivilegeFootnote = () => {
+  const cutoff = new Date('2026-08-02T18:30:00Z');
+  return new Date() >= cutoff ? "Offer valid till August 31, 2026" : "Offer valid till August 2, 2026";
+};
+
 // Default data as a starting point
 const defaultTickets = [
   {
     id: "last-year",
     name: "Privilege Offer",
     description: "For GHCI 25 attendees ",
-    footnote: "Offer valid till August 2, 2026",
+    footnote: getPrivilegeFootnote(),
     price: "₹10,000",
     gst: "+ applicable charges",
     cta: "Get the Pass",
@@ -522,7 +527,7 @@ export default function Ticketing() {
       "id": "last-year",
       "name": "Privilege Offer",
       "description": "For GHCI 25 attendees ",
-      "footnote": "Offer valid till August 2, 2026",
+      "footnote": getPrivilegeFootnote(),
       "price": "₹10,000",
       "gst": "+ applicable charges",
       "cta": "Get the Pass",
