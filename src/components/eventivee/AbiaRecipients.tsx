@@ -12,8 +12,22 @@ export default function AbiaRecipients({ data }: AbiaRecipientsProps) {
   const { recipients } = data;
 
   return (
-    <section className="py-24 bg-[#070708] relative border-t border-white/5 px-4 md:px-13">
-      <div className="w-full">
+    <section className="py-16 md:py-24 text-white relative overflow-hidden bg-[#070708] px-4 md:px-13">
+      {/* Responsive Background Images */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img 
+          src="/aip/scholarship-benefits-mobile.png" 
+          alt="" 
+          className="w-full h-full object-cover block md:hidden" 
+        />
+        <img 
+          src="/aip/scholarship-benefits-desktop.png" 
+          alt="" 
+          className="w-full h-full object-cover hidden md:block" 
+        />
+      </div>
+
+      <div className="w-full relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +40,7 @@ export default function AbiaRecipients({ data }: AbiaRecipientsProps) {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:pb-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
           {recipients.list.map((item: any, index: number) => (
             <motion.div
               key={index}
@@ -34,24 +48,22 @@ export default function AbiaRecipients({ data }: AbiaRecipientsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 md:p-10 rounded-[10px] bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col justify-between min-h-[260px] md:min-h-[290px] hover:bg-white/[0.05] hover:border-[#A32482]/30 transition-all duration-300 group"
+              className="p-8 md:p-10 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col min-h-[265px] md:min-h-[290px] hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[85%] md:w-auto snap-start"
             >
-              {/* Checkmark icon in brand magenta */}
+              {/* Checkmark icon in brand color */}
               <div className="mb-8 md:mb-12">
-                <Check className="w-6 h-6 text-[#A32482]" />
+                <Check className="w-8 h-8 text-[#A32482]" />
               </div>
               
-              <div className="space-y-4">
-                {/* Title */}
-                <h3 className="text-xl md:text-2xl text-white font-semibold leading-tight">
-                  {item.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-white/60 text-sm md:text-base leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+              {/* Title */}
+              <h3 className="text-2xl md:text-[26px] text-white mb-4 leading-tight font-medium">
+                {item.title}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-white/60 text-[16px] md:text-lg leading-relaxed mt-auto font-medium">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

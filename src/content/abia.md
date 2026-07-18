@@ -79,8 +79,8 @@ winners:
   list:
     - name: "Sandya Bhat Asnotikar"
       title: "Technical Leadership"
-      image: "/abia/sandya.png?v=1"
+      image: "/abia/winner/sandya.png?v=2"
     - name: "Lakshmi Hebbalkar"
       title: "Tech Leadership in Government"
-      image: "/abia/lakshmi.png?v=1"
+      image: "/abia/winner/lakshmi.png?v=2"
 ---

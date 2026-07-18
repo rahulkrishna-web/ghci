@@ -2034,4 +2034,130 @@
 - Applied user's custom JSON configuration for bokeh blobs in AbiaHero.tsx as default.
 - [0.1 hrs]
 
+### Styled AbiaHero CTA button to match AipHero [2026-07-18 23:12]
+- Replaced standard outline button in AbiaHero.tsx with the premium double-bubble ticket button design.
+- [0.1 hrs]
+
+### Styled AbiaCTA button to match AipHero [2026-07-18 23:14]
+- Replaced standard outline button in AbiaCTA.tsx with the premium double-bubble ticket button design.
+- [0.1 hrs]
+
+### Aligned AbiaRecipients card styling with AipBenefits [2026-07-18 23:17]
+- Redesigned what recipients receive cards to match Scholarship Benefits card layout and aesthetics.
+- Added responsive background images to the section background to match AipBenefits.
+- [0.1 hrs]
+
+### Updated AbiaWhoCan background [2026-07-18 23:20]
+- Removed wequest background image from Who Can Be Nominated? section.
+- Added background color #1c0118 to the section.
+- [0.1 hrs]
+
+### Styled AbiaWinners cards to match Figma spec [2026-07-18 23:29]
+- Updated past winners image paths to use the new color variants under `/public/abia/winner/` with cache-busting.
+- Styled past winners cards as fixed-height cards (`326px` x `450px`) with `#A3A3A3` to `#494949` background gradients.
+- Positioned transparent winner images aligned to the top, applying a grayscale CSS filter by default and color on hover.
+- Added a black gradient overlay at the bottom to cover empty height gaps and serve as a readable text backdrop.
+- [0.2 hrs]
+
+### Fixed color transition on hover for AbiaWinners [2026-07-18 23:32]
+- Replaced Tailwind-based image grayscale filter classes with Framer Motion variants (`whileHover="hover"`).
+- [0.1 hrs]
+
+### Centered AbiaWinners layout on screen [2026-07-18 23:34]
+- Redesigned AbiaWinners section grid structure into a centered flex layout container (`justify-center`).
+- Maintained exact Figma spacing/gaps between the title and the cards.
+- [0.1 hrs]
+
+### Fixed AbiaWinners card width collapse [2026-07-18 23:35]
+- Replaced relative `w-full max-w-[326px]` with explicit `w-[326px] max-w-full` on cards to prevent collapsing under flex containers.
+- [0.1 hrs]
+
+### Doubled gap in AbiaWinners section [2026-07-18 23:37]
+- Doubled flexbox gap layout classes from `gap-12 lg:gap-16` to `gap-24 lg:gap-32` between the title and the cards.
+- [0.1 hrs]
+
+### Removed line break in AbiaWhatIs title [2026-07-18 23:38]
+- Replaced block display span elements with inline elements to display "What is ABIA?" on a single line.
+- [0.1 hrs]
+
+### Centered and aligned AbiaWhatIs layout [2026-07-18 23:40]
+- Refactored AbiaWhatIs grid structure into a flex container to bring the title closer to the descriptions.
+- Set the layout gap to `gap-24 lg:gap-32` to match the winners section.
+- Vertically aligned the title and button container to the middle of the descriptions block.
+- [0.1 hrs]
+
+### Styled AbiaWhatIs button to match hero CTA [2026-07-18 23:41]
+- Replaced the simple sliding button in AbiaWhatIs.tsx with the premium double-pill ticket button cluster.
+- [0.1 hrs]
+
+### Justified text in AbiaWhatIs description [2026-07-18 23:42]
+- Applied `text-justify` utility class to the description and paragraph text blocks in AbiaWhatIs.tsx.
+- [0.1 hrs]
+
+### Styled AbiaCategories cards to match AbiaRecipients [2026-07-18 23:43]
+- Updated font sizes, weights, and colors of card titles and descriptions in AbiaCategories.tsx to match AbiaRecipients.tsx.
+- Applied `flex flex-col` layout and `min-h-[265px] md:min-h-[290px]` dimensions to the cards.
+- [0.1 hrs]
+
+### Enabled mobile swipe sliders [2026-07-18 23:45]
+- Replaced block layouts with swipable horizontal flex containers on mobile for AbiaCategories and AbiaRecipients.
+- Applied snap scroll alignment (`snap-start`) and `-mx-4 px-4` layout to ensure full-width horizontal swiping.
+- [0.1 hrs]
+
+### Added padding offset to mobile scroll containers [2026-07-18 23:46]
+- Modified AbiaCategories and AbiaRecipients slider containers to use `-mx-4 px-6 scroll-pl-6` on mobile.
+- This adds padding so cards don't touch the screen edge and aligns them correctly.
+- [0.1 hrs]
+
+### Adjusted mobile spacing and text alignment in AbiaWhatIs [2026-07-18 23:47]
+- Reduced layout gap on mobile from `gap-24` to `gap-10` between title/button and description text.
+- Replaced general `text-justify` alignment with responsive `text-left md:text-justify` to remove justified text on mobile.
+- [0.1 hrs]
+
+### Centered text on mobile in AbiaWhatIs [2026-07-18 23:48]
+- Replaced `text-left md:text-justify` with `text-center lg:text-justify` on description paragraphs in AbiaWhatIs.tsx to center align text on mobile.
+- [0.1 hrs]
+
+### Enabled mobile swipe slider in AbiaWinners [2026-07-18 23:49]
+- Turned AbiaWinners card list into a swipeable horizontal flex slider (`flex overflow-x-auto`) on mobile.
+- Applied snap alignment (`snap-start`) and `-mx-4 px-6 scroll-pl-6` layout offsets.
+- [0.1 hrs]
+
+### Adjusted AbiaWinners mobile alignment and layout gaps [2026-07-18 23:51]
+- Changed the parent container alignment on mobile to `items-stretch` and reduced the gap to `gap-10` to match other section headers.
+- Set the mobile scroll container width to `w-full` so it spans the entire screen and aligns correctly with page margins.
+- [0.1 hrs]
+
+### Resolved viewport clipping in AbiaWinners [2026-07-18 23:52]
+- Added `overflow-hidden` to the AbiaWinners section to prevent horizontal page scrolling.
+- Replaced parent flex wrapper on mobile with block styling (`space-y-10 lg:space-y-0`) to resolve flexbox sizing bugs.
+- [0.1 hrs]
+
+### Synchronized AbiaWinners breakpoints to prevent premature card clipping [2026-07-18 23:54]
+- Changed the slider overrides on the Cards Container and card elements from `sm:` to `lg:` to match the parent layout split wrapper.
+- This ensures horizontal scrolling is active on all screens up to 1024px, resolving early card cut-offs inside the viewport.
+- [0.1 hrs]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

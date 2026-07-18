@@ -27,12 +27,9 @@ export default function AbiaWhoCan({ data }: AbiaWhoCanProps) {
 
   return (
     <section 
-      className="py-24 bg-[#070708] relative px-4 md:px-13 overflow-hidden"
+      className="py-24 relative px-4 md:px-13 overflow-hidden"
       style={{
-        backgroundImage: `url('/wequest/why_apply_bg.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundColor: '#1c0118'
       }}
     >
       <div className="w-full">

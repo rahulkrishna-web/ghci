@@ -31,7 +31,7 @@ export default function AbiaCategories({ data }: AbiaCategoriesProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:pb-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
           {categories.list.map((item: any, index: number) => (
             <motion.div
               key={index}
@@ -41,7 +41,7 @@ export default function AbiaCategories({ data }: AbiaCategoriesProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`relative p-8 rounded-2xl border overflow-hidden transition-all duration-300 ${
+              className={`relative p-8 rounded-2xl border overflow-hidden transition-all duration-300 flex flex-col min-h-[265px] md:min-h-[290px] flex-shrink-0 w-[85%] md:w-auto snap-start ${
                 hoveredIndex === index ? 'border-[#D837AD] -translate-y-1 shadow-lg shadow-[#A32482]/10' : 'bg-white/5 border-white/10'
               }`}
             >
@@ -57,16 +57,16 @@ export default function AbiaCategories({ data }: AbiaCategoriesProps) {
               />
               
               {/* Content Wrapper */}
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
                 <div className={`text-5xl md:text-6xl font-medium mb-6 transition-colors duration-300 ${
                   hoveredIndex === index ? 'text-white' : 'text-white/40'
                 }`}>
                   {item.number}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">
+                <h3 className="text-2xl md:text-[26px] text-white mb-4 leading-tight font-medium">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed">
+                <p className="text-white/60 text-[16px] md:text-lg leading-relaxed font-medium mt-auto">
                   {item.description}
                 </p>
               </div>

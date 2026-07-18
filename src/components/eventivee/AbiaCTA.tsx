@@ -41,35 +41,27 @@ export default function AbiaCTA({ data }: AbiaCTAProps) {
           {ctaBanner.subtitle}
         </motion.p>
 
-        {/* Outer outlined pill CTA button */}
+        {/* Premium Button Cluster (Apply Cluster) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="inline-block"
+          className="flex flex-row items-center justify-center group gap-0"
         >
+          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10">
+            <img src="/icons/Ticket.png" alt="Ticket" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+          </div>
           <a
             href={ctaBanner.ctaLink}
-            className="inline-flex rounded-full p-[2px] min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
-            style={{
-              backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)'
-            }}
+            className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
           >
-            <div className="w-full h-full bg-[#070708] rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
-              <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                <div 
-                  className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-transparent bg-clip-text text-sm md:text-2xl font-semibold tracking-[0.08em] uppercase pb-0.5"
-                  style={{
-                    backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
-                    WebkitBackgroundClip: 'text'
-                  }}
-                >
-                  {ctaBanner.cta}
-                </div>
-                <div className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-white text-sm md:text-2xl font-semibold tracking-[0.08em] uppercase pb-0.5">
-                  {ctaBanner.cta}
-                </div>
+            <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+              <div className="h-full w-full flex items-center justify-center px-6 md:px-10 shrink-0">
+                {ctaBanner.cta}
+              </div>
+              <div className="h-full w-full flex items-center justify-center px-6 md:px-10 shrink-0">
+                {ctaBanner.cta}
               </div>
             </div>
           </a>

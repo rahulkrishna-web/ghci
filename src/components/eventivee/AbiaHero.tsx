@@ -254,43 +254,26 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
               {hero.subtitle}
             </p>
             
+            {/* Premium Button Cluster (Apply Cluster) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-block mt-6"
+              className="flex flex-row items-center group gap-0 mt-6"
             >
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10">
+                <img src="/icons/Ticket.png" alt="Ticket" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+              </div>
               <a
                 href={hero.ctaLink}
-                className="relative inline-flex rounded-full min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
+                className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
               >
-                {/* Gradient Border Overlay */}
-                <div 
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    border: '2px solid transparent',
-                    background: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%) border-box',
-                    WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'destination-out',
-                    maskComposite: 'exclude',
-                  }}
-                />
-                
-                {/* Sliding Content Container */}
-                <div className="w-full h-full rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
-                  <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                    <div 
-                      className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-transparent bg-clip-text text-sm md:text-xl font-semibold tracking-[0.08em] uppercase pb-0.5"
-                      style={{
-                        backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
-                        WebkitBackgroundClip: 'text'
-                      }}
-                    >
-                      {hero.cta}
-                    </div>
-                    <div className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-white text-sm md:text-xl font-semibold tracking-[0.08em] uppercase pb-0.5">
-                      {hero.cta}
-                    </div>
+                <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                  <div className="h-full w-full flex items-center justify-center px-6 md:px-10 shrink-0">
+                    {hero.cta}
+                  </div>
+                  <div className="h-full w-full flex items-center justify-center px-6 md:px-10 shrink-0">
+                    {hero.cta}
                   </div>
                 </div>
               </a>
