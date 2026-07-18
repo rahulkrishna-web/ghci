@@ -11,38 +11,53 @@ export default function AbiaDates({ data }: AbiaDatesProps) {
   const { dates } = data;
 
   return (
-    <section className="py-24 bg-[#070708] relative border-t border-white/5 px-4 md:px-13">
-      <div className="w-full max-w-5xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            {dates.title}
-          </h2>
-        </motion.div>
+    <section className="py-16 md:py-24 bg-[#070708] text-white px-4 md:px-13 relative overflow-hidden border-t border-white/5">
+      {/* Background soft glow */}
+      <div className="absolute w-[40%] h-[40%] rounded-full bg-[#A32482]/5 blur-[100px] right-10 top-1/3 pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
-          {dates.list.map((item: any, index: number) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col gap-2 pb-6 border-b border-white/10"
-            >
-              <h3 className="text-white/60 text-sm uppercase tracking-wider font-semibold">
-                {item.title}
-              </h3>
-              <p className="text-[#A32482] font-bold text-lg">
-                {item.date}
-              </p>
-            </motion.div>
-          ))}
+      <div className="w-full max-w-5xl mx-auto relative z-10">
+        {/* Title */}
+        <div className="mb-16 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl tracking-tight text-white font-medium"
+          >
+            {dates.title}
+          </motion.h2>
+        </div>
+
+        {/* Dates Grid with Transparent Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-transparent">
+          {dates.list.map((item: any, idx: number) => {
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-transparent border border-white/10 rounded-[12px] p-8 md:p-10 flex flex-col justify-center min-h-[140px] md:min-h-[160px] hover:bg-white/[0.02] transition-colors duration-300 w-full"
+              >
+                {/* Bold Title Case Label matching Figma */}
+                <span className="text-white text-lg md:text-[22px] font-bold mb-2">
+                  {item.title}
+                </span>
+                {/* Brand magenta gradient date value */}
+                <span
+                  className="text-base md:text-lg font-bold leading-tight bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: 'linear-gradient(258.31deg, #A32478 44%, #FFFFFF 90.99%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  {item.date}
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

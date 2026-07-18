@@ -1927,3 +1927,111 @@
 ### Removed max width from AbiaWhatIs [2026-07-17 20:17]
 - Removed max-w-[1140px] from the container to allow full-width edge-to-edge spanning.
 - [0.1 hrs]
+
+### Refined ABIA Page Hero and CTA styling [2026-07-18 19:33]
+- Removed pill background and border from the deadline above hero title, and increased its size to text-lg/text-xl.
+- Adjusted hero title font weight from bold to medium to match other landing page heroes.
+- Removed solid black backgrounds from all CTA buttons on the ABIA page using custom WebKit-masked gradient border layout for true transparency.
+- [0.2 hrs]
+
+### Made ABIA Hero glassy and matching AIP typography [2026-07-18 19:39]
+- Added mouse-tracking glass shine layer effect to the ABIA page hero title.
+- Updated ABIA hero subtitle font size and weight to text-lg md:text-[2rem] font-normal to match the AIP hero description styling.
+- [0.1 hrs]
+
+### Aligned AbiaWhatIs typography and layout with AipWhatIs [2026-07-18 19:41]
+- Changed right side paragraph font size and weight to text-lg md:text-2xl font-normal.
+- Changed right side max-width from none to max-w-4xl lg:max-w-5xl.
+- Aligned grid columns and flex start positioning to match AipWhatIs exactly.
+- [0.1 hrs]
+
+### Set AbiaWhatIs description weight to bold [2026-07-18 19:43]
+- Changed the first paragraph (nomination description text) in AbiaWhatIs right side to font-bold.
+- [0.1 hrs]
+
+### Applied custom linear gradient to AbiaCategories [2026-07-18 19:45]
+- Configured linear gradient on the first card of AbiaCategories with stops #27273F (0%), #27021D (50%), and #AA1F88 (100%) at 225 degrees.
+- Set the border color of the active card to #D837AD.
+- [0.1 hrs]
+
+### Aligned ABIA section titles with Wequest page typography [2026-07-18 19:46]
+- Updated section titles across AbiaCategories, AbiaDates, AbiaProcess, AbiaRecipients, AbiaWinners, and AbiaCTA components.
+- Standardized to use "text-4xl md:text-6xl tracking-tight text-white font-medium" to match the Wequest page section title design.
+- [0.1 hrs]
+
+### Refined AbiaCategories subtitle color and card hover behavior [2026-07-18 19:50]
+- Updated categories section subtitle to use solid white color (`text-white`).
+- Moved the active highlight styling from being static on the first card to a dynamic hover overlay effect on all cards.
+- [0.1 hrs]
+
+### Increased AbiaCategories step number font size [2026-07-18 19:52]
+- Changed the category number font size from text-4xl to text-5xl md:text-6xl.
+- Made the number transition to full white on hover, keeping the muted purple/gray color as the default normal state.
+- [0.1 hrs]
+
+### Set categories numbers to bold and made subtitle full-width [2026-07-18 19:53]
+- Changed the category card number weight from font-light to font-bold.
+- Removed max-width restriction (`max-w-2xl`) from the categories section subtitle so it displays in a single line on desktop.
+- [0.1 hrs]
+
+### Adjusted AbiaCategories step number font weight [2026-07-18 19:56]
+- Changed the category card number weight from font-bold to font-medium to match the section title font weight.
+- [0.1 hrs]
+
+### Aligned AbiaRecipients card styling with WequestGains [2026-07-18 19:57]
+- Redesigned cards in AbiaRecipients to use the card style from WequestGains: rounded-[10px], min-h-[260px] md:min-h-[290px], bg-white/[0.02], border border-white/5, and hover styling of bg-white/[0.05] & border-[#A32482]/30.
+- Simplified the checkmark icon rendering by removing the rounded background bubble.
+- [0.1 hrs]
+
+### Aligned AbiaWhoCan with homepage WhatToExpect layout [2026-07-18 19:58]
+- Updated grid columns span to 5/12 and 7/12 layout.
+- Applied the homepage WhatToExpect box background (`what-to-expect-card-bg.png`) with matching padding and layout.
+- Added heading text highlight gradient and hover transitions to the list bullets.
+- [0.1 hrs]
+
+### Aligned AbiaProcess timeline style with WequestProcess [2026-07-18 20:00]
+- Applied the background image (`how_to_apply_bg.webp`) and backdrop radial highlight to the Nomination Process section in Abia.
+- Restructured the steps into a connected vertical timeline layout with gradient line segments.
+- Added scale/shadow transitions on card number hover and title text highlights.
+- [0.1 hrs]
+
+### Set AbiaWhoCan background to match WequestWhyApply background [2026-07-18 20:01]
+- Applied `why_apply_bg.webp` to the section background style of the AbiaWhoCan component.
+- [0.1 hrs]
+
+### Aligned AbiaDates card styling with WequestDates [2026-07-18 20:02]
+- Redesigned AbiaDates timeline/grid items into the card-grid style of WequestDates.
+- Set card height, border radius (`rounded-[12px]`), border opacity, and background glow settings.
+- Added gradient text mask style for date text.
+- [0.1 hrs]
+
+### Aligned AbiaCTA design with WequestCTA [2026-07-18 20:03]
+- Upgraded the "Nominations Are Now Open" banner to use the styling of WequestCTA.
+- Set title text to use the gradient clip style from `#A32478` to `#FFFFFF` and font-medium.
+- Styled subtext with low-opacity white color, large font sizes, and custom max-width.
+- Re-implemented the button border and layout matching the Wequest CTA style exactly.
+- [0.1 hrs]
+
+### Updated AbiaWinners image assets and title styling [2026-07-18 20:07]
+- Replaced winner image references in `abia.md` with `sandya.png` and `lakshmi.png` from the Figma layout.
+- Applied the standard text-gradient clip styling to the "Meet Our Past Winners" title.
+- Aligned winner card dimensions (`aspect-[3/4]`, `rounded-[12px]`) for size consistency.
+- [0.1 hrs]
+
+### Resolved image caching issue for AbiaWinners [2026-07-18 20:11]
+- Replaced the Next.js `Image` component with a watermarked/cache-busted path or standard `img` to support cache-busting.
+- Added version query parameters to winners' images in `abia.md`.
+- Updated winner names and titles to match Figma text.
+- [0.1 hrs]
+
+### Integrated customizable background bokeh into AbiaHero [2026-07-18 20:16]
+- Refactored AbiaHero component to utilize the dynamic, animated bokeh blob background system.
+- Added a floating debug settings panel directly into AbiaHero to configure speeds, blur, and blob counts in real-time.
+- Connected the AbiaHero settings panel to the Control Panel launcher events, mapping it under `abia-hero`.
+- [0.3 hrs]
+
+### Updated default bokeh settings for AbiaHero [2026-07-18 20:25]
+- Applied user's custom JSON configuration for bokeh blobs in AbiaHero.tsx as default.
+- [0.1 hrs]
+
+

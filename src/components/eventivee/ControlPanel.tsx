@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 const sections = [
   { id: 'hero', name: 'Hero', icon: Layout, color: '#A32482' },
   { id: 'aip-hero', name: 'AIP Hero', icon: Layout, color: '#A32482' },
+  { id: 'abia-hero', name: 'ABIA Hero', icon: Layout, color: '#A32482' },
   { id: 'about', name: 'About', icon: Info, color: '#4284c2' },
   { id: 'experience', name: 'Experience', icon: BarChart3, color: '#A32482' },
   { id: 'gain', name: 'What You Gain', icon: Zap, color: '#4284c2' },

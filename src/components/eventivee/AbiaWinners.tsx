@@ -24,9 +24,14 @@ export default function AbiaWinners({ data }: AbiaWinnersProps) {
             transition={{ duration: 0.6 }}
             className="md:col-span-4 flex flex-col gap-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white whitespace-pre-line leading-tight">
-              <span className="text-white/60 font-normal">Meet</span> <span className="text-[#A32482]">Our</span><br />
-              <span className="text-white">Past Winners</span>
+            <h2 
+              className="text-4xl md:text-6xl tracking-tight font-medium pb-1 text-transparent bg-clip-text inline-block leading-tight"
+              style={{
+                backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)',
+                WebkitBackgroundClip: 'text'
+              }}
+            >
+              Meet Our<br />Past Winners
             </h2>
           </motion.div>
 
@@ -39,14 +44,13 @@ export default function AbiaWinners({ data }: AbiaWinnersProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 aspect-[3/4] flex items-end p-6"
+                className="group relative rounded-[12px] overflow-hidden bg-white/5 border border-white/10 aspect-[3/4] flex items-end p-6"
               >
                 {/* Image Background */}
-                <Image 
+                <img 
                   src={winner.image}
                   alt={winner.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Gradient Overlay for Text Visibility */}

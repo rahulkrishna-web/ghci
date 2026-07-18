@@ -77,10 +77,10 @@ ctaBanner:
 winners:
   title: "Meet Our\nPast Winners"
   list:
-    - name: "Sandya Bhat"
+    - name: "Sandya Bhat Asnotikar"
       title: "Technical Leadership"
-      image: "/abia/sandya_bhat.png"
-    - name: "Lakshmi Hanspal"
-      title: "Social Transformation\nGovernment"
-      image: "/abia/lakshmi.png"
+      image: "/abia/sandya.png?v=1"
+    - name: "Lakshmi Hebbalkar"
+      title: "Tech Leadership in Government"
+      image: "/abia/lakshmi.png?v=1"
 ---

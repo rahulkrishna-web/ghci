@@ -13,7 +13,7 @@ export default function AbiaWhatIs({ data }: AbiaWhatIsProps) {
   return (
     <section className="py-16 md:py-24 bg-[#070708] text-white relative border-t border-white/5 px-4 md:px-13 overflow-hidden">
       <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 lg:gap-24 items-start">
           
           {/* Left Column */}
           <motion.div 
@@ -21,7 +21,7 @@ export default function AbiaWhatIs({ data }: AbiaWhatIsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-4 flex flex-col gap-8"
+            className="md:col-span-5 flex flex-col gap-8"
           >
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] tracking-tight font-medium leading-[1.15]">
               <span className="text-white block">What is</span>
@@ -38,12 +38,22 @@ export default function AbiaWhatIs({ data }: AbiaWhatIsProps) {
             >
               <a
                 href={whatIs.ctaLink}
-                className="inline-flex rounded-full p-[2px] min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
-                style={{
-                  backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)'
-                }}
+                className="relative inline-flex rounded-full min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
               >
-                <div className="w-full h-full bg-[#070708] rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
+                {/* Gradient Border Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    border: '2px solid transparent',
+                    background: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%) border-box',
+                    WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'destination-out',
+                    maskComposite: 'exclude',
+                  }}
+                />
+                
+                {/* Sliding Content Container */}
+                <div className="w-full h-full rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
                   <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
                     <div 
                       className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-transparent bg-clip-text text-sm md:text-xl font-semibold tracking-[0.08em] uppercase pb-0.5"
@@ -69,12 +79,12 @@ export default function AbiaWhatIs({ data }: AbiaWhatIsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="md:col-span-8 text-left space-y-6 md:space-y-8"
+            className="md:col-span-7 text-left space-y-6 md:space-y-8"
           >
-            <p className="text-white/70 text-base md:text-[18px] lg:text-[20px] leading-relaxed font-normal whitespace-pre-line">
+            <p className="text-white/80 text-lg md:text-2xl leading-relaxed font-bold max-w-4xl lg:max-w-5xl whitespace-pre-line">
               {whatIs.description}
             </p>
-            <p className="text-white/70 text-base md:text-[18px] lg:text-[20px] leading-relaxed font-normal whitespace-pre-line">
+            <p className="text-white/80 text-lg md:text-2xl leading-relaxed font-normal max-w-4xl lg:max-w-5xl whitespace-pre-line">
               {whatIs.paragraph}
             </p>
           </motion.div>
