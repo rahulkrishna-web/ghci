@@ -2190,3 +2190,8 @@
 - Replaced `overflow-x-auto` with `overflow-x-auto md:overflow-visible` across all mobile-first snap slider containers (including ABIA Categories, Recipients, Winners, Tracks, etc.) to prevent vertical clipping on desktop.
 - Added `py-4 -my-4` to these containers to provide vertical bleeding room for hover states (shadows and translations) without shifting the layout.
 - [0.2 hrs]
+
+### Linked Navbar Logo to Homepage [2026-07-20 23:51]
+- Updated the `Navbar` component so the main GHCI logo links to the homepage (`/`) instead of just an empty hash (`#`).
+- Wrapped the logo inside the mobile menu in a clickable anchor linking to the homepage, which also properly closes the mobile menu when clicked.
+- [0.1 hrs]

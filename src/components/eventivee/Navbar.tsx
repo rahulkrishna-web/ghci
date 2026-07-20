@@ -39,7 +39,7 @@ export default function Navbar() {
       >
         <div className="w-full flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex-shrink-0">
+          <a href="/" className="flex-shrink-0">
             <img 
               src="/ghci27-logo-white.png" 
               alt="GHCI 2027" 
@@ -131,11 +131,13 @@ export default function Navbar() {
               <div className="p-8 flex flex-col">
                 {/* Header inside popup */}
                 <div className="flex items-center justify-between mb-10">
-                  <img 
-                    src="/ghci27-logo-white.png" 
-                    alt="GHCI 2027" 
-                    className="h-10 w-auto object-contain"
-                  />
+                  <a href="/" onClick={() => setIsOpen(false)}>
+                    <img 
+                      src="/ghci27-logo-white.png" 
+                      alt="GHCI 2027" 
+                      className="h-10 w-auto object-contain"
+                    />
+                  </a>
                   <button
                     onClick={() => setIsOpen(false)}
                     className="p-3 rounded-full bg-white/5 border border-white/10 text-white"
