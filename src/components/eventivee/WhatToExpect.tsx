@@ -29,8 +29,8 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
       <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch">
           {/* Left Side: Image */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-5 rounded-[10px] overflow-hidden border border-white/10 h-full"
           >
@@ -43,8 +43,8 @@ export default function WhatToExpect({ data }: WhatToExpectProps) {
  
           {/* Right Side: Info Box */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="md:col-span-7 relative rounded-[10px] p-10 md:p-14 overflow-hidden h-full flex flex-col justify-center"

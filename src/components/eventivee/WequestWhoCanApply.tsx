@@ -34,13 +34,13 @@ export default function WequestWhoCanApply({ data }: WequestWhoCanApplyProps) {
         </div>
 
         {/* Responsive Grid Layout */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 w-full overflow-x-auto md:overflow-x-hidden gap-6 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide px-4 md:px-0">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 w-full overflow-x-auto md:overflow-visible py-4 -my-4 md:overflow-x-hidden gap-6 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide px-4 md:px-0">
           {data.criteria.map((item, idx) => {
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className="p-8 md:p-10 rounded-[10px] flex flex-col justify-center min-h-[260px] md:min-h-[290px] transition-all duration-300 flex-shrink-0 w-[80%] sm:w-[60%] md:w-auto snap-start bg-white/[0.02] border border-white/5 backdrop-blur-md hover:bg-gradient-to-b hover:from-[#A32482] hover:to-[#7f1863] hover:border-[#A32482]/50 hover:shadow-xl hover:shadow-purple-950/20 hover:scale-[1.02] group"

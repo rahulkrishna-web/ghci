@@ -32,15 +32,15 @@ export default function AipCategories({ data }: AipCategoriesProps) {
         </div>
 
         {/* Slider on mobile, 2x2 Grid on desktop */}
-        <div className="flex w-full overflow-x-auto overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch md:grid md:grid-cols-2">
+        <div className="flex w-full overflow-x-auto md:overflow-visible py-4 -my-4 overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch md:grid md:grid-cols-2">
           {data.categories.map((category, idx) => {
             const iconPath = IconMap[category.icon];
 
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
                 className="group p-6 md:p-10 rounded-[10px] flex flex-col justify-between min-h-[220px] md:min-h-[240px] min-w-[65%] md:min-w-0 snap-start cursor-pointer transition-all duration-300 bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:border-transparent hover:shadow-2xl hover:shadow-purple-900/20"

@@ -275,8 +275,8 @@ export default function AipHero({ data }: AipHeroProps) {
           drag
           dragMomentum={false}
           className="fixed bottom-6 right-6 z-[999] w-[340px] bg-[#121214]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[80vh]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
           {/* Header / Drag Handle */}
           <div className="flex justify-between items-center p-4 border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0">

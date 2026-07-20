@@ -48,7 +48,7 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
         </div>
 
         {/* Grid / Slider Container */}
-        <div className="flex items-stretch overflow-x-auto overflow-y-hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex items-stretch overflow-x-auto md:overflow-visible py-4 -my-4 overflow-y-hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {data.blocks.map((block, idx) => {
                 const iconPath = IconMap[block.icon];
                 const isCenteredOnDesktop = idx >= 3;
@@ -57,8 +57,8 @@ export default function WhoShouldAttend({ data }: WhoShouldAttendProps) {
                 return (
                     <motion.div
                         key={idx}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
                         onClick={() => setSelectedIndex(idx)}

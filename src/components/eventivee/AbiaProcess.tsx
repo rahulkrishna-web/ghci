@@ -48,8 +48,8 @@ export default function AbiaProcess({ data }: AbiaProcessProps) {
             {process.list.map((item: any, index: number) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="flex items-stretch gap-5 md:gap-8 relative group"

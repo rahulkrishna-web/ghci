@@ -176,12 +176,7 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left: Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-full relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-          >
+          <div className="w-full relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <Image 
               src="/abia/lead_section.png"
               alt="Anita Borg Impact Awards Stage"
@@ -189,15 +184,10 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
               className="object-cover"
               priority
             />
-          </motion.div>
+          </div>
 
           {/* Right: Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col items-start gap-6 w-full"
-          >
+          <div className="flex flex-col items-start gap-6 w-full">
             <div className="flex items-center gap-2.5 text-white/90 text-lg md:text-xl font-medium">
               <Clock className="w-5 h-5 md:w-6 md:h-6" />
               <span>{hero.deadline}</span>
@@ -210,9 +200,6 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
                   ref={titleRef}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
                   style={{
                     backgroundImage: background,
                     backgroundClip: 'text',
@@ -230,9 +217,6 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
                 {/* Border Shine Layer (Overlay) */}
                 <motion.h1
                   aria-hidden="true"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
                   style={{
                     backgroundImage: background,
                     backgroundClip: 'text',
@@ -255,12 +239,7 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
             </p>
             
             {/* Premium Button Cluster (Apply Cluster) */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="flex flex-row items-center group gap-0 mt-6"
-            >
+            <div className="flex flex-row items-center group gap-0 mt-6">
               <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10">
                 <img src="/icons/Ticket.png" alt="Ticket" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
               </div>
@@ -277,8 +256,8 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
                   </div>
                 </div>
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -289,8 +268,8 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
           drag
           dragMomentum={false}
           className="fixed bottom-6 right-6 z-[999] w-[340px] bg-[#121214]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[80vh] text-white"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
           {/* Header */}
           <div className="flex justify-between items-center p-4 border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0">

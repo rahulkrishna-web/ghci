@@ -34,7 +34,7 @@ export default function WhatYouGain({ data }: WhatYouGainProps) {
           {data.sectionTitle}
         </motion.h2>
 
-        <div className="flex items-stretch overflow-x-auto overflow-y-hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-1 snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex items-stretch overflow-x-auto md:overflow-visible py-4 -my-4 overflow-y-hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-1 snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {data.cards.map((card, idx) => {
             const Icon = IconMap[card.icon];
             return (

@@ -83,8 +83,8 @@ function CountdownCard({ unit, mounted }: CountdownCardProps) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="group relative flex flex-col items-center p-2 sm:p-4 md:p-8 rounded-[8px] sm:rounded-[12px] md:rounded-[16px] bg-white/[0.01] border border-white/[0.04] backdrop-blur-md transition-all duration-500 hover:border-[#A32482]/30 hover:bg-white/[0.02] w-auto shrink-0"
     >

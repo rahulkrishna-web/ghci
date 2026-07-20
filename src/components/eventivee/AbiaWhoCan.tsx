@@ -37,8 +37,8 @@ export default function AbiaWhoCan({ data }: AbiaWhoCanProps) {
           
           {/* Left: Image */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="md:col-span-5 rounded-[10px] overflow-hidden border border-white/10 h-[300px] md:h-auto min-h-[300px] relative"
           >
@@ -52,8 +52,8 @@ export default function AbiaWhoCan({ data }: AbiaWhoCanProps) {
 
           {/* Right: Content Box with Homepage Card Background */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="md:col-span-7 relative rounded-[10px] p-10 md:p-14 overflow-hidden h-full flex flex-col justify-center"

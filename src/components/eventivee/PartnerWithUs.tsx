@@ -97,8 +97,8 @@ export default function PartnerWithUs({ data, isPage = false }: PartnerWithUsPro
             {data.benefits.map((benefit, idx) => (
                 <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className={`p-2 md:py-10 text-left flex flex-col items-start relative 

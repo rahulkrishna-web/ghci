@@ -31,8 +31,8 @@ export default function AipSplitSection({ data }: AipSplitSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {/* Who Should Apply Card */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="p-8 md:p-14 rounded-[10px] bg-white/[0.03] border border-white/5 backdrop-blur-md flex flex-col justify-start min-h-[300px] hover:bg-white/[0.05] transition-all duration-300"
           >
@@ -52,8 +52,8 @@ export default function AipSplitSection({ data }: AipSplitSectionProps) {
 
           {/* Why Apply Card */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="p-8 md:p-14 rounded-[10px] bg-white/[0.03] border border-white/5 backdrop-blur-md flex flex-col justify-start min-h-[300px] hover:bg-white/[0.05] transition-all duration-300"

@@ -49,8 +49,8 @@ export default function WequestSelection({ data }: WequestSelectionProps) {
 
         {/* Evaluation Card Container (matching figma plummy-eggplant tone) */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="p-8 md:py-10 md:px-12 rounded-[15px] bg-gradient-to-b from-[#180512]/60 to-[#0e020a]/80 border border-[#A32482]/20 backdrop-blur-md w-full max-w-6xl mx-auto flex flex-col items-center justify-center"

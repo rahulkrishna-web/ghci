@@ -45,8 +45,8 @@ export default function Location({ data }: LocationProps) {
           {/* Left Column: Info Cards */}
           <div className="flex flex-col gap-4 h-full">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="flex-1 bg-white/[0.04] py-5 px-8 rounded-[10px] flex items-center gap-6 border border-white/5"
             >
@@ -62,8 +62,8 @@ export default function Location({ data }: LocationProps) {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="flex-1 bg-white/[0.04] py-5 px-8 rounded-[10px] flex items-center gap-6 border border-white/5"
@@ -79,8 +79,8 @@ export default function Location({ data }: LocationProps) {
 
           {/* Right Column: Map */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="rounded-[10px] overflow-hidden border border-white/10 h-full"
           >
@@ -107,8 +107,8 @@ export default function Location({ data }: LocationProps) {
 
         {/* Getting There Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="relative border border-white/5 rounded-[10px] p-10 md:p-10 overflow-hidden"
           style={{

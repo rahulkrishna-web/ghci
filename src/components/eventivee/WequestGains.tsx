@@ -97,13 +97,13 @@ export default function WequestGains({ data }: WequestGainsProps) {
 
           <div 
             ref={scrollRef}
-            className="flex w-full overflow-x-auto overflow-y-hidden gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch"
+            className="flex w-full overflow-x-auto md:overflow-visible py-4 -my-4 overflow-y-hidden gap-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch"
           >
             {data.gains.map((gain, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className="p-8 md:p-10 rounded-[10px] bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col justify-between min-h-[260px] md:min-h-[290px] hover:bg-white/[0.05] hover:border-[#A32482]/30 transition-all duration-300 group flex-shrink-0 w-[80%] sm:w-[60%] md:w-[45%] lg:w-[23.5%] snap-start"

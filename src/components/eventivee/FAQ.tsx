@@ -47,8 +47,8 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="bg-white/[0.03] border border-white/10 hover:bg-white/[0.05] transition-colors rounded-none overflow-hidden"

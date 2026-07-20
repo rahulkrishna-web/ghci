@@ -4,11 +4,11 @@ hero:
   title: "Anita Borg Impact Awards (ABIA)"
   subtitle: "Celebrating women creating impact through technology."
   cta: "NOMINATE NOW"
-  ctaLink: "#nominate"
+  ctaLink: "https://ghci27.stutzee.com"
 whatIs:
   title: "What is\nABIA?"
   cta: "NOMINATE NOW"
-  ctaLink: "#nominate"
+  ctaLink: "https://ghci27.stutzee.com"
   description: "Recognition begins with a nomination. Celebrate a woman whose work is making a difference. (Hint: women in you, nominate yourself)"
   paragraph: "The Anita Borg Impact Awards at Grace Hopper Celebration India 2027 (GHCI 27) recognize women who have made and influence through technology. These awards honor individuals whose leadership and contributions are creating meaningful impact across industry, government, and society."
 categories:
@@ -73,7 +73,7 @@ ctaBanner:
   title: "Nominations Are Now Open"
   subtitle: "Every nomination helps bring remarkable work into the spotlight. Submit your nomination today."
   cta: "NOMINATE NOW"
-  ctaLink: "#nominate"
+  ctaLink: "https://ghci27.stutzee.com"
 winners:
   title: "Meet Our\nPast Winners"
   list:

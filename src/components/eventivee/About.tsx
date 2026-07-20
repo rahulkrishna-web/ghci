@@ -63,8 +63,8 @@ export default function About({ data }: AboutProps) {
         <div className="relative h-[300px] md:h-[700px] mb-0 md:mb-20">
             {/* Top Left Floating Image */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="hidden md:block absolute left-0 lg:left-[1%] top-0 w-20 md:w-40 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
@@ -73,8 +73,8 @@ export default function About({ data }: AboutProps) {
 
             {/* Top Right Floating Image */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="hidden md:block absolute right-0 top-[1%] w-24 md:w-44 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
@@ -83,8 +83,8 @@ export default function About({ data }: AboutProps) {
 
             {/* Main Center Video */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full md:w-[68%] aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
             >
@@ -140,8 +140,8 @@ export default function About({ data }: AboutProps) {
 
             {/* Bottom Left Floating Image */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="hidden md:block absolute left-0 lg:left-0 bottom-0 w-24 md:w-48 aspect-video rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >
@@ -150,8 +150,8 @@ export default function About({ data }: AboutProps) {
 
             {/* Bottom Right Floating Image */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="hidden md:block absolute right-0  bottom-[2%] w-20 md:w-36 aspect-[3/4] rounded-[10px] overflow-hidden border border-white/10 shadow-2xl z-20"
             >

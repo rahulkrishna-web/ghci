@@ -15,8 +15,8 @@ export default function TicketPerks({ data }: TicketPerksProps) {
         
         {/* Left Side: Title */}
         <motion.div
-           initial={{ opacity: 0, x: -20 }}
-           whileInView={{ opacity: 1, x: 0 }}
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
            viewport={{ once: true }}
            className="md:w-1/3"
         >
@@ -27,8 +27,8 @@ export default function TicketPerks({ data }: TicketPerksProps) {
 
         {/* Right Side: Ticket Card */}
         <motion.div
-           initial={{ opacity: 0, x: 20 }}
-           whileInView={{ opacity: 1, x: 0 }}
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
            viewport={{ once: true }}
            className="relative md:w-2/3 w-full"
         >

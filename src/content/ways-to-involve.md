@@ -20,6 +20,7 @@ ways:
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
     type: "secondary"
     badge: "Launching Soon"
+    badgeUrl: "/abia"
   - title: "Call For Jurors"
     description: "Help recognize excellence in tech. Evaluate submissions, support talent, and shape industry benchmarks."
     type: "secondary"

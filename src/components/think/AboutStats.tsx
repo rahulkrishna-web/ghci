@@ -14,8 +14,8 @@ export default function AboutStats() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-8 italic">
@@ -30,8 +30,8 @@ export default function AboutStats() {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 className="p-8 border border-white/10 rounded-2xl bg-white/5"
               >

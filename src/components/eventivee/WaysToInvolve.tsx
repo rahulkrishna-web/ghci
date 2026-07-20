@@ -7,6 +7,7 @@ type WayItem = {
   type: 'primary' | 'secondary';
   links?: { text: string; url: string; variant: 'solid' | 'outline' }[];
   badge?: string;
+  badgeUrl?: string;
 };
 
 type WaysToInvolveProps = {
@@ -67,8 +68,8 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className={`
@@ -109,11 +110,15 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                     </span>
                   )}
 
-                  {way.badge && (
+                  {way.badge && way.badgeUrl ? (
+                    <a href={way.badgeUrl} className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-xs md:text-xl font-semibold w-fit shadow-lg shadow-purple-900/20 hover:opacity-90 transition-opacity">
+                      {way.badge}
+                    </a>
+                  ) : way.badge ? (
                     <div className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-xs md:text-xl font-semibold w-fit shadow-lg shadow-purple-900/20">
                       {way.badge}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </motion.div>
             );

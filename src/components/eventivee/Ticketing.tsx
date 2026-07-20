@@ -192,8 +192,8 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
       className="relative w-full h-[740px] rounded-[2.5rem] overflow-hidden group flex flex-col"
@@ -376,8 +376,8 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.6 }}
             className="relative w-full rounded-[0.5rem] overflow-hidden border flex flex-row"
@@ -1426,7 +1426,7 @@ export default function Ticketing() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto md:snap-x md:snap-mandatory gap-8 justify-items-center md:justify-start mb-12 md:mb-20 pb-8 scrollbar-hide scroll-smooth">
+        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto md:overflow-visible py-4 -my-4 md:snap-x md:snap-mandatory gap-8 justify-items-center md:justify-start mb-12 md:mb-20 pb-8 scrollbar-hide scroll-smooth">
           {tickets.map((ticket, idx) => (
             <div key={ticket.id} className="w-full md:min-w-[calc((100%-96px)/3.5)] md:snap-start flex">
               {isMobile 
@@ -1457,9 +1457,9 @@ export default function Ticketing() {
             drag
             dragMomentum={false}
             className="fixed bottom-6 right-6 z-[999] w-[380px] bg-[#121214]/95 border border-white/10 rounded-3xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[85vh] overflow-hidden"
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
           >
             {/* Header */}
             <div className="flex justify-between items-center p-5 border-b border-white/10 bg-white/5 cursor-grab active:cursor-grabbing shrink-0">

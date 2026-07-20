@@ -2161,3 +2161,32 @@
 
 
 
+
+### Linked ABIA Page in Ways to Get Involved [2026-07-20 23:34]
+- Replaced the 'Launching Soon' badge with an 'Explore' link pointing to `/abia` in the Ways to Get Involved section.
+- [0.1 hrs]
+
+### Reverted ABIA Tile to Badge [2026-07-20 23:36]
+- Reverted the ABIA tile link button to the 'Launching Soon' badge to maintain original design.
+- Added `badgeUrl` support to the WaysToInvolve component to wrap the badge in an anchor tag pointing to `/abia`.
+- [0.1 hrs]
+
+### Updated ABIA CTA Link [2026-07-20 23:37]
+- Replaced all local '#nominate' CTA links in the ABIA page content with the external Stutzee URL (https://ghci27.stutzee.com).
+- [0.1 hrs]
+
+### Removed Card Slide Animations [2026-07-20 23:40]
+- Removed the slide-in-top animation (y-axis translation) from all card elements across all pages to ensure cards simply fade in without vertical movement.
+- Applied this change globally across 36 components in src/components/eventivee and src/components/think by stripping `y` transforms from `initial` and `whileInView` properties on `motion.div` card items.
+- [0.2 hrs]
+
+### Removed Animations from ABIA Hero & Sideways Animations Globally [2026-07-20 23:44]
+- Removed all entrance animations (fade and slide) from the ABIA Hero section components (images, titles, CTA) to render them statically on load.
+- Stripped sideways sliding animations (`x` axis translations) from all components globally to ensure items fade in without horizontal motion.
+- [0.2 hrs]
+
+### Fixed Hover Clipping on Slider Cards [2026-07-20 23:47]
+- Fixed an issue where hovering on cards caused them to get clipped by their parent containers.
+- Replaced `overflow-x-auto` with `overflow-x-auto md:overflow-visible` across all mobile-first snap slider containers (including ABIA Categories, Recipients, Winners, Tracks, etc.) to prevent vertical clipping on desktop.
+- Added `py-4 -my-4` to these containers to provide vertical bleeding room for hover states (shadows and translations) without shifting the layout.
+- [0.2 hrs]

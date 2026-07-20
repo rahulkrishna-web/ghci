@@ -59,8 +59,8 @@ export default function Gallery() {
           {galleryImages.map((img, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30, rotate: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, rotate: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06, duration: 0.6 }}
               className={`rounded-2xl overflow-hidden border border-white/10 shrink-0 ${img.className}`}

@@ -79,8 +79,8 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             {speakersToRender.map((speaker, idx) => (
                 <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ 
                     duration: 0.5,
                     delay: isExpanded && idx >= 4 ? (idx - 4) * 0.05 : 0 

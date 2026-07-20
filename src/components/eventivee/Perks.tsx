@@ -17,8 +17,8 @@ export default function Perks({ data }: PerksProps) {
       
       <div className="max-w-4xl mx-auto px-6 relative z-10 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="bg-gradient-to-br from-[#1a1a24] to-[#0d0d12] border border-white/10 rounded-3xl p-10 md:p-14 shadow-2xl flex flex-col md:flex-row gap-12 items-center"
         >
@@ -36,8 +36,8 @@ export default function Perks({ data }: PerksProps) {
             {data.perks.map((perk, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 className="flex items-start gap-4"

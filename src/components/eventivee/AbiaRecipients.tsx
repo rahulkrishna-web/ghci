@@ -40,12 +40,12 @@ export default function AbiaRecipients({ data }: AbiaRecipientsProps) {
           </h2>
         </motion.div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:pb-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
+        <div className="flex overflow-x-auto md:overflow-visible py-4 -my-4 snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:pb-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
           {recipients.list.map((item: any, index: number) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="p-8 md:p-10 rounded-[10px] bg-[#D9D9D9]/20 backdrop-blur-md border border-white/10 flex flex-col min-h-[265px] md:min-h-[290px] hover:bg-white/[0.08] transition-all group flex-shrink-0 w-[85%] md:w-auto snap-start"

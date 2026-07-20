@@ -65,8 +65,8 @@ export default function Host() {
 
           {/* Host Image */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.7 }}
             className="lg:w-[480px] h-[500px] rounded-3xl overflow-hidden border border-white/10 relative"

@@ -46,7 +46,7 @@ export default function AbiaWinners({ data }: AbiaWinnersProps) {
           </motion.div>
 
           {/* Right Column (Cards) */}
-          <div className="w-full flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 lg:w-auto lg:mx-0 lg:px-0 lg:pb-0 lg:flex-row lg:justify-center gap-6 scrollbar-hide">
+          <div className="w-full flex overflow-x-auto md:overflow-visible py-4 -my-4 snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 lg:w-auto lg:mx-0 lg:px-0 lg:pb-0 lg:flex-row lg:justify-center gap-6 scrollbar-hide">
             {winners.list.map((winner: any, index: number) => (
               <motion.div
                 key={index}

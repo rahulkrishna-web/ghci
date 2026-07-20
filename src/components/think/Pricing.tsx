@@ -33,8 +33,8 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ delay: index * 0.1 }}
               className="p-12 border border-white/10 rounded-[2.5rem] bg-white/5 relative group hover:border-think-accent transition-all duration-500"
             >

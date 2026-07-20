@@ -104,9 +104,9 @@ export default function AipNavbar() {
 
             {/* Menu Popup Card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="relative w-full max-w-sm rounded-[30px] bg-[#070708]/90 border border-white/10 backdrop-blur-2xl overflow-hidden shadow-2xl flex flex-col"
             >

@@ -91,8 +91,8 @@ export default function Contact({ data }: ContactProps) {
             
             {/* Left Side: Content (75% approx) */}
             <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="w-full md:flex-1"
             >
@@ -113,8 +113,8 @@ export default function Contact({ data }: ContactProps) {
 
             {/* Right Side: CTAs (25% approx) */}
             <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="w-full md:w-auto shrink-0 flex flex-row md:flex-col gap-2 md:gap-6 items-center md:items-end pt-2 mt-8 md:mt-0"
             >
@@ -197,8 +197,8 @@ export default function Contact({ data }: ContactProps) {
             drag
             dragMomentum={false}
             className="fixed bottom-6 right-6 z-[999] w-[340px] bg-[#121214]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col max-h-[80vh]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             >
                 {/* Header / Drag Handle */}
                 <div className="flex justify-between items-center p-4 border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0">

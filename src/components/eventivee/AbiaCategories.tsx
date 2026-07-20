@@ -31,12 +31,12 @@ export default function AbiaCategories({ data }: AbiaCategoriesProps) {
           </p>
         </motion.div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:pb-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
+        <div className="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory py-4 -my-4 pb-10 md:pb-4 -mx-4 px-6 scroll-pl-6 md:mx-0 md:px-0 md:scroll-pl-0 md:grid md:grid-cols-3 gap-6 scrollbar-hide">
           {categories.list.map((item: any, index: number) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
