@@ -149,7 +149,7 @@ export default function CountdownTimer({ className = "py-12 px-4" }: { className
   useEffect(() => {
     setMounted(true);
     // Target event start date: January 20, 2027
-    const targetDate = new Date("2027-01-20T09:00:00+05:30").getTime();
+    const targetDate = new Date("2027-01-20T08:00:00+05:30").getTime();
 
     const calculateTime = () => {
       const diff = targetDate - Date.now();
