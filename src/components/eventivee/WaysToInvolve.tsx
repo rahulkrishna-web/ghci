@@ -106,7 +106,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                   ))}
                   {way.title === "Advancing Inclusion Program" && (
                     <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Apply by July 15, 2026, 11:59 PM IST
+                      Apply by Aug 3, 2026, 11:59 PM IST
                     </span>
                   )}
 

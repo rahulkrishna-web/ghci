@@ -2195,3 +2195,8 @@
 - Updated the `Navbar` component so the main GHCI logo links to the homepage (`/`) instead of just an empty hash (`#`).
 - Wrapped the logo inside the mobile menu in a clickable anchor linking to the homepage, which also properly closes the mobile menu when clicked.
 - [0.1 hrs]
+
+### Updated AIP Deadline and ABIA Button [2026-07-21 13:03]
+- Updated the deadline for Advancing Inclusion Program to Aug 3, 2026 in the Ways to Get Involved section.
+- Changed the Anita Borg Impact Awards item from a 'Launching Soon' badge to an 'Apply Now' button similar to AIP.
+- [0.1 hrs]
