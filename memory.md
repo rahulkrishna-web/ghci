@@ -2204,3 +2204,7 @@
 - Updated the homepage hero countdown timer target date to Jan 20, 2027 at 8 AM.
 - [0.1 hrs]
 
+
+### Updated ABIA Button Text [2026-07-22 19:03]
+- Changed the CTA text under the 'Anita Borg Impact Awards' section on the homepage from 'Apply Now' to 'Nominate Now' in `ways-to-involve.md`.
+- [0.1 hrs]

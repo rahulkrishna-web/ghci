@@ -20,7 +20,7 @@ ways:
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
     type: "secondary"
     links:
-      - text: "Apply Now"
+      - text: "Nominate Now"
         url: "/abia"
         variant: "solid"
   - title: "Call For Jurors"
