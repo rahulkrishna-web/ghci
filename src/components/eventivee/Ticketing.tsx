@@ -1426,7 +1426,7 @@ export default function Ticketing() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto md:overflow-visible py-4 -my-4 md:snap-x md:snap-mandatory gap-8 justify-items-center md:justify-start mb-12 md:mb-20 pb-8 scrollbar-hide scroll-smooth">
+        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto py-4 -my-4 md:snap-x md:snap-mandatory gap-8 justify-items-center md:justify-start mb-12 md:mb-20 pb-8 scrollbar-hide scroll-smooth">
           {tickets.map((ticket, idx) => (
             <div key={ticket.id} className="w-full md:min-w-[calc((100%-96px)/3.5)] md:snap-start flex">
               {isMobile 

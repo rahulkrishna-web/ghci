@@ -103,7 +103,7 @@ export default function AipBenefits({ data }: AipBenefitsProps) {
 
           <div 
             ref={scrollRef}
-            className="flex w-full overflow-x-auto md:overflow-visible py-4 -my-4 overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch"
+            className="flex w-full overflow-x-auto py-4 -my-4 overflow-y-hidden gap-4 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide px-4 md:px-13 scroll-pl-4 md:scroll-pl-13 items-stretch"
           >
             {data.benefits.map((benefit, idx) => (
               <motion.div

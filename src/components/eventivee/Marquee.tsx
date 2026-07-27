@@ -22,7 +22,7 @@ export default function Marquee() {
   const isJuly1OrLater = now >= new Date('2026-07-01T00:00:00+05:30');
 
   const textVal = isJuly1OrLater 
-    ? 'Registrations Now Open • Limited Spots' 
+    ? 'Early Bird Registrations Open - Limited Spots' 
     : 'Super Early Bird Now Live • Limited Spots';
 
   const items = [textVal, textVal, textVal, textVal];
