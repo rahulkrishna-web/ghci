@@ -8,6 +8,7 @@ heroDescription: "Connect with investors, mentors, and ecosystem leaders. Receiv
 heroCtaText: "Apply Now"
 heroCtaLink: "https://ghci27.stutzee.com/applications/wequest/create"
 heroImage: "/wequest-hero-bg.webp"
+heroDeadline: "Apply by Aug 3, 2026, 11:59 PM IST"
 
 whatIsTitle: "What is WeQuest?"
 whatIsText: "WeQuest is GHCI's platform for early-stage women tech founders building solutions for India's future.\n\nDesigned for startups ready to grow, WeQuest brings together founders, investors, mentors, industry leaders, and the wider technology ecosystem through a structured journey of mentorship, visibility, and live pitching.\n\nSelected founders will have the opportunity to showcase their startups at GHCI 27, connect with ecosystem leaders, and gain exposure before one of the largest communities of women and allies in tech."

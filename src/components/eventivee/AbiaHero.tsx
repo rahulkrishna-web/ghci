@@ -17,6 +17,16 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [debugMode, setDebugMode] = useState(false);
   const [expandedSection, setExpandedSection] = useState<'bokeh' | 'json' | null>('bokeh');
+  const [deadlineText, setDeadlineText] = useState(hero.deadline || "");
+
+  useEffect(() => {
+    if (!hero.deadline) return;
+    const now = new Date();
+    const cutoff = new Date('2026-08-03T23:59:59+05:30');
+    if (now > cutoff) {
+      setDeadlineText(hero.deadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));
+    }
+  }, [hero.deadline]);
 
   const [config, setConfig] = useState({
     bokehBlur: 35,
@@ -188,11 +198,6 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
 
           {/* Right: Content */}
           <div className="flex flex-col items-start gap-6 w-full">
-            <div className="flex items-center gap-2.5 text-white/90 text-lg md:text-xl font-medium">
-              <Clock className="w-5 h-5 md:w-6 md:h-6" />
-              <span>{hero.deadline}</span>
-            </div>
-            
             <div className="relative group w-full flex flex-col items-start">
               <div className="relative w-full flex flex-col items-start">
                 {/* Main Fill Layer */}
@@ -257,6 +262,13 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
                 </div>
               </a>
             </div>
+
+            {hero.deadline && (
+              <div className="inline-flex items-center gap-2.5 text-white/90 text-sm md:text-base font-medium mt-4 lg:mt-6 bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10 w-max">
+                <Clock className="w-4 h-4 md:w-5 md:h-5" />
+                <span>{deadlineText}</span>
+              </div>
+            )}
           </div>
           
         </div>

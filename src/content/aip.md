@@ -6,6 +6,7 @@ heroSubtitle: "A Scholarship Designed to Expand Access.\nAttend GHCI 27. Fully S
 heroCtaText: "Apply Now"
 heroCtaLink: "https://ghci27.stutzee.com/applications/scholarship/create"
 heroImage: "/aip/ghci-aip-lead.jpeg"
+heroDeadline: "Apply by Aug 3, 2026, 11:59 PM IST"
 
 whatIsTitle: "What is AIP?"
 whatIsText: "The Advancing Inclusion Program is designed to help women who would benefit from access to the learning, networking, mentorship, and career opportunities available through GHCI."

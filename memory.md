@@ -2219,3 +2219,15 @@
 - Refactored the Privilege Offer ticket footnote to display "Offer valid till August 2, 2026" initially and dynamically change to "Offer valid till August 31, 2026" once the date surpasses August 2nd midnight. Moved the logic to `useEffect` to prevent SSR hydration mismatches.
 - [0.1 hrs]
 
+
+### Updated Inner Pages Deadlines [2026-07-30 19:43]
+- Moved the deadline in inner pages (ABIA, WeQuest, AIP) below the CTA buttons in the hero sections and updated the text to 'Apply by Aug 3, 2026, 11:59 PM IST'.
+- [0.25]
+
+### Dynamic Deadline Logic [2026-07-30 19:53]
+- Applied dynamic deadline logic to ABIA, WeQuest, and AIP Hero sections so that their deadlines automatically update from Aug 3 to Aug 20 once August 3 passes.
+- [0.15]
+
+### Pill Styling for Inner Pages Deadline [2026-07-30 19:54]
+- Styled the dynamic deadline elements in WequestHero, AbiaHero, and AipHero as semi-transparent dark pills (bg-black/60, backdrop-blur-md, border, rounded-full) to improve readability against varied backgrounds.
+- [0.10]

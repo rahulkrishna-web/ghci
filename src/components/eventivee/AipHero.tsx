@@ -1,7 +1,7 @@
 'use client';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { Settings, X } from 'lucide-react';
+import { Settings, X, Clock } from 'lucide-react';
 
 type AipHeroProps = {
   data: {
@@ -9,6 +9,7 @@ type AipHeroProps = {
     heroSubtitle: string;
     heroCtaText: string;
     heroCtaLink: string;
+    heroDeadline?: string;
   };
 };
 
@@ -18,6 +19,16 @@ export default function AipHero({ data }: AipHeroProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [debugMode, setDebugMode] = useState(false);
+  const [deadlineText, setDeadlineText] = useState(data.heroDeadline || "");
+
+  useEffect(() => {
+    if (!data.heroDeadline) return;
+    const now = new Date();
+    const cutoff = new Date('2026-08-03T23:59:59+05:30');
+    if (now > cutoff) {
+      setDeadlineText(data.heroDeadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));
+    }
+  }, [data.heroDeadline]);
   const [expandedSection, setExpandedSection] = useState<'bokeh' | 'json' | null>('bokeh');
   const [config, setConfig] = useState({
     bokehBlur: 40,
@@ -241,6 +252,18 @@ export default function AipHero({ data }: AipHeroProps) {
                 </div>
               </a>
             </motion.div>
+
+            {data.heroDeadline && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="inline-flex items-center gap-2.5 text-white/90 text-sm md:text-base font-medium mt-4 lg:mt-6 bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10 w-max"
+              >
+                <Clock className="w-4 h-4 md:w-5 md:h-5" />
+                <span>{deadlineText}</span>
+              </motion.div>
+            )}
           </div>
 
           {/* Right Column: Image Placeholder */}

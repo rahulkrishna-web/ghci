@@ -1,6 +1,7 @@
 'use client';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { Clock } from 'lucide-react';
 
 type WequestHeroProps = {
   data: {
@@ -11,6 +12,7 @@ type WequestHeroProps = {
     heroCtaText: string;
     heroCtaLink: string;
     heroImage: string;
+    heroDeadline?: string;
   };
 };
 
@@ -18,6 +20,16 @@ export default function WequestHero({ data }: WequestHeroProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [deadlineText, setDeadlineText] = useState(data.heroDeadline || "");
+
+  useEffect(() => {
+    if (!data.heroDeadline) return;
+    const now = new Date();
+    const cutoff = new Date('2026-08-03T23:59:59+05:30');
+    if (now > cutoff) {
+      setDeadlineText(data.heroDeadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));
+    }
+  }, [data.heroDeadline]);
 
   useEffect(() => {
     setMounted(true);
@@ -174,6 +186,18 @@ export default function WequestHero({ data }: WequestHeroProps) {
               </div>
             </a>
           </motion.div>
+
+          {data.heroDeadline && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="flex items-center justify-center gap-2.5 text-white/90 text-sm md:text-base font-medium mt-6 md:mt-8 bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10 w-max mx-auto"
+            >
+              <Clock className="w-4 h-4 md:w-5 md:h-5" />
+              <span>{deadlineText}</span>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
