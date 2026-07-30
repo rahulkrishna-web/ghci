@@ -3,10 +3,6 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 import { useState, useRef, useEffect } from 'react';
 import { Shield, X, ChevronLeft, Plus, Settings, Trash2, Edit3, Type, Image as ImageIcon, Copy, ExternalLink, Check } from 'lucide-react';
 
-const getPrivilegeFootnote = () => {
-  const cutoff = new Date('2026-08-02T18:30:00Z');
-  return new Date() >= cutoff ? "Offer valid till August 31, 2026" : "Offer valid till August 2, 2026";
-};
 
 // Default data as a starting point
 const defaultTickets = [
@@ -14,7 +10,7 @@ const defaultTickets = [
     id: "last-year",
     name: "Privilege Offer",
     description: "For GHCI 25 attendees ",
-    footnote: getPrivilegeFootnote(),
+    footnote: "Offer valid till August 2, 2026",
     price: "₹10,000",
     gst: "+ applicable charges",
     cta: "Get the Pass",
@@ -527,7 +523,7 @@ export default function Ticketing() {
       "id": "last-year",
       "name": "Privilege Offer",
       "description": "For GHCI 25 attendees ",
-      "footnote": getPrivilegeFootnote(),
+      "footnote": "Offer valid till August 2, 2026",
       "price": "₹10,000",
       "gst": "+ applicable charges",
       "cta": "Get the Pass",
@@ -1202,6 +1198,25 @@ export default function Ticketing() {
         window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
+    const now = new Date();
+    const cutoff = new Date('2026-08-02T23:59:59+05:30');
+    
+    if (now > cutoff) {
+      setConfig((prev) => {
+        const newTickets = prev.tickets.map(t => {
+          if (t.id === 'last-year') {
+            return { ...t, footnote: "Offer valid till August 31, 2026" };
+          }
+          return t;
+        });
+        return { ...prev, tickets: newTickets };
+      });
+    }
+  }, [mounted]);
 
   useEffect(() => {
     if (mounted && window.location.hash === '#ticketing') {

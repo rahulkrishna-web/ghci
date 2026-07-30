@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 type WayItem = {
   title: string;
@@ -21,6 +22,16 @@ type WaysToInvolveProps = {
 export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   const primaryWays = data.ways.filter(w => w.type === 'primary');
   const secondaryWays = data.ways.filter(w => w.type === 'secondary');
+
+  const [aipDeadline, setAipDeadline] = useState("Aug 3, 2026");
+
+  useEffect(() => {
+    const now = new Date();
+    const deadlineDate = new Date("2026-08-03T23:59:59+05:30");
+    if (now > deadlineDate) {
+      setAipDeadline("Aug 20, 2026");
+    }
+  }, []);
 
   const getTitleWithHighlight = (title: string) => {
     return (
@@ -106,7 +117,17 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                   ))}
                   {way.title === "Advancing Inclusion Program" && (
                     <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Apply by Aug 3, 2026, 11:59 PM IST
+                      Apply by {aipDeadline}, 11:59 PM IST
+                    </span>
+                  )}
+                  {way.title === "WeQuest" && (
+                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
+                      Apply by Aug 25, 2026, 11:59 PM IST
+                    </span>
+                  )}
+                  {way.title === "Anita Borg Impact Awards" && (
+                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
+                      Nominate by Aug 24, 2026, 11:59 PM IST
                     </span>
                   )}
 

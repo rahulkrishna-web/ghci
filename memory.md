@@ -2208,3 +2208,14 @@
 ### Updated ABIA Button Text [2026-07-22 19:03]
 - Changed the CTA text under the 'Anita Borg Impact Awards' section on the homepage from 'Apply Now' to 'Nominate Now' in `ways-to-involve.md`.
 - [0.1 hrs]
+
+### Added Deadlines to Ways to Involve [2026-07-30 15:54]
+- Added WeQuest deadline (Aug 25) and ABIA deadline (Aug 24) to the homepage's "Ways to Get Involved" section.
+- Made the Advancing Inclusion Program (AIP) deadline dynamic, showing Aug 3 initially and switching to Aug 20 after Aug 3 midnight.
+- [0.2 hrs]
+
+
+### Added Dynamic Autoschedule to Privilege Offer [2026-07-30 16:20]
+- Refactored the Privilege Offer ticket footnote to display "Offer valid till August 2, 2026" initially and dynamically change to "Offer valid till August 31, 2026" once the date surpasses August 2nd midnight. Moved the logic to `useEffect` to prevent SSR hydration mismatches.
+- [0.1 hrs]
+
