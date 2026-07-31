@@ -2231,3 +2231,8 @@
 ### Pill Styling for Inner Pages Deadline [2026-07-30 19:54]
 - Styled the dynamic deadline elements in WequestHero, AbiaHero, and AipHero as semi-transparent dark pills (bg-black/60, backdrop-blur-md, border, rounded-full) to improve readability against varied backgrounds.
 - [0.10]
+
+### Update WeQuest and ABIA Dates [2026-07-31 10:31]
+- Updated WeQuest internal page deadline to "Apply by Aug 25, 2026, 11:59 PM IST" to match homepage.
+- Updated ABIA internal page deadline to "Nominate by Aug 24, 2026, 11:59 PM IST" to match homepage.
+- [0.10]
