@@ -310,7 +310,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
           <p className="text-white/40 text-lg mb-4 leading-none h-4">{ticket.gst}</p>
           
           <a 
-            href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
+            href={ticket.disabled ? undefined : (ticket.link || "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite")}
             target="_blank"
             rel="noopener noreferrer"
             className={`block w-full cursor-pointer ${ticket.disabled ? 'pointer-events-none' : ''}`}
@@ -449,7 +449,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                     <p className="text-white/40 text-xs md:text-sm mb-2">{ticket.gst}</p>
 
                     <a 
-                        href={ticket.disabled ? undefined : "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite"}
+                        href={ticket.disabled ? undefined : (ticket.link || "https://link.district.in/DSTRKT/GHCI2027PartnerWebsite")}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`block w-full cursor-pointer ${ticket.disabled ? 'pointer-events-none' : ''}`}
@@ -991,10 +991,11 @@ export default function Ticketing() {
       "name": "Virtual",
       "description": "Access GHCI 27 virtually from anywhere",
       "footnote": "",
-      "price": "Launching soon",
-      "gst": "",
-      "cta": "Launching soon",
-      "disabled": true,
+      "price": "₹3,068",
+      "gst": "inclusive of 18% GST",
+      "cta": "Get the Pass",
+      "disabled": false,
+      "link": "https://events.getherspace.com/virtualghci/home/",
       "features": [
         "Full access to GHCI 27, including sessions, workshops, and networking",
         "Live Q&A, chats, polls, and curated networking opportunities",

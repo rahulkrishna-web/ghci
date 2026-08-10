@@ -2236,3 +2236,12 @@
 - Updated WeQuest internal page deadline to "Apply by Aug 25, 2026, 11:59 PM IST" to match homepage.
 - Updated ABIA internal page deadline to "Nominate by Aug 24, 2026, 11:59 PM IST" to match homepage.
 - [0.10]
+### Update AIP Deadline and Virtual Card [2026-08-10 12:27]
+- Scheduled AIP deadline extension to Aug 31 once Aug 20 is hit.
+- Activated virtual ticket card with link and price ₹3,068 (including gst).
+- [0.25]
+
+### Update Virtual Card GST Text [2026-08-10 12:34]
+- Updated the virtual card GST text to "inclusive of 18% GST".
+- [0.05]
+

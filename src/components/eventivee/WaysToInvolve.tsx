@@ -27,8 +27,11 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
 
   useEffect(() => {
     const now = new Date();
-    const deadlineDate = new Date("2026-08-03T23:59:59+05:30");
-    if (now > deadlineDate) {
+    const deadlineDate1 = new Date("2026-08-03T23:59:59+05:30");
+    const deadlineDate2 = new Date("2026-08-20T23:59:59+05:30");
+    if (now > deadlineDate2) {
+      setAipDeadline("Aug 31, 2026");
+    } else if (now > deadlineDate1) {
       setAipDeadline("Aug 20, 2026");
     }
   }, []);
