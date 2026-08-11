@@ -990,12 +990,13 @@ export default function Ticketing() {
       "id": "virtual",
       "name": "Virtual",
       "description": "Access GHCI 27 virtually from anywhere",
-      "footnote": "",
-      "price": "₹3,068",
-      "gst": "inclusive of 18% GST",
+      "footnote": "Offer valid till September 15, 2026",
+      "price": "₹2,600",
+      "oldPrice": "₹7,670",
+      "gst": "+ applicable taxes",
       "cta": "Get the Pass",
       "disabled": false,
-      "link": "https://events.getherspace.com/virtualghci/home/",
+      "link": "https://events.getherspace.com/virtualghci/register",
       "features": [
         "Full access to GHCI 27, including sessions, workshops, and networking",
         "Live Q&A, chats, polls, and curated networking opportunities",
@@ -1271,6 +1272,8 @@ export default function Ticketing() {
       now = new Date(withTimezone);
     }
     const isJuly1OrLater = now >= new Date('2026-07-01T00:00:00+05:30');
+    const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30');
+    const isSept16OrLater = now >= new Date('2026-09-16T00:00:00+05:30');
 
     let processed = rawTickets.map(t => {
       if (t.id === 'super-early' && isJuly1OrLater) {
@@ -1280,28 +1283,45 @@ export default function Ticketing() {
           cta: 'Sold Out'
         };
       }
+      if (t.id === 'virtual' && isSept16OrLater) {
+        return {
+          ...t,
+          price: '₹3,250',
+          footnote: 'Early Bird Offer'
+        };
+      }
+      if ((t.id === 'last-year' || t.id === 'early-bird') && isSept1OrLater) {
+        return {
+          ...t,
+          disabled: true,
+          cta: 'Sold Out'
+        };
+      }
       return t;
     });
 
-    if (isJuly1OrLater) {
-      // Find the super-early ticket
-      const superEarlyTicket = processed.find(t => t.id === 'super-early');
-      if (superEarlyTicket) {
-        // Remove super-early from its current position
-        const filtered = processed.filter(t => t.id !== 'super-early');
-        // Find index of virtual ticket
-        const virtualIdx = filtered.findIndex(t => t.id === 'virtual');
-        if (virtualIdx !== -1) {
-          // Insert after virtual
-          filtered.splice(virtualIdx + 1, 0, superEarlyTicket);
-        } else {
-          filtered.push(superEarlyTicket);
-        }
-        processed = filtered;
-      }
+    if (isSept1OrLater) {
+      const order = ['virtual', 'regular', 'last-year', 'early-bird', 'super-early'];
+      processed.sort((a, b) => {
+        let iA = order.indexOf(a.id);
+        let iB = order.indexOf(b.id);
+        if (iA === -1) iA = 99;
+        if (iB === -1) iB = 99;
+        return iA - iB;
+      });
     } else {
-      // Hide early-bird before July 1st
-      processed = processed.filter(t => t.id !== 'early-bird');
+      const order = ['last-year', 'early-bird', 'virtual', 'regular', 'super-early'];
+      processed.sort((a, b) => {
+        let iA = order.indexOf(a.id);
+        let iB = order.indexOf(b.id);
+        if (iA === -1) iA = 99;
+        if (iB === -1) iB = 99;
+        return iA - iB;
+      });
+
+      if (!isJuly1OrLater) {
+        processed = processed.filter(t => t.id !== 'early-bird');
+      }
     }
     return processed;
   };

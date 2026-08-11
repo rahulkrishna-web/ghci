@@ -2245,3 +2245,23 @@
 - Updated the virtual card GST text to "inclusive of 18% GST".
 - [0.05]
 
+
+### Update Virtual Pass Pricing [2026-08-11 12:18]
+- Updated the Virtual pass pricing to ₹2,600 + applicable taxes.
+- Added the original price ₹7,670 crossed out.
+- Added a footnote stating the launch offer is valid till Sept 15.
+- Programmed the price to dynamically update to Early Bird (₹3,250) on Sept 16.
+- [0.10]
+
+### Update Virtual Pass Link [2026-08-11 12:33]
+- Updated the Virtual pass CTA link to point directly to the registration page.
+- [0.05]
+
+### Reorder Ticketing Cards [2026-08-11 12:37]
+- Reordered the ticketing cards so Virtual is displayed in the 3rd spot right now.
+- Programmed the logic so that after Sept 1 (when Early Bird & Privilege end), they are marked Sold Out and Virtual moves to the 1st spot, followed by Academia.
+- [0.15]
+
+### Standardize Virtual Pass Footnote [2026-08-11 12:39]
+- Removed 'Launch' from the Virtual ticket footnote to make it consistent with the other cards ('Offer valid till September 15, 2026').
+- [0.05]
