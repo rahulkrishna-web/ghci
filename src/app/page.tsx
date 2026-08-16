@@ -21,6 +21,7 @@ import Footer from '@/components/eventivee/Footer';
 import Ticketing from '@/components/eventivee/Ticketing';
 
 // Data loader
+// deploy: 2026-08-16
 import { getContentData } from '@/lib/content';
 
 export default function EventiveePage() {
