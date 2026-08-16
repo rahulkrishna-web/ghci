@@ -25,9 +25,11 @@ export default function WequestHero({ data }: WequestHeroProps) {
   useEffect(() => {
     if (!data.heroDeadline) return;
     const now = new Date();
-    const cutoff = new Date('2026-08-03T23:59:59+05:30');
-    if (now > cutoff) {
-      setDeadlineText(data.heroDeadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));
+    const cutoffAug17 = new Date('2026-08-17T00:00:00+05:30');
+    if (now >= cutoffAug17) {
+      // From Aug 17 onwards: deadline is Sep 8
+      setDeadlineText(data.heroDeadline
+        .replace('Aug 25', 'Sep 8').replace('August 25', 'September 8'));
     }
   }, [data.heroDeadline]);
 

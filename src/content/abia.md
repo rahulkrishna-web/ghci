@@ -1,6 +1,6 @@
 ---
 hero:
-  deadline: "Nominate by Aug 24, 2026, 11:59 PM IST"
+  deadline: "Nominate by Sep 16, 2026, 11:59 PM IST"
   title: "Anita Borg Impact Awards (ABIA)"
   subtitle: "Celebrating women creating impact through technology."
   cta: "NOMINATE NOW"
@@ -60,7 +60,7 @@ dates:
     - title: "Nominations Open"
       date: "July 21, 2026"
     - title: "Deadline"
-      date: "August 24, 2026"
+      date: "September 16, 2026"
     - title: "Jury Review (Round 1)"
       date: "August 15 – September 8, 2026"
     - title: "Jury Review (Round 2)"

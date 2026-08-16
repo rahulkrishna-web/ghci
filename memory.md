@@ -2265,3 +2265,16 @@
 ### Standardize Virtual Pass Footnote [2026-08-11 12:39]
 - Removed 'Launch' from the Virtual ticket footnote to make it consistent with the other cards ('Offer valid till September 15, 2026').
 - [0.05]
+
+### Schedule Deadline Updates for Aug 17 Midnight [2026-08-16 19:41]
+- WeQuest deadline: Aug 25 → Sep 8, 2026 (auto-swap at 2026-08-17T00:00:00+05:30)
+- ABIA deadline: Aug 24 → Sep 16, 2026 (auto-swap at same cutoff)
+- AIP was already handled by existing logic (auto-swaps to Aug 31 since Aug 20 cutoff passed)
+- Updated: wequest.md, abia.md (content), WequestHero.tsx, AbiaHero.tsx (hero deadline), WaysToInvolve.tsx (homepage cards) — all use client-side useEffect date checks
+- [0.3]
+
+### Fix AIP Deadline Cutoff [2026-08-16 19:48]
+- AIP was still showing Aug 20 (not Aug 31) since Aug 20 cutoff hadn't fired yet
+- Advanced cutoff2 from Aug 20 to Aug 17 midnight in AipHero.tsx & WaysToInvolve.tsx
+- All 3 programs now swap simultaneously at 2026-08-17T00:00:00+05:30: AIP→Aug 31, WeQuest→Sep 8, ABIA→Sep 16
+- [0.1]

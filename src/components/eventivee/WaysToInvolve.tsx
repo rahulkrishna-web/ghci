@@ -23,16 +23,24 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   const primaryWays = data.ways.filter(w => w.type === 'primary');
   const secondaryWays = data.ways.filter(w => w.type === 'secondary');
 
-  const [aipDeadline, setAipDeadline] = useState("Aug 3, 2026");
+  const [aipDeadline, setAipDeadline] = useState("Aug 31, 2026");
+  const [wequestDeadline, setWequestDeadline] = useState("Aug 25, 2026");
+  const [abiaDeadline, setAbiaDeadline] = useState("Aug 24, 2026");
 
   useEffect(() => {
     const now = new Date();
     const deadlineDate1 = new Date("2026-08-03T23:59:59+05:30");
-    const deadlineDate2 = new Date("2026-08-20T23:59:59+05:30");
-    if (now > deadlineDate2) {
+    const cutoffAug17 = new Date("2026-08-17T00:00:00+05:30");
+    if (now >= cutoffAug17) {
       setAipDeadline("Aug 31, 2026");
     } else if (now > deadlineDate1) {
       setAipDeadline("Aug 20, 2026");
+    }
+
+    const cutoffAug17 = new Date("2026-08-17T00:00:00+05:30");
+    if (now >= cutoffAug17) {
+      setWequestDeadline("Sep 8, 2026");
+      setAbiaDeadline("Sep 16, 2026");
     }
   }, []);
 
@@ -125,12 +133,12 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                   )}
                   {way.title === "WeQuest" && (
                     <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Apply by Aug 25, 2026, 11:59 PM IST
+                      Apply by {wequestDeadline}, 11:59 PM IST
                     </span>
                   )}
                   {way.title === "Anita Borg Impact Awards" && (
                     <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Nominate by Aug 24, 2026, 11:59 PM IST
+                      Nominate by {abiaDeadline}, 11:59 PM IST
                     </span>
                   )}
 

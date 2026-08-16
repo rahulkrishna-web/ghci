@@ -25,8 +25,8 @@ export default function AipHero({ data }: AipHeroProps) {
     if (!data.heroDeadline) return;
     const now = new Date();
     const cutoff1 = new Date('2026-08-03T23:59:59+05:30');
-    const cutoff2 = new Date('2026-08-20T23:59:59+05:30');
-    if (now > cutoff2) {
+    const cutoffAug17 = new Date('2026-08-17T00:00:00+05:30');
+    if (now >= cutoffAug17) {
       setDeadlineText(data.heroDeadline.replace('Aug 3', 'Aug 31').replace('August 3', 'August 31').replace('Aug 20', 'Aug 31').replace('August 20', 'August 31'));
     } else if (now > cutoff1) {
       setDeadlineText(data.heroDeadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));

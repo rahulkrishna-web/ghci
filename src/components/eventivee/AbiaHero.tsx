@@ -22,9 +22,11 @@ export default function AbiaHero({ data }: AbiaHeroProps) {
   useEffect(() => {
     if (!hero.deadline) return;
     const now = new Date();
-    const cutoff = new Date('2026-08-03T23:59:59+05:30');
-    if (now > cutoff) {
-      setDeadlineText(hero.deadline.replace('Aug 3', 'Aug 20').replace('August 3', 'August 20'));
+    const cutoffAug17 = new Date('2026-08-17T00:00:00+05:30');
+    if (now >= cutoffAug17) {
+      // From Aug 17 onwards: deadline is Sep 16
+      setDeadlineText(hero.deadline
+        .replace('Aug 24', 'Sep 16').replace('August 24', 'September 16'));
     }
   }, [hero.deadline]);
 
