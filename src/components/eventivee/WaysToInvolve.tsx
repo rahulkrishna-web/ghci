@@ -31,16 +31,13 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
     const now = new Date();
     const deadlineDate1 = new Date("2026-08-03T23:59:59+05:30");
     const cutoffAug17 = new Date("2026-08-17T00:00:00+05:30");
+
     if (now >= cutoffAug17) {
       setAipDeadline("Aug 31, 2026");
-    } else if (now > deadlineDate1) {
-      setAipDeadline("Aug 20, 2026");
-    }
-
-    const cutoffAug17 = new Date("2026-08-17T00:00:00+05:30");
-    if (now >= cutoffAug17) {
       setWequestDeadline("Sep 8, 2026");
       setAbiaDeadline("Sep 16, 2026");
+    } else if (now > deadlineDate1) {
+      setAipDeadline("Aug 20, 2026");
     }
   }, []);
 
