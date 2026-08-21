@@ -2428,3 +2428,7 @@
 ### Reverse Mobile Layout in Architects [2026-08-21 15:19]
 - Switched Architects section flex direction to flex-col-reverse on mobile so the image appears above the text, while maintaining left-to-right on desktop
 - [0.1]
+
+### Update Journey Content [2026-08-21 15:24]
+- Updated the title, subtitle, and card content in journey.md to reflect the accurate copy from the provided screenshot
+- [0.1]
