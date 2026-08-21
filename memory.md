@@ -2278,3 +2278,119 @@
 - Advanced cutoff2 from Aug 20 to Aug 17 midnight in AipHero.tsx & WaysToInvolve.tsx
 - All 3 programs now swap simultaneously at 2026-08-17T00:00:00+05:30: AIP→Aug 31, WeQuest→Sep 8, ABIA→Sep 16
 - [0.1]
+
+### Create Branch for Homepage Section [2026-08-21 12:38]
+- Created branch `feature/homepage-section` to safely add new section without affecting master
+- [0.1]
+
+### Add Journey Section to Homepage [2026-08-21 12:44]
+- Created Journey section between About and Stats with cards and mission banner based on provided design
+- Implemented hover states matching existing UI patterns
+- Integrated content via src/content/journey.md
+- [0.5]
+
+### Update About and Journey Sections [2026-08-21 12:49]
+- Added text content (heading and paragraph) at the bottom of About.tsx to match design
+- Replaced Journey banner gradient with background image `/our-mission.png`
+- Updated `about.md` to reflect the new paragraph copy
+- [0.2]
+
+### Apply Gradient to Experience GHCI Heading [2026-08-21 12:52]
+- Updated the 'Experience GHCI' heading in About.tsx to use the same text gradient ('from-white to-[#A32482]') as the stats component to match the design
+- [0.1]
+
+### Format Experience GHCI Content [2026-08-21 13:08]
+- Added a line break to the Experience GHCI paragraph in about.md
+- Applied whitespace-pre-line to the paragraph in About.tsx to render the line break properly
+- [0.1]
+
+### Adjust Section Widths [2026-08-21 13:11]
+- Removed max-width constraint on Journey.tsx container so the grid spans wider to match other sections
+- Increased max-width of Experience GHCI text in About.tsx from max-w-4xl to max-w-5xl
+- [0.1]
+
+### Fix Text Wrapping in About [2026-08-21 13:15]
+- Increased max-width of Experience GHCI text in About.tsx to max-w-6xl to prevent orphan words from wrapping
+- [0.1]
+
+### Remove Duplicate Heading [2026-08-21 13:16]
+- Removed the redundant 'Experience GHCI' heading from ExperienceStats.tsx to avoid duplication
+- [0.1]
+
+### Add Architects Section [2026-08-21 13:18]
+- Created architects.md for the 'Architects of GHCI 27' section content
+- Built Architects.tsx component to display the content alongside a group image
+- Inserted the new section into page.tsx before the 'Ways to Get Involved' section
+- [0.3]
+
+### Update Architects Image & Width [2026-08-21 13:20]
+- Updated the image source to /architects-of-ghci.png in architects.md
+- Removed the max-w-7xl constraint on the Architects.tsx container so it spans the same full width as other sections
+- [0.1]
+
+### Standardize Animations [2026-08-21 13:22]
+- Replaced the horizontal slide-in animations (x: 30 / -30) in the Architects section with standard vertical fade-ups to match the rest of the page
+- [0.1]
+
+### Add Sponsor a Scholar Section [2026-08-21 13:26]
+- Created sponsor-scholar.md for the content
+- Built SponsorScholar.tsx with a glassmorphic card design and the provided text
+- Inserted the new section into page.tsx below the Trusted By logo carousel
+- [0.2]
+
+### Update Sponsor Scholar Width [2026-08-21 13:28]
+- Removed max-width constraint on SponsorScholar.tsx so it stretches fully across the page matching other sections
+- [0.1]
+
+### Apply Background Color to Sponsor Scholar [2026-08-21 13:30]
+- Added the deep purple background color (bg-[#22021d]) to the Sponsor Scholar section to match the Trusted By component above it
+- [0.1]
+
+### Reorder Contact Section [2026-08-21 13:42]
+- Moved the Contact ('Get in Touch') section to appear just above the FAQ section in page.tsx
+- [0.1]
+
+### Reorder Ticketing Section [2026-08-21 13:44]
+- Moved the 'Choose Your Pass' (Ticketing) section to appear just above the Architects of GHCI 27 section in page.tsx
+- [0.1]
+
+### Balance Ticketing Header Spacing [2026-08-21 13:47]
+- Increased top padding (pt-16 md:pt-24) of the Ticketing section to give it more breathing room from the section above
+- Decreased bottom margin (mb-8 md:mb-16) of the 'Choose Your Pass' header to bring it closer to the cards
+- [0.1]
+
+### Standardize Heading Font Sizes [2026-08-21 14:11]
+- Standardized the desktop font sizes for both 'Experience GHCI' and 'Built Around Where You Are' headings to exactly 60px (md:text-[60px]) to match the rest of the page
+- [0.1]
+
+### Remove Background from Ways To Involve [2026-08-21 14:15]
+- Removed the purple wavy background image (/speaker.png) from the 'Ways to Get Involved' section
+- [0.1]
+
+### Standardize Button Hover Animations [2026-08-21 14:18]
+- Updated buttons in the 'Architects of GHCI' and 'Sponsor a Scholar' sections to use the standard vertical sliding text animation (text slides up on hover) for visual consistency
+- [0.1]
+
+### Update Sponsor a Scholar CTA Link [2026-08-21 14:21]
+- Updated the 'Sponsor a Scholar' button link in `sponsor-scholar.md` to point to the official Milaap fundraiser URL
+- [0.1]
+
+### Reorder Partner and Location Sections [2026-08-21 14:24]
+- Moved the 'Partner With Us' and 'Location' sections to appear immediately above the 'Trusted By' section in `page.tsx`
+- [0.1]
+
+### Reorder Sponsor a Scholar Section [2026-08-21 14:27]
+- Moved the 'Sponsor a Scholar' section to appear immediately after the 'Partner With Us' section in `page.tsx`
+- [0.1]
+
+### Reorder Trusted By Section [2026-08-21 14:27]
+- Moved the 'Trusted By' section to appear immediately above the 'Sponsor a Scholar' section in `page.tsx`
+- [0.1]
+
+### Update Sponsor Scholar Background [2026-08-21 14:30]
+- Changed the background of the 'Sponsor a Scholar' section from a solid color to a vertical gradient fading to transparent for a smoother visual transition
+- [0.1]
+
+### Standardize Dashes Across the Site [2026-08-21 14:30]
+- Replaced all instances of em-dashes (—) and en-dashes (–) with standard hyphens (-) across all components and markdown content files for consistency
+- [0.1]

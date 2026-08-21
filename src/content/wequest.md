@@ -74,7 +74,7 @@ dates:
   - name: "1:1 Mentorship"
     date: "November 2026"
   - name: "Live Final Pitch"
-    date: "January 20–22, 2027"
+    date: "January 20-22, 2027"
   - name: "Post-Event Recognition"
     date: "January 2027"
 

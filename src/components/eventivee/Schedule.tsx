@@ -17,13 +17,13 @@ const schedule: ScheduleItem[] = [
     isBreak: true,
   },
   {
-    time: '09:00 AM – 09:45 AM',
+    time: '09:00 AM - 09:45 AM',
     title: 'Kickoff & Coffee Connect',
     description: 'A casual kickoff to spark early conversations. Grab a coffee, meet fellow attendees, and get in the zone.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
   },
   {
-    time: '09:45 AM – 10:30 AM',
+    time: '09:45 AM - 10:30 AM',
     title: 'Opening Keynote',
     description: "Our keynote speaker will share bold ideas, industry insights, and a powerful vision of what's ahead in the world of tech and innovation.",
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
@@ -35,13 +35,13 @@ const schedule: ScheduleItem[] = [
     isBreak: true,
   },
   {
-    time: '11:45 AM – 01:00 PM',
+    time: '11:45 AM - 01:00 PM',
     title: 'Panel Discussion / Future of Tech',
-    description: "Leading voices in AI, design, and emerging tech dive into what's shaping tomorrow — and how to stay ahead.",
+    description: "Leading voices in AI, design, and emerging tech dive into what's shaping tomorrow - and how to stay ahead.",
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80',
   },
   {
-    time: '10:30 AM – 11:45 PM',
+    time: '10:30 AM - 11:45 PM',
     title: 'Workshop / Building Modern Apps',
     description: 'Hands-on session with industry experts. Learn the latest in app architecture, UX, and performance-first design.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80',
@@ -53,15 +53,15 @@ const schedule: ScheduleItem[] = [
     isBreak: true,
   },
   {
-    time: '02:15 PM – 03:00 PM',
+    time: '02:15 PM - 03:00 PM',
     title: 'Keynote / The Future of Work',
     description: "A high-impact talk on automation, creativity, and how leaders are reshaping tomorrow's teams and tools.",
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80',
   },
   {
-    time: '01:30 PM – 02:15 PM',
+    time: '01:30 PM - 02:15 PM',
     title: 'Breakout Session / AI Trends',
-    description: 'Smaller, focused groups unpack real-world AI use cases across industries — with live demos and Q&A.',
+    description: 'Smaller, focused groups unpack real-world AI use cases across industries - with live demos and Q&A.',
     image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80',
   },
   {
@@ -71,13 +71,13 @@ const schedule: ScheduleItem[] = [
     isBreak: true,
   },
   {
-    time: '03:30 PM – 04:30 PM',
+    time: '03:30 PM - 04:30 PM',
     title: 'Workshop / Revolutionizing Transactions',
     description: "Dive into fintech and blockchain design, and learn what's next in digital transactions and user trust.",
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
   },
   {
-    time: '04:30 PM – 05:00 PM',
+    time: '04:30 PM - 05:00 PM',
     title: 'Closing Remarks',
     description: 'Check-in and start your day with a morning coffee while connecting with fellow attendees. Meet new faces and get ready for an exciting day ahead.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80',
@@ -187,7 +187,7 @@ export default function Schedule() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-semibold tracking-tight"
             >
-              Fuel Your Curiosity –{' '}
+              Fuel Your Curiosity -{' '}
               <span className="text-white/40">Discover the Schedule</span>
             </motion.h2>
           </div>

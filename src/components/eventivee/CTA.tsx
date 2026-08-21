@@ -22,7 +22,7 @@ export default function CTA() {
             transition={{ repeat: Infinity, duration: 15, ease: 'linear' }}
           >
             {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i}>October 15-17, 2027 — Live in Bengaluru, India</span>
+              <span key={i}>October 15-17, 2027 - Live in Bengaluru, India</span>
             ))}
           </motion.div>
         </div>

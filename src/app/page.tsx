@@ -2,6 +2,7 @@ import Navbar from '@/components/eventivee/Navbar';
 import Hero from '@/components/eventivee/Hero';
 import Marquee from '@/components/eventivee/Marquee';
 import About from '@/components/eventivee/About';
+import Journey from '@/components/eventivee/Journey';
 import ExperienceStats from '@/components/eventivee/ExperienceStats';
 import WhatYouGain from '@/components/eventivee/WhatYouGain';
 import WhoShouldAttend from '@/components/eventivee/WhoShouldAttend';
@@ -9,10 +10,12 @@ import ExploreTracks from '@/components/eventivee/ExploreTracks';
 import WhatToExpect from '@/components/eventivee/WhatToExpect';
 import SpeakerGrid from '@/components/eventivee/SpeakerGrid';
 import Schedule from '@/components/eventivee/Schedule';
+import Architects from '@/components/eventivee/Architects';
 import WaysToInvolve from '@/components/eventivee/WaysToInvolve';
 import Perks from '@/components/eventivee/Perks';
 import PartnerWithUs from '@/components/eventivee/PartnerWithUs';
 import TrustedBy from '@/components/eventivee/TrustedBy';
+import SponsorScholar from '@/components/eventivee/SponsorScholar';
 import Location from '@/components/eventivee/Location';
 import TicketPerks from '@/components/eventivee/TicketPerks';
 import Contact from '@/components/eventivee/Contact';
@@ -21,19 +24,21 @@ import Footer from '@/components/eventivee/Footer';
 import Ticketing from '@/components/eventivee/Ticketing';
 
 // Data loader
-// deploy: 2026-08-16
 import { getContentData } from '@/lib/content';
 
 export default function EventiveePage() {
   const heroData = getContentData('hero');
   const aboutData = getContentData('about');
+  const journeyData = getContentData('journey');
   const gainData = getContentData('what-you-gain');
   const attendData = getContentData('who-should-attend');
   const tracksData = getContentData('explore-tracks');
   const expectData = getContentData('what-to-expect');
   const speakersData = getContentData('speakers');
+  const architectsData = getContentData('architects');
   const involveData = getContentData('ways-to-involve');
   const partnerData = getContentData('partner-with-us');
+  const sponsorScholarData = getContentData('sponsor-scholar');
   const locationData = getContentData('location');
   const perksData = getContentData('perks');
   const ticketPerksData = getContentData('ticket-perks');
@@ -45,6 +50,7 @@ export default function EventiveePage() {
       <Navbar />
       <div id="hero">{heroData && <Hero data={heroData as any} />}</div>
       <div id="about">{aboutData && <About data={aboutData as any} />}</div>
+      <div id="journey">{journeyData && <Journey data={journeyData as any} />}</div>
       <div id="experience">{aboutData && <ExperienceStats data={aboutData as any} />}</div>
       <div id="gain">{gainData && <WhatYouGain data={gainData as any} />}</div>
       
@@ -58,24 +64,25 @@ export default function EventiveePage() {
         <div id="tracks">{tracksData && <ExploreTracks data={tracksData as any} />}</div>
         <div id="expect">{expectData && <WhatToExpect data={expectData as any} />}</div>
       </section>
-      <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
-      
-      <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
-      
-      <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
-      <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
-      
-      {/* 
-      <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div> */}
       
       {/* New Ticketing Section */}
       <Ticketing />
 
-
-      <div id="faq"><FAQ /></div>
-      <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
+      <div id="architects">{architectsData && <Architects data={architectsData as any} />}</div>
+      <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
       
+      <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
+      
+      <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
+      <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>
+      <div id="sponsor-scholar">{sponsorScholarData && <SponsorScholar data={sponsorScholarData as any} />}</div>
       <div id="location">{locationData && <Location data={locationData as any} />}</div>
+      
+      {/* 
+      <div id="ticket-perks">{ticketPerksData && <TicketPerks data={ticketPerksData as any} />}</div> */}
+
+      <div id="contact">{contactData && <Contact data={contactData as any} />}</div>
+      <div id="faq"><FAQ /></div>
       <div id="footer">{footerData && <Footer data={footerData as any} />}</div>
     </main>
   );

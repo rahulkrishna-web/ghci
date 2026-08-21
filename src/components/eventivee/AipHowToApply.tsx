@@ -15,7 +15,7 @@ export default function AipHowToApply({ data }: AipHowToApplyProps) {
     "Create an account or sign in to your existing Stutzee account",
     "Click on New Application",
     "Select AIP (GHCI Scholarships)",
-    "Fill in your application details — you can save your progress anytime using the 'Save Draft' option",
+    "Fill in your application details - you can save your progress anytime using the 'Save Draft' option",
     "Once ready, submit your application. You can view your submitted application but please note that it cannot be edited after submission"
   ];
 

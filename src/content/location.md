@@ -11,7 +11,7 @@ gettingThere:
     - title: "VIA CAB/RIDE-HAILING"
       desc: "Easily accessible via Uber, Ola, and other taxi services. KTPO is a well-known landmark in Whitefield with direct road connectivity."
     - title: "VIA METRO"
-      desc: "Nearest Station: Nallurhalli Metro Station (Purple Line). Distance: Approximately 500–600 meters (6–8 minute walk)"
+      desc: "Nearest Station: Nallurhalli Metro Station (Purple Line). Distance: Approximately 500-600 meters (6-8 minute walk)"
     - title: "VIA BUS"
-      desc: "Nearest Stop: KTPO Bus Stop. Distance: Approximately 500 meters (5–6 minute walk)"
+      desc: "Nearest Stop: KTPO Bus Stop. Distance: Approximately 500 meters (5-6 minute walk)"
 ---

@@ -10,7 +10,7 @@ ways:
         url: "/aip"
         variant: "solid"
   - title: "WeQuest"
-    description: "A pitch platform for early-stage women founders—offering funding access, mentorship, and industry connections."
+    description: "A pitch platform for early-stage women founders-offering funding access, mentorship, and industry connections."
     type: "primary"
     links:
       - text: "Apply Now"
