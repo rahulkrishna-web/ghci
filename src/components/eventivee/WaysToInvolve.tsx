@@ -50,11 +50,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   };
 
   return (
-    <section id="get-involved" className="pt-12 pb-12 relative overflow-hidden text-white px-4 md:px-12" style={{
-      backgroundImage: 'url(/speaker.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'top center'
-    }}>
+    <section id="get-involved" className="pt-12 pb-12 relative overflow-hidden text-white px-4 md:px-12 bg-black">
       <div className="w-full">
         
         {/* Header */}

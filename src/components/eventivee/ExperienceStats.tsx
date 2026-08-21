@@ -54,14 +54,6 @@ export default function ExperienceStats({ data }: ExperienceStatsProps) {
       <div className="w-full relative z-10" ref={containerRef}>
         {/* Section Content */}
         <div className="text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl tracking-tight mb-8 md:mb-22"
-          >
-            {data.sectionTitle}
-          </motion.h2>
  
           <motion.div
             initial={{ opacity: 0, y: 20 }}

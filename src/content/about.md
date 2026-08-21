@@ -14,4 +14,5 @@ gallery:
   - "/experience/experience-left-bottom.png"
   - "/experience/experience-bottom-right.png"
 ---
-GHCI brings together talent, leaders, and organizations across the technology ecosystem.
+Grace Hopper Celebration India (GHCI) brings together women and allies in tech to learn, connect, and discover new opportunities.
+Designed for every stage of the career journey, GHCI helps attendees build skills, expand their networks, and move toward what’s next.

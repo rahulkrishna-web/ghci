@@ -2394,3 +2394,24 @@
 ### Standardize Dashes Across the Site [2026-08-21 14:30]
 - Replaced all instances of em-dashes (—) and en-dashes (–) with standard hyphens (-) across all components and markdown content files for consistency
 - [0.1]
+
+### Restore Component Order & Content [2026-08-21 14:52]
+- Restored 'Experience GHCI' component back to its proper position (above 'Built Around Where You Are') and restored the descriptive text below the gallery that was accidentally omitted
+- [0.1]
+
+### Fix Component Positions & Restore Details [2026-08-21 14:55]
+- Fixed a regression from a previous branch revert by returning ExperienceStats to its original location (below 'Journey' / above 'What You'll Gain')
+- Restored the gradient styling and missing text content for the 'Experience GHCI' gallery component (About.tsx)
+- [0.1]
+
+### Fix Text Wrapping in About [2026-08-21 14:58]
+- Increased max-width of Experience GHCI text in About.tsx to max-w-[1400px] to prevent orphan words from wrapping on the last line
+- [0.1]
+
+### Fix Gap in Journey Cards [2026-08-21 15:00]
+- Removed 'mt-auto' from the description paragraph in Journey.tsx to reduce the gap between card titles and descriptions
+- [0.1]
+
+### Adjust Journey Card Height [2026-08-21 15:02]
+- Reduced min-height of Journey cards from 300px to 220px to make the section more compact
+- [0.1]

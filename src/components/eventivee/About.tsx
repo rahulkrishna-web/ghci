@@ -159,6 +159,27 @@ export default function About({ data }: AboutProps) {
             </motion.div>
         </div>
 
+        {/* About Content Below Gallery */}
+        <div className="text-center mt-12 md:mt-24 px-4 max-w-[1400px] mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-[60px] font-semibold mb-6 tracking-tight bg-gradient-to-r from-white to-[#A32482] bg-clip-text text-transparent inline-block"
+          >
+            {data.sectionTitle}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-white/80 text-base md:text-xl leading-relaxed whitespace-pre-line"
+          >
+            {data.content}
+          </motion.p>
+        </div>
+
       </div>
     </section>
   );

@@ -45,12 +45,12 @@ export default function Journey({ data }: JourneyProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-8 md:p-10 rounded-2xl flex flex-col min-h-[300px] bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent transition-all duration-300 cursor-pointer"
+              className="group p-8 md:p-10 rounded-2xl flex flex-col min-h-[220px] bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent transition-all duration-300 cursor-pointer"
             >
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-white group-hover:text-white transition-colors duration-300">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-white group-hover:text-white transition-colors duration-300">
                 {card.title}
               </h3>
-              <p className="text-white/70 text-lg leading-relaxed group-hover:text-white/90 transition-colors duration-300 mt-auto">
+              <p className="text-white/70 text-lg leading-relaxed group-hover:text-white/90 transition-colors duration-300">
                 {card.description}
               </p>
             </motion.div>
