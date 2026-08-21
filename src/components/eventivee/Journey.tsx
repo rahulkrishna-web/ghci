@@ -37,7 +37,7 @@ export default function Journey({ data }: JourneyProps) {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 mb-16 snap-x snap-mandatory pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {data.cards.map((card, idx) => (
             <motion.div
               key={idx}
@@ -45,7 +45,7 @@ export default function Journey({ data }: JourneyProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-8 md:p-10 rounded-2xl flex flex-col min-h-[220px] bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent transition-all duration-300 cursor-pointer"
+              className="min-w-[75vw] sm:min-w-[350px] md:min-w-0 snap-start group p-8 md:p-10 rounded-2xl flex flex-col min-h-[220px] bg-white/[0.03] border border-white/5 hover:bg-[#A32482] hover:shadow-2xl hover:shadow-purple-900/20 hover:border-transparent transition-all duration-300 cursor-pointer"
             >
               <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-white group-hover:text-white transition-colors duration-300">
                 {card.title}

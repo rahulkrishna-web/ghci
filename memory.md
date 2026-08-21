@@ -2415,3 +2415,16 @@
 ### Adjust Journey Card Height [2026-08-21 15:02]
 - Reduced min-height of Journey cards from 300px to 220px to make the section more compact
 - [0.1]
+
+### Implement Mobile Slider for Journey Cards [2026-08-21 15:16]
+- Converted Journey cards from a vertical stack to a horizontal snap-scroll slider on mobile displays
+- Applied scrollbar hiding and snap-mandatory utilities for native-feeling interaction
+- [0.1]
+
+### Adjust Mobile Slider Width [2026-08-21 15:17]
+- Adjusted Journey mobile slider cards to be 75vw wide with snap-start alignment so approximately 1.2 cards are visible at a time
+- [0.1]
+
+### Reverse Mobile Layout in Architects [2026-08-21 15:19]
+- Switched Architects section flex direction to flex-col-reverse on mobile so the image appears above the text, while maintaining left-to-right on desktop
+- [0.1]
