@@ -2432,3 +2432,7 @@
 ### Update Journey Content [2026-08-21 15:24]
 - Updated the title, subtitle, and card content in journey.md to reflect the accurate copy from the provided screenshot
 - [0.1]
+
+### Merge Homepage Section [2026-08-24 14:07]
+- Merged feature/homepage-section branch into master to prepare for pushing live.
+- [0.1]
