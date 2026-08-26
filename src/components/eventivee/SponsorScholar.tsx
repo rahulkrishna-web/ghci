@@ -25,9 +25,23 @@ export default function SponsorScholar({ data }: SponsorScholarProps) {
           {data.sectionTitle}
         </h2>
         
-        <p className="text-white/90 text-base md:text-lg mb-10 max-w-4xl mx-auto whitespace-pre-line leading-relaxed">
-          {data.content}
-        </p>
+        <div className="text-white/90 mb-10 max-w-4xl mx-auto whitespace-pre-line leading-relaxed text-center">
+          {data.content.split('\n').filter(Boolean).map((line, i) => {
+            if (line.includes('learning, ')) {
+              const parts = line.split('learning, ');
+              return (
+                <span key={i} className="block mt-2 text-base md:text-lg">
+                  {parts[0]}learning, <span className="font-bold text-lg md:text-xl">{parts[1]}</span>
+                </span>
+              );
+            }
+            return (
+              <span key={i} className="block text-base md:text-lg">
+                {line}
+              </span>
+            );
+          })}
+        </div>
         
         <Link href={data.buttonLink} className="group h-12 md:h-14 inline-flex flex-col rounded-full bg-[#A32482] hover:bg-[#8e1f7c] transition-all text-white text-lg font-medium active:scale-95 whitespace-nowrap overflow-hidden cursor-pointer">
           <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">

@@ -2439,3 +2439,15 @@
 ### Architects Section CTA Link [2026-08-26 10:33]
 - Updated CTA button link in architects section to point to https://ghci27.stutzee.com/
 - [0.1]
+
+### Architects Section CTA Link Update [2026-08-26 12:55]
+- Updated CTA button link in architects section to point to https://anitabindia.stutzee.com/ghci-27/p/advisory%20committee
+- [0.1]
+
+### Sponsor Scholar Text Style Update [2026-08-26 12:57]
+- Updated SponsorScholar.tsx to make the last line of the description bold and 2pt larger (text-lg md:text-xl).
+- [0.1]
+
+### Sponsor Scholar Text Refinement [2026-08-26 12:58]
+- Refined styling in SponsorScholar.tsx to apply the bold and larger text size specifically to the portion of the sentence following "learning, ".
+- [0.1]
