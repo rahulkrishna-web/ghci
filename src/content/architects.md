@@ -2,7 +2,7 @@
 sectionTitle: "Architects of GHCI 27"
 subtitle: "The visionaries behind the GHCI 27 experience."
 buttonText: "Meet the Architects"
-buttonLink: "#"
+buttonLink: "https://ghci27.stutzee.com/"
 image: "/architects-of-ghci.png"
 ---
 Bringing together some of the most accomplished voices across the technology ecosystem, the Architects of GHCI 27 play a defining role in shaping the conference.

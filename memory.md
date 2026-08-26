@@ -2435,4 +2435,7 @@
 
 ### Merge Homepage Section [2026-08-24 14:07]
 - Merged feature/homepage-section branch into master to prepare for pushing live.
+
+### Architects Section CTA Link [2026-08-26 10:33]
+- Updated CTA button link in architects section to point to https://ghci27.stutzee.com/
 - [0.1]
