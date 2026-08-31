@@ -2491,3 +2491,7 @@
 ### Regular Pass Pricing Update [2026-08-31 15:39]
 - Updated base pass prices for scheduled Sep 1 passes: Regular Pass / Day 1+2+3 to ₹15,000 + applicable charges and Regular Pass / Day 1 Only to ₹3,000 + applicable charges.
 - [0.1]
+
+### Regular Pass Naming Update [2026-08-31 15:44]
+- Updated names of scheduled Sep 1 passes to 'Regular Pass - Day 1+2+3' and 'Day 1 Pass Only'.
+- [0.1]

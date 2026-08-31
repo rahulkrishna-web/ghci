@@ -540,7 +540,7 @@ export default function Ticketing() {
   "tickets": [
     {
       "id": "regular-3day",
-      "name": "Regular Pass / Day 1+2+3",
+      "name": "Regular Pass - Day 1+2+3",
       "description": "All Access 3-day pass.",
       "footnote": "",
       "price": "₹15,000",
@@ -569,7 +569,7 @@ export default function Ticketing() {
     },
     {
       "id": "regular-day1",
-      "name": "Regular Pass / Day 1 Only",
+      "name": "Day 1 Pass Only",
       "description": "Access to Day 1 GHCI 27 sessions & networking.",
       "footnote": "",
       "price": "₹3,000",
