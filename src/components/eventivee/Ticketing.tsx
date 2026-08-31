@@ -511,14 +511,91 @@ export default function Ticketing() {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [isPreviewScheduled, setIsPreviewScheduled] = useState(false);
   
   // Debug Navigation State
   const [debugView, setDebugView] = useState<'main' | 'ticket-edit'>('main');
   const [activeTicketId, setActiveTicketId] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('ghci-preview-scheduled');
+      setIsPreviewScheduled(saved === 'true');
+    }
+
+    const handlePreviewToggle = (e: any) => {
+      if (e.detail && typeof e.detail.preview === 'boolean') {
+        setIsPreviewScheduled(e.detail.preview);
+      } else {
+        const saved = localStorage.getItem('ghci-preview-scheduled');
+        setIsPreviewScheduled(saved === 'true');
+      }
+    };
+    window.addEventListener('ghci-preview-toggle', handlePreviewToggle);
+    return () => window.removeEventListener('ghci-preview-toggle', handlePreviewToggle);
+  }, []);
+
   const DEFAULT_CONFIG = {
   "bokehSpeed": 2,
   "tickets": [
+    {
+      "id": "regular-3day",
+      "name": "Regular Pass / Day 1+2+3",
+      "description": "All Access 3-day pass.",
+      "footnote": "",
+      "price": "₹15,000",
+      "gst": "+ applicable charges",
+      "cta": "Get the Pass",
+      "features": [
+        "Full access to GHCI 27 (sessions, workshops & networking)",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        { "color": "#a32482", "width": 52, "height": 82, "x": 67, "y": -37, "opacity": 1 },
+        { "color": "#223852", "width": 40, "height": 65, "x": -5, "y": 14, "opacity": 0.6 },
+        { "color": "#223852", "width": 27, "height": 69, "curve": 50, "x": 51, "y": 31, "opacity": 0.5 },
+        { "color": "#223852", "width": 38, "height": 67, "curve": 47, "x": 78, "y": 60, "opacity": 0.5 },
+        { "color": "#22021d", "width": 48, "height": 83, "curve": 44, "x": 27, "y": 39, "opacity": 1 }
+      ],
+      "blobsMobile": [
+        { "color": "#a32482", "width": 33, "height": 82, "x": -9, "y": 73, "opacity": 1 },
+        { "color": "#223852", "width": 26, "height": 50, "x": -8, "y": -16, "opacity": 0.6 },
+        { "color": "#223852", "width": 27, "height": 69, "curve": 50, "x": 19, "y": 11, "opacity": 0.5 },
+        { "color": "#223852", "width": 38, "height": 67, "curve": 47, "x": 69, "y": 45, "opacity": 0.5 },
+        { "color": "#22021d", "width": 48, "height": 83, "curve": 44, "x": 27, "y": -27, "opacity": 1 }
+      ]
+    },
+    {
+      "id": "regular-day1",
+      "name": "Regular Pass / Day 1 Only",
+      "description": "Access to Day 1 GHCI 27 sessions & networking.",
+      "footnote": "",
+      "price": "₹3,000",
+      "gst": "+ applicable charges",
+      "cta": "Get the Pass",
+      "features": [
+        "Access to Day 1 sessions, workshops & networking",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        { "color": "#a32482", "width": 52, "height": 82, "x": 67, "y": -37, "opacity": 1 },
+        { "color": "#223852", "width": 40, "height": 65, "x": -5, "y": 14, "opacity": 0.6 },
+        { "color": "#223852", "width": 27, "height": 69, "curve": 50, "x": 51, "y": 31, "opacity": 0.5 },
+        { "color": "#223852", "width": 38, "height": 67, "curve": 47, "x": 78, "y": 60, "opacity": 0.5 },
+        { "color": "#22021d", "width": 48, "height": 83, "curve": 44, "x": 27, "y": 39, "opacity": 1 }
+      ],
+      "blobsMobile": [
+        { "color": "#a32482", "width": 33, "height": 82, "x": -9, "y": 73, "opacity": 1 },
+        { "color": "#223852", "width": 26, "height": 50, "x": -8, "y": -16, "opacity": 0.6 },
+        { "color": "#223852", "width": 27, "height": 69, "curve": 50, "x": 19, "y": 11, "opacity": 0.5 },
+        { "color": "#223852", "width": 38, "height": 67, "curve": 47, "x": 69, "y": 45, "opacity": 0.5 },
+        { "color": "#22021d", "width": 48, "height": 83, "curve": 44, "x": 27, "y": -27, "opacity": 1 }
+      ]
+    },
     {
       "id": "last-year",
       "name": "Privilege Offer",
@@ -1261,7 +1338,7 @@ export default function Ticketing() {
 
   if (!mounted) return null;
   
-  // Dynamic scheduling logic for Super Early Bird (July 1, 2026 cutoff)
+  // Dynamic scheduling logic for Super Early Bird (July 1, 2026 cutoff) and Sep 1 release
   const getProcessedTickets = () => {
     const rawTickets = config.tickets || [];
     const queryDate = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('testDate') : null;
@@ -1271,16 +1348,31 @@ export default function Ticketing() {
       const withTimezone = formatted.includes('+') || formatted.endsWith('Z') ? formatted : `${formatted}+05:30`;
       now = new Date(withTimezone);
     }
-    const isJuly1OrLater = now >= new Date('2026-07-01T00:00:00+05:30');
-    const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30');
+    
+    const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30') || isPreviewScheduled;
     const isSept16OrLater = now >= new Date('2026-09-16T00:00:00+05:30');
 
     let processed = rawTickets.map(t => {
-      if (t.id === 'super-early' && isJuly1OrLater) {
+      if (t.id === 'super-early') {
         return {
           ...t,
           disabled: true,
           cta: 'Sold Out'
+        };
+      }
+      if (t.id === 'early-bird' && isSept1OrLater) {
+        return {
+          ...t,
+          disabled: true,
+          cta: 'Sold Out'
+        };
+      }
+      if (t.id === 'last-year' && isSept1OrLater) {
+        return {
+          ...t,
+          footnote: '', // Deadline removed for Privilege Offer
+          disabled: false,
+          cta: 'Get the Pass'
         };
       }
       if (t.id === 'virtual' && isSept16OrLater) {
@@ -1290,18 +1382,19 @@ export default function Ticketing() {
           footnote: 'Early Bird Offer'
         };
       }
-      if ((t.id === 'last-year' || t.id === 'early-bird') && isSept1OrLater) {
-        return {
-          ...t,
-          disabled: true,
-          cta: 'Sold Out'
-        };
-      }
       return t;
     });
 
     if (isSept1OrLater) {
-      const order = ['virtual', 'regular', 'last-year', 'early-bird', 'super-early'];
+      // 6 active tickets for Sep 1 release:
+      // 1. Regular Pass / Day 1+2+3 (regular-3day)
+      // 2. Regular Pass / Day 1 Only (regular-day1)
+      // 3. Academic Pass (regular)
+      // 4. Virtual Pass (virtual)
+      // 5. Privilege Offer (last-year, 2nd last position)
+      // 6. Early Bird (early-bird, last position, sold out)
+      const order = ['regular-3day', 'regular-day1', 'regular', 'virtual', 'last-year', 'early-bird'];
+      processed = processed.filter(t => t.id !== 'super-early');
       processed.sort((a, b) => {
         let iA = order.indexOf(a.id);
         let iB = order.indexOf(b.id);
@@ -1311,6 +1404,7 @@ export default function Ticketing() {
       });
     } else {
       const order = ['last-year', 'early-bird', 'virtual', 'regular', 'super-early'];
+      processed = processed.filter(t => t.id !== 'regular-3day' && t.id !== 'regular-day1');
       processed.sort((a, b) => {
         let iA = order.indexOf(a.id);
         let iB = order.indexOf(b.id);
@@ -1318,10 +1412,6 @@ export default function Ticketing() {
         if (iB === -1) iB = 99;
         return iA - iB;
       });
-
-      if (!isJuly1OrLater) {
-        processed = processed.filter(t => t.id !== 'early-bird');
-      }
     }
     return processed;
   };
@@ -1448,6 +1538,24 @@ export default function Ticketing() {
         }}
     >
       <div className="mx-auto relative z-10">
+        {isPreviewScheduled && (
+          <div className="mb-6 mx-auto max-w-lg p-3 bg-gradient-to-r from-green-950/80 via-black to-purple-950/80 border border-green-500/40 rounded-2xl flex items-center justify-between text-xs text-white shadow-xl">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+              <span className="font-bold text-green-300">Previewing Sep 1 Scheduled Passes</span>
+            </div>
+            <button 
+              onClick={() => {
+                localStorage.setItem('ghci-preview-scheduled', 'false');
+                window.dispatchEvent(new CustomEvent('ghci-preview-toggle', { detail: { preview: false } }));
+              }}
+              className="px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-lg font-bold transition-all text-[11px]"
+            >
+              Exit Preview
+            </button>
+          </div>
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

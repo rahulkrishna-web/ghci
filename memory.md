@@ -2451,3 +2451,43 @@
 ### Sponsor Scholar Text Refinement [2026-08-26 12:58]
 - Refined styling in SponsorScholar.tsx to apply the bold and larger text size specifically to the portion of the sentence following "learning, ".
 - [0.1]
+
+### Restore Assignee Autocomplete [2026-08-30 22:06]
+- Restored the MultiLayerSelect (Shopify style autocomplete) for assignees, checked by, and approved by fields in ProjectDetailsView.tsx that were accidentally overwritten with plain text inputs.
+- [0.1]
+### Fix Staff List [2026-08-30 22:08]
+- Updated the staff fetching logic in ProjectDetailsView.tsx to fetch the entire organization's users from Firebase instead of solely relying on the local storage cache which only contained the current user.
+- [0.1]
+### Fix Task Stage Sync [2026-08-30 22:18]
+- Fixed the Stage/Phase dropdown in the 'Create New Task' modal (ProjectDetailsView.tsx) to correctly display all available project stages when the default 'No Stage' is selected, by updating the filter logic.
+- [0.1]
+### Custom Field Target Mapping [2026-08-30 22:28]
+- Updated the Target Resource Mapping dropdown in the Create New Task modal to dynamically include all project custom fields (DataCards), so fields like Tally/Busy No. can be targeted by deliverables.
+- [0.1]
+### Fix Task Assignee Display [2026-08-30 22:38]
+- Updated the task pills in Kanban and list views (ProjectDetailsView.tsx) to resolve and display the assigned staff member's name instead of their raw user ID, using a new resolveAssigneeName helper function that cross-references the project staff list.
+- [0.1]
+### Custom Field Gallery Uploads [2026-08-30 23:41]
+- Added a new 'Gallery (Multiple Files)' field type to the CustomFieldBuilderModal.
+- Integrated the MediaLibraryModal into ProjectDetailsView for 'image' and 'gallery' custom field types.
+- Replaced standard file uploads with media library selection for custom field data cards, allowing for multiple file selection via comma-separated URLs and visual thumbnails.
+- [0.3]
+### Raw Files Custom Field and Security [2026-08-30 23:52]
+- Added 'Raw Files (Multiple Any Type)' to Custom Fields to support uploading diverse files alongside images.
+- Updated the MediaLibraryModal to allow any file type upload instead of strictly images/PDFs.
+- Implemented client-side security mitigations during media upload: hard-blocks executable extensions (like .exe, .sh, .bat, .php) to prevent malware uploads, and forces the 'application/octet-stream' content-type on unrecognized formats to guarantee safe downloading (preventing browser script execution).
+- [0.4]
+### Task Deliverables Target Sync [2026-08-31 00:01]
+- Updated 'Create New Task' modal to automatically fill the Deliverable Label when a Target Resource is selected.
+- The Deliverable Type now auto-detects from the target custom field (e.g., locking to 'Raw Files (Auto)' instead of forcing a manual selection).
+- Integrated MediaLibraryModal into the Task Execution modal (GenericTaskExecutionModal) so advanced media types (gallery, raw_files, image) render with thumbnail previews, multi-file support, and Media Library upload capabilities.
+
+### Scheduled Ticketing Update & Control Panel Preview [2026-08-31 10:02]
+- Implemented Sep 1, 2026 midnight IST scheduled ticket updates with 6 active passes: Regular Pass / Day 1+2+3 (1st), Regular Pass / Day 1 Only (2nd), Academic (3rd), Virtual (4th), Privilege Offer (5th / deadline removed), Early Bird (6th / greyed out 'Sold Out').
+- Integrated Sep 1 release preview toggle and live real-time countdown timer in the Control Panel (Ctrl + Alt + C).
+- Added preview state sync and active admin banner in Ticketing component for instant UI previewing.
+- [0.6]
+
+### Regular Pass Pricing Update [2026-08-31 15:39]
+- Updated base pass prices for scheduled Sep 1 passes: Regular Pass / Day 1+2+3 to ₹15,000 + applicable charges and Regular Pass / Day 1 Only to ₹3,000 + applicable charges.
+- [0.1]

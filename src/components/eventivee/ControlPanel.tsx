@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Settings, X, Layout, Image as ImageIcon, Users, 
   BarChart3, Globe, Ticket, MessageSquare, List, 
-  MapPin, Shield, Zap, Info, Play
+  MapPin, Shield, Zap, Info, Play, Clock, Eye
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -34,7 +34,38 @@ export default function ControlPanel() {
   const [activeTab, setActiveTab] = useState<'launcher' | 'settings'>('launcher');
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
   const [jsonInput, setJsonInput] = useState('');
+  const [isPreviewActive, setIsPreviewActive] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<{ hours: number; minutes: number; seconds: number; isLive: boolean }>({ hours: 0, minutes: 0, seconds: 0, isLive: false });
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('ghci-preview-scheduled');
+      setIsPreviewActive(saved === 'true');
+    }
+  }, []);
+
+  useEffect(() => {
+    const targetDate = new Date('2026-09-01T00:00:00+05:30');
+    
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+      
+      if (diff <= 0) {
+        setTimeLeft({ hours: 0, minutes: 0, seconds: 0, isLive: true });
+      } else {
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        setTimeLeft({ hours, minutes, seconds, isLive: false });
+      }
+    };
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -46,6 +77,16 @@ export default function ControlPanel() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  const togglePreviewMode = () => {
+    const nextState = !isPreviewActive;
+    setIsPreviewActive(nextState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ghci-preview-scheduled', nextState ? 'true' : 'false');
+      window.dispatchEvent(new CustomEvent('ghci-preview-toggle', { detail: { preview: nextState } }));
+      window.dispatchEvent(new CustomEvent('update-settings-ticketing'));
+    }
+  };
 
   const handleSectionClick = (sectionId: string) => {
     // Navigate to section or open its settings
@@ -105,6 +146,38 @@ export default function ControlPanel() {
                 className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/50 hover:text-white"
               >
                 <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Scheduled Changes Control Banner */}
+            <div className="p-4 mx-6 mt-4 rounded-2xl bg-gradient-to-r from-purple-950/80 via-black to-pink-950/80 border border-[#A32482]/40 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#A32482]" />
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Sep 1 Scheduled Release</span>
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/90">
+                    {timeLeft.isLive ? (
+                      <span className="text-green-400 font-bold">● LIVE</span>
+                    ) : (
+                      `Goes live in: ${String(timeLeft.hours).padStart(2, '0')}h ${String(timeLeft.minutes).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`
+                    )}
+                  </span>
+                </div>
+                <p className="text-[11px] text-white/60">
+                  Target: Sep 1, 2026 00:00 IST. Previews the 6 scheduled active ticket passes.
+                </p>
+              </div>
+
+              <button
+                onClick={togglePreviewMode}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 ${
+                  isPreviewActive 
+                    ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-900/40 animate-pulse' 
+                    : 'bg-[#A32482] hover:bg-[#8e1f7c] text-white shadow-lg shadow-purple-900/30'
+                }`}
+              >
+                <Eye className="w-4 h-4" />
+                {isPreviewActive ? 'Preview Active (ON)' : 'Preview Sep 1 Changes'}
               </button>
             </div>
 
