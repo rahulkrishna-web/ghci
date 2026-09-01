@@ -2503,3 +2503,15 @@
 - Updated the 'Will there be a virtual option?' FAQ in FAQ.tsx to state that the virtual pass is available and included the CTA link.
 - [0.1]
 
+
+### Early Career Pass Description Update [2026-09-01 13:41]
+- Updated the description for the Early Career Pass in Ticketing.tsx to clarify who the pass is designed for.
+- [0.1]
+
+### Regular Pass Title Update [2026-09-01 13:47]
+- Removed " - Day 1+2+3" from the "Regular Pass" title in Ticketing.tsx as the 3-day duration is already mentioned in the description.
+- [0.1]
+
+### Early Career Pass Description Refinement [2026-09-01 14:12]
+- Refined the Early Career Pass description in Ticketing.tsx to "For students and those just starting their career to learn, network, and engage."
+- [0.1]
