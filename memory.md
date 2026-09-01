@@ -2515,3 +2515,21 @@
 ### Early Career Pass Description Refinement [2026-09-01 14:12]
 - Refined the Early Career Pass description in Ticketing.tsx to "For students and those just starting their career to learn, network, and engage."
 - [0.1]
+
+### Ticketing Copy & Nomenclature Uniformity [2026-09-01 16:16]
+- Updated names across all ticket categories in Ticketing.tsx to append the word "Pass" for uniformity.
+- Applied new finalized subtexts provided by the client for Regular Pass, Early Career Pass, Academia Pass, and Virtual Pass.
+- Standardized the descriptions for Super Early Bird and Early Bird to match the new Regular Pass description.
+- [0.2]
+
+### Academia Pass Description Truncation Fix [2026-09-01 16:47]
+- Increased the line-clamp on the desktop ticketing card description from 2 to 4 in Ticketing.tsx to prevent the Academia pass description from being cut off.
+- [0.1]
+
+### Academia Pass Header Height Fix [2026-09-01 17:07]
+- Changed the fixed height (h-[160px]) to a minimum height (min-h-[160px]) for the ticketing card header in Ticketing.tsx to allow longer titles and descriptions to fully expand without clipping.
+- [0.1]
+
+### Ticketing Card Alignment Fix [2026-09-01 17:17]
+- Set a uniform fixed height of 230px (h-[230px]) for the ticketing card header in Ticketing.tsx. This ensures all cards have the same header height regardless of content length, keeping the divider lines and CTA buttons perfectly aligned horizontally across the row.
+- [0.1]

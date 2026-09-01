@@ -8,7 +8,7 @@ import { Shield, X, ChevronLeft, Plus, Settings, Trash2, Edit3, Type, Image as I
 const defaultTickets = [
   {
     id: "last-year",
-    name: "Privilege Offer",
+    name: "Privilege Offer Pass",
     description: "For GHCI 25 attendees ",
     footnote: "Offer valid till August 2, 2026",
     price: "₹10,000",
@@ -38,8 +38,8 @@ const defaultTickets = [
   },
   {
     id: "super-early",
-    name: "Super Early Bird",
-    description: "All Access 3-day pass. ",
+    name: "Super Early Bird Pass",
+    description: "Experience the complete GHCI 27 with full access to all three days.",
     footnote: "",
     price: "₹11,000",
     oldPrice: "₹25,000",
@@ -72,8 +72,8 @@ const defaultTickets = [
   },
   {
     id: "early-bird",
-    name: "Early Bird",
-    description: "All Access 3-day pass. ",
+    name: "Early Bird Pass",
+    description: "Experience the complete GHCI 27 with full access to all three days.",
     footnote: "Offer valid till August 31, 2026",
     price: "₹12,000",
     oldPrice: "₹25,000",
@@ -106,8 +106,8 @@ const defaultTickets = [
   },
   {
     id: "regular",
-    name: "Regular",
-    description: "Academia / Faculty / Startup / Return-to-Work ",
+    name: "Academia / Faculty / Startup / Return-to-Work Pass",
+    description: "Special pricing for educators, founders, and professionals returning to tech.",
     footnote: "",
     price: "₹9,000",
     gst: "18% GST Applicable",
@@ -287,10 +287,10 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
 
       {/* Content */}
       <div className="relative z-10  flex flex-col h-full flex-1">
-        <div className="p-8 md:p-10 pt-16 md:pt-14 pb-2 md:pb-2 h-[160px] flex flex-col justify-center flex-shrink-0">
+        <div className="p-8 md:p-10 pt-16 md:pt-14 pb-2 md:pb-2 h-[230px] flex flex-col justify-center flex-shrink-0">
           <h3 className="text-xl md:text-2xl mb-2 leading-tight">{ticket.name}</h3>
           {ticket.description && (
-            <p className="text-white/60 text-sm md:text-base leading-snug line-clamp-2">
+            <p className="text-white/60 text-sm md:text-base leading-snug line-clamp-4">
               {ticket.description}
             </p>
           )}
@@ -541,7 +541,7 @@ export default function Ticketing() {
     {
       "id": "regular-3day",
       "name": "Regular Pass",
-      "description": "All Access 3-day pass.",
+      "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "",
       "price": "₹15,000",
       "gst": "+ applicable charges",
@@ -570,7 +570,7 @@ export default function Ticketing() {
     {
       "id": "regular-day1",
       "name": "Early Career Pass",
-      "description": "For students and those just starting their career to learn, network, and engage.",
+      "description": "Designed for students and early professionals to learn, connect, and grow.",
       "footnote": "",
       "price": "₹3,000",
       "gst": "+ applicable charges",
@@ -598,7 +598,7 @@ export default function Ticketing() {
     },
     {
       "id": "last-year",
-      "name": "Privilege Offer",
+      "name": "Privilege Offer Pass",
       "description": "For GHCI 25 attendees ",
       "footnote": "Offer valid till August 2, 2026",
       "price": "₹10,000",
@@ -694,8 +694,8 @@ export default function Ticketing() {
     },
     {
       "id": "super-early",
-      "name": "Super Early Bird",
-      "description": "",
+      "name": "Super Early Bird Pass",
+      "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "",
       "price": "₹11,000",
       "oldPrice": "₹25,000",
@@ -818,8 +818,8 @@ export default function Ticketing() {
     },
     {
       "id": "early-bird",
-      "name": "Early Bird",
-      "description": "All Access 3-day pass. ",
+      "name": "Early Bird Pass",
+      "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "Offer valid till August 31, 2026",
       "price": "₹12,000",
       "oldPrice": "₹25,000",
@@ -942,8 +942,8 @@ export default function Ticketing() {
     },
     {
       "id": "regular",
-      "name": "Academia / Faculty / Startup / Return-to-Work ",
-      "description": "",
+      "name": "Academia / Faculty / Startup / Return-to-Work Pass",
+      "description": "Special pricing for educators, founders, and professionals returning to tech.",
       "footnote": "For discount code support, contact the Support ID below",
       "price": "₹9,000",
       "gst": "+ applicable charges",
@@ -1065,8 +1065,8 @@ export default function Ticketing() {
     },
     {
       "id": "virtual",
-      "name": "Virtual",
-      "description": "Access GHCI 27 virtually from anywhere",
+      "name": "Virtual Pass",
+      "description": "Join GHCI 27 live online from anywhere in the world.",
       "footnote": "Offer valid till September 15, 2026",
       "price": "₹2,600",
       "oldPrice": "₹7,670",
