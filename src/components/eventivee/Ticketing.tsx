@@ -569,7 +569,7 @@ export default function Ticketing() {
     },
     {
       "id": "regular-day1",
-      "name": "Day 1 Pass Only",
+      "name": "Early Career Pass",
       "description": "Access to Day 1 GHCI 27 sessions & networking.",
       "footnote": "",
       "price": "₹3,000",

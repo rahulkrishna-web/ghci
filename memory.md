@@ -2495,3 +2495,11 @@
 ### Regular Pass Naming Update [2026-08-31 15:44]
 - Updated names of scheduled Sep 1 passes to 'Regular Pass - Day 1+2+3' and 'Day 1 Pass Only'.
 - [0.1]
+### Early Career Pass Update [2026-09-01 06:21]
+- Renamed "Day 1 Pass Only" to "Early Career Pass" in the Ticketing configuration.
+- [0.1]
+
+### FAQ Virtual Pass Update [2026-09-01 06:23]
+- Updated the 'Will there be a virtual option?' FAQ in FAQ.tsx to state that the virtual pass is available and included the CTA link.
+- [0.1]
+

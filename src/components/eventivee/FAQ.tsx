@@ -22,7 +22,19 @@ const faqs = [
   },
   {
     q: 'Will there be a virtual option?',
-    a: 'Yes, a virtual option will also be available, with registrations opening soon.',
+    a: (
+      <>
+        Yes, a virtual pass is now available.{' '}
+        <a 
+          href="https://link.district.in/DSTRKT/GHCI2027PartnerWebsite" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-white hover:text-[#A32482] underline transition-colors"
+        >
+          Get your pass here
+        </a>.
+      </>
+    ),
   },
 ];
 
