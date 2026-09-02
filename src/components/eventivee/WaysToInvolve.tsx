@@ -119,11 +119,6 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                       </div>
                     </a>
                   ))}
-                  {way.title === "Advancing Inclusion Program" && (
-                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Apply by {aipDeadline}, 11:59 PM IST
-                    </span>
-                  )}
                   {way.title === "WeQuest" && (
                     <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
                       Apply by {wequestDeadline}, 11:59 PM IST

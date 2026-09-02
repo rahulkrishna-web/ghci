@@ -2,13 +2,6 @@
 sectionTitle: "Ways to Get Involved"
 subtitle: "Explore opportunities to speak, contribute, compete, and engage with the GHCI community."
 ways:
-  - title: "Advancing Inclusion Program"
-    description: "Access curated opportunities for learning, mentorship, and community engagement."
-    type: "primary"
-    links:
-      - text: "Apply Now"
-        url: "/aip"
-        variant: "solid"
   - title: "WeQuest"
     description: "A pitch platform for early-stage women founders-offering funding access, mentorship, and industry connections."
     type: "primary"
@@ -18,11 +11,18 @@ ways:
         variant: "solid"
   - title: "Anita Borg Impact Awards"
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
-    type: "secondary"
+    type: "primary"
     links:
       - text: "Nominate Now"
         url: "/abia"
         variant: "solid"
+  - title: "Advancing Inclusion Program"
+    description: "Access curated opportunities for learning, mentorship, and community engagement."
+    type: "secondary"
+    links:
+      - text: "Applications Closed"
+        url: "#"
+        variant: "outline"
   - title: "Call For Jurors"
     description: "Help recognize excellence in tech. Evaluate submissions, support talent, and shape industry benchmarks."
     type: "secondary"

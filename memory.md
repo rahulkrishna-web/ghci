@@ -2539,3 +2539,9 @@
 - Updated "Early Career Pass" description to "Designed for students and young professionals."
 - Closed AIP CTA links, updated messaging to indicate applications are closed, and added disabled styling (grayscale, pointer-events-none) to the buttons.
 - [0.2]
+
+### Ways To Involve Reordering & Updates [2026-09-02 17:58]
+- Reordered the "Ways to Get Involved" section to prioritize active programs: WeQuest and ABIA are now primary (top row), while AIP is secondary (bottom row) alongside Call for Jurors and Presenters.
+- Updated the AIP CTA button in the Ways to Get Involved section to "Applications Closed" with outline styling, matching the other closed programs.
+- Removed the deadline display for the AIP program in the grid.
+- [0.1]
