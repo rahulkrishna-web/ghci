@@ -51,14 +51,14 @@ export default function AipCTA({ data }: AipCTAProps) {
           className="inline-block"
         >
           <a
-            href={data.ctaSectionButtonLink}
-            className="inline-flex rounded-full p-[2px] min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group active:scale-98 cursor-pointer transition-all duration-300"
+            href={data.ctaSectionButtonLink !== "#" ? data.ctaSectionButtonLink : undefined}
+            className={`inline-flex rounded-full p-[2px] min-w-[200px] md:min-w-[280px] h-12 md:h-16 overflow-hidden group transition-all duration-300 ${data.ctaSectionButtonLink !== "#" ? "active:scale-98 cursor-pointer" : "opacity-50 grayscale cursor-not-allowed"}`}
             style={{
               backgroundImage: 'linear-gradient(258.87deg, #A32478 44.34%, #FFFFFF 90.93%)'
             }}
           >
-            <div className="w-full h-full bg-[#070708] rounded-full flex items-center justify-center relative overflow-hidden group-hover:bg-[#A32482] transition-colors duration-300">
-              <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+            <div className={`w-full h-full bg-[#070708] rounded-full flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${data.ctaSectionButtonLink !== "#" ? "group-hover:bg-[#A32482]" : ""}`}>
+              <div className={`h-full w-full relative ${data.ctaSectionButtonLink !== "#" ? "transition-transform duration-500 ease-in-out group-hover:-translate-y-full" : ""}`}>
                 <div 
                   className="h-full w-full flex items-center justify-center px-6 md:px-20 shrink-0 text-transparent bg-clip-text text-sm md:text-2xl font-semibold tracking-[0.08em] uppercase pb-0.5"
                   style={{

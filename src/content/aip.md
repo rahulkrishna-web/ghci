@@ -3,8 +3,8 @@ metaTitle: "Advancing Inclusion Program (AIP) - GHCI 27"
 metaDescription: "A Scholarship Designed to Expand Access. Attend GHCI 27. Fully Sponsored."
 heroTitle: "Advancing Inclusion Program (AIP)"
 heroSubtitle: "A Scholarship Designed to Expand Access.\nAttend GHCI 27. Fully Sponsored."
-heroCtaText: "Apply Now"
-heroCtaLink: "https://ghci27.stutzee.com/applications/scholarship/create"
+heroCtaText: "Applications Closed"
+heroCtaLink: "#"
 heroImage: "/aip/ghci-aip-lead.jpeg"
 heroDeadline: "Apply by Aug 3, 2026, 11:59 PM IST"
 
@@ -46,10 +46,10 @@ whoShouldApplyText: "Women who are passionate about technology and would benefit
 whyApplyTitle: "Why Apply"
 whyApplyText: "GHCI brings together thousands of technologists, leaders, educators, students, and innovators.\n\nAIP helps ensure that women with potential and ambition can access these opportunities, regardless of financial barriers."
 
-ctaSectionTitle: "Applications Are Now Open"
-ctaSectionText: "Apply for the Advancing Inclusion Program and join one of Asia's largest gatherings of women and allies in technology."
-ctaSectionButtonText: "APPLY NOW"
-ctaSectionButtonLink: "https://ghci27.stutzee.com/applications/scholarship/create"
+ctaSectionTitle: "Applications Are Closed"
+ctaSectionText: "Applications for the Advancing Inclusion Program are now closed."
+ctaSectionButtonText: "APPLICATIONS CLOSED"
+ctaSectionButtonLink: "#"
 
 howToApplyTitle: "How to Apply"
 howToApplySteps:

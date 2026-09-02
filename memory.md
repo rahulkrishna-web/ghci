@@ -2533,3 +2533,9 @@
 ### Ticketing Card Alignment Fix [2026-09-01 17:17]
 - Set a uniform fixed height of 230px (h-[230px]) for the ticketing card header in Ticketing.tsx. This ensures all cards have the same header height regardless of content length, keeping the divider lines and CTA buttons perfectly aligned horizontally across the row.
 - [0.1]
+
+### Ticketing & AIP Updates [2026-09-02 17:47]
+- Increased overall ticketing card height to 780px to fix clipping issues on the bottom sections (Virtual Pass).
+- Updated "Early Career Pass" description to "Designed for students and young professionals."
+- Closed AIP CTA links, updated messaging to indicate applications are closed, and added disabled styling (grayscale, pointer-events-none) to the buttons.
+- [0.2]

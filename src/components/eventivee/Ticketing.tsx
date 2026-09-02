@@ -192,7 +192,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
-      className="relative w-full h-[740px] rounded-[2.5rem] overflow-hidden group flex flex-col"
+      className="relative w-full h-[780px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
         maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
         WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
@@ -570,7 +570,7 @@ export default function Ticketing() {
     {
       "id": "regular-day1",
       "name": "Early Career Pass",
-      "description": "Designed for students and early professionals to learn, connect, and grow.",
+      "description": "Designed for students and young professionals.",
       "footnote": "",
       "price": "₹3,000",
       "gst": "+ applicable charges",

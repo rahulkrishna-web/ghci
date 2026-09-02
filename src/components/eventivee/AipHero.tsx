@@ -242,10 +242,10 @@ export default function AipHero({ data }: AipHeroProps) {
                 <img src="/icons/Ticket.png" alt="Ticket" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
               </div>
               <a
-                href={data.heroCtaLink}
-                className="h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
+                href={data.heroCtaLink !== "#" ? data.heroCtaLink : undefined}
+                className={`h-12 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] transition-all text-white text-[15px] md:text-lg font-semibold shadow-xl shadow-purple-900/20 whitespace-nowrap z-0 overflow-hidden ${data.heroCtaLink !== "#" ? "group-hover:bg-[#8e1f7c] active:scale-95 cursor-pointer" : "opacity-50 grayscale cursor-not-allowed"}`}
               >
-                <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                <div className={`h-full w-full relative ${data.heroCtaLink !== "#" ? "transition-transform duration-500 ease-in-out group-hover:-translate-y-full" : ""}`}>
                   <div className="h-full w-full flex items-center justify-center px-6 md:px-10 shrink-0">
                     {data.heroCtaText}
                   </div>
