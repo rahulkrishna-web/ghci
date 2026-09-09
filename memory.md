@@ -2545,3 +2545,8 @@
 - Updated the AIP CTA button in the Ways to Get Involved section to "Applications Closed" with outline styling, matching the other closed programs.
 - Removed the deadline display for the AIP program in the grid.
 - [0.1]
+
+### WeQuest and Impact (ABIA) Deadline Update [2026-09-09 13:32]
+- Updated WeQuest application deadline to September 23, 2026 across wequest.md, WequestHero.tsx, and WaysToInvolve.tsx.
+- Verified Anita Borg Impact Awards (ABIA) deadline remains set to September 16, 2026 and aligned default state in WaysToInvolve.tsx.
+- [0.1]
