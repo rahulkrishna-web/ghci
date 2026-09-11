@@ -19,9 +19,12 @@ export default function Marquee() {
     const withTimezone = formatted.includes('+') || formatted.endsWith('Z') ? formatted : `${formatted}+05:30`;
     now = new Date(withTimezone);
   }
+  const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30');
   const isJuly1OrLater = now >= new Date('2026-07-01T00:00:00+05:30');
 
-  const textVal = isJuly1OrLater 
+  const textVal = isSept1OrLater
+    ? 'Virtual GHCI 27 Passes Are Now Available'
+    : isJuly1OrLater 
     ? 'Early Bird Registrations Open - Limited Spots' 
     : 'Super Early Bird Now Live • Limited Spots';
 

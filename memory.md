@@ -2550,3 +2550,7 @@
 - Updated WeQuest application deadline to September 23, 2026 across wequest.md, WequestHero.tsx, and WaysToInvolve.tsx.
 - Verified Anita Borg Impact Awards (ABIA) deadline remains set to September 16, 2026 and aligned default state in WaysToInvolve.tsx.
 - [0.1]
+
+### Marquee Text Update [2026-09-11 15:02]
+- Updated Hero ticker in `Marquee.tsx` to display "Virtual GHCI 27 Passes Are Now Available" for September 1, 2026 onwards.
+- [0.1]
