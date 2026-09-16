@@ -2554,3 +2554,12 @@
 ### Marquee Text Update [2026-09-11 15:02]
 - Updated Hero ticker in `Marquee.tsx` to display "Virtual GHCI 27 Passes Are Now Available" for September 1, 2026 onwards.
 - [0.1]
+
+### Virtual Pass Date Update [2026-09-16 17:07]
+- Updated Virtual Pass deadline to September 30 in `Ticketing.tsx`.
+- Changed the cutoff for Early Bird price transition from September 16 to October 1.
+- [0.1]
+
+### Early Bird Pass Footnote Fix [2026-09-16 17:15]
+- Removed the date footnote from the Early Bird Pass (and Super Early Bird) when they are in the "Sold Out" state.
+- [0.05]

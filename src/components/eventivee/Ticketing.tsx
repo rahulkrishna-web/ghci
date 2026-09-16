@@ -1067,7 +1067,7 @@ export default function Ticketing() {
       "id": "virtual",
       "name": "Virtual Pass",
       "description": "Join GHCI 27 live online from anywhere in the world.",
-      "footnote": "Offer valid till September 15, 2026",
+      "footnote": "Offer valid till September 30, 2026",
       "price": "₹2,600",
       "oldPrice": "₹7,670",
       "gst": "+ applicable taxes",
@@ -1350,21 +1350,23 @@ export default function Ticketing() {
     }
     
     const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30') || isPreviewScheduled;
-    const isSept16OrLater = now >= new Date('2026-09-16T00:00:00+05:30');
+    const isOct1OrLater = now >= new Date('2026-10-01T00:00:00+05:30');
 
     let processed = rawTickets.map(t => {
       if (t.id === 'super-early') {
         return {
           ...t,
           disabled: true,
-          cta: 'Sold Out'
+          cta: 'Sold Out',
+          footnote: ''
         };
       }
       if (t.id === 'early-bird' && isSept1OrLater) {
         return {
           ...t,
           disabled: true,
-          cta: 'Sold Out'
+          cta: 'Sold Out',
+          footnote: ''
         };
       }
       if (t.id === 'last-year' && isSept1OrLater) {
@@ -1375,7 +1377,7 @@ export default function Ticketing() {
           cta: 'Get the Pass'
         };
       }
-      if (t.id === 'virtual' && isSept16OrLater) {
+      if (t.id === 'virtual' && isOct1OrLater) {
         return {
           ...t,
           price: '₹3,250',
