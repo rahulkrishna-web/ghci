@@ -1,14 +1,14 @@
 ---
 hero:
-  deadline: "Nominate by Sep 16, 2026, 11:59 PM IST"
+  deadline: ""
   title: "Anita Borg Impact Awards (ABIA)"
   subtitle: "Celebrating women creating impact through technology."
-  cta: "NOMINATE NOW"
-  ctaLink: "https://ghci27.stutzee.com"
+  cta: "NOMINATIONS CLOSED"
+  ctaLink: "#"
 whatIs:
   title: "What is\nABIA?"
-  cta: "NOMINATE NOW"
-  ctaLink: "https://ghci27.stutzee.com"
+  cta: "NOMINATIONS CLOSED"
+  ctaLink: "#"
   description: "Recognition begins with a nomination. Celebrate a woman whose work is making a difference. (Hint: women in you, nominate yourself)"
   paragraph: "The Anita Borg Impact Awards at Grace Hopper Celebration India 2027 (GHCI 27) recognize women who have made and influence through technology. These awards honor individuals whose leadership and contributions are creating meaningful impact across industry, government, and society."
 categories:
@@ -70,10 +70,10 @@ dates:
     - title: "Award Ceremony"
       date: "January 20 - 22, 2027"
 ctaBanner:
-  title: "Nominations Are Now Open"
-  subtitle: "Every nomination helps bring remarkable work into the spotlight. Submit your nomination today."
-  cta: "NOMINATE NOW"
-  ctaLink: "https://ghci27.stutzee.com"
+  title: "Nominations Are Now Closed"
+  subtitle: "Thank you for submitting your nominations. We are currently reviewing the entries."
+  cta: "NOMINATIONS CLOSED"
+  ctaLink: "#"
 winners:
   title: "Meet Our\nPast Winners"
   list:

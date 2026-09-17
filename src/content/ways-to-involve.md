@@ -13,9 +13,9 @@ ways:
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
     type: "primary"
     links:
-      - text: "Nominate Now"
-        url: "/abia"
-        variant: "solid"
+      - text: "Nominations Closed"
+        url: "#"
+        variant: "outline"
   - title: "Advancing Inclusion Program"
     description: "Access curated opportunities for learning, mentorship, and community engagement."
     type: "secondary"

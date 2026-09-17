@@ -25,7 +25,6 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
 
   const [aipDeadline, setAipDeadline] = useState("Aug 31, 2026");
   const [wequestDeadline, setWequestDeadline] = useState("Sep 23, 2026");
-  const [abiaDeadline, setAbiaDeadline] = useState("Sep 16, 2026");
 
   useEffect(() => {
     const now = new Date();
@@ -35,7 +34,6 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
     if (now >= cutoffAug17) {
       setAipDeadline("Aug 31, 2026");
       setWequestDeadline("Sep 23, 2026");
-      setAbiaDeadline("Sep 16, 2026");
     } else if (now > deadlineDate1) {
       setAipDeadline("Aug 20, 2026");
     }
@@ -124,11 +122,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                       Apply by {wequestDeadline}, 11:59 PM IST
                     </span>
                   )}
-                  {way.title === "Anita Borg Impact Awards" && (
-                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
-                      Nominate by {abiaDeadline}, 11:59 PM IST
-                    </span>
-                  )}
+
 
                   {way.badge && way.badgeUrl ? (
                     <a href={way.badgeUrl} className="inline-block px-4 py-2 rounded-full bg-[#A32482] text-white text-xs md:text-xl font-semibold w-fit shadow-lg shadow-purple-900/20 hover:opacity-90 transition-opacity">
