@@ -24,7 +24,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   const secondaryWays = data.ways.filter(w => w.type === 'secondary');
 
   const [aipDeadline, setAipDeadline] = useState("Aug 31, 2026");
-  const [wequestDeadline, setWequestDeadline] = useState("Sep 23, 2026");
+  const [wequestDeadline, setWequestDeadline] = useState("Sep 30, 2026");
 
   useEffect(() => {
     const now = new Date();
@@ -33,7 +33,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
 
     if (now >= cutoffAug17) {
       setAipDeadline("Aug 31, 2026");
-      setWequestDeadline("Sep 23, 2026");
+      setWequestDeadline("Sep 30, 2026");
     } else if (now > deadlineDate1) {
       setAipDeadline("Aug 20, 2026");
     }

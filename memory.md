@@ -2563,3 +2563,7 @@
 ### Early Bird Pass Footnote Fix [2026-09-16 17:15]
 - Removed the date footnote from the Early Bird Pass (and Super Early Bird) when they are in the "Sold Out" state.
 - [0.05]
+
+### WeQuest Deadline Extension [2026-09-23 12:08]
+- Extended WeQuest application deadline from Sep 23 to Sep 30, 2026 across wequest.md, WaysToInvolve.tsx, WequestHero.tsx.
+- [0.05]

@@ -27,10 +27,11 @@ export default function WequestHero({ data }: WequestHeroProps) {
     const now = new Date();
     const cutoffAug17 = new Date('2026-08-17T00:00:00+05:30');
     if (now >= cutoffAug17) {
-      // From Aug 17 onwards: deadline is Sep 23
+      // From Aug 17 onwards: deadline is Sep 30
       setDeadlineText(data.heroDeadline
-        .replace('Aug 25', 'Sep 23').replace('August 25', 'September 23')
-        .replace('Sep 8', 'Sep 23').replace('September 08', 'September 23').replace('September 8', 'September 23'));
+        .replace('Aug 25', 'Sep 30').replace('August 25', 'September 30')
+        .replace('Sep 8', 'Sep 30').replace('September 08', 'September 30').replace('September 8', 'September 30')
+        .replace('Sep 23', 'Sep 30').replace('September 23', 'September 30'));
     }
   }, [data.heroDeadline]);
 
