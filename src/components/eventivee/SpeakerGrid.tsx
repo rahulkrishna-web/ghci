@@ -19,35 +19,22 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
     setIsMounted(true);
   }, []);
   
+  const sortedSpeakers = [...(data.speakers || [])].sort((a, b) => a.name.localeCompare(b.name));
+
   // Show only 4 speakers on mobile initially
-  const visibleSpeakers = isExpanded ? data.speakers : data.speakers.slice(0, 4);
+  const visibleSpeakers = isExpanded ? sortedSpeakers : sortedSpeakers.slice(0, 4);
 
   // Avoid hydration mismatch by rendering all speakers on the server/initial client pass
   const speakersToRender = isMounted && typeof window !== 'undefined' && window.innerWidth < 768 
     ? visibleSpeakers 
-    : data.speakers;
+    : sortedSpeakers;
 
   return (
-    <section id="speakers" className="py-12 md:py-24 relative overflow-hidden text-white" style={{
-      background: 'linear-gradient(to bottom, #120110, #22021d)'
-    }}>
-      {/* Dark overlay for readability */}
-    
-      {/* <div className="absolute inset-0 bg-black/60 pointer-events-none" /> */}
-      
+    <section id="speakers" className="py-12 md:py-24 relative overflow-hidden text-white bg-black">
       <div className="w-full relative z-10 px-4 md:px-12">
         
         {/* Header Section */}
-        <div className="text-center mb-20 relative">
-          {/* Wavy Pattern Background Accent */}
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-64 opacity-20 pointer-events-none overflow-visible">
-            <svg className="w-full h-full opacity-40 scale-150" viewBox="0 0 1440 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 100C360 20 720 180 1080 100C1440 20 1800 180 2160 100" stroke="#A32482" strokeWidth="2" opacity="0.3" />
-              <path d="M0 120C360 40 720 200 1080 120C1440 40 1800 200 2160 120" stroke="#A32482" strokeWidth="2" opacity="0.2" />
-              <path d="M0 80C360 0 720 160 1080 80C1440 0 1800 160 2160 80" stroke="#A32482" strokeWidth="2" opacity="0.1" />
-            </svg>
-          </div>
-
+        <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

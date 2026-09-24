@@ -2598,3 +2598,16 @@
 - Merged `feature/speakers-update` into `master`.
 - Verified production build successfully via Next.js Turbopack.
 - [0.05]
+
+### Speakers Section Title, Placement, and Sorting Update [2026-09-24 18:34]
+- Changed Speaker section title to "GHCI 27 Speakers" in `src/content/speakers.md`.
+- Moved speakers section above architects section in `src/app/page.tsx`.
+- Sorted speakers list alphabetically by name in `src/content/speakers.md` and ensured sorting in `SpeakerGrid.tsx`.
+- Verified production build successfully.
+- [0.1]
+
+### Swap Backgrounds for Speakers and Ways to Get Involved [2026-09-24 18:44]
+- Replaced Speakers section plum gradient and wavy accent with solid black (`bg-black`) in `SpeakerGrid.tsx`.
+- Applied plum gradient (`linear-gradient(to bottom, #120110, #22021d)`) and wavy pattern SVG accent behind Ways to Get Involved in `WaysToInvolve.tsx`.
+- Verified production build successfully.
+- [0.1]

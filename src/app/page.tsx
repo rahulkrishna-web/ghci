@@ -68,10 +68,9 @@ export default function EventiveePage() {
       {/* New Ticketing Section */}
       <Ticketing />
 
+      <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
       <div id="architects">{architectsData && <Architects data={architectsData as any} />}</div>
       <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
-      
-      <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
       
       <div id="partner">{partnerData && <PartnerWithUs data={partnerData as any} />}</div>
       <div id="trusted">{partnerData && <TrustedBy data={partnerData as any} />}</div>

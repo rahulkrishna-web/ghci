@@ -1,5 +1,5 @@
 ---
-sectionTitle: "Speakers"
+sectionTitle: "GHCI 27 Speakers"
 subtitle: "Meet the leaders, innovators, and changemakers taking the stage at GHCI 27. Explore the speakers bringing fresh perspectives and real-world insights to this year’s conversations."
 speakers:
   - name: "Aarti Singh"
@@ -8,9 +8,6 @@ speakers:
   - name: "Geeta Gurnani"
     role: "CTO, IBM India Ltd"
     image: "/speakers/geeta-gurnani.webp"
-  - name: "Shelmina Abji"
-    role: "Founder and CEO, Show Your Worth.ai"
-    image: "/speakers/shelmina-abji.webp"
   - name: "Jibu Elias"
     role: "Country Lead for India, Mozilla Foundation"
     image: "/speakers/jibu-elias.webp"
@@ -20,10 +17,13 @@ speakers:
   - name: "Niki Armstrong"
     role: "Chief Administrative and Legal Officer, Everpure"
     image: "/speakers/niki-armstrong.webp"
-  - name: "Sheenam Ohrie"
-    role: "Managing Director, India, Broadridge Financial Solutions"
-    image: "/speakers/sheenam-ohrie.webp"
   - name: "Reginé Gilbert"
     role: "Industry Associate Professor, NYU Tandon & Founder, Access Blueprint®"
     image: "/speakers/regine-gilbert.webp"
+  - name: "Sheenam Ohrie"
+    role: "Managing Director, India, Broadridge Financial Solutions"
+    image: "/speakers/sheenam-ohrie.webp"
+  - name: "Shelmina Abji"
+    role: "Founder and CEO, Show Your Worth.ai"
+    image: "/speakers/shelmina-abji.webp"
 ---
