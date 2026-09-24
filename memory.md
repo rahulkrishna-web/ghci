@@ -2578,3 +2578,14 @@
 ### Regine Gilbert Photo Recenter [2026-09-24 13:01]
 - Recentered Regine Gilbert's 3:4 crop horizontally on her face/head at X=1770 in public/speakers.
 - [0.05]
+
+### Gitignore Scratch Directory [2026-09-24 13:13]
+- Added scratch/ to .gitignore.
+- [0.02]
+
+### Virtual Early Bird Ticket & Oct 1 Simulation [2026-09-24 13:28]
+- Added "Virtual Early Bird Pass" (₹3,250, valid Oct 1 - Dec 15) to Ticketing.tsx.
+- Renamed active tier to "Virtual Launch Offer Pass" (₹2,600, valid till Sep 30).
+- Configured dynamic scheduling: activates Virtual Early Bird on Oct 1 and transitions Launch Offer to sold out.
+- Added Oct 1 scheduled release banner with countdown and simulation controls in ControlPanel.tsx, supporting URL param ?preview=oct1.
+- [0.25]

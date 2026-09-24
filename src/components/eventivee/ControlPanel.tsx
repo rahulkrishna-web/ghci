@@ -35,30 +35,61 @@ export default function ControlPanel() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
   const [jsonInput, setJsonInput] = useState('');
   const [isPreviewActive, setIsPreviewActive] = useState(false);
-  const [timeLeft, setTimeLeft] = useState<{ hours: number; minutes: number; seconds: number; isLive: boolean }>({ hours: 0, minutes: 0, seconds: 0, isLive: false });
+  const [isPreviewOct1, setIsPreviewOct1] = useState(false);
+  const [showNextPhaseEarly, setShowNextPhaseEarly] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number; isLive: boolean }>({ days: 0, hours: 0, minutes: 0, seconds: 0, isLive: false });
   const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('ghci-preview-scheduled');
       setIsPreviewActive(saved === 'true');
+      const savedOct1 = localStorage.getItem('ghci-preview-oct1');
+      setIsPreviewOct1(savedOct1 === 'true');
+      const savedNextPhase = localStorage.getItem('ghci-virtual-next-phase');
+      setShowNextPhaseEarly(savedNextPhase === 'true');
+
+      // Auto-open if ?controlPanel=true query parameter is present
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('controlPanel') === 'true') {
+        setIsOpen(true);
+      }
     }
+
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-control-panel', handleOpen);
+
+    const handleOct1Toggle = (e: any) => {
+      if (e.detail && typeof e.detail.preview === 'boolean') {
+        setIsPreviewOct1(e.detail.preview);
+      } else {
+        const savedOct1 = localStorage.getItem('ghci-preview-oct1');
+        setIsPreviewOct1(savedOct1 === 'true');
+      }
+    };
+    window.addEventListener('ghci-preview-oct1-toggle', handleOct1Toggle);
+
+    return () => {
+      window.removeEventListener('open-control-panel', handleOpen);
+      window.removeEventListener('ghci-preview-oct1-toggle', handleOct1Toggle);
+    };
   }, []);
 
   useEffect(() => {
-    const targetDate = new Date('2026-09-01T00:00:00+05:30');
+    const targetDate = new Date('2026-10-01T00:00:00+05:30');
     
     const updateCountdown = () => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
       
       if (diff <= 0) {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0, isLive: true });
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isLive: true });
       } else {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        setTimeLeft({ hours, minutes, seconds, isLive: false });
+        setTimeLeft({ days, hours, minutes, seconds, isLive: false });
       }
     };
 
@@ -84,6 +115,26 @@ export default function ControlPanel() {
     if (typeof window !== 'undefined') {
       localStorage.setItem('ghci-preview-scheduled', nextState ? 'true' : 'false');
       window.dispatchEvent(new CustomEvent('ghci-preview-toggle', { detail: { preview: nextState } }));
+      window.dispatchEvent(new CustomEvent('update-settings-ticketing'));
+    }
+  };
+
+  const togglePreviewOct1 = () => {
+    const nextState = !isPreviewOct1;
+    setIsPreviewOct1(nextState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ghci-preview-oct1', nextState ? 'true' : 'false');
+      window.dispatchEvent(new CustomEvent('ghci-preview-oct1-toggle', { detail: { preview: nextState } }));
+      window.dispatchEvent(new CustomEvent('update-settings-ticketing'));
+    }
+  };
+
+  const toggleShowNextPhaseEarly = () => {
+    const nextState = !showNextPhaseEarly;
+    setShowNextPhaseEarly(nextState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ghci-virtual-next-phase', nextState ? 'true' : 'false');
+      window.dispatchEvent(new CustomEvent('ghci-virtual-next-phase-toggle', { detail: { show: nextState } }));
       window.dispatchEvent(new CustomEvent('update-settings-ticketing'));
     }
   };
@@ -149,35 +200,46 @@ export default function ControlPanel() {
               </button>
             </div>
 
-            {/* Scheduled Changes Control Banner */}
+            {/* Scheduled Changes Control Banner - Oct 1 Release */}
             <div className="p-4 mx-6 mt-4 rounded-2xl bg-gradient-to-r from-purple-950/80 via-black to-pink-950/80 border border-[#A32482]/40 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-3 shrink-0">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[#A32482]" />
-                  <span className="text-xs font-bold text-white uppercase tracking-wider">Sep 1 Scheduled Release</span>
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Oct 1 Scheduled Release</span>
                   <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/90">
                     {timeLeft.isLive ? (
                       <span className="text-green-400 font-bold">● LIVE</span>
                     ) : (
-                      `Goes live in: ${String(timeLeft.hours).padStart(2, '0')}h ${String(timeLeft.minutes).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`
+                      `Goes live in: ${timeLeft.days}d ${String(timeLeft.hours).padStart(2, '0')}h ${String(timeLeft.minutes).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`
                     )}
                   </span>
                 </div>
                 <p className="text-[11px] text-white/60">
-                  Target: Sep 1, 2026 00:00 IST. Previews the 6 scheduled active ticket passes.
+                  Target: Oct 1, 2026 00:00 IST. Activates Virtual Early Bird Pass (₹3,250, 1st Oct - Dec 15).
                 </p>
+                <div className="flex items-center gap-2 pt-1">
+                  <label className="text-[10px] text-white/70 flex items-center gap-1.5 cursor-pointer hover:text-white">
+                    <input 
+                      type="checkbox"
+                      checked={showNextPhaseEarly}
+                      onChange={toggleShowNextPhaseEarly}
+                      className="accent-[#A32482] rounded"
+                    />
+                    <span>Show &apos;Next Phase&apos; card before Oct 1</span>
+                  </label>
+                </div>
               </div>
 
               <button
-                onClick={togglePreviewMode}
+                onClick={togglePreviewOct1}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 ${
-                  isPreviewActive 
+                  isPreviewOct1 
                     ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-900/40 animate-pulse' 
                     : 'bg-[#A32482] hover:bg-[#8e1f7c] text-white shadow-lg shadow-purple-900/30'
                 }`}
               >
                 <Eye className="w-4 h-4" />
-                {isPreviewActive ? 'Preview Active (ON)' : 'Preview Sep 1 Changes'}
+                {isPreviewOct1 ? 'Simulating Oct 1 (ACTIVE)' : 'Simulate Oct 1 Release'}
               </button>
             </div>
 

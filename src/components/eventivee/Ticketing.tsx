@@ -512,6 +512,8 @@ export default function Ticketing() {
   const [isMobile, setIsMobile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [isPreviewScheduled, setIsPreviewScheduled] = useState(false);
+  const [isPreviewOct1, setIsPreviewOct1] = useState(false);
+  const [showNextPhaseEarly, setShowNextPhaseEarly] = useState(false);
   
   // Debug Navigation State
   const [debugView, setDebugView] = useState<'main' | 'ticket-edit'>('main');
@@ -521,6 +523,10 @@ export default function Ticketing() {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('ghci-preview-scheduled');
       setIsPreviewScheduled(saved === 'true');
+      const savedOct1 = localStorage.getItem('ghci-preview-oct1');
+      setIsPreviewOct1(savedOct1 === 'true');
+      const savedNextPhase = localStorage.getItem('ghci-virtual-next-phase');
+      setShowNextPhaseEarly(savedNextPhase === 'true');
     }
 
     const handlePreviewToggle = (e: any) => {
@@ -532,7 +538,32 @@ export default function Ticketing() {
       }
     };
     window.addEventListener('ghci-preview-toggle', handlePreviewToggle);
-    return () => window.removeEventListener('ghci-preview-toggle', handlePreviewToggle);
+
+    const handleOct1Toggle = (e: any) => {
+      if (e.detail && typeof e.detail.preview === 'boolean') {
+        setIsPreviewOct1(e.detail.preview);
+      } else {
+        const savedOct1 = localStorage.getItem('ghci-preview-oct1');
+        setIsPreviewOct1(savedOct1 === 'true');
+      }
+    };
+    window.addEventListener('ghci-preview-oct1-toggle', handleOct1Toggle);
+
+    const handleNextPhaseToggle = (e: any) => {
+      if (e.detail && typeof e.detail.show === 'boolean') {
+        setShowNextPhaseEarly(e.detail.show);
+      } else {
+        const savedNextPhase = localStorage.getItem('ghci-virtual-next-phase');
+        setShowNextPhaseEarly(savedNextPhase === 'true');
+      }
+    };
+    window.addEventListener('ghci-virtual-next-phase-toggle', handleNextPhaseToggle);
+
+    return () => {
+      window.removeEventListener('ghci-preview-toggle', handlePreviewToggle);
+      window.removeEventListener('ghci-preview-oct1-toggle', handleOct1Toggle);
+      window.removeEventListener('ghci-virtual-next-phase-toggle', handleNextPhaseToggle);
+    };
   }, []);
 
   const DEFAULT_CONFIG = {
@@ -1065,10 +1096,137 @@ export default function Ticketing() {
     },
     {
       "id": "virtual",
-      "name": "Virtual Pass",
+      "name": "Virtual Launch Offer Pass",
       "description": "Join GHCI 27 live online from anywhere in the world.",
       "footnote": "Offer valid till September 30, 2026",
       "price": "₹2,600",
+      "oldPrice": "₹7,670",
+      "gst": "+ applicable taxes",
+      "cta": "Get the Pass",
+      "disabled": false,
+      "link": "https://events.getherspace.com/virtualghci/register",
+      "features": [
+        "Full access to GHCI 27, including sessions, workshops, and networking",
+        "Live Q&A, chats, polls, and curated networking opportunities",
+        "1-year AnitaB.org Global Membership",
+        "Attendee certification + digital badges"
+      ],
+      "cardBlur": 70,
+      "blobsDesktop": [
+        {
+          "color": "#a32482",
+          "width": 52,
+          "height": 82,
+          "x": 67,
+          "y": -37,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 40,
+          "height": 65,
+          "x": -5,
+          "y": 14,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 51,
+          "y": 31,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 78,
+          "y": 60,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": 39,
+          "opacity": 1
+        }
+      ],
+      "blobsMobile": [
+        {
+          "color": "#a32482",
+          "width": 33,
+          "height": 82,
+          "x": -9,
+          "y": 73,
+          "opacity": 1
+        },
+        {
+          "color": "#223852",
+          "width": 26,
+          "height": 50,
+          "x": -8,
+          "y": -16,
+          "opacity": 0.6
+        },
+        {
+          "color": "#223852",
+          "width": 27,
+          "height": 69,
+          "curve": 50,
+          "x": 19,
+          "y": 11,
+          "opacity": 0.5
+        },
+        {
+          "color": "#223852",
+          "width": 38,
+          "height": 67,
+          "curve": 47,
+          "x": 69,
+          "y": 45,
+          "opacity": 0.5
+        },
+        {
+          "color": "#22021d",
+          "width": 48,
+          "height": 83,
+          "curve": 44,
+          "x": 27,
+          "y": -27,
+          "opacity": 1
+        }
+      ],
+      "blobs": [
+        {
+          "color": "#22021D",
+          "width": 80,
+          "height": 60,
+          "x": 10,
+          "y": 40,
+          "opacity": 0.8
+        },
+        {
+          "color": "#A32482",
+          "width": 50,
+          "height": 40,
+          "x": 60,
+          "y": 70,
+          "opacity": 0.5
+        }
+      ]
+    },
+    {
+      "id": "virtual-early-bird",
+      "name": "Virtual Early Bird Pass",
+      "description": "Join GHCI 27 live online from anywhere in the world.",
+      "footnote": "Offer valid till December 15, 2026",
+      "price": "₹3,250",
       "oldPrice": "₹7,670",
       "gst": "+ applicable taxes",
       "cta": "Get the Pass",
@@ -1338,10 +1496,13 @@ export default function Ticketing() {
 
   if (!mounted) return null;
   
-  // Dynamic scheduling logic for Super Early Bird (July 1, 2026 cutoff) and Sep 1 release
+  // Dynamic scheduling logic for Super Early Bird (July 1, 2026 cutoff), Sep 1 release, and Oct 1 Virtual Early Bird
   const getProcessedTickets = () => {
     const rawTickets = config.tickets || [];
-    const queryDate = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('testDate') : null;
+    const queryParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+    const queryDate = queryParams?.get('testDate');
+    const queryPreviewOct1 = queryParams?.get('preview') === 'oct1' || queryParams?.get('previewOct1') === 'true';
+    
     let now = new Date();
     if (queryDate) {
       const formatted = queryDate.includes('T') ? queryDate : `${queryDate}T00:00:00`;
@@ -1350,7 +1511,7 @@ export default function Ticketing() {
     }
     
     const isSept1OrLater = now >= new Date('2026-09-01T00:00:00+05:30') || isPreviewScheduled;
-    const isOct1OrLater = now >= new Date('2026-10-01T00:00:00+05:30');
+    const isOct1OrLater = now >= new Date('2026-10-01T00:00:00+05:30') || isPreviewOct1 || queryPreviewOct1;
 
     let processed = rawTickets.map(t => {
       if (t.id === 'super-early') {
@@ -1377,36 +1538,91 @@ export default function Ticketing() {
           cta: 'Get the Pass'
         };
       }
-      if (t.id === 'virtual' && isOct1OrLater) {
-        return {
-          ...t,
-          price: '₹3,250',
-          footnote: 'Early Bird Offer'
-        };
+      if (t.id === 'virtual') {
+        if (isOct1OrLater) {
+          return {
+            ...t,
+            name: 'Virtual Launch Offer Pass',
+            disabled: true,
+            cta: 'Sold Out',
+            footnote: ''
+          };
+        } else {
+          return {
+            ...t,
+            name: 'Virtual Launch Offer Pass',
+            price: '₹2,600',
+            oldPrice: '₹7,670',
+            footnote: 'Offer valid till September 30, 2026',
+            disabled: false,
+            cta: 'Get the Pass'
+          };
+        }
+      }
+      if (t.id === 'virtual-early-bird') {
+        if (isOct1OrLater) {
+          return {
+            ...t,
+            name: 'Virtual Early Bird Pass',
+            price: '₹3,250',
+            oldPrice: '₹7,670',
+            footnote: 'Offer valid till December 15, 2026',
+            disabled: false,
+            cta: 'Get the Pass'
+          };
+        } else {
+          return {
+            ...t,
+            name: 'Virtual Early Bird Pass',
+            price: '₹3,250',
+            oldPrice: '₹7,670',
+            footnote: 'Valid 1st Oct - Dec 15, 2026',
+            disabled: true,
+            cta: 'Next Phase'
+          };
+        }
       }
       return t;
     });
 
     if (isSept1OrLater) {
-      // 6 active tickets for Sep 1 release:
-      // 1. Regular Pass / Day 1+2+3 (regular-3day)
-      // 2. Regular Pass / Day 1 Only (regular-day1)
-      // 3. Academic Pass (regular)
-      // 4. Virtual Pass (virtual)
-      // 5. Privilege Offer (last-year, 2nd last position)
-      // 6. Early Bird (early-bird, last position, sold out)
-      const order = ['regular-3day', 'regular-day1', 'regular', 'virtual', 'last-year', 'early-bird'];
-      processed = processed.filter(t => t.id !== 'super-early');
-      processed.sort((a, b) => {
-        let iA = order.indexOf(a.id);
-        let iB = order.indexOf(b.id);
-        if (iA === -1) iA = 99;
-        if (iB === -1) iB = 99;
-        return iA - iB;
-      });
+      if (isOct1OrLater) {
+        // Active Virtual Early Bird in 4th spot, expired Virtual Launch Offer at end with Early Bird sold out
+        const order = ['regular-3day', 'regular-day1', 'regular', 'virtual-early-bird', 'last-year', 'virtual', 'early-bird'];
+        processed = processed.filter(t => t.id !== 'super-early');
+        processed.sort((a, b) => {
+          let iA = order.indexOf(a.id);
+          let iB = order.indexOf(b.id);
+          if (iA === -1) iA = 99;
+          if (iB === -1) iB = 99;
+          return iA - iB;
+        });
+      } else {
+        if (showNextPhaseEarly) {
+          const order = ['regular-3day', 'regular-day1', 'regular', 'virtual', 'virtual-early-bird', 'last-year', 'early-bird'];
+          processed = processed.filter(t => t.id !== 'super-early');
+          processed.sort((a, b) => {
+            let iA = order.indexOf(a.id);
+            let iB = order.indexOf(b.id);
+            if (iA === -1) iA = 99;
+            if (iB === -1) iB = 99;
+            return iA - iB;
+          });
+        } else {
+          const order = ['regular-3day', 'regular-day1', 'regular', 'virtual', 'last-year', 'early-bird'];
+          processed = processed.filter(t => t.id !== 'super-early' && t.id !== 'virtual-early-bird');
+          processed.sort((a, b) => {
+            let iA = order.indexOf(a.id);
+            let iB = order.indexOf(b.id);
+            if (iA === -1) iA = 99;
+            if (iB === -1) iB = 99;
+            return iA - iB;
+          });
+        }
+      }
     } else {
       const order = ['last-year', 'early-bird', 'virtual', 'regular', 'super-early'];
-      processed = processed.filter(t => t.id !== 'regular-3day' && t.id !== 'regular-day1');
+      processed = processed.filter(t => t.id !== 'regular-3day' && t.id !== 'regular-day1' && t.id !== 'virtual-early-bird');
       processed.sort((a, b) => {
         let iA = order.indexOf(a.id);
         let iB = order.indexOf(b.id);
@@ -1550,6 +1766,31 @@ export default function Ticketing() {
               onClick={() => {
                 localStorage.setItem('ghci-preview-scheduled', 'false');
                 window.dispatchEvent(new CustomEvent('ghci-preview-toggle', { detail: { preview: false } }));
+              }}
+              className="px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-lg font-bold transition-all text-[11px]"
+            >
+              Exit Preview
+            </button>
+          </div>
+        )}
+
+        {(isPreviewOct1 || (typeof window !== 'undefined' && (new URLSearchParams(window.location.search).get('preview') === 'oct1' || new URLSearchParams(window.location.search).get('previewOct1') === 'true'))) && (
+          <div className="mb-6 mx-auto max-w-lg p-3 bg-gradient-to-r from-green-950/80 via-black to-purple-950/80 border border-green-500/40 rounded-2xl flex items-center justify-between text-xs text-white shadow-xl">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+              <span className="font-bold text-green-300">Simulating Oct 1 Release (Virtual Early Bird Active)</span>
+            </div>
+            <button 
+              onClick={() => {
+                localStorage.setItem('ghci-preview-oct1', 'false');
+                setIsPreviewOct1(false);
+                window.dispatchEvent(new CustomEvent('ghci-preview-oct1-toggle', { detail: { preview: false } }));
+                if (window.location.search.includes('preview=oct1') || window.location.search.includes('previewOct1=true')) {
+                  const url = new URL(window.location.href);
+                  url.searchParams.delete('preview');
+                  url.searchParams.delete('previewOct1');
+                  window.history.replaceState({}, '', url.toString());
+                }
               }}
               className="px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-lg font-bold transition-all text-[11px]"
             >
