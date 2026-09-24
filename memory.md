@@ -2589,3 +2589,7 @@
 - Configured dynamic scheduling: activates Virtual Early Bird on Oct 1 and transitions Launch Offer to sold out.
 - Added Oct 1 scheduled release banner with countdown and simulation controls in ControlPanel.tsx, supporting URL param ?preview=oct1.
 - [0.25]
+
+### Speakers Section Description Update [2026-09-24 13:32]
+- Updated Speakers section subtitle in `src/content/speakers.md` to highlight GHCI 27 leaders, innovators, and changemakers.
+- [0.02]

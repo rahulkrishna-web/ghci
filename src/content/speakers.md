@@ -1,6 +1,6 @@
 ---
 sectionTitle: "Speakers"
-subtitle: "Over the years, GHCI has brought together industry leaders and experts shaping the future of technology across global enterprises and emerging startups."
+subtitle: "Meet the leaders, innovators, and changemakers taking the stage at GHCI 27. Explore the speakers bringing fresh perspectives and real-world insights to this year’s conversations."
 speakers:
   - name: "Aarti Singh"
     role: "Sr. VP and Chief Digital Transformation Officer, Auto & Farm, Mahindra & Mahindra Ltd"
