@@ -2593,3 +2593,8 @@
 ### Speakers Section Description Update [2026-09-24 13:32]
 - Updated Speakers section subtitle in `src/content/speakers.md` to highlight GHCI 27 leaders, innovators, and changemakers.
 - [0.02]
+
+### Merge Speakers & Ticket Updates into Master [2026-09-24 16:33]
+- Merged `feature/speakers-update` into `master`.
+- Verified production build successfully via Next.js Turbopack.
+- [0.05]
