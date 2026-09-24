@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 type SpeakerGridProps = {
   data: {
     sectionTitle: string;
-    subtitle: string;
-    lineupNote: string;
+    subtitle?: string;
+    lineupNote?: string;
     speakers: { name: string; role: string; image: string }[];
   };
 };
@@ -64,12 +64,16 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
             transition={{ delay: 0.1 }}
             className="max-w-5xl mx-auto"
           >
-            <p className="text-white text-lg md:text-2xl leading-relaxed">
-              {data.subtitle}
-            </p>
-            <p className="text-white font-semibold text-lg md:text-2xl">
-              {data.lineupNote}
-            </p>
+            {data.subtitle && (
+              <p className="text-white text-lg md:text-2xl leading-relaxed">
+                {data.subtitle}
+              </p>
+            )}
+            {data.lineupNote && (
+              <p className="text-white font-semibold text-lg md:text-2xl">
+                {data.lineupNote}
+              </p>
+            )}
           </motion.div>
         </div>
 

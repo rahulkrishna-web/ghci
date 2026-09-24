@@ -2567,3 +2567,14 @@
 ### WeQuest Deadline Extension [2026-09-23 12:08]
 - Extended WeQuest application deadline from Sep 23 to Sep 30, 2026 across wequest.md, WaysToInvolve.tsx, WequestHero.tsx.
 - [0.05]
+
+### Speakers Section Update [2026-09-24 12:55]
+- Renamed "Past Speakers" section to "Speakers" in speakers.md and SpeakerGrid.tsx.
+- Extracted and matched 8 speakers from speaker_data.csv to photos.
+- Cropped to 3:4 aspect ratio, resized to 600x800, and optimized images to WebP/JPEG in public/speakers.
+- Arranged grid for 2 rows of 4 columns on desktop with responsive layout.
+- [0.25]
+
+### Regine Gilbert Photo Recenter [2026-09-24 13:01]
+- Recentered Regine Gilbert's 3:4 crop horizontally on her face/head at X=1770 in public/speakers.
+- [0.05]
