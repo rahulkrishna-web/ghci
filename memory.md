@@ -2611,3 +2611,9 @@
 - Applied plum gradient (`linear-gradient(to bottom, #120110, #22021d)`) and wavy pattern SVG accent behind Ways to Get Involved in `WaysToInvolve.tsx`.
 - Verified production build successfully.
 - [0.1]
+
+### WeQuest Deadline Extension to October 31, 2026 [2026-10-01 02:24]
+- Extended WeQuest application deadline to October 31, 2026 across `src/content/wequest.md`, `src/components/eventivee/WaysToInvolve.tsx`, and `src/components/eventivee/WequestHero.tsx`.
+- Updated Application Window key date in `src/content/wequest.md` to June 26, 2026 - October 31, 2026.
+- Verified production build successfully.
+- [0.05]
