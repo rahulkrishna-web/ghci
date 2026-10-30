@@ -7,6 +7,8 @@ type SpeakerGridProps = {
     sectionTitle: string;
     subtitle?: string;
     lineupNote?: string;
+    ctaText?: string;
+    ctaLink?: string;
     speakers: { name: string; role: string; image: string }[];
   };
 };
@@ -145,6 +147,20 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                 >
                     SHOW LESS -
                 </button>
+            </div>
+        )}
+
+        {/* See More CTA (links to full speaker list on Stutzee) */}
+        {data.ctaLink && (
+            <div className="text-center mt-10 md:mt-16">
+                <a
+                    href={data.ctaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-3 md:px-10 md:py-4 rounded-full bg-[#A32482] hover:bg-[#b02677] text-white text-sm md:text-lg font-semibold uppercase tracking-[0.15em] transition-colors"
+                >
+                    {data.ctaText || 'See more'}
+                </a>
             </div>
         )}
       </div>
