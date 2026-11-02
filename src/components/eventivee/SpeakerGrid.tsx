@@ -68,7 +68,7 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
 
         {/* Speaker Grid / Slider */}
         <div className="relative">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-6 lg:gap-4 xl:gap-6">
             {speakersToRender.map((speaker, idx) => (
                 <motion.div
                 key={idx}
@@ -112,11 +112,11 @@ export default function SpeakerGrid({ data }: SpeakerGridProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-100" />
                 
                 {/* Speaker Info Overlay */}
-                <div className="absolute bottom-0 left-0 p-3 md:p-6 w-full">
-                    <h3 className="text-sm md:text-3xl font-semibold text-white mb-1 md:mb-2 leading-tight">
+                <div className="absolute bottom-0 left-0 p-3 md:p-6 lg:p-4 xl:p-5 w-full">
+                    <h3 className="text-sm md:text-3xl lg:text-xl xl:text-2xl font-semibold text-white mb-1 md:mb-2 leading-tight">
                     {speaker.name}
                     </h3>
-                    <p className="text-white text-[10px] md:text-xl leading-tight max-w-[95%] line-clamp-3">
+                    <p className="text-white text-[10px] md:text-xl lg:text-sm xl:text-base leading-tight max-w-[95%] line-clamp-3">
                     {speaker.role}
                     </p>
                 </div>
