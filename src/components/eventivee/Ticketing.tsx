@@ -12,12 +12,14 @@ const defaultTickets = [
     description: "For GHCI 25 attendees ",
     footnote: "Offer valid till August 2, 2026",
     price: "₹10,000",
-    gst: "+ applicable charges",
+    gst: "18% GST Applicable",
     cta: "Get the Pass",
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges"
+      "Attendee certification + digital badges (via Verix)",
+      "Virtual access available",
+      "Free 6-month Brava membership (worth ₹45,000/year)"
     ],
     cardBlur: 0,
     blobsDesktop: [
@@ -42,13 +44,15 @@ const defaultTickets = [
     description: "Experience the complete GHCI 27 with full access to all three days.",
     footnote: "",
     price: "₹11,000",
-    oldPrice: "₹25,000",
+    oldPrice: "₹15,000",
     gst: "18% GST Applicable",
     cta: "Get the Pass",
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges"
+      "Attendee certification + digital badges (via Verix)",
+      "Virtual access available",
+      "Free 6-month Brava membership (worth ₹45,000/year)"
     ],
     cardBlur: 70,
     blobsDesktop: [
@@ -76,13 +80,15 @@ const defaultTickets = [
     description: "Experience the complete GHCI 27 with full access to all three days.",
     footnote: "Offer valid till August 31, 2026",
     price: "₹12,000",
-    oldPrice: "₹25,000",
-    gst: "+ applicable charges",
+    oldPrice: "₹15,000",
+    gst: "18% GST Applicable",
     cta: "Get the Pass",
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges"
+      "Attendee certification + digital badges (via Verix)",
+      "Virtual access available",
+      "Free 6-month Brava membership (worth ₹45,000/year)"
     ],
     cardBlur: 70,
     blobsDesktop: [
@@ -115,7 +121,9 @@ const defaultTickets = [
     features: [
       "Full access to GHCI 27 (sessions, workshops & networking)",
       "1-year AnitaB.org Global Membership",
-      "Attendee certification + digital badges"
+      "Attendee certification + digital badges (via Verix)",
+      "Virtual access available",
+      "Free 6-month Brava membership (worth ₹45,000/year)"
     ],
     cardBlur: 70,
     blobsDesktop: [
@@ -138,6 +146,20 @@ const defaultTickets = [
     ]
   },
 ];
+
+const renderFeatureText = (feature: string) => {
+  if (feature.includes('Brava')) {
+    const parts = feature.split('Brava');
+    return (
+      <span>
+        {parts[0]}
+        <span className="underline underline-offset-2">Brava</span>
+        {parts[1]}
+      </span>
+    );
+  }
+  return feature;
+};
 
 const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; config: any }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -192,7 +214,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
-      className="relative w-full h-[780px] rounded-[2.5rem] overflow-hidden group flex flex-col"
+      className="relative w-full h-[830px] rounded-[2.5rem] overflow-hidden group flex flex-col"
       style={{
         maskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
         WebkitMaskImage: `radial-gradient(circle at 50% 0px, transparent ${nSize}px, black ${nSize + 0.5}px)`,
@@ -340,7 +362,7 @@ const TicketingCard = ({ ticket, idx, config }: { ticket: any; idx: number; conf
             {ticket.features.map((feature: string, fIdx: number) => (
               <li key={fIdx} className="flex items-start gap-3 text-sm md:text-base text-white/80">
                 <span className="text-white text-xl mt-[-2px]">+</span>
-                <span className="line-clamp-2">{feature}</span>
+                <span className="line-clamp-2">{renderFeatureText(feature)}</span>
               </li>
             ))}
           </ul>
@@ -491,7 +513,7 @@ const TicketingCardMobile = ({ ticket, idx, config }: { ticket: any; idx: number
                         {ticket.features.map((feature: string, fIdx: number) => (
                             <li key={fIdx} className="flex items-start gap-3 text-[10px] md:text-lg text-white/80 leading-snug">
                                 <span className="text-white text-lg leading-none">+</span>
-                                <span>{feature}</span>
+                                <span>{renderFeatureText(feature)}</span>
                             </li>
                         ))}
                     </ul>
@@ -575,12 +597,14 @@ export default function Ticketing() {
       "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "",
       "price": "₹15,000",
-      "gst": "+ applicable charges",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -604,12 +628,14 @@ export default function Ticketing() {
       "description": "Designed for students and young professionals.",
       "footnote": "",
       "price": "₹3,000",
-      "gst": "+ applicable charges",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Access to Day 1 sessions, workshops & networking",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -633,12 +659,14 @@ export default function Ticketing() {
       "description": "For GHCI 25 attendees ",
       "footnote": "Offer valid till August 2, 2026",
       "price": "₹10,000",
-      "gst": "+ applicable charges",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 0,
       "blobsDesktop": [
@@ -729,13 +757,15 @@ export default function Ticketing() {
       "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "",
       "price": "₹11,000",
-      "oldPrice": "₹25,000",
-      "gst": "+ applicable charges",
+      "oldPrice": "₹15,000",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -853,13 +883,15 @@ export default function Ticketing() {
       "description": "Experience the complete GHCI 27 with full access to all three days.",
       "footnote": "Offer valid till August 31, 2026",
       "price": "₹12,000",
-      "oldPrice": "₹25,000",
-      "gst": "+ applicable charges",
+      "oldPrice": "₹15,000",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -977,12 +1009,14 @@ export default function Ticketing() {
       "description": "Special pricing for educators, founders, and professionals returning to tech.",
       "footnote": "For discount code support, contact the Support ID below",
       "price": "₹9,000",
-      "gst": "+ applicable charges",
+      "gst": "18% GST Applicable",
       "cta": "Get the Pass",
       "features": [
         "Full access to GHCI 27 (sessions, workshops & networking)",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Virtual access available",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -1109,7 +1143,8 @@ export default function Ticketing() {
         "Full access to GHCI 27, including sessions, workshops, and networking",
         "Live Q&A, chats, polls, and curated networking opportunities",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -1236,7 +1271,8 @@ export default function Ticketing() {
         "Full access to GHCI 27, including sessions, workshops, and networking",
         "Live Q&A, chats, polls, and curated networking opportunities",
         "1-year AnitaB.org Global Membership",
-        "Attendee certification + digital badges"
+        "Attendee certification + digital badges (via Verix)",
+        "Free 6-month Brava membership (worth ₹45,000/year)"
       ],
       "cardBlur": 70,
       "blobsDesktop": [
@@ -1394,7 +1430,7 @@ export default function Ticketing() {
                     const defaultTicket = DEFAULT_CONFIG.tickets.find(t => t.id === parsedTicket.id);
                     if (!defaultTicket) return parsedTicket;
                     
-                    const features = (parsedTicket.features || defaultTicket.features).filter((f: string) => f !== 'Virtual access available');
+                    const features = defaultTicket.features;
                     const blobsDesktop = parsedTicket.blobsDesktop || defaultTicket.blobsDesktop;
                     const blobsMobile = parsedTicket.blobsMobile || defaultTicket.blobsMobile;
                     

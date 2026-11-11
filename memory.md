@@ -2633,3 +2633,11 @@
 - Integrated `Accommodations` directly below "Getting There" within `Location.tsx`.
 - Verified production build successfully.
 - [0.3]
+
+
+### Ticket Cards "What's Included" and Details Update [2026-11-11 11:22]
+- Updated ticket card features across passes to match the new design: added Verix accreditation badge note, Virtual access available, and free 6-month Brava membership with underlined Brava styling.
+- Standardized GST text to "18% GST Applicable" and adjusted original price on Super Early Bird to ₹15,000.
+- Preserved card footers (disclaimers / "GHCI 27 • BENGALURU") and adjusted desktop card height for proper content spacing without clipping.
+- Verified production build successfully.
+- [0.15]
