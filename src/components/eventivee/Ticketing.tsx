@@ -153,7 +153,15 @@ const renderFeatureText = (feature: string) => {
     return (
       <span>
         {parts[0]}
-        <span className="underline underline-offset-2">Brava</span>
+        <a
+          href="https://brava.world/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="underline underline-offset-2 hover:text-white transition-colors"
+        >
+          Brava
+        </a>
         {parts[1]}
       </span>
     );

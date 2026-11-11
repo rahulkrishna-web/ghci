@@ -2647,3 +2647,10 @@
 - Replaced "+ applicable taxes" with "18% GST Applicable" for Virtual Launch Offer Pass and Virtual Early Bird Pass in `src/components/eventivee/Ticketing.tsx`.
 - Verified production build successfully.
 - [0.05]
+
+
+### Add Brava External Link to Ticket Inclusions [2026-11-11 11:36]
+- Added hyperlink to `https://brava.world/` for the underlined "Brava" text across ticket card inclusions in `src/components/eventivee/Ticketing.tsx`.
+- Ensured link opens safely in a new tab (`target="_blank"`, `rel="noopener noreferrer"`) and stops click propagation.
+- Verified production build successfully.
+- [0.05]
