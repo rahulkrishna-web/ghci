@@ -2641,3 +2641,9 @@
 - Preserved card footers (disclaimers / "GHCI 27 • BENGALURU") and adjusted desktop card height for proper content spacing without clipping.
 - Verified production build successfully.
 - [0.15]
+
+
+### Standardize 18% GST Applicable on Virtual Passes [2026-11-11 11:30]
+- Replaced "+ applicable taxes" with "18% GST Applicable" for Virtual Launch Offer Pass and Virtual Early Bird Pass in `src/components/eventivee/Ticketing.tsx`.
+- Verified production build successfully.
+- [0.05]
