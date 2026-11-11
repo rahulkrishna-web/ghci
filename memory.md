@@ -2624,3 +2624,12 @@
 - Removed deadline counter and updated button states to disabled (`opacity-50 grayscale cursor-not-allowed`) in `WaysToInvolve.tsx`, `WequestHero.tsx`, and `WequestCTA.tsx`.
 - Verified production build successfully.
 - [0.1]
+
+
+### Hotels & Accommodations Section Integration [2026-11-11 11:07]
+- Updated event dates format to "20-22 JANUARY 2027" in `src/content/location.md` matching Figma design.
+- Added comprehensive accommodations data for 47 properties across 7 categories (Premium, Business, Budget, Serviced Apartments, Co-Living, Gents PG, Ladies PG) to `src/content/location.md`.
+- Implemented `Accommodations.tsx` component with collapsible accordion sections, property count pills, disclaimer banner, and formatted contact/booking links.
+- Integrated `Accommodations` directly below "Getting There" within `Location.tsx`.
+- Verified production build successfully.
+- [0.3]

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Car, Train, Bus } from 'lucide-react';
+import Accommodations, { AccommodationsData } from './Accommodations';
 
 type LocationProps = {
   data: {
@@ -15,6 +16,7 @@ type LocationProps = {
       description: string;
       options: { title: string; desc: string }[];
     };
+    accommodations?: AccommodationsData;
   };
 };
 
@@ -170,6 +172,9 @@ export default function Location({ data }: LocationProps) {
             </div>
           </div>
         </motion.div>
+
+        {/* Hotels & Accommodations Section */}
+        {data.accommodations && <Accommodations data={data.accommodations} />}
       </div>
     </section>
   );
