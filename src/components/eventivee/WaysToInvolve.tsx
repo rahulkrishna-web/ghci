@@ -24,6 +24,7 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
   const secondaryWays = data.ways.filter(w => w.type === 'secondary');
 
   const [aipDeadline, setAipDeadline] = useState("Aug 31, 2026");
+  const [wequestDeadline, setWequestDeadline] = useState("Nov 30, 2026");
 
   useEffect(() => {
     const now = new Date();
@@ -126,6 +127,11 @@ export default function WaysToInvolve({ data }: WaysToInvolveProps) {
                       </div>
                     </a>
                   ))}
+                  {way.title === "WeQuest" && (
+                    <span className="text-white/60 text-xs md:text-lg font-medium mt-1 md:mt-0">
+                      Apply by {wequestDeadline}, 11:59 PM IST
+                    </span>
+                  )}
 
 
                   {way.badge && way.badgeUrl ? (

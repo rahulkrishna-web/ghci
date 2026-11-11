@@ -2660,3 +2660,10 @@
 - Fast-forward merged `feature/hotels-and-accommodations` into `master`.
 - Verified Next.js production build passes cleanly.
 - [0.05]
+
+
+### Extend WeQuest Applications to November 30 [2026-11-11 16:32]
+- Re-opened WeQuest applications with extended deadline of November 30, 2026 across `src/content/wequest.md`, `src/content/ways-to-involve.md`, `WaysToInvolve.tsx`, and `WequestHero.tsx`.
+- Restored active "Apply Now" buttons, links to application portal (`https://ghci27.stutzee.com/applications/wequest/create`), and deadline notices ("Apply by Nov 30, 2026, 11:59 PM IST").
+- Verified production build successfully.
+- [0.1]
