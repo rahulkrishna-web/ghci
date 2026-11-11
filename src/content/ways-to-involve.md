@@ -6,9 +6,9 @@ ways:
     description: "A pitch platform for early-stage women founders-offering funding access, mentorship, and industry connections."
     type: "primary"
     links:
-      - text: "Apply Now"
-        url: "/wequest"
-        variant: "solid"
+      - text: "Applications Closed"
+        url: "#"
+        variant: "outline"
   - title: "Anita Borg Impact Awards"
     description: "Recognizing women technologists making impactful contributions across industry, research, and leadership"
     type: "primary"

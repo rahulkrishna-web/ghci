@@ -2617,3 +2617,10 @@
 - Updated Application Window key date in `src/content/wequest.md` to June 26, 2026 - October 31, 2026.
 - Verified production build successfully.
 - [0.05]
+
+
+### WeQuest Applications Closed Update [2026-11-11 10:19]
+- Updated WeQuest application status to closed across `src/content/ways-to-involve.md` and `src/content/wequest.md` (CTA text "Applications Closed", link `#`, outline variant).
+- Removed deadline counter and updated button states to disabled (`opacity-50 grayscale cursor-not-allowed`) in `WaysToInvolve.tsx`, `WequestHero.tsx`, and `WequestCTA.tsx`.
+- Verified production build successfully.
+- [0.1]

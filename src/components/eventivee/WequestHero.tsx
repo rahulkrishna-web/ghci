@@ -172,16 +172,16 @@ export default function WequestHero({ data }: WequestHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
-            className="flex flex-row items-center group gap-0 cursor-pointer"
+            className={`flex flex-row items-center group gap-0 ${data.heroCtaLink !== "#" ? "cursor-pointer" : ""}`}
           >
-            <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center group-hover:bg-[#8e1f7c] transition-all z-10 animate-in fade-in zoom-in duration-200">
+            <div className={`w-10 h-10 md:w-16 md:h-16 rounded-full bg-[#A32482] border border-[#A32482]/30 flex items-center justify-center transition-all z-10 animate-in fade-in zoom-in duration-200 ${data.heroCtaLink !== "#" ? "group-hover:bg-[#8e1f7c]" : "opacity-50 grayscale"}`}>
               <img src="/icons/Ticket.png" alt="Ticket" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
             </div>
             <a
-              href={data.heroCtaLink}
-              className="h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] group-hover:bg-[#8e1f7c] transition-all text-white text-[15px] md:text-lg font-bold tracking-wider shadow-xl shadow-purple-900/20 active:scale-95 whitespace-nowrap z-0 overflow-hidden cursor-pointer"
+              href={data.heroCtaLink !== "#" ? data.heroCtaLink : undefined}
+              className={`h-10 md:h-16 inline-flex flex-col rounded-full bg-[#A32482] transition-all text-white text-[15px] md:text-lg font-bold tracking-wider shadow-xl shadow-purple-900/20 whitespace-nowrap z-0 overflow-hidden ${data.heroCtaLink !== "#" ? "group-hover:bg-[#8e1f7c] active:scale-95 cursor-pointer" : "opacity-50 grayscale cursor-not-allowed"}`}
             >
-              <div className="h-full w-full relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+              <div className={`h-full w-full relative ${data.heroCtaLink !== "#" ? "transition-transform duration-500 ease-in-out group-hover:-translate-y-full" : ""}`}>
                 <div className="h-full w-full flex items-center justify-center px-6 md:px-8 shrink-0">
                   {data.heroCtaText}
                 </div>
@@ -192,7 +192,7 @@ export default function WequestHero({ data }: WequestHeroProps) {
             </a>
           </motion.div>
 
-          {data.heroDeadline && (
+          {data.heroDeadline && deadlineText ? (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ export default function WequestHero({ data }: WequestHeroProps) {
               <Clock className="w-4 h-4 md:w-5 md:h-5" />
               <span>{deadlineText}</span>
             </motion.div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>
